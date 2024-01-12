@@ -143,7 +143,7 @@
                   "IN PROGRESS(i!)"
                   "RESEARCHING(r@/!)"
                   "BACKLOGGED(l@/!)"
-                  "IN REVIEW(r!)"
+                  "IN REVIEW(R!)"
                   "BLOCKED(b@/!)"
                   "WARNING(w@/!)"
                   "APPROVED(a!)"
