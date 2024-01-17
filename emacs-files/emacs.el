@@ -122,6 +122,13 @@
 (global-set-key (kbd "C-S-k") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;; Quick keybindings for writeroom mode.
+
+(with-eval-after-load 'writeroom-mode
+  (define-key writeroom-mode-map (kbd "C-M-=") 'writeroom-adjust-width)
+  (define-key writeroom-mode-map (kbd "C-M->") 'writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd "C-M-<") 'writeroom-decrease-width))
+
 ;; Keywords not highlighted by default but I believe should be.
 
 (font-lock-add-keywords 'emacs-lisp-mode
@@ -258,7 +265,7 @@
  '(frame-background-mode 'dark)
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
+   '(writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode t)
