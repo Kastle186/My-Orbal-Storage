@@ -5,6 +5,7 @@
 ;; Let's save our org filenames in variables for easier access and better readability.
 
 (defvar dotnet-work-todos-file "~/Documents/Emacs/dotnet-todos.org")
+(defvar preview-buffer-name "*Work-Item-Preview*")
 
 ;; Setting priorities to be with numbers.
 
@@ -15,6 +16,35 @@
 ;; **********************************
 ;;  Work Item Information Functions!
 ;; **********************************
+
+;; *****************
+;; append-to-preview
+;; *****************
+;; Helper function to display the work item's information in a preview buffer,
+;; as it is entered. This is mainly to help us keep track of what we've entered
+;; visually, as it is more comfortable this way, rather than not knowing.
+
+(defun append-to-preview (text)
+  "Display the work item's information on a preview buffer as it is entered."
+  (pop-to-buffer preview-buffer-name)
+  (goto-char (point-max))
+  (insert (format "%s\n" text)))
+
+
+;; ****************************
+;; capture-and-print-to-preview
+;; ****************************
+;; Helper function to encapsulate the user input functionality with the printing
+;; to the preview buffer functionality.
+
+(defun capture-and-print-to-preview (field &optional prefix-arg)
+  "Prompt the user for the given field of information of the new work item, and
+output it to the preview pane."
+  (let ((input (read-string (format "Enter the %s: " field)))
+        (prefix (if prefix-arg prefix-arg "")))
+    (append-to-preview (format "%s%s: %s" prefix field input))
+    input))
+
 
 ;; ***************************
 ;; get-work-item-tracking-info
@@ -29,8 +59,8 @@
   (setq tracking-info "")
   (when (yes-or-no-p "Is there a tracking item in a Github repository? ")
 
-    (let* ((repo-name     (read-string "Enter the Github repository's suburl: "))
-           (issue-number  (read-string "Enter the tracking issue number: "))
+    (let* ((repo-name     (capture-and-print-to-preview "Github repository's suburl"))
+           (issue-number  (capture-and-print-to-preview "Tracking Issue Number"))
            (generated-url (format "[[https://github.com/%s/issues/%s]]"
                                   repo-name
                                   issue-number)))
@@ -59,7 +89,7 @@
     (let ((more-tasks t))
 
       (while more-tasks
-        (let* ((task-name (read-string "Enter the next task: "))
+        (let* ((task-name (capture-and-print-to-preview "Task" "- "))
                (has-subtasks (yes-or-no-p "Will this task be subdivided into subtasks? "))
                (task-item (if has-subtasks
                               (format "\n- [ ] %s [%%]\n" task-name)
@@ -68,7 +98,7 @@
           (setq checklist (concat checklist task-item))
 
           (while has-subtasks
-            (let* ((subtask-name (read-string "Enter the subtask: "))
+            (let* ((subtask-name (capture-and-print-to-preview "Subtask: " "  - "))
                    (subtask-item (format "  - [ ] %s\n" subtask-name)))
 
               (setq checklist (concat checklist subtask-item)))
@@ -88,9 +118,12 @@
 
 (defun get-work-item-capture-template ()
   "Function that entirely generates the org capture template for dotnet work items."
-  (let ((job-title       (read-string "Enter the job item title: "))
-        (job-description (read-string "Enter the job description: "))
-        (job-tags        (read-string "Enter tags for this job item (colon-separated): "))
+  (when (get-buffer preview-buffer-name)
+    (kill-buffer preview-buffer-name))
+
+  (let ((job-title       (capture-and-print-to-preview "Job Item Title"))
+        (job-description (capture-and-print-to-preview "Job Description"))
+        (job-tags        (capture-and-print-to-preview "Tags for this Job Item (colon-separated)"))
         (job-repo-info   (get-work-item-tracking-info))
         (job-checklist   (get-work-item-checklist))
         (job-filing-time (format-time-string "%Y/%m/%d %l:%M %P %Z")))
