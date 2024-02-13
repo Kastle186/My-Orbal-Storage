@@ -18,7 +18,8 @@
 ;; Load my Org-Mode and Ren'py configurations.
 
 (load-file "~/.emacs.d/org-mode-config/my-org-mode-config.el")
-(load-file "~/.emacs.d/renpy-config.el")
+(load-file "~/.emacs.d/my-tools/renpy-config.el")
+;; (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
 
 ;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
 ;; by default when editing these types of files.
@@ -46,6 +47,19 @@
 (setq-default auth-sources '("~/.authinfo.gpg"))
 (setq-default ediff-forward-word-function 'forward-char)
 (setq-default delete-selection-mode t)
+(setq-default org-confirm-babel-evaluate nil)
+(setq-default markdown-command "/usr/bin/pandoc")
+
+;; Enable all the languages I tend to use in Babel by default.
+
+(setq-default org-babel-load-languages
+              '((emacs-lisp . t)
+                (python     . t)
+                (ruby       . t)
+                (sed        . t)
+                (shell      . t)))
+
+;; Auxiliary functions to boost my productivity!
 
 (defun toggle-line-numbers-type ()
   "Function to easily toggle between normal/absolute and relative line numbering."
@@ -134,9 +148,11 @@
 (font-lock-add-keywords 'emacs-lisp-mode
                         '(("\\<add-hook\\>"             . font-lock-keyword-face)
                           ("\\<add-to-list\\>"          . font-lock-keyword-face)
+                          ("\\<capitalize\\>"           . font-lock-keyword-face)
                           ("\\<custom-set-faces\\>"     . font-lock-keyword-face)
                           ("\\<custom-set-variables\\>" . font-lock-keyword-face)
                           ("\\<define-key\\>"           . font-lock-keyword-face)
+                          ("\\<downcase\\>"             . font-lock-keyword-face)
                           ("\\<eql\\>"                  . font-lock-keyword-face)
                           ("\\<equal\\>"                . font-lock-keyword-face)
                           ("\\<format\\>"               . font-lock-keyword-face)
@@ -146,7 +162,9 @@
                           ("\\<load-file\\>"            . font-lock-keyword-face)
                           ("\\<member\\>"               . font-lock-keyword-face)
                           ("\\<nil\\>"                  . font-lock-keyword-face)
-                          ("\\<not\\>"                  . font-lock-keyword-face)))
+                          ("\\<not\\>"                  . font-lock-keyword-face)
+                          ("\\<set\\>"                  . font-lock-keyword-face)
+                          ("\\<upcase\\>"               . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'csharp-mode
                         '(("\\<init\\>" . font-lock-keyword-face)))
@@ -265,7 +283,7 @@
  '(frame-background-mode 'dark)
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(powershell writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
+   '(markdown-mode powershell writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode t)
