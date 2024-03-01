@@ -19,7 +19,7 @@
 
 (load-file "~/.emacs.d/org-mode-config/my-org-mode-config.el")
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
-;; (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
+(load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
 
 ;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
 ;; by default when editing these types of files.
@@ -96,6 +96,17 @@
 (global-set-key (kbd "M-n") 'display-line-numbers-mode)
 (global-set-key (kbd "C-x C-M-b") 'ibuffer)
 
+;; These keys are just for my rescued keyboard whose 'f' key doesn't work.
+
+;; (global-set-key (kbd "<f5>") "f")
+;; (global-set-key (kbd "<f6>") "F")
+;; (global-set-key (kbd "C-<f5>") 'forward-char)
+;; (global-set-key (kbd "M-<f5>") 'forward-word)
+;; (global-set-key (kbd "C-x M-<f5>") 'find-char-forward)
+;; (global-set-key (kbd "C-x M-<f6>") 'find-char-backward)
+;; (global-set-key (kbd "C-x C-<f5>") 'find-file)
+;; (global-set-key (kbd "C-x x <f5>") 'menu-set-font)
+
 ;; Text modifying and navigation keyboard shortcuts
 
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -129,12 +140,12 @@
 
 ;; Configured keybindings for multiple cursors mode.
 
-(define-key mc/keymap (kbd "<return>") nil)
-
-(global-set-key (kbd "C-S-c C-S-n") 'mc/edit-lines)
-(global-set-key (kbd "C-S-j") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-S-k") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+(with-eval-after-load 'multiple-cursors-mode
+  (define-key mc/keymap (kbd "<return>") nil)
+  (global-set-key (kbd "C-S-c C-S-n") 'mc/edit-lines)
+  (global-set-key (kbd "C-S-j") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-S-k") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click))
 
 ;; Quick keybindings for writeroom mode.
 
@@ -149,6 +160,7 @@
                         '(("\\<add-hook\\>"             . font-lock-keyword-face)
                           ("\\<add-to-list\\>"          . font-lock-keyword-face)
                           ("\\<capitalize\\>"           . font-lock-keyword-face)
+                          ("\\<concat\\>"               . font-lock-keyword-face)
                           ("\\<custom-set-faces\\>"     . font-lock-keyword-face)
                           ("\\<custom-set-variables\\>" . font-lock-keyword-face)
                           ("\\<define-key\\>"           . font-lock-keyword-face)
@@ -156,6 +168,7 @@
                           ("\\<eql\\>"                  . font-lock-keyword-face)
                           ("\\<equal\\>"                . font-lock-keyword-face)
                           ("\\<format\\>"               . font-lock-keyword-face)
+                          ("\\<getenv\\>"               . font-lock-keyword-face)
                           ("\\<global-set-key\\>"       . font-lock-keyword-face)
                           ("\\<global-unset-key\\>"     . font-lock-keyword-face)
                           ("\\<kbd\\>"                  . font-lock-keyword-face)
@@ -164,6 +177,7 @@
                           ("\\<nil\\>"                  . font-lock-keyword-face)
                           ("\\<not\\>"                  . font-lock-keyword-face)
                           ("\\<set\\>"                  . font-lock-keyword-face)
+                          ("\\<setenv\\>"               . font-lock-keyword-face)
                           ("\\<upcase\\>"               . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'csharp-mode
@@ -277,13 +291,11 @@
  '(column-number-mode t)
  '(cursor-type 'box)
  '(custom-enabled-themes '(deeper-blue))
- '(custom-safe-themes
-   '("47d5324dac28a85c1bb84b4c1dc3a8dc407cc7369db6e30d3244b16232b1eec4" "b5fab52f16546a15f171e6bd450ff11f2a9e20e5ac7ec10fa38a14bb0c67b9ab" "7ec8fd456c0c117c99e3a3b16aaf09ed3fb91879f6601b1ea0eeaee9c6def5d9" "9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a" "993aac313027a1d6e70d45b98e121492c1b00a0daa5a8629788ed7d523fe62c1" "acd58d8c3efc1897097086198cc839eb2d11018c5278cf2cbdd2bc4e8286812d" default))
  '(display-time-mode t)
  '(frame-background-mode 'dark)
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(markdown-mode powershell writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
+   '(grep-a-lot markdown-mode powershell writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode t)

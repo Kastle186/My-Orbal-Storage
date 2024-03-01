@@ -25,6 +25,7 @@ shortcuts for this Emacs instance."
     (when (equal config "") (setq config "release"))
 
     (setenv "REPO_ROOT" repo)
+    (setenv "TEST_SRC" (format "%s/src/tests" (getenv "REPO_ROOT")))
 
     (setenv "TEST_ARTIFACTS" (format "%s/artifacts/tests/coreclr/%s.%s.%s"
                                      (getenv "REPO_ROOT") os arch (capitalize config)))
@@ -47,3 +48,14 @@ by dotnet-dev() previously called."
 previously called."
   (interactive)
   (delete-directory (format "%s/artifacts/log" (getenv "REPO_ROOT")) t))
+
+(defun cd-to-repo-root ()
+  "Set Emacs' working directory to the current dotnet-dev repository root path."
+  (interactive)
+  (cd (getenv "REPO_ROOT")))
+
+(define-skeleton msbuild-message-template
+  "Generate a <Message /> tag for an XML MSBuild file. Includes an empty placeholder
+for the message, and a given set priority."
+  ""
+  > "<Message Text=\"\" Importance=\"" (skeleton-read "Enter the message's priority: ") "\" />")
