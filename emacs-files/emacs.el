@@ -22,6 +22,7 @@
 (load-file "~/.emacs.d/org-mode-config/my-org-mode-config.el")
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
 (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
+(load-file "~/.emacs.d/my-tools/utils.el")
 
 ;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
 ;; by default when editing these types of files.
@@ -50,6 +51,7 @@
 (setq-default ediff-forward-word-function 'forward-char)
 (setq-default delete-selection-mode t)
 (setq-default org-confirm-babel-evaluate nil)
+(setq-default ring-bell-function 'ignore)
 (setq-default markdown-command "/usr/bin/pandoc")
 
 ;; Enable all the languages I tend to use in Babel by default.
@@ -161,6 +163,7 @@
 (font-lock-add-keywords 'emacs-lisp-mode
                         '(("\\<add-hook\\>"             . font-lock-keyword-face)
                           ("\\<add-to-list\\>"          . font-lock-keyword-face)
+                          ("\\<assq\\>"                 . font-lock-keyword-face)
                           ("\\<capitalize\\>"           . font-lock-keyword-face)
                           ("\\<concat\\>"               . font-lock-keyword-face)
                           ("\\<custom-set-faces\\>"     . font-lock-keyword-face)
@@ -174,6 +177,7 @@
                           ("\\<global-set-key\\>"       . font-lock-keyword-face)
                           ("\\<global-unset-key\\>"     . font-lock-keyword-face)
                           ("\\<kbd\\>"                  . font-lock-keyword-face)
+                          ("\\<length\\>"               . font-lock-keyword-face)
                           ("\\<load-file\\>"            . font-lock-keyword-face)
                           ("\\<member\\>"               . font-lock-keyword-face)
                           ("\\<nil\\>"                  . font-lock-keyword-face)
