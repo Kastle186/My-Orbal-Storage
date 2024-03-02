@@ -6,7 +6,9 @@
 
 (require 'package)
 (require 'ibuf-ext)
-(require 'multiple-cursors)
+
+(when (package-installed-p 'multiple-cursors)
+  (require 'multiple-cursors))
 
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -140,7 +142,7 @@
 
 ;; Configured keybindings for multiple cursors mode.
 
-(with-eval-after-load 'multiple-cursors-mode
+(when (package-installed-p 'multiple-cursors)
   (define-key mc/keymap (kbd "<return>") nil)
   (global-set-key (kbd "C-S-c C-S-n") 'mc/edit-lines)
   (global-set-key (kbd "C-S-j") 'mc/mark-next-like-this)
