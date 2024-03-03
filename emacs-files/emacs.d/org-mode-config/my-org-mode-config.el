@@ -31,5 +31,6 @@ name, header, and source segments."
 
 ;; Load each personalized org-mode configuration files.
 
-(load-file "~/.emacs.d/org-mode-config/japanese-dictionary-orgmode.el")
+(load-file "~/.emacs.d/org-mode-config/journal-time-log-orgmode.el")
 (load-file "~/.emacs.d/org-mode-config/dotnet-work-items-orgmode.el")
+(load-file "~/.emacs.d/org-mode-config/japanese-dictionary-orgmode.el")
