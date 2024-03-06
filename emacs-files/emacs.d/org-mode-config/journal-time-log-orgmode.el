@@ -5,6 +5,13 @@
 ;; Let's save our org filenames in variables for easier access and better readability.
 
 (defvar journal-time-log-file "~/Documents/Emacs/my-daily-journal.org")
+(defvar days-of-the-week '("Sunday"
+                           "Monday"
+                           "Tuesday"
+                           "Wednesday"
+                           "Thursday"
+                           "Friday"
+                           "Saturday"))
 
 ;; ****************************************
 ;; Journal Time and Information Functions!
@@ -23,10 +30,16 @@
 ;; was 10 minutes. Next, let's assume that 'Activity 2' and 'Activity 3' had 15 and 20
 ;; minutes of wasted time respectively. As a result, this function would return
 ;; 45 minutes of wasted time in that specific day.
+;;
+;; As for the format of the 'date-arg' parameter, it can be either a string of the
+;; form 'yyyy-mm-dd', or a 2-element list containing the time, like the function
+;; '(date-to-time)' returns.
 
 (defun calculate-wasted-time ()
   "Calculate and get the total amount of wasted time on a particular day."
-  "0m")
+  (let ((date-node (if date-arg
+                       (format-time-string "%Y-%m-%d %A" (date-to-time date-arg))
+                     (format-time-string "%Y-%m-%d %A"))))))
 
 ;; *********************
 ;;  New Item Templates!
@@ -39,7 +52,7 @@
 
 (add-to-list 'org-capture-templates
              '("J" "New Journal Entry"
-               item (file+datetree journal-time-log-file)
-               " [%<%k:%M %Z>] => %^{Activity} (%^{Duration|0m})"
+               plain (file+datetree journal-time-log-file)
+               "+ [%<%k:%M %Z>] => %^{Activity} (%^{Duration|0m})"
                :immediate-finish t :jump-to-captured t)
              t)
