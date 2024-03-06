@@ -20,9 +20,9 @@
 ;; Load my Org-Mode and Ren'py configurations.
 
 (load-file "~/.emacs.d/org-mode-config/my-org-mode-config.el")
+(load-file "~/.emacs.d/my-tools/utils.el")
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
 (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
-(load-file "~/.emacs.d/my-tools/utils.el")
 
 ;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
 ;; by default when editing these types of files.
