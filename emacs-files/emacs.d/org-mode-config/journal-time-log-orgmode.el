@@ -35,11 +35,27 @@
 ;; form 'yyyy-mm-dd', or a 2-element list containing the time, like the function
 ;; '(date-to-time)' returns.
 
-(defun calculate-wasted-time ()
+(defun calculate-wasted-time (&optional date-arg)
   "Calculate and get the total amount of wasted time on a particular day."
   (let ((date-node (if date-arg
                        (format-time-string "%Y-%m-%d %A" (date-to-time date-arg))
-                     (format-time-string "%Y-%m-%d %A"))))))
+                     (format-time-string "%Y-%m-%d %A"))))
+
+    (find-file journal-time-log-file)
+    (goto-char (org-find-exact-headline-in-buffer date-node))
+    (forward-line) ;; The activity log starts after the node headline :)
+
+    ;; Iterate each line until we get to one that doesn't start with a '+' sign.
+    ;; That means we're no longer in the activity list we want to process.
+
+    (let ((next-entry (buffer-substring-no-properties (line-beginning-position)
+                                                      (line-end-position))))
+      (while (string-prefix-p "+" next-entry)
+        (let ((entry-parts (split-string next-entry))))
+        (forward-line)
+        (setq next-entry (buffer-substring-no-properties (line-beginning-position)
+                                                         (line-end-position)))))))
+
 
 ;; *********************
 ;;  New Item Templates!
