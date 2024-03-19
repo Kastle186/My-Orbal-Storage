@@ -18,9 +18,9 @@ are no longer/not available for installation."
         "There are no unavailable packages at this moment :)"
       notavailable)))
 
-;; (Last-Nth-Element)
+;; (Last-Element)
 
-(defun last-nth-element (list &optional n)
+(defun last-element (list &optional n)
   "Returns the last nth element of the given list as an item, as opposed to Emacs'
 builtin function, (last), which returns the last element as a list."
   (when (not n)
