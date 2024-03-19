@@ -80,3 +80,4 @@ Most comfortable themes for Emacs for me and my eyes :)
 - ventura-xcode-default
 - vscode-dark-plus
 - vs-dark
+- zenburn
