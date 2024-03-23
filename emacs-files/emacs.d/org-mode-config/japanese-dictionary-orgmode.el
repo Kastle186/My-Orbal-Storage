@@ -1,6 +1,6 @@
-;; *************************
-;;  Org-Mode Configuration!
-;; *************************
+;; *********************************************
+;;  Japanese Dictionary Org-Mode Configuration!
+;; *********************************************
 
 ;; Let's save our org filenames in variables for easier access and better readability.
 

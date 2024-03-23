@@ -36,7 +36,6 @@ shortcuts for this Emacs instance."
     (setenv "CONFIGURATION" config)
     (setenv "OPERATING_SYSTEM" os)))
 
-
 (defun clean-tests ()
   "Delete the artifacts/tests and artifacts/log directories in the repo path set
 by dotnet-dev() previously called."
@@ -44,30 +43,19 @@ by dotnet-dev() previously called."
   (delete-directory (format "%s/artifacts/tests" (getenv "REPO_ROOT")) t)
   (delete-directory (format "%s/artifacts/log" (getenv "REPO_ROOT")) t))
 
-
 (defun clean-logs-only ()
   "Delete the artifacts/log directory in the repo path set by dotnet-dev()
 previously called."
   (interactive)
   (delete-directory (format "%s/artifacts/log" (getenv "REPO_ROOT")) t))
 
-
 (defun cd-to-repo-root ()
   "Set Emacs' working directory to the current dotnet-dev repository root path."
   (interactive)
   (cd (getenv "REPO_ROOT")))
-
 
 (define-skeleton msbuild-message-template
   "Generate a <Message /> tag for an XML MSBuild file. Includes an empty placeholder
 for the message, and a given set priority."
   ""
   > "<Message Text=\"\" Importance=\"" (skeleton-read "Enter the message's priority: ") "\" />")
-
-
-(define-skeleton csharp-summary-template
-  "Generate a '<summary>' comments template for documenting C# code."
-  ""
-  > "/// <" (setq v1 (skeleton-read "Documentation Tag: ")) ">" \n
-  > "/// " (skeleton-read "Enter what is being documented: ") ": <c></c>" \n
-  > "/// </" v1 ">")
