@@ -63,6 +63,22 @@
                 (sed        . t)
                 (shell      . t)))
 
+;; The Emacs' default C-styles don't quite match my tastes, so change them to the
+;; default linux ones. But only for C/C++ files because for other languages like C#,
+;; the Emacs' default styles fit my tastes best.
+
+(add-hook 'c-mode-hook
+          (lambda () (progn
+                       (c-set-style "linux")
+                       (setq c-basic-offset 4)
+                       (setq indent-tabs-mode nil))))
+
+(add-hook 'c++-mode-hook
+          (lambda () (progn
+                       (c-set-style "linux")
+                       (setq c-basic-offset 4)
+                       (setq indent-tabs-mode nil))))
+
 ;; Auxiliary functions to boost my productivity!
 
 (defun toggle-line-numbers-type ()
@@ -161,35 +177,49 @@
 ;; Keywords not highlighted by default but I believe should be.
 
 (font-lock-add-keywords 'emacs-lisp-mode
-                        '(("\\_<add-hook\\_>"             . font-lock-keyword-face)
-                          ("\\_<add-to-list\\_>"          . font-lock-keyword-face)
-                          ("\\_<assq\\_>"                 . font-lock-keyword-face)
-                          ("\\_<capitalize\\_>"           . font-lock-keyword-face)
-                          ("\\_<concat\\_>"               . font-lock-keyword-face)
-                          ("\\_<custom-set-faces\\_>"     . font-lock-keyword-face)
-                          ("\\_<custom-set-variables\\_>" . font-lock-keyword-face)
-                          ("\\_<define-key\\_>"           . font-lock-keyword-face)
-                          ("\\_<downcase\\_>"             . font-lock-keyword-face)
+                        '(("\\_<add-hook\\_>"             . font-lock-builtin-face)
+                          ("\\_<add-to-list\\_>"          . font-lock-builtin-face)
+                          ("\\_<assq\\_>"                 . font-lock-builtin-face)
+                          ("\\_<capitalize\\_>"           . font-lock-builtin-face)
+                          ("\\_<concat\\_>"               . font-lock-builtin-face)
+                          ("\\_<custom-set-faces\\_>"     . font-lock-builtin-face)
+                          ("\\_<custom-set-variables\\_>" . font-lock-builtin-face)
+                          ("\\_<define-key\\_>"           . font-lock-builtin-face)
+                          ("\\_<downcase\\_>"             . font-lock-builtin-face)
                           ("\\_<eql\\_>"                  . font-lock-keyword-face)
-                          ("\\_<equal\\_>"                . font-lock-keyword-face)
-                          ("\\_<format\\_>"               . font-lock-keyword-face)
-                          ("\\_<getenv\\_>"               . font-lock-keyword-face)
-                          ("\\_<global-set-key\\_>"       . font-lock-keyword-face)
-                          ("\\_<global-unset-key\\_>"     . font-lock-keyword-face)
-                          ("\\_<kbd\\_>"                  . font-lock-keyword-face)
-                          ("\\_<length\\_>"               . font-lock-keyword-face)
-                          ("\\_<load-file\\_>"            . font-lock-keyword-face)
-                          ("\\_<member\\_>"               . font-lock-keyword-face)
+                          ("\\_<equal\\_>"                . font-lock-builtin-face)
+                          ("\\_<format\\_>"               . font-lock-builtin-face)
+                          ("\\_<getenv\\_>"               . font-lock-builtin-face)
+                          ("\\_<global-set-key\\_>"       . font-lock-builtin-face)
+                          ("\\_<global-unset-key\\_>"     . font-lock-builtin-face)
+                          ("\\_<kbd\\_>"                  . font-lock-builtin-face)
+                          ("\\_<length\\_>"               . font-lock-builtin-face)
+                          ("\\_<load-file\\_>"            . font-lock-builtin-face)
+                          ("\\_<member\\_>"               . font-lock-builtin-face)
                           ("\\_<nil\\_>"                  . font-lock-keyword-face)
                           ("\\_<not\\_>"                  . font-lock-keyword-face)
-                          ("\\_<put\\_>"                  . font-lock-keyword-face)
-                          ("\\_<set\\_>"                  . font-lock-keyword-face)
-                          ("\\_<setenv\\_>"               . font-lock-keyword-face)
+                          ("\\_<put\\_>"                  . font-lock-builtin-face)
+                          ("\\_<set\\_>"                  . font-lock-builtin-face)
+                          ("\\_<setenv\\_>"               . font-lock-builtin-face)
                           ("\\_<t\\_>"                    . font-lock-keyword-face)
-                          ("\\_<upcase\\_>"               . font-lock-keyword-face)))
+                          ("\\_<upcase\\_>"               . font-lock-builtin-face)))
 
 (font-lock-add-keywords 'csharp-mode
                         '(("\\_<init\\_>" . font-lock-keyword-face)))
+
+(font-lock-add-keywords 'c-mode
+                        '(("\\_<calloc\\_>"  . font-lock-builtin-face)
+                          ("\\_<free\\_>"    . font-lock-builtin-face)
+                          ("\\_<malloc\\_>"  . font-lock-builtin-face)
+                          ("\\_<printf\\_>"  . font-lock-builtin-face)
+                          ("\\_<scanf\\_>"   . font-lock-builtin-face)
+                          ("\\_<strcmp\\_>"  . font-lock-builtin-face)
+                          ("\\_<strlen\\_>"  . font-lock-builtin-face)))
+
+(font-lock-add-keywords 'c++-mode
+                        '(("\\_<cin\\_>"   . font-lock-keyword-face)
+                          ("\\_<cout\\_>"  . font-lock-keyword-face)
+                          ("\\_<endl\\_>"  . font-lock-keyword-face)))
 
 ;; It's really annoying to have Emacs GUI minimized with an accidental typo :(
 

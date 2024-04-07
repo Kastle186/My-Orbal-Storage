@@ -4,9 +4,9 @@
 
 const char *get_filename_from_path(const char *);
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-    const char *name = get_filename_from_path(argv[1]);
+    const char *name = get_filename_from_path(*(argv+1));
     printf("App Name: %s\n", name);
     free(name);
     name = NULL;
