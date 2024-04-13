@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+#define UPPER(c) (c - (('a' - 'A') * (c / 'a')))
+
 char *generate_bot_text(const char *human_text);
 
 int main(int argc, char **argv)
@@ -57,7 +59,7 @@ char *generate_bot_text(const char *human_text)
         }
         else
         {
-            *res_ptr = *orig_ptr;
+            *res_ptr = UPPER(*orig_ptr);
             orig_ptr++;
         }
 
