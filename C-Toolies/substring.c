@@ -15,6 +15,22 @@ int *kmp_lps_table(const char *pattern);
 
 int main(int argc, char **argv)
 {
+    if (argc < 3)
+    {
+        puts("\nApologies, but you need to pass the string to look into, and the"
+             " pattern to search in the command-line arguments.");
+        return 1;
+    }
+
+    const char *str = (const char *) *(argv+1);
+    const char *pat = (const char *) *(argv+2);
+    int substr_index = knuth_morris_pratt_substring(str, pat);
+
+    if (substr_index == -1)
+        printf("\n'%s' was not a substring of '%s' :(\n", pat, str);
+    else
+        printf("\nSubstring '%s' found at index %d of '%s'\n", pat, substr_index, str);
+
     return 0;
 }
 
@@ -49,6 +65,12 @@ int naive_substring(const char *str, const char *pattern)
 
 int knuth_morris_pratt_substring(const char *str, const char *pattern)
 {
+    // If either the string to search or the pattern are null or empty, there
+    // cannot be a potential substring match, so we return the -1 since here.
+
+    if (str == NULL || pattern == NULL || strlen(str) == 0 || strlen(pattern) == 0)
+        return -1;
+
     int *lps = kmp_lps_table(pattern);
     int result = -1;
 
@@ -62,14 +84,43 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern)
 
     for (int i = 0, j = 0; i < str_len; )
     {
-        if ((j == 0) && (*(str+i) != *(pattern+j)))
+        if (*(str+i) != *(pattern+j))
         {
-            i++;
-            continue;
-        }
+            if (j == 0)
+            {
+                i++;
+                continue;
+            }
 
-        if (*(str+i) == *(str+j))
+            // The potential candidate failed to be, so we're back to square one
+            // looking for the next one opportunity.
+            result = -1;
+            j = *(lps + (j-1));
+        }
+        else
         {
+            // If we're starting a potential substring result, then store its
+            // index in the result variable, to have it ready in case the
+            // candidate succeeds.
+            if (result == -1) result = i;
+
+            if (i == str_len-1 && j < pat_len-1)
+            {
+                // If we're still in a potential candidate but the original string
+                // is over, then it ended up not being a full substring, and therefore
+                // we failed the mission.
+                result = -1;
+                break;
+            }
+            else if (j == pat_len-1)
+            {
+                break;
+            }
+            else
+            {
+                i++;
+                j++;
+            }
         }
     }
 
@@ -130,7 +181,7 @@ int *kmp_lps_table(const char *pattern)
         {
             // If the current lps was broken, then retrocede one space in the hopes
             // of finding a shorter lps next.
-            currlps_len = *(table + (currlps_len-1))
+            currlps_len = *(table + (currlps_len-1));
         }
         else
         {
