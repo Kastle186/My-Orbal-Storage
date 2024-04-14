@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define NO_SUBSTR_FOUND -1
+
 // Algorithms to find the substring occurrences. To start with, we will only
 // calculate the first occurrence of the pattern. Later on, we will expand
 // to returning an array with the positions of all the pattern occurrences.
@@ -12,6 +14,7 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern);
 // Helper functions for the previous algorithms.
 
 int *kmp_lps_table(const char *pattern);
+void print_result(int res, const char *str, const char *pat, const char *algorithm);
 
 int main(int argc, char **argv)
 {
@@ -24,14 +27,29 @@ int main(int argc, char **argv)
 
     const char *str = (const char *) *(argv+1);
     const char *pat = (const char *) *(argv+2);
-    int substr_index = knuth_morris_pratt_substring(str, pat);
 
-    if (substr_index == -1)
-        printf("\n'%s' was not a substring of '%s' :(\n", pat, str);
-    else
-        printf("\nSubstring '%s' found at index %d of '%s'\n", pat, substr_index, str);
+    putchar('\n');
+    // int substr_n = naive_substring(str, pat);
+    int substr_kmp = knuth_morris_pratt_substring(str, pat);
+
+    // print_result(substr_n, str, pat, (const char *)"naive");
+    print_result(substr_kmp, str, pat, (const char *)"knuth_morris_pratt");
 
     return 0;
+}
+
+void print_result(int res, const char *str, const char *pat, const char *algorithm)
+{
+    if (res == NO_SUBSTR_FOUND)
+    {
+        printf("'%s' was not found in '%s' with %s algorithm :(\n",
+               pat, str, algorithm);
+    }
+    else
+    {
+        printf("'%s' is a substring of '%s' at index %d with %s algorithm.\n",
+               pat, str, res, algorithm);
+    }
 }
 
 //***************************//
@@ -40,7 +58,15 @@ int main(int argc, char **argv)
 
 int naive_substring(const char *str, const char *pattern)
 {
-    return -1;
+    int result = NO_SUBSTR_FOUND;
+    char *str_ptr = (char *)str;
+    char *pat_ptr = (char *)pattern;
+
+    while (*str_ptr != '\0' && *pat_ptr != '\0')
+    {
+    }
+
+    return result;
 }
 
 //******************************//
@@ -72,7 +98,7 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern)
         return -1;
 
     int *lps = kmp_lps_table(pattern);
-    int result = -1;
+    int result = NO_SUBSTR_FOUND;
 
     // With indices!
 
@@ -94,7 +120,7 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern)
 
             // The potential candidate failed to be, so we're back to square one
             // looking for the next one opportunity.
-            result = -1;
+            result = NO_SUBSTR_FOUND;
             j = *(lps + (j-1));
         }
         else
@@ -102,14 +128,14 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern)
             // If we're starting a potential substring result, then store its
             // index in the result variable, to have it ready in case the
             // candidate succeeds.
-            if (result == -1) result = i;
+            if (result == NO_SUBSTR_FOUND) result = i;
 
             if (i == str_len-1 && j < pat_len-1)
             {
                 // If we're still in a potential candidate but the original string
                 // is over, then it ended up not being a full substring, and therefore
                 // we failed the mission.
-                result = -1;
+                result = NO_SUBSTR_FOUND;
                 break;
             }
             else if (j == pat_len-1)
