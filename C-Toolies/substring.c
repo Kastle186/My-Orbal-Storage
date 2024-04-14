@@ -58,14 +58,13 @@ void print_result(int res, const char *str, const char *pat, const char *algorit
 
 int naive_substring(const char *str, const char *pattern)
 {
+    // If either the string to search or the pattern are null or empty, there
+    // cannot be a potential substring match, so we return the -1 since here.
+
+    if (str == NULL || pattern == NULL || strlen(str) == 0 || strlen(pattern) == 0)
+        return NO_SUBSTR_FOUND;
+
     int result = NO_SUBSTR_FOUND;
-    char *str_ptr = (char *)str;
-    char *pat_ptr = (char *)pattern;
-
-    while (*str_ptr != '\0' && *pat_ptr != '\0')
-    {
-    }
-
     return result;
 }
 
@@ -95,7 +94,7 @@ int knuth_morris_pratt_substring(const char *str, const char *pattern)
     // cannot be a potential substring match, so we return the -1 since here.
 
     if (str == NULL || pattern == NULL || strlen(str) == 0 || strlen(pattern) == 0)
-        return -1;
+        return NO_SUBSTR_FOUND;
 
     int *lps = kmp_lps_table(pattern);
     int result = NO_SUBSTR_FOUND;
