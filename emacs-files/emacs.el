@@ -209,12 +209,19 @@
 
 (font-lock-add-keywords 'c-mode
                         '(("\\_<calloc\\_>"  . font-lock-builtin-face)
+                          ("\\_<fgets\\_>"   . font-lock-builtin-face)
                           ("\\_<free\\_>"    . font-lock-builtin-face)
                           ("\\_<malloc\\_>"  . font-lock-builtin-face)
+                          ("\\_<pid_t\\_>"   . font-lock-type-face)
+                          ("\\_<putc\\_>"    . font-lock-builtin-face)
+                          ("\\_<putchar\\_>" . font-lock-builtin-face)
                           ("\\_<printf\\_>"  . font-lock-builtin-face)
+                          ("\\_<puts\\_>"    . font-lock-builtin-face)
                           ("\\_<scanf\\_>"   . font-lock-builtin-face)
+                          ("\\_<size_t\\_>"  . font-lock-builtin-face)
                           ("\\_<strcmp\\_>"  . font-lock-builtin-face)
-                          ("\\_<strlen\\_>"  . font-lock-builtin-face)))
+                          ("\\_<strlen\\_>"  . font-lock-builtin-face)
+                          ("\\_<FILE\\_>"    . font-lock-type-face)))
 
 (font-lock-add-keywords 'c++-mode
                         '(("\\_<cin\\_>"   . font-lock-keyword-face)
