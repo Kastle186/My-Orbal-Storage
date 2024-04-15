@@ -63,22 +63,6 @@
                 (sed        . t)
                 (shell      . t)))
 
-;; The Emacs' default C-styles don't quite match my tastes, so change them to the
-;; default linux ones. But only for C/C++ files because for other languages like C#,
-;; the Emacs' default styles fit my tastes best.
-
-(add-hook 'c-mode-hook
-          (lambda () (progn
-                       (c-set-style "linux")
-                       (setq c-basic-offset 4)
-                       (setq indent-tabs-mode nil))))
-
-(add-hook 'c++-mode-hook
-          (lambda () (progn
-                       (c-set-style "linux")
-                       (setq c-basic-offset 4)
-                       (setq indent-tabs-mode nil))))
-
 ;; Auxiliary functions to boost my productivity!
 
 (defun toggle-line-numbers-type ()
@@ -137,6 +121,8 @@
 (global-set-key (kbd "M-s M-e") 'widen)
 (global-set-key (kbd "C-x M-f") 'find-char-forward)
 (global-set-key (kbd "C-x M-F") 'find-char-backward)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key (kbd "C-M-z") 'zap-to-char)
 
 ;; Frame manipulation keyboard shortcuts
 
@@ -245,6 +231,22 @@
 (add-hook 'dired-mode-hook
           (lambda () (define-key dired-mode-map (kbd "^")
                        (lambda () (interactive) (find-alternate-file "..")))))
+
+;; The Emacs' default C-styles don't quite match my tastes, so change them to the
+;; default linux ones. But only for C/C++ files because for other languages like C#,
+;; the Emacs' default styles fit my tastes best.
+
+(add-hook 'c-mode-hook
+          (lambda () (progn
+                       (c-set-style "linux")
+                       (setq c-basic-offset 4)
+                       (setq indent-tabs-mode nil))))
+
+(add-hook 'c++-mode-hook
+          (lambda () (progn
+                       (c-set-style "linux")
+                       (setq c-basic-offset 4)
+                       (setq indent-tabs-mode nil))))
 
 ;; Grouping buffers by category in IBuffer makes my life so much easier
 ;; and productive :)
