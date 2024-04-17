@@ -387,3 +387,50 @@
   *先代である5代目モデルまでは日本でも販売がおこなわれていました ->*
   *Honda's flagship (/Lit./ mainline) Crossover SUV model*
   *was sold in Japan until its predecessor, the 5th generation.*
+
+** Signals Survey
+
+- 求める (もとめる): To request, require, ask for
+- 学ぶ (まなぶ): To study in depth, learn, take lessons in
+- 成長(する) (せいちょう): Growth, development, becoming "grower" as a company
+- 活性化(する) (かっせいか): Stimulation/revitalization/invigoration of an economy/company
+- 方法 (ほうほう): Method, manner, means
+*- フィードバックを求めること、そしてそれから学ぶことは、成長マインドセットを活性化させる方法のーつです ->*
+  *Asking for feedback and learning from it is one way to stimulate a growth mindset!.
+  (/Lit./ Requesting feedback, and then studying it in depth, is a method to stimulate a growth mindset!).*
+
+- 得た (える): To get, acquire, procure, gain, attain
+- 洞察(する) (どうさつ): Discernment, insight
+- 活用(する) (かつよう): Practical use, application
+- 組織(する) (そしき): Organization, formation, structure
+- 成功(する) (せいこう): Success, achievement, prosperity
+- (もたらす): To bring, to take, to bring about
+*- フィードバックから得た洞察を活用することで、マネージャーやリーダーはチームや組織に成功をもたらす ->*
+  *By leveraging insights gained from feedback, managers and leaders bring success to their teams and organizations.
+  (/Lit./ By applying the insight acquired from the feedback, managers and leaders bring success into the teams and organizations).*
+
+- 最高(な) (さいこう): Highest, maximum, most, uppermost, supreme, finest
+- 能力 (のうりょく): Ability, faculty
+- 引き出す (ひきだす): To draw out, bring to the table (fig.), bring out talent
+*- メンバーの最高の能力を引き出すことができます -> Bring out the best in the members.
+  (/Lit./ Be able bring out the members' best ability).*
+
+- 実現(する) (じつげん): Implementation, materialization, actualization
+- 提供(する) (ていきょう): Offer, provide, supply, sponsor (a TV program)
+- 説明(する) (せつめい): Explanation, exposition, description
+- 説明責任 (せつめいせきにん): Accountability, being held accountable
+- 促進(する) (そくしん): Promotion, acceleration, encouragement, facilitation, spurring on
+*- マネジャーは、高いパフォーマンスを実現するためのフィードバックを提供することで、説明責任を促進します ->*
+  *Your manager is held accountable by providing feedback for high performance.
+  (/Lit./ Managers are held accountable through providing feedback for the sake of implementing high performance).*
+
+- 生産性 (せいさんせい): Productivity
+- 影響(する) (えいきょう): Influence, effect, impact
+- 改善(する) (かいぜん): Betterment, improvement
+- 障害(する) (しょうがい): Obstacle, impediment, hindrance, barrier!, difficulty
+- 取り除く (とりのぞく): To remove, deinstall, take away, set apart
+- 役立つ (やくだつ): To be useful, helpful, serve the purpose
+- 提供(する) (ていきょう): Offer, provide, supply, sponsor (a TV program)
+*- マネジャーは、生産性と影響を改善するための障害を取り除くのに役立つコーチングを提供します ->*
+  *Your manager provides coaching to help remove obstacles, in order to improve productivity and impact.
+  (/Lit./ Managers offer helpful coaching in order to remove obstacles for improving the productivity and impact).*

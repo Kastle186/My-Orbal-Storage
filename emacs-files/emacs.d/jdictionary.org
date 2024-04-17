@@ -36,10 +36,13 @@
 
 - どしゃぶり (土砂降り): Downpour, heavy rain, pouring rain, cloudburst, pelting rain
 - どうが (動画): Video, video clip, animation
+- どうさつ(する) (洞察): Discernment, insight
 
 ** え
 
 - えいぎょう(する) (営業): Business, trade, operations, sales
+- えいきょう(する) (影響): Influence, effect, impact
+- える (得た): To get, acquire, procure, gain, attain
 
 ** ふ
 
@@ -80,6 +83,7 @@
 
 ** ひ
 
+- ひきだす (引き出す): To draw out, bring to the table (fig.), bring out talent
 - ひょうじ(する) (表示): Showing, indication, display, representation
 
 ** ひょ
@@ -88,8 +92,9 @@
 
 ** ほ
 
-- ほうこく(する) (報告): Report, information
 - ほん(ぶん/もん) (本文): Text, body (of a book, document, letter, etc)
+- ほうほう (方法): Method, manner, means
+- ほうこく(する) (報告): Report, information
 
 ** い
 
@@ -102,6 +107,7 @@
 - じき (時機): Opportunity, chance, time, occasion
 - じこく (時刻): The time/hour, favorable time, opportunity, chance
 - じてき(な) (時的): Temporal, temporary
+- じつげん(する) (実現): Implementation, materialization, actualization
 
 ** じょ
 
@@ -124,6 +130,7 @@
 - かいかん (快感): Pleasant feeling, exhilaration
 - かいし(する) (開始): Start, commence, begin, initiate (formal/more intentional than 始まる)
 - かいわ(する) (会話): Conversation, chat
+- かいぜん(する) (改善): Betterment, improvement
 - かこ (過去): The past, bygone days, preterite
 - かくにん(する) (確認): Confirmation, verification, validation, review, check, affirmation, identification
 - かまう (構う): To mind, to care about, to be an issue, to create an inconvenience, to interfere with, to meddle in, to keep company, to look after
@@ -132,6 +139,8 @@
 - かんれんせい (関連性): Relatedness, relation, relevance, associativity
 - かんりょう(する) (完了): Completion, conclusion
 - から (空): Be empty, emptiness
+- かっせいか(する) (活性化): Stimulation/revitalization/invigoration of an economy/company
+- かつよう(する) (活用): Practical use, application
 
 ** け
 
@@ -167,6 +176,7 @@
 
 ** ま
 
+- まなぶ (学ぶ): To study in depth, learn, take lessons in
 - または (又は): Or, either or
 
 ** め
@@ -183,8 +193,10 @@
 
 - もっとも (最も): Most, extremely
 - もど(る/す) (戻(る/す)): Return/go back (in computer context), recover
+- もたらす (): To bring, to take, to bring about
 - もと (元): Origin, source
 - もとづく (基づく): To be based on, founded on, grounded on
+- もとめる (求める): To request, require, ask for
 
 ** な
 
@@ -203,6 +215,10 @@
 ** にゅ
 
 - にゅうしゅ(する) (入手): Acquisition, obtaining, procurement, geting (a)(holdof)
+
+** の
+
+- のうりょく (能力): Ability, faculty
 
 ** お
 
@@ -242,6 +258,11 @@
 - せんだい (先代): Previous generation/age, predecessor
 - せんたく(する) (選択): Choice, selection, option
 - せつぞく(する) (接続): Connection, union, link
+- せいちょう(する) (成長): Growth, development, becoming "grower" as a company
+- せいこう(する) (成功): Success, achievement, prosperity
+- せいさんせい (生産性): Productivity
+- せつめい(する) (説明): Explanation, exposition, description
+- せつめいせきにん (説明責任): Accountability, being held accountable
 
 ** し
 
@@ -256,21 +277,23 @@
 ** しょ
 
 - しょくりょうひん (食料品): Groceries, food stuff
+- しょうがい(する) (障害): Obstacle, impediment, hindrance, barrier!, difficulty
 - しょうさい(な) (詳細): Detailed, specific, minute
 - しょざい(する) (所在): Whereabouts, position, location
-- しゅうりょう(する) (終了): End, close, finish, conclude (formal/more intentional than 終わる)
 
 ** しゅ
 
 - しゅりょく (主力): Debut, first appearance
 - しゅうちゅう(する) (集中): Concentrate, focus (one's) attention
 - しゅうちゅうりょく (集中力): Ability to concentrate, powers of concentration
+- しゅうりょう(する) (終了): End, close, finish, conclude (formal/more intentional than 終わる)
 
 ** そ
 
-- そしき(する) (組織): Organization, texture (of a rock), weave (of a fabric)
-- そうしん(する) (送信): Sending, transmission
+- そくしん(する) (促進): Promotion, acceleration, encouragement, facilitation, spurring on
 - そんざい(する) (存在): Existence, being
+- そしき(する) (組織): Organization, formation, structure, texture (of a rock), weave (of a fabric)
+- そうしん(する) (送信): Sending, transmission
 
 ** す
 
@@ -285,8 +308,9 @@
 
 ** て
 
-- ていし(する) (停止): Halt, suspension/interruption of operations
 - ていえん (庭園): Garden, park (bigger than the small family parks)
+- ていきょう(する) (提供): Offer, provide, supply, sponsor (a TV program)
+- ていし(する) (停止): Halt, suspension/interruption of operations
 - てん (店): Store, shop, establishment, restaurant
 - てんかい(する) (展開): Extraction, decompression, unpacking (of compressed data), development, evolution, progression
 - てんかいさき (展開先): Destination (of file extraction, transfer, copy, etc)
@@ -297,6 +321,7 @@
 
 - とくちょう (特長): Strong point, forte, merit, strength
 - となる (): To become, to be, to turn out
+- とりのぞく (取り除く): To remove, deinstall, take away, set apart
 - とうろく(する) (登録): Registration, entry, record
 - とうろくしゃすう (登録者数): Number of registrants, subscribers, enrollees
 
@@ -315,6 +340,10 @@
 ** わ
 
 - わり (割(り)): Rate, proportion, assignment
+
+** や
+
+- やくだつ (役立つ): To be useful, helpful, serve the purpose
 
 ** よ
 
@@ -336,3 +365,4 @@
 ** ず
 
 - ずみ (済(み)): Arranged, taken care of, completed
+
