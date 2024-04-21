@@ -6,48 +6,57 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define node_struct_type(T) struct node_ ## T
-#define linked_list_type(T) struct linked_list_ ## T
+#define FIRST 0
+#define LAST -1
 
-#define node_struct_type_ptr(T) struct node_ ## T*
-#define linked_list_type_ptr(T) struct linked_list_ ## T*
+#define NODE_STRUCT_TYPE(T) struct node_ ## T
+#define LINKED_LIST_TYPE(T) struct linked_list_ ## T
 
-#define node(T)                       \
-    node_struct_type(T)               \
+#define NODE_STRUCT_TYPE_PTR(T) struct node_ ## T*
+#define LINKED_LIST_TYPE_PTR(T) struct linked_list_ ## T*
+
+#define DEF_NODE_T(T)                 \
+    NODE_STRUCT_TYPE(T)               \
     {                                 \
         T data;                       \
-        node_struct_type_ptr(T) next; \
+        NODE_STRUCT_TYPE_PTR(T) next; \
     }
 
-#define linked_list(T)                \
-    linked_list_type(T)               \
+#define DEF_LINKED_LIST_T(T)          \
+    LINKED_LIST_TYPE(T)               \
     {                                 \
-        node_struct_type_ptr(T) head; \
+        NODE_STRUCT_TYPE_PTR(T) head; \
         size_t size;                  \
-        const char *type;             \
+        char *type;                   \
     }
 
-#define make_node_obj(OBJ_NAME, TYPE, DATA)                                  \
-    node_struct_type_ptr(TYPE) OBJ_NAME =                                    \
-        (node_struct_type_ptr(TYPE)) malloc(sizeof(node_struct_type(TYPE))); \
+#define MAKE_NODE_OBJ(TYPE, OBJ_NAME, DATA)                                  \
+    NODE_STRUCT_TYPE_PTR(TYPE) OBJ_NAME =                                    \
+        (NODE_STRUCT_TYPE_PTR(TYPE)) malloc(sizeof(NODE_STRUCT_TYPE(TYPE))); \
     OBJ_NAME->data = DATA;                                                   \
-    OBJ_NAME->next = NULL;
+    OBJ_NAME->next = NULL
 
-#define make_linked_list_obj(OBJ_NAME, TYPE)                                 \
-    linked_list_type_ptr(TYPE) OBJ_NAME =                                    \
-        (linked_list_type_ptr(TYPE)) malloc(sizeof(linked_list_type(TYPE))); \
+#define MAKE_LINKED_LIST_OBJ(TYPE, OBJ_NAME)                                 \
+    LINKED_LIST_TYPE_PTR(TYPE) OBJ_NAME =                                    \
+        (LINKED_LIST_TYPE_PTR(TYPE)) malloc(sizeof(LINKED_LIST_TYPE(TYPE))); \
     OBJ_NAME->size = 0;                                                      \
     OBJ_NAME->head = NULL;                                                   \
     OBJ_NAME->type = NULL;                                                   \
-    make_string(OBJ_NAME->type, #TYPE)
+    MAKE_STRING(OBJ_NAME->type, #TYPE)
 
-#define make_string(VAR, STR)                \
-    VAR = calloc(strlen(STR), sizeof(char)); \
-    strcpy(VAR, STR);
+#define MAKE_STRING(VAR, STR)                         \
+    VAR = (char *) calloc(strlen(STR), sizeof(char)); \
+    strcpy(VAR, STR)
 
-#define free_string(VAR) \
+#define FREE_STRING(VAR) \
     free(VAR);           \
-    VAR = NULL;
+    VAR = NULL
+
+#define UNWRAP_LIST_FROM_VOID_PTR(LIST, VAR_NAME) \
+    LINKED_LIST_TYPE_PTR(LIST->type) VAR_NAME = (LINKED_LIST_TYPE_PTR(LIST->type)) LIST
+
+#define UNWRAP_VAR_FROM_VOID_PTR(WRAPPED, TYPE, VAR_NAME) \
+    TYPE *VAR_NAME = (TYPE *) WRAPPED
 
 void append(void *list, void *data);
 void prepend(void *list, void *data);
