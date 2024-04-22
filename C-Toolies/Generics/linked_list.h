@@ -27,7 +27,6 @@
     {                                 \
         NODE_STRUCT_TYPE_PTR(T) head; \
         size_t size;                  \
-        char *type;                   \
     }
 
 #define MAKE_NODE_OBJ(TYPE, OBJ_NAME, DATA)                                  \
@@ -40,23 +39,10 @@
     LINKED_LIST_TYPE_PTR(TYPE) OBJ_NAME =                                    \
         (LINKED_LIST_TYPE_PTR(TYPE)) malloc(sizeof(LINKED_LIST_TYPE(TYPE))); \
     OBJ_NAME->size = 0;                                                      \
-    OBJ_NAME->head = NULL;                                                   \
-    OBJ_NAME->type = NULL;                                                   \
-    MAKE_STRING(OBJ_NAME->type, #TYPE)
+    OBJ_NAME->head = NULL
 
-#define MAKE_STRING(VAR, STR)                         \
-    VAR = (char *) calloc(strlen(STR), sizeof(char)); \
-    strcpy(VAR, STR)
-
-#define FREE_STRING(VAR) \
-    free(VAR);           \
-    VAR = NULL
-
-#define UNWRAP_LIST_FROM_VOID_PTR(LIST, VAR_NAME) \
-    LINKED_LIST_TYPE_PTR(LIST->type) VAR_NAME = (LINKED_LIST_TYPE_PTR(LIST->type)) LIST
-
-#define UNWRAP_VAR_FROM_VOID_PTR(WRAPPED, TYPE, VAR_NAME) \
-    TYPE *VAR_NAME = (TYPE *) WRAPPED
+#define PREPEND_TO_LIST(LIST, DATA, TYPE) \
+    MAKE_NODE_OBJ(TYPE, new_node, DATA)
 
 void append(void *list, void *data);
 void prepend(void *list, void *data);
