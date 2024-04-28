@@ -8,7 +8,7 @@
 // calculate the first occurrence of the pattern. Later on, we will expand
 // to returning an array with the positions of all the pattern occurrences.
 
-int naive_substring(const char *str, const char *pattern);
+int naive_substring(const char *str, const char *pattern); // TODO
 int knuth_morris_pratt_substring(const char *str, const char *pattern);
 
 // Helper functions for the previous algorithms.
