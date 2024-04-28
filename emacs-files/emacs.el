@@ -206,8 +206,8 @@
                           ("\\_<puts\\_>"    . font-lock-builtin-face)
                           ("\\_<scanf\\_>"   . font-lock-builtin-face)
                           ("\\_<size_t\\_>"  . font-lock-type-face)
-                          ("\\_<strcpy\\_>"  . font-lock-builtin-face)
                           ("\\_<strcmp\\_>"  . font-lock-builtin-face)
+                          ("\\_<strcpy\\_>"  . font-lock-builtin-face)
                           ("\\_<strlen\\_>"  . font-lock-builtin-face)
                           ("\\_<FILE\\_>"    . font-lock-type-face)))
 
