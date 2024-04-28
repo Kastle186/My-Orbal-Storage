@@ -255,49 +255,51 @@
 
 (setq ibuffer-saved-filter-groups
       (quote (("default"
-               ("Agenda"    (mode . org-mode))
-               ("Bash"      (mode . sh-mode))
-               ("C"         (mode . c-mode))
-               ("C++"       (mode . c++-mode))
-               ("C#"        (mode . csharp-mode))
-               ("CMake"     (mode . cmake-mode))
-               ("Docker"    (or
-                             (mode . dockerfile-mode)
-                             (name . "^\\*?docker")))
-               ("Elisp"     (mode . emacs-lisp-mode))
-               ("JSON"      (or
-                             (mode . json-mode)
-                             (name . "\\.json")))
-               ("MSBuild"   (or
-                             (name . "\\.??proj")
-                             (name . "\\.props")
-                             (name . "\\.targets")))
-               ("Python"    (or
-                             (mode . python-mode)
-                             (name . "^\\*Python\\*$")))
-               ("Ruby"      (or
-                             (mode . ruby-mode)
-                             (mode . inf-ruby-mode)))
-               ("Text"      (mode . text-mode))
-               ("XML"       (name . "\\.xml"))
-               ("YAML"      (mode . yaml-mode))
-               ("Terminals" (mode . term-mode))
-               ("Dired"     (mode . dired-mode))
-               ("Magit"     (name . "magit*"))
-               ("TAGS"      (or
-                             (mode . tags-table-mode)
-                             (name . "^\\*Tags List\\*$")))
-               ("Emacs"     (or
-                             (mode . Buffer-menu-mode)
-                             (mode . grep-mode)
-                             (mode . help-mode)
-                             (name . "^\\*scratch\\*$")
-                             (name . "^\\*Backtrace\\*$")
-                             (name . "^\\*Completions\\*$")
-                             (name . "^\\*GNU Emacs\\*$")
-                             (name . "^\\*Messages\\*$")
-                             (name . "^\\*Packages\\*$")
-                             (name . "^\\*Warnings\\*$")))))))
+               ("Agenda"     (mode . org-mode))
+               ("Bash"       (mode . sh-mode))
+               ("C"          (mode . c-mode))
+               ("C++"        (mode . c++-mode))
+               ("C#"         (mode . csharp-mode))
+               ("CMake"      (mode . cmake-mode))
+               ("Docker"     (or
+                              (mode . dockerfile-mode)
+                              (name . "^\\*?docker")))
+               ("Elisp"      (mode . emacs-lisp-mode))
+               ("JSON"       (or
+                              (mode . json-mode)
+                              (name . "\\.json")))
+               ("Julia"      (mode . julia-mode))
+               ("MSBuild"    (or
+                              (name . "\\.??proj")
+                              (name . "\\.props")
+                              (name . "\\.targets")))
+               ("PowerShell" (mode . ps-mode))
+               ("Python"     (or
+                              (mode . python-mode)
+                              (name . "^\\*Python\\*$")))
+               ("Ruby"       (or
+                              (mode . ruby-mode)
+                              (mode . inf-ruby-mode)))
+               ("Text"       (mode . text-mode))
+               ("XML"        (name . "\\.xml"))
+               ("YAML"       (mode . yaml-mode))
+               ("Terminals"  (mode . term-mode))
+               ("Dired"      (mode . dired-mode))
+               ("Magit"      (name . "magit*"))
+               ("TAGS"       (or
+                              (mode . tags-table-mode)
+                              (name . "^\\*Tags List\\*$")))
+               ("Emacs"      (or
+                              (mode . Buffer-menu-mode)
+                              (mode . grep-mode)
+                              (mode . help-mode)
+                              (name . "^\\*scratch\\*$")
+                              (name . "^\\*Backtrace\\*$")
+                              (name . "^\\*Completions\\*$")
+                              (name . "^\\*GNU Emacs\\*$")
+                              (name . "^\\*Messages\\*$")
+                              (name . "^\\*Packages\\*$")
+                              (name . "^\\*Warnings\\*$")))))))
 
 (add-hook 'ibuffer-mode-hook
           (lambda ()
