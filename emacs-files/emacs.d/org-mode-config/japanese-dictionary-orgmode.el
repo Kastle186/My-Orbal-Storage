@@ -4,8 +4,8 @@
 
 ;; Let's save our org filenames in variables for easier access and better readability.
 
-(defvar japanese-lexicon-file "~/Documents/Emacs/jlexicon.org")
-(defvar japanese-dictionary-file "~/Documents/Emacs/jdictionary.org")
+;; (defvar japanese-lexicon-file "~/.emacs.d/jlexicon.org")
+;; (defvar japanese-dictionary-file "~/.emacs.d/jdictionary.org")
 
 ;; *********************************
 ;;  New Item Data Prompt Functions!
@@ -63,11 +63,13 @@ the dictionary."
         (definition (read-string "Enter the word's definition in English: ")))
 
     (record-word-to-dictionary hiragana-writing kanji-writing word-type definition)
-    (format "%s%s (%s): %s\n"
-            kanji-writing
-            word-type
-            hiragana-writing
-            definition)))
+    (if (y-or-n-p "Emacs wants to ask again if this word will be added to a lexicon.")
+        (format "%s%s (%s): %s\n"
+                kanji-writing
+                word-type
+                hiragana-writing
+                definition)
+      nil)))
 
 
 ;; ****************
@@ -95,14 +97,32 @@ literally, there is another prompt afterwards to retrieve this case."
 ;; ********************
 ;; get-word-found-place
 ;; ********************
+;; We are adding support to select the file where we want to add the new word
+;; at will during runtime. This little function is like the main hub that delegates
+;; finding the word's new place to the appropriate function, depending on what kind
+;; of file we will be working with.
+
+(defun get-word-found-place ()
+  "Ask whether this word will be added to a lexicon file, and find the appropriate
+location for it in this case. If not, then it means it will only be added to a
+dictionary, and for that case, everything is taken care of by the dictionary word
+recording function."
+  (when (y-or-n-p "Will this word be added to a lexicon file?")
+    (let ((lex-file (read-file-name "Enter the lexicon's file path: ")))
+      (get-lexicon-word-place lex-file))))
+
+
+;; **********************
+;; get-lexicon-word-place
+;; **********************
 ;; We will be classifying our words per semantic field in which we found them. So,
 ;; we have to specify said field when filing the individual words' information. This
 ;; function asks and retrieves that information.
 
-(defun get-word-found-place ()
+(defun get-lexicon-word-place (lex-file)
   "Prompt for the source of where the given word was found, and move the cursor to
-said position in the file."
-  (find-file japanese-lexicon-file)
+said position in the lexicon file."
+  (find-file lex-file)
   (let ((place (read-string "Enter the place you found the word at: ")))
     (if-let ((header-pos (org-find-exact-headline-in-buffer place)))
         (progn
@@ -119,11 +139,15 @@ said position in the file."
 ;; Every time we add a new word to our lexicon, we also want it added to our dictionary,
 ;; so that we also have it in an easy way to look it up alphabetically... Or perhaps
 ;; I should say syllabarily :)
+;;
+;; A new update has come to this file: Now, we support adding to different lexicons
+;; and/or different dictionaries. So, this function is in charge of the dictionary
+;; adding in both cases.
 
 (defun record-word-to-dictionary (hiragana kanji nasuru english)
   "Add captured word entry to its respective place in the dictionary after being
-added to the lexicon."
-  (find-file japanese-dictionary-file)
+added to the lexicon, or if it was prompted to be a dictionary-only addition."
+  (find-file (read-file-name "Enter the dictionary file path: "))
   (let* ((syllable (substring hiragana 0 1))
          (syl-header-pos (org-find-exact-headline-in-buffer syllable)))
 
@@ -160,14 +184,14 @@ added to the lexicon."
 
 (add-to-list 'org-capture-templates
              '("w" "New Japanese Word"
-               item (file+function japanese-lexicon-file get-word-found-place)
+               item (function get-word-found-place)
                #'get-new-word
                :empty-lines 0 :immediate-finish t :jump-to-captured t)
              t)
 
 (add-to-list 'org-capture-templates
              '("e" "New Japanese Sentence Example"
-               item (file+function japanese-lexicon-file get-word-found-place)
+               plain (function get-word-found-place)
                #'get-new-sentence
                :empty-lines-after 1 :immediate-finish t :jump-to-captured t)
              t)
