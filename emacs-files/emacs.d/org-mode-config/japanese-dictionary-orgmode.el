@@ -2,10 +2,7 @@
 ;;  Japanese Dictionary Org-Mode Configuration!
 ;; *********************************************
 
-;; Let's save our org filenames in variables for easier access and better readability.
-
-;; (defvar japanese-lexicon-file "~/.emacs.d/jlexicon.org")
-;; (defvar japanese-dictionary-file "~/.emacs.d/jdictionary.org")
+(setq is-for-lexicon nil)
 
 ;; *********************************
 ;;  New Item Data Prompt Functions!
@@ -63,12 +60,14 @@ the dictionary."
         (definition (read-string "Enter the word's definition in English: ")))
 
     (record-word-to-dictionary hiragana-writing kanji-writing word-type definition)
-    (if (y-or-n-p "Emacs wants to ask again if this word will be added to a lexicon.")
-        (format "%s%s (%s): %s\n"
-                kanji-writing
-                word-type
-                hiragana-writing
-                definition)
+    (if (y-or-n-p "Will this word be added to a lexicon file? ")
+        (progn
+          (setq is-for-lexicon t)
+          (format "%s%s (%s): %s\n"
+                  kanji-writing
+                  word-type
+                  hiragana-writing
+                  definition))
       nil)))
 
 
@@ -81,6 +80,7 @@ the dictionary."
   "Prompt for the example sentence in Japanese, and then for its English translation.
 If the 'good/official' English translation differs from how it would be if translated
 literally, there is another prompt afterwards to retrieve this case."
+  (setq is-for-lexicon t)
   (let ((japanese-sentence (read-string
                             "Enter the example sentence in Japanese: "))
         (english-translation (read-string
@@ -107,9 +107,10 @@ literally, there is another prompt afterwards to retrieve this case."
 location for it in this case. If not, then it means it will only be added to a
 dictionary, and for that case, everything is taken care of by the dictionary word
 recording function."
-  (when (y-or-n-p "Will this word be added to a lexicon file?")
+  (when is-for-lexicon
     (let ((lex-file (read-file-name "Enter the lexicon's file path: ")))
-      (get-lexicon-word-place lex-file))))
+      (get-lexicon-word-place lex-file)))
+  (setq is-for-lexicon nil))
 
 
 ;; **********************
