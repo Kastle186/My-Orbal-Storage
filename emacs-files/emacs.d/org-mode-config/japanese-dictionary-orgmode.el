@@ -152,6 +152,10 @@ added to the lexicon, or if it was prompted to be a dictionary-only addition."
   (let* ((syllable (substring hiragana 0 1))
          (syl-header-pos (org-find-exact-headline-in-buffer syllable)))
 
+    ;; FIXME: Compound syllables like じゅ for example, get treated as their root.
+    ;;        In this case, じ. Need to add special handling for those to find
+    ;;        their compound headers, instead of the base ones.
+
     (if syl-header-pos
         (progn
           (goto-char syl-header-pos)
