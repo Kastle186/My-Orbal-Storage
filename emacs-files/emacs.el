@@ -20,6 +20,7 @@
 ;; Load my Org-Mode and Ren'py configurations.
 
 (load-file "~/.emacs.d/org-mode-config/my-org-mode-config.el")
+(load-file "~/.emacs.d/my-tools/keywords.el")
 (load-file "~/.emacs.d/my-tools/utils.el")
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
 (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
@@ -52,7 +53,7 @@
 (setq-default delete-selection-mode t)
 (setq-default org-confirm-babel-evaluate nil)
 (setq-default ring-bell-function 'ignore)
-(setq-default markdown-command "/usr/bin/pandoc")
+;; (setq-default markdown-command "/usr/bin/pandoc")
 
 ;; Enable all the languages I tend to use in Babel by default.
 
@@ -72,6 +73,9 @@
       (setq-default display-line-numbers-type 'relative)
     (setq-default display-line-numbers-type 'absolute))
   (display-line-numbers-mode 1))
+
+;; FIXME: The find-char-* functions should allow going to the nth occurrence of the
+;;        character given. Right now, they always go to the first one only.
 
 (defun find-char-forward ()
   "Find the next occurrence of the given char and move the cursor to it."
@@ -159,62 +163,6 @@
   (define-key writeroom-mode-map (kbd "C-M-=") 'writeroom-adjust-width)
   (define-key writeroom-mode-map (kbd "C-M->") 'writeroom-increase-width)
   (define-key writeroom-mode-map (kbd "C-M-<") 'writeroom-decrease-width))
-
-;; Keywords not highlighted by default but I believe should be.
-
-(font-lock-add-keywords 'emacs-lisp-mode
-                        '(("\\_<add-hook\\_>"             . font-lock-builtin-face)
-                          ("\\_<add-to-list\\_>"          . font-lock-builtin-face)
-                          ("\\_<assq\\_>"                 . font-lock-builtin-face)
-                          ("\\_<capitalize\\_>"           . font-lock-builtin-face)
-                          ("\\_<concat\\_>"               . font-lock-builtin-face)
-                          ("\\_<custom-set-faces\\_>"     . font-lock-builtin-face)
-                          ("\\_<custom-set-variables\\_>" . font-lock-builtin-face)
-                          ("\\_<define-key\\_>"           . font-lock-builtin-face)
-                          ("\\_<downcase\\_>"             . font-lock-builtin-face)
-                          ("\\_<eql\\_>"                  . font-lock-keyword-face)
-                          ("\\_<equal\\_>"                . font-lock-builtin-face)
-                          ("\\_<format\\_>"               . font-lock-builtin-face)
-                          ("\\_<getenv\\_>"               . font-lock-builtin-face)
-                          ("\\_<global-set-key\\_>"       . font-lock-builtin-face)
-                          ("\\_<global-unset-key\\_>"     . font-lock-builtin-face)
-                          ("\\_<kbd\\_>"                  . font-lock-builtin-face)
-                          ("\\_<length\\_>"               . font-lock-builtin-face)
-                          ("\\_<load-file\\_>"            . font-lock-builtin-face)
-                          ("\\_<member\\_>"               . font-lock-builtin-face)
-                          ("\\_<nil\\_>"                  . font-lock-keyword-face)
-                          ("\\_<not\\_>"                  . font-lock-keyword-face)
-                          ("\\_<put\\_>"                  . font-lock-builtin-face)
-                          ("\\_<set\\_>"                  . font-lock-builtin-face)
-                          ("\\_<setenv\\_>"               . font-lock-builtin-face)
-                          ("\\_<t\\_>"                    . font-lock-keyword-face)
-                          ("\\_<upcase\\_>"               . font-lock-builtin-face)))
-
-(font-lock-add-keywords 'csharp-mode
-                        '(("\\_<init\\_>" . font-lock-keyword-face)))
-
-(font-lock-add-keywords 'c-mode
-                        '(("\\_<bool\\_>"    . font-lock-type-face)
-                          ("\\_<calloc\\_>"  . font-lock-builtin-face)
-                          ("\\_<fgets\\_>"   . font-lock-builtin-face)
-                          ("\\_<free\\_>"    . font-lock-builtin-face)
-                          ("\\_<malloc\\_>"  . font-lock-builtin-face)
-                          ("\\_<pid_t\\_>"   . font-lock-type-face)
-                          ("\\_<printf\\_>"  . font-lock-builtin-face)
-                          ("\\_<putc\\_>"    . font-lock-builtin-face)
-                          ("\\_<putchar\\_>" . font-lock-builtin-face)
-                          ("\\_<puts\\_>"    . font-lock-builtin-face)
-                          ("\\_<scanf\\_>"   . font-lock-builtin-face)
-                          ("\\_<size_t\\_>"  . font-lock-type-face)
-                          ("\\_<strcmp\\_>"  . font-lock-builtin-face)
-                          ("\\_<strcpy\\_>"  . font-lock-builtin-face)
-                          ("\\_<strlen\\_>"  . font-lock-builtin-face)
-                          ("\\_<FILE\\_>"    . font-lock-type-face)))
-
-(font-lock-add-keywords 'c++-mode
-                        '(("\\_<cin\\_>"   . font-lock-keyword-face)
-                          ("\\_<cout\\_>"  . font-lock-keyword-face)
-                          ("\\_<endl\\_>"  . font-lock-keyword-face)))
 
 ;; It's really annoying to have Emacs GUI minimized with an accidental typo :(
 
