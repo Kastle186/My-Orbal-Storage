@@ -17,6 +17,7 @@
 ** ち
 
 - ちから (力): Power, force, strength, might, capability
+- ちがう (違う): To differ, be different, disagree, be incorrect, be mistaken
 
 ** だ
 
@@ -44,7 +45,12 @@
 
 - はいる (入る): To enter, go into, join
 - はなし (話): Talk, speech, chat, conversation, discussion
+- はしる (走る): To run, rush to, dash, flee, spread quickly
 - はやい (早い): Fast, quick, swift, early, soon
+
+** ほ
+
+- ほか (他): Other, another, the rest, besides, in addition to
 
 ** ひ
 
@@ -79,8 +85,9 @@
 - かんじる (感じる): To feel, sense, experience
 - かのじょ (彼女): She, her, girlfriend
 - かお (顔): Face, visage, expression
-- からだ ([身]体): Body, torso, constitution of the body
+- からだ/しんたい ([身]体): Body, torso, constitution of the body
 - かれ (彼): He, him, boyfriend
+- かた (肩): Shoulder
 - かぜ (風): Wind, breeze, draft
 - かず/すう (数): Number, amount, quantity
 
@@ -95,6 +102,7 @@
 - こども (子供): Child
 - こえ (声): Voice, singing of a bird, sound, voiced sound, chirping of a critter
 - こころ (心): Heart, spirit, meaning of a phrase/riddle/etc
+- こおり (氷): Ice
 - こし/コシ (腰): Lower back, waist, hips, lumbar region, resilience
 - こたえる (答える): To answer, reply
 - こと/じ (事): Thing, matter, alias
@@ -105,6 +113,7 @@
 - くび/クビ (首): Neck, dismissal/firing from a job
 - くち (口): Mouth, opening, hole, gap, orifice
 - くに (国): Country, state, region, province of Japan, land
+- くろい (黒い): Black, dark, suspicious, wicked, ill-boding
 
 ** ま
 
@@ -118,8 +127,11 @@
 ** み
 
 - み (身): Body, oneself, main part
+- みち (道): Road, path, street, lane, passage, route, way
 - みえる (見える): To be seen, be in sight, seem
 - みる (見る): To see, look, view, observe, examine
+- みせる (見せる): To show, display, resolve to do
+- みず (水): Water (especially fresh and drinking water), liquid
 
 ** も
 
@@ -130,6 +142,7 @@
 ** む
 
 - むね/むな (胸): Chest, breast, bust, feelings, heart
+- むすめ (娘): Daughter, girl, young and unmarried woman
 
 ** な
 
@@ -142,6 +155,7 @@
 ** に
 
 - にほん (日本): Japan
+- にもつ (荷物): Luggage, baggage, package, burden, payload
 - にんげん (人間): Human being, mankind, person
 
 ** お
@@ -168,6 +182,7 @@
 
 - しかし (): However, but
 - しぬ (死ぬ): To die, pass away
+- しろい (白い): White
 - しる (知): To know, be aware of, understand, comprehend, realize
 
 ** しょ
@@ -195,6 +210,11 @@
 ** と
 
 - とる (取る): To take, pick up, grab, obtain, keep
+
+** う
+
+- うで (腕): Arm, skill, efforts, ability
+- うごく (動く): To move, stir, operate, vary, fluctuate
 
 ** わ
 
