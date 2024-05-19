@@ -32,6 +32,10 @@
 
 - ど (度): Degree (angle, temperature, scale), counter of occurrences, strength of glasses, alcohol volume
 
+** ふ
+
+- ふる (振る): To wave, shake, swing, reject, give up
+
 ** ご
 
 - ご (五): Five, 5
@@ -40,6 +44,7 @@
 
 - はいる (入る): To enter, go into, join
 - はなし (話): Talk, speech, chat, conversation, discussion
+- はやい (早い): Fast, quick, swift, early, soon
 
 ** ひ
 
@@ -69,6 +74,7 @@
 
 ** か
 
+- かいし(する) (開始): Start, commencement, beginning, initiation
 - かんがえる (考える): To think over, ponder, consider, reflect on, bear in mind
 - かんじる (感じる): To feel, sense, experience
 - かのじょ (彼女): She, her, girlfriend
@@ -125,6 +131,10 @@
 
 - むね/むな (胸): Chest, breast, bust, feelings, heart
 
+** な
+
+- ながい (長い): Long, prolonged, protracted
+
 ** ね
 
 - ねん/とし (年): Year, age
@@ -136,11 +146,13 @@
 
 ** お
 
+- おく (置く): To put, place, leave alone/behind, put down a tool, do something in advance
 - おもう (思う): To think, consider, believe, imagine, expect
 - おんな/じょ (女): Woman, female, gal
 - おなじ (同じ): Same, identical, equal, equivalent, alike
 - おお/だい (大): Large, big, great, major, ultimate
 - おれ (俺): I, me
+- おそい (遅い): Slow, time-consuming, dull, late, unpunctual
 - おと (音): Sound, noise, note (musical)
 - おとこ/だん (男): Man, male, fellow, guy, manliness
 
@@ -161,6 +173,10 @@
 ** しょ
 
 - しょうじょ/おとめ (少女): Maiden, young lady, little girl
+
+** しゅ
+
+- しゅうりょう(する) (終了): End, close, termination
 
 ** す
 
@@ -191,3 +207,7 @@
 - よぶ (呼ぶ): To call out to, invite, summon
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
+
+** ゆ
+
+- ゆび (指): Finger, toe, digit
