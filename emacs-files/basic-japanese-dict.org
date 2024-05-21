@@ -10,9 +10,14 @@
 - あし (足): Foot, paw, leg
 - あたま (頭): Head, mind, intellect, tip, top structural component
 
+** ば
+
+- ばしょ (場所): Place, location, spot, position, space
+
 ** ぼ
 
 - ぼく (僕): I, me, you (when addressing a young boy)
+- ぼうてん (傍点): Marks or dots written alongside a word to emphasize it and draw the reader's attention
 
 ** ち
 
@@ -66,6 +71,7 @@
 
 - いえ/うち (家): House, residence, home, household, lineage
 - いじょう (以上): Not less than, more than, further than, and over, and above
+- いみ(する) (意味): Meaning, significance, sense
 - いれる (入れる): To put in, let in, bring in, install, employ
 - いう (言う/云う): To say, utter, name, declare, make a noise
 
