@@ -12,17 +12,19 @@
 
 ** ば
 
+- ばんごう (番号): Number, series of digits
 - ばしょ (場所): Place, location, spot, position, space
 
 ** ぼ
 
 - ぼく (僕): I, me, you (when addressing a young boy)
-- ぼうてん (傍点): Marks or dots written alongside a word to emphasize it and draw the reader's attention
+- ぼうてん (傍点): Marks or dots written alongside text to emphasize it and draw the reader's attention
 
 ** ち
 
-- ちから (力): Power, force, strength, might, capability
 - ちがう (違う): To differ, be different, disagree, be incorrect, be mistaken
+- ちいさい (小さい): Small, little, tiny, soft volume, trivial
+- ちから (力): Power, force, strength, might, capability
 
 ** だ
 
@@ -40,6 +42,7 @@
 
 ** ふ
 
+- ふね (船): Ship, boat, watercraft, tank, counter for boat-shaped containers
 - ふる (振る): To wave, shake, swing, reject, give up
 
 ** ご
@@ -49,28 +52,41 @@
 ** は
 
 - はいる (入る): To enter, go into, join
+- はじまる/はじめる (始[ま|め]る): To start, begin, commence, initiate, open up
 - はなし (話): Talk, speech, chat, conversation, discussion
+- はなす (話す): To talk, speak, converse, chat, tell
 - はしる (走る): To run, rush to, dash, flee, spread quickly
 - はやい (早い): Fast, quick, swift, early, soon
 
-** ほ
+** へ
 
-- ほか (他): Other, another, the rest, besides, in addition to
+- へや (部屋): Room, chamber, apartment, flat, pad
 
 ** ひ
 
 - ひかり (光): Light, illumination, ray, gleam, glow
 - ひかる (光る): To shine, glitter, be bright
 - ひと (人): Person, someone, human
+- ひつよう(な) (必要): Necessary, needed, essential, indispensable, required
 
-** へ
+** ひゃ
 
-- へや (部屋): Room, chamber, apartment, flat, pad
+- ひゃく/もも (百): Hundred, 100
+
+** ひょ
+
+- ひょうじ(する) (表示): Showing, display, representation
+- ひょうじょう (表情): Facial expression, countenance, appearance
+
+** ほ
+
+- ほか (他): Other, another, the rest, besides, in addition to
 
 ** い
 
 - いえ/うち (家): House, residence, home, household, lineage
 - いじょう (以上): Not less than, more than, further than, and over, and above
+- いき (息): Breath, breathing
 - いみ(する) (意味): Meaning, significance, sense
 - いれる (入れる): To put in, let in, bring in, install, employ
 - いう (言う/云う): To say, utter, name, declare, make a noise
@@ -86,13 +102,19 @@
 
 ** か
 
+- かべ (壁): Wall, partition, barrier, obstacle, chinese "Wall" constellation
+- かべがみ (壁紙): Wallpaper, background image, desktop image
 - かいし(する) (開始): Start, commencement, beginning, initiation
+- かいしゃ (会社): Company, corporation, workplace
+- かく (書く): To write, compose, pen, draw, paint
+- かみ(な) (神): God, deity, divinity, spirit, godly
 - かんがえる (考える): To think over, ponder, consider, reflect on, bear in mind
 - かんじる (感じる): To feel, sense, experience
 - かのじょ (彼女): She, her, girlfriend
 - かお (顔): Face, visage, expression
 - からだ/しんたい ([身]体): Body, torso, constitution of the body
 - かれ (彼): He, him, boyfriend
+- かれら (彼ら): They, them
 - かた (肩): Shoulder
 - かぜ (風): Wind, breeze, draft
 - かず/すう (数): Number, amount, quantity
@@ -100,8 +122,15 @@
 ** き
 
 - き (気): Spirit, mind, will, mood, ambience
+- き (機): Machine (both as counter and suffix), chance, opportunity
+- きこえる (聞こえる): To be heard, audible, come across as, accept someone's words, agree
 - きく (聞く): To hear, listen, ask, overhear, eavesdrop
 - きみ (君): You, buddy, pal
+
+** きょ
+
+- きょじゅう(する) (居住): Residence, abode, dwelling
+- きょうしつ (教室): Classroom, lecture room, department in a university
 
 ** こ
 
@@ -113,18 +142,25 @@
 - こたえる (答える): To answer, reply
 - こと/じ (事): Thing, matter, alias
 - ことば (言葉): Word, expression, language
+- こうしん (口唇): Lips
+- こうしん(する) (更新): Renewal, update, replacement, renovation, breaking a record
 
 ** く
 
 - くび/クビ (首): Neck, dismissal/firing from a job
 - くち (口): Mouth, opening, hole, gap, orifice
+- くちびる (唇): Lip, lips
+- くださる (): To confer, bestow, kindly do for someone, oblige, do someone a favor
 - くに (国): Country, state, region, province of Japan, land
 - くろい (黒い): Black, dark, suspicious, wicked, ill-boding
 
 ** ま
 
+- まど (窓): Window
 - まなこ (眼): Eyeball
+- まるで (): As if, just like, quite
 - まつ (待つ): To wait, await, look forward to
+- まったく (全く): Really, truly, indeed, wholly, perfectly
 
 ** め
 
@@ -135,6 +171,7 @@
 - み (身): Body, oneself, main part
 - みち (道): Road, path, street, lane, passage, route, way
 - みえる (見える): To be seen, be in sight, seem
+- みみ (耳): Ear, hearing, edge/crust/heel of a bread or cheese
 - みる (見る): To see, look, view, observe, examine
 - みせる (見せる): To show, display, resolve to do
 - みず (水): Water (especially fresh and drinking water), liquid
@@ -147,12 +184,15 @@
 
 ** む
 
+- むかう (向う): To face towards, go towards, head towards
+- むける (向ける): To turn towards, point
 - むね/むな (胸): Chest, breast, bust, feelings, heart
 - むすめ (娘): Daughter, girl, young and unmarried woman
 
 ** な
 
 - ながい (長い): Long, prolonged, protracted
+- なな/しち (七): Seven, 7
 
 ** ね
 
@@ -166,15 +206,22 @@
 
 ** お
 
+- おちる (落ちる): To fall down, drop, decrease, fail (an exam, class, etc), crash down
+- おかね/きん ([お]金): Money / Gold (metal)
+- おこなう (行う): To perform, conduct, carry out
 - おく (置く): To put, place, leave alone/behind, put down a tool, do something in advance
 - おもう (思う): To think, consider, believe, imagine, expect
 - おんな/じょ (女): Woman, female, gal
 - おなじ (同じ): Same, identical, equal, equivalent, alike
 - おお/だい (大): Large, big, great, major, ultimate
+- おおき(な) (大き): Great, grand, large
 - おれ (俺): I, me
+- おる (居る): To be (animate), exist
 - おそい (遅い): Slow, time-consuming, dull, late, unpunctual
 - おと (音): Sound, noise, note (musical)
 - おとこ/だん (男): Man, male, fellow, guy, manliness
+- おう (王): King, ruler, sovereign, monarch, tycoon
+- おわる (終わる): To end, close, finish
 
 ** ろ
 
@@ -186,6 +233,7 @@
 
 ** し
 
+- しごと(する) (仕事): Work, job, labour, occupation, employment
 - しかし (): However, but
 - しぬ (死ぬ): To die, pass away
 - しろい (白い): White
@@ -199,6 +247,10 @@
 
 - しゅうりょう(する) (終了): End, close, termination
 
+** そ
+
+- そら/から/カラ (空): Sky, air, state of mind / Empty, emptiness
+
 ** す
 
 - すがた (姿): Figure, form, shape, appearance, guise
@@ -206,6 +258,7 @@
 
 ** た
 
+- たかい (高い): High, tall, expensive
 - たつ (立つ): To stand up, rise, find oneself in a situation
 
 ** て
@@ -217,22 +270,35 @@
 
 - とる (取る): To take, pick up, grab, obtain, keep
 
+** つ
+
+- つぎ (次): Next, following, subsequent, stage, station
+- つよい (強い): Strong, potent, powerful, resilient, trustworthy
+
 ** う
 
 - うで (腕): Arm, skill, efforts, ability
 - うごく (動く): To move, stir, operate, vary, fluctuate
+- うける (受ける): To receive, get, sustain damage, accept a challenge, catch a ball
+- うる (得る): To get, acquire, attain - As suffix: To be able to, can
 
 ** わ
 
+- わかい (若い): Young, youthful
 - わらう (笑う): To laugh, amuse
 - わるい (悪い): Bad, undesirable, evil, poor quality, sinful
 - わたし (私): I, me
+
+** や
+
+- やおや (八百屋): Greengrocer, fruit and vegetable shop
 
 ** よ
 
 - よぶ (呼ぶ): To call out to, invite, summon
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
+- ようす (様子): State of affairs, situation, circumstances, look, sign
 
 ** ゆ
 
