@@ -22,6 +22,7 @@
 
 ** ち
 
+- ち (血): Blood, lineage, passions
 - ちがう (違う): To differ, be different, disagree, be incorrect, be mistaken
 - ちいさい (小さい): Small, little, tiny, soft volume, trivial
 - ちから (力): Power, force, strength, might, capability
@@ -34,11 +35,13 @@
 
 ** で
 
+- でんたつ(する) (伝達): Transmission of news/signals/electricity, communication, delivery, transfer, relay
 - でる (出る): To exit, leave, go out, depart, emerge
 
 ** ど
 
 - ど (度): Degree (angle, temperature, scale), counter of occurrences, strength of glasses, alcohol volume
+- どおり (通り): Street, Avenue
 
 ** ふ
 
@@ -51,6 +54,7 @@
 
 ** は
 
+- はち (八): Eight, 8
 - はいる (入る): To enter, go into, join
 - はじまる/はじめる (始[ま|め]る): To start, begin, commence, initiate, open up
 - はなし (話): Talk, speech, chat, conversation, discussion
@@ -66,6 +70,7 @@
 
 - ひかり (光): Light, illumination, ray, gleam, glow
 - ひかる (光る): To shine, glitter, be bright
+- ひく (引く): To pull, tug, draw a line or card, haul, subtract
 - ひと (人): Person, someone, human
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, required
 
@@ -81,15 +86,18 @@
 ** ほ
 
 - ほか (他): Other, another, the rest, besides, in addition to
+- ほんとうに (本当に): Truly, really
 
 ** い
 
 - いえ/うち (家): House, residence, home, household, lineage
 - いじょう (以上): Not less than, more than, further than, and over, and above
 - いき (息): Breath, breathing
+- いきる (生きる): To live, exist, subsist, come to life, be enlivened
 - いみ(する) (意味): Meaning, significance, sense
 - いれる (入れる): To put in, let in, bring in, install, employ
 - いう (言う/云う): To say, utter, name, declare, make a noise
+- いっしょに (一緒に): Together, at the same time
 
 ** じ
 
@@ -123,9 +131,11 @@
 
 - き (気): Spirit, mind, will, mood, ambience
 - き (機): Machine (both as counter and suffix), chance, opportunity
+- きづく (気[付|づ]く): To notice, recognize, become aware of, perceive, realize
 - きこえる (聞こえる): To be heard, audible, come across as, accept someone's words, agree
 - きく (聞く): To hear, listen, ask, overhear, eavesdrop
 - きみ (君): You, buddy, pal
+- きる (切る): To cut, sever, turn off the light, disconnect, criticize
 
 ** きょ
 
@@ -137,6 +147,7 @@
 - こども (子供): Child
 - こえ (声): Voice, singing of a bird, sound, voiced sound, chirping of a critter
 - こころ (心): Heart, spirit, meaning of a phrase/riddle/etc
+- こんど (今度): This time
 - こおり (氷): Ice
 - こし/コシ (腰): Lower back, waist, hips, lumbar region, resilience
 - こたえる (答える): To answer, reply
@@ -153,6 +164,7 @@
 - くださる (): To confer, bestow, kindly do for someone, oblige, do someone a favor
 - くに (国): Country, state, region, province of Japan, land
 - くろい (黒い): Black, dark, suspicious, wicked, ill-boding
+- くるま/クルマ (車): Car, automobile, vehicle
 
 ** ま
 
@@ -174,12 +186,14 @@
 - みみ (耳): Ear, hearing, edge/crust/heel of a bread or cheese
 - みる (見る): To see, look, view, observe, examine
 - みせる (見せる): To show, display, resolve to do
+- みつめる (見つめる): To stare at, gaze at, look hard at, watch intently, fix one's eyes on
 - みず (水): Water (especially fresh and drinking water), liquid
 
 ** も
 
 - もどる (戻る): To turn back, return, rebound, spring back, be returned
 - もくてき (目的): Purpose, goal, aim, objective, intention
+- もんだい (問題): Question (on a test or a doubt), problem, issue, trouble, controversy
 - もつ (持つ): To hold in one's hand, carry, have, own, possess
 
 ** む
@@ -193,6 +207,7 @@
 
 - ながい (長い): Long, prolonged, protracted
 - なな/しち (七): Seven, 7
+- なぜ (何故): Why, how
 
 ** ね
 
@@ -203,13 +218,21 @@
 - にほん (日本): Japan
 - にもつ (荷物): Luggage, baggage, package, burden, payload
 - にんげん (人間): Human being, mankind, person
+- について (): Concerning, regarding, per, for every
+- によって (): According to, by means of, due to, because of
+
+** の
+
+- のこる (残る): To remain, be left
 
 ** お
 
 - おちる (落ちる): To fall down, drop, decrease, fail (an exam, class, etc), crash down
 - おかね/きん ([お]金): Money / Gold (metal)
-- おこなう (行う): To perform, conduct, carry out
+- おこなう (行う): To perform, conduct, carry out by oneself
 - おく (置く): To put, place, leave alone/behind, put down a tool, do something in advance
+- おく (奥): Inner part, depths, back of a house/drawer/building
+- おくゆき (奥行き): Depth, length
 - おもう (思う): To think, consider, believe, imagine, expect
 - おんな/じょ (女): Woman, female, gal
 - おなじ (同じ): Same, identical, equal, equivalent, alike
@@ -227,14 +250,22 @@
 
 - ろく/むう (六/陸): Six, 6
 
+** さ
+
+- さいご (最後): End, conclusion, last, final, latest
+- さいしん (最新): Latest, newest, late-breaking news
+- さらに (更に): Furthermore, again, after all, more and more, moreover, even more
+
 ** せ
 
 - せかい (世界): The world, universe, society
+- せいき (生気): Life, vitality, vigor, verve, spirit
 
 ** し
 
 - しごと(する) (仕事): Work, job, labour, occupation, employment
 - しかし (): However, but
+- しんじる (信じる): To believe in, place trust in, confide in, have faith in
 - しぬ (死ぬ): To die, pass away
 - しろい (白い): White
 - しる (知): To know, be aware of, understand, comprehend, realize
@@ -249,6 +280,7 @@
 
 ** そ
 
+- そんざい(する) (存在): Existence, being
 - そら/から/カラ (空): Sky, air, state of mind / Empty, emptiness
 
 ** す
@@ -265,13 +297,17 @@
 
 - て (手): Hand, forepaw, hand of cards, handle, help
 - てき (敵): Rival, adversary, menace, threat, enemy
+- てつだう (手伝う): To help, assist, aid, contribute to, be a factor in
 
 ** と
 
+- ところ (所): Place, spot, scene, site, area
 - とる (取る): To take, pick up, grab, obtain, keep
+- とおる (通る): To go by, travel along on a route, use a road, carry of a voice, pass on (like a customer's order to the kitchen)
 
 ** つ
 
+- つづける (続ける): To continue, keep up, keep on
 - つぎ (次): Next, following, subsequent, stage, station
 - つよい (強い): Strong, potent, powerful, resilient, trustworthy
 
@@ -288,6 +324,7 @@
 - わらう (笑う): To laugh, amuse
 - わるい (悪い): Bad, undesirable, evil, poor quality, sinful
 - わたし (私): I, me
+- わすれる (忘れる): To forget, leave carelessly, be forgetful
 
 ** や
 
@@ -303,3 +340,8 @@
 ** ゆ
 
 - ゆび (指): Finger, toe, digit
+
+** ず
+
+- ずっと (): Continuously in some state, throughout, all along, the whole time, all the way
+
