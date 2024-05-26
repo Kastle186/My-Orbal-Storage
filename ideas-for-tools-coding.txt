@@ -1,5 +1,0 @@
-- A decompressor for all formats, starting with Zip, Tar, Gz, and Tar.Gz formats.
-  C / C#
-
-- A command-line parser
-  C
