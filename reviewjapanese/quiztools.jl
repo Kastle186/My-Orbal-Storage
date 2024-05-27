@@ -1,7 +1,9 @@
-#!/usr/bin/julia
+# Tools for Japanese/English Little Quizzes
 
-using Random
-using StatsBase # Needs to be installed via the Julia REPL with Pkg.add("StatsBase")
+module QuizTools
+
+export getwords
+export runquiz
 
 """
 """
@@ -13,36 +15,9 @@ end
 
 """
 """
-function getparams()
-    wordfile = ""
-    numquestions = 0
-
-    if length(ARGS) < 2
-        print("\n")
-
-        if length(ARGS) < 1
-            print("Enter the file where the word list is: ")
-            wordfile = readline(stdin)
-        else
-            wordfile = ARGS[1]
-        end
-
-        print("Enter the number of questions you want to review: ")
-        numquestions = parse(Int, readline(stdin))
-
-    else
-        wordfile = ARGS[1]
-        numquestions = parse(Int, ARGS[2])
-
-    end
-
-    return wordfile, numquestions
-end
-
-"""
-"""
 function getwords(jporgfile::String)
     words = Vector{JPWord}()
+    println("\nReading the word pool from '$jporgfile'...")
 
     for line in eachline(jporgfile)
         if ! startswith(line, "-") continue end
@@ -66,32 +41,32 @@ end
 
 """
 """
-function run_kanji2englishtest(wordlist::Vector{JPWord})
+function runquiz(wordlist::Vector{JPWord}, numqs::Int)
     numcorrects = 0
     misses = Vector{@NamedTuple{q::JPWord, a::String}}()
-    total = length(wordlist)
+    qindices = rand(1:length(wordlist), numqs)
 
-    shuffle!(wordlist)
+    for qi in qindices
+        question = wordlist[qi]
 
-    for question in wordlist
         println("\nWhat does this Kanji $(question.kanji) mean?")
         answer = readline(stdin)
 
-        if ! isempty(answer) && occursin(answer, lowercase(question.meanings))
+        if ! isempty(answer) && occursin(lowercase(answer), lowercase(question.meanings))
             numcorrects += 1
         else
             push!(misses, (q=question, a=answer))
         end
     end
 
-    print("\nYou had $numcorrects/$total correct answers")
+    print("\nYou had $numcorrects/$numqs correct answers")
 
-    if numcorrects == total
+    if numcorrects == numqs
         print("!\n")
         println("Way to go! You got all questions of this session right!")
     else
         print(".\n")
-        println("You missed $(total - numcorrects) questions :(")
+        println("You missed $(numqs - numcorrects) questions :(")
         println("\nHere are the missed questions, so you can review them:\n")
 
         for miss in misses
@@ -103,16 +78,4 @@ function run_kanji2englishtest(wordlist::Vector{JPWord})
     end
 end
 
-"""
-"""
-function main()
-    wordfile, numquestions = getparams()
-
-    wordpool = getwords(wordfile)
-    questions = sample(wordpool, numquestions)
-    run_kanji2englishtest(questions)
-
-    return 0
 end
-
-main()
