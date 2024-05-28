@@ -1,8 +1,5 @@
 #!/usr/bin/julia
 
-using Random
-using StatsBase # Needs to be installed via the Julia REPL with Pkg.add("StatsBase")
-
 include("quiztools.jl")
 
 """
@@ -38,8 +35,14 @@ end
 function main()
     wordfile, numquestions = getparams()
     wordpool = QuizTools.getwords(wordfile)
+    quiztype = "kanji2english"
 
-    QuizTools.runquiz(wordpool, numquestions)
+    # Options for the Quiz:
+    # - Kanji to English
+    # - Kanji to Kana
+    # - Kana/English to Kanji
+
+    QuizTools.runquiz(wordpool, numquestions, quiztype)
     return 0
 end
 
