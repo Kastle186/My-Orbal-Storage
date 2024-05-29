@@ -45,6 +45,7 @@
 
 ** ふ
 
+- ふかい (深い): Deep, profound, dense, close relationship, intense
 - ふね (船): Ship, boat, watercraft, tank, counter for boat-shaped containers
 - ふる (振る): To wave, shake, swing, reject, give up
 
@@ -118,6 +119,7 @@
 - かみ(な) (神): God, deity, divinity, spirit, godly
 - かんがえる (考える): To think over, ponder, consider, reflect on, bear in mind
 - かんじる (感じる): To feel, sense, experience
+- かんけい(する) (関係): Relationship, connection, participation, connected to, sexual relationship
 - かのじょ (彼女): She, her, girlfriend
 - かお (顔): Face, visage, expression
 - からだ/しんたい ([身]体): Body, torso, constitution of the body
@@ -126,6 +128,10 @@
 - かた (肩): Shoulder
 - かぜ (風): Wind, breeze, draft
 - かず/すう (数): Number, amount, quantity
+
+** け
+
+- けん (剣): Sword, blade
 
 ** き
 
@@ -201,6 +207,7 @@
 - むかう (向う): To face towards, go towards, head towards
 - むける (向ける): To turn towards, point
 - むね/むな (胸): Chest, breast, bust, feelings, heart
+- むら/そん (村): Village
 - むすめ (娘): Daughter, girl, young and unmarried woman
 
 ** な
@@ -255,6 +262,7 @@
 - さいご (最後): End, conclusion, last, final, latest
 - さいしん (最新): Latest, newest, late-breaking news
 - さらに (更に): Furthermore, again, after all, more and more, moreover, even more
+- さっき (): A short while ago, a moment ago, just now
 
 ** せ
 
@@ -264,11 +272,14 @@
 ** し
 
 - しごと(する) (仕事): Work, job, labour, occupation, employment
+- しいる (強いる): To force, compel, coerce, press, impose
 - しかし (): However, but
 - しんじる (信じる): To believe in, place trust in, confide in, have faith in
 - しぬ (死ぬ): To die, pass away
 - しろい (白い): White
-- しる (知): To know, be aware of, understand, comprehend, realize
+- しせん (視線): One's line of sight, glance, gaze
+- しれる (知れる): To become known, be discovered, be understood, be evident, be obvious
+- しる (知る): To know, be aware of, understand, comprehend, realize
 
 ** しょ
 
@@ -285,6 +296,7 @@
 
 ** す
 
+- すでに (既に): Already, too late
 - すがた (姿): Figure, form, shape, appearance, guise
 - すこし (少し): Small quantity, little, few
 
@@ -301,6 +313,7 @@
 
 ** と
 
+- とぶ (飛ぶ): To fly, soar, leap, rush, be missing a page
 - ところ (所): Place, spot, scene, site, area
 - とる (取る): To take, pick up, grab, obtain, keep
 - とおる (通る): To go by, travel along on a route, use a road, carry of a voice, pass on (like a customer's order to the kitchen)
@@ -309,6 +322,7 @@
 
 - つづける (続ける): To continue, keep up, keep on
 - つぎ (次): Next, following, subsequent, stage, station
+- つくる (作る): To make, produce, manufacture, prepare, brew
 - つよい (強い): Strong, potent, powerful, resilient, trustworthy
 
 ** う
@@ -328,11 +342,14 @@
 
 ** や
 
+- やはり (): As expected, sure enough, in any case, even so, nonetheless
 - やおや (八百屋): Greengrocer, fruit and vegetable shop
+- やつ (奴): Fellow, guy, chap, he, she: All in a derogatory manner
 
 ** よ
 
 - よぶ (呼ぶ): To call out to, invite, summon
+- よこ/ヨコ (横): Horizontal (as opposed to vertical), side-to-side (as opposed to front-to-back), side of a box
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
 - ようす (様子): State of affairs, situation, circumstances, look, sign
