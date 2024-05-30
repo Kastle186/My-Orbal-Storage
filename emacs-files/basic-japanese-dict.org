@@ -23,6 +23,7 @@
 ** ち
 
 - ち (血): Blood, lineage, passions
+- ち (地): Ground, land, soil, territory, earth element
 - ちがう (違う): To differ, be different, disagree, be incorrect, be mistaken
 - ちいさい (小さい): Small, little, tiny, soft volume, trivial
 - ちから (力): Power, force, strength, might, capability
@@ -36,6 +37,9 @@
 ** で
 
 - でんたつ(する) (伝達): Transmission of news/signals/electricity, communication, delivery, transfer, relay
+- でんち (電池): Battery, cell
+- でんき (電気): Electricity, electric light
+- でんわ(する) (電話): Telephone (call), phone (call)
 - でる (出る): To exit, leave, go out, depart, emerge
 
 ** ど
@@ -65,6 +69,7 @@
 
 ** へ
 
+- へん(な) (変): Strange, peculiar, weird, fishy, disturbance
 - へや (部屋): Room, chamber, apartment, flat, pad
 
 ** ひ
@@ -88,6 +93,7 @@
 
 - ほか (他): Other, another, the rest, besides, in addition to
 - ほんとうに (本当に): Truly, really
+- ほとんど (): Almost, nearly, mostly, practically, basically, virtually
 
 ** い
 
@@ -104,15 +110,18 @@
 
 - じ/とき (時): Time, hour, moment
 - じぶん (自分): Myself, oneself
+- じしん (自身): One's self, oneself
 
 ** じゅ
 
+- じょうたつ(する) (上達): Improvement in skills and abilities, advance, progress
 - じゅう (十): Ten, 10, book containing collection of poems
 
 ** か
 
 - かべ (壁): Wall, partition, barrier, obstacle, chinese "Wall" constellation
 - かべがみ (壁紙): Wallpaper, background image, desktop image
+- かげ (影): Shadow, silhouette, reflection, ominous sign, trace
 - かいし(する) (開始): Start, commencement, beginning, initiation
 - かいしゃ (会社): Company, corporation, workplace
 - かく (書く): To write, compose, pen, draw, paint
@@ -126,6 +135,7 @@
 - かれ (彼): He, him, boyfriend
 - かれら (彼ら): They, them
 - かた (肩): Shoulder
+- かたち (形): Form, shape, figure
 - かぜ (風): Wind, breeze, draft
 - かず/すう (数): Number, amount, quantity
 
@@ -138,6 +148,7 @@
 - き (気): Spirit, mind, will, mood, ambience
 - き (機): Machine (both as counter and suffix), chance, opportunity
 - きづく (気[付|づ]く): To notice, recognize, become aware of, perceive, realize
+- きえる (消える): To disappear, vanish, go out (fire, light), fade away, turn off a TV screen
 - きこえる (聞こえる): To be heard, audible, come across as, accept someone's words, agree
 - きく (聞く): To hear, listen, ask, overhear, eavesdrop
 - きみ (君): You, buddy, pal
@@ -159,6 +170,7 @@
 - こたえる (答える): To answer, reply
 - こと/じ (事): Thing, matter, alias
 - ことば (言葉): Word, expression, language
+- こう (項): Clause, paragraph, item, argument, term of an equation
 - こうしん (口唇): Lips
 - こうしん(する) (更新): Renewal, update, replacement, renovation, breaking a record
 
@@ -200,6 +212,7 @@
 - もどる (戻る): To turn back, return, rebound, spring back, be returned
 - もくてき (目的): Purpose, goal, aim, objective, intention
 - もんだい (問題): Question (on a test or a doubt), problem, issue, trouble, controversy
+- もし (): If, in case, supposing
 - もつ (持つ): To hold in one's hand, carry, have, own, possess
 
 ** む
@@ -253,6 +266,10 @@
 - おう (王): King, ruler, sovereign, monarch, tycoon
 - おわる (終わる): To end, close, finish
 
+** りゅ
+
+- りゅう (竜): Dragon, naga
+
 ** ろ
 
 - ろく/むう (六/陸): Six, 6
@@ -261,6 +278,7 @@
 
 - さいご (最後): End, conclusion, last, final, latest
 - さいしん (最新): Latest, newest, late-breaking news
+- さいしょ (最初): Beginning, first, onset
 - さらに (更に): Furthermore, again, after all, more and more, moreover, even more
 - さっき (): A short while ago, a moment ago, just now
 
@@ -271,6 +289,7 @@
 
 ** し
 
+- しばらく(する) (): For a moment, for a minute, for a while, for some time, for the time being, for now
 - しごと(する) (仕事): Work, job, labour, occupation, employment
 - しいる (強いる): To force, compel, coerce, press, impose
 - しかし (): However, but
@@ -284,6 +303,7 @@
 ** しょ
 
 - しょうじょ/おとめ (少女): Maiden, young lady, little girl
+- しょうねん (少年): Boy, juvenile, lad
 
 ** しゅ
 
@@ -303,6 +323,7 @@
 ** た
 
 - たかい (高い): High, tall, expensive
+- たしか(な) (確か): Sure, certain, accurate, if I'm not mistaken, if I recall correctly
 - たつ (立つ): To stand up, rise, find oneself in a situation
 
 ** て
@@ -357,6 +378,7 @@
 ** ゆ
 
 - ゆび (指): Finger, toe, digit
+- ゆっくり(する) (): Slowly, unhurriedly, without haste, leisurely, with time to spare
 
 ** ず
 
