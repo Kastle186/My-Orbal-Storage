@@ -6,12 +6,14 @@
 - あいだ (間): Space between, gap, interval, duration, period of time
 - あいて (相手): Companion, partner, company, opponent, other party
 - あく (開く): To open, be empty, be vacant, be open, have an interval
+- あまり(な) (): Remainder, rest, not much, extreme, tremendous
 - あるく (歩く): To walk
 - あし (足): Foot, paw, leg
 - あたま (頭): Head, mind, intellect, tip, top structural component
 
 ** ば
 
+- ばあい (場合): Case, situation
 - ばんごう (番号): Number, series of digits
 - ばしょ (場所): Place, location, spot, position, space
 
@@ -19,6 +21,10 @@
 
 - ぼく (僕): I, me, you (when addressing a young boy)
 - ぼうてん (傍点): Marks or dots written alongside text to emphasize it and draw the reader's attention
+
+** ぶ
+
+- ぶ (部): Department in an organization or company, division, bureau, faculty, club
 
 ** ち
 
@@ -62,6 +68,7 @@
 - はち (八): Eight, 8
 - はいる (入る): To enter, go into, join
 - はじまる/はじめる (始[ま|め]る): To start, begin, commence, initiate, open up
+- はなれる (離れる): To be separated, distant, leave a job, lose connection with, drift away from
 - はなし (話): Talk, speech, chat, conversation, discussion
 - はなす (話す): To talk, speak, converse, chat, tell
 - はしる (走る): To run, rush to, dash, flee, spread quickly
@@ -125,8 +132,10 @@
 - かいし(する) (開始): Start, commencement, beginning, initiation
 - かいしゃ (会社): Company, corporation, workplace
 - かく (書く): To write, compose, pen, draw, paint
+- かみ (髪): Hair on the head
 - かみ(な) (神): God, deity, divinity, spirit, godly
 - かんがえる (考える): To think over, ponder, consider, reflect on, bear in mind
+- かんじ (感じ): Feeling, sense, impression
 - かんじる (感じる): To feel, sense, experience
 - かんけい(する) (関係): Relationship, connection, participation, connected to, sexual relationship
 - かのじょ (彼女): She, her, girlfriend
@@ -152,7 +161,9 @@
 - きこえる (聞こえる): To be heard, audible, come across as, accept someone's words, agree
 - きく (聞く): To hear, listen, ask, overhear, eavesdrop
 - きみ (君): You, buddy, pal
+- きもち (気持ち): Feeling, sensation, mood, state of mind, sentiment
 - きる (切る): To cut, sever, turn off the light, disconnect, criticize
+- きっと (): Surely, undoubtedly, almost certainly, most likely, ~90% chance of being true
 
 ** きょ
 
@@ -186,6 +197,7 @@
 
 ** ま
 
+- まち (町): Town, block, neighborhood, downtown, main street
 - まど (窓): Window
 - まなこ (眼): Eyeball
 - まるで (): As if, just like, quite
@@ -238,25 +250,30 @@
 - にほん (日本): Japan
 - にもつ (荷物): Luggage, baggage, package, burden, payload
 - にんげん (人間): Human being, mankind, person
+- にる (似る): To resemble, look like, be alike, be similar, take after
 - について (): Concerning, regarding, per, for every
 - によって (): According to, by means of, due to, because of
 
 ** の
 
 - のこる (残る): To remain, be left
+- のる (乗る): To get in vehicle, board, step on, mount, take part
 
 ** お
 
 - おちる (落ちる): To fall down, drop, decrease, fail (an exam, class, etc), crash down
+- おどろく (驚く): To be surprised, be astonished
 - おかね/きん ([お]金): Money / Gold (metal)
 - おこなう (行う): To perform, conduct, carry out by oneself
 - おく (置く): To put, place, leave alone/behind, put down a tool, do something in advance
 - おく (奥): Inner part, depths, back of a house/drawer/building
 - おくゆき (奥行き): Depth, length
+- おもえる (思える): To seem, appear likely
 - おもう (思う): To think, consider, believe, imagine, expect
 - おんな/じょ (女): Woman, female, gal
 - おなじ (同じ): Same, identical, equal, equivalent, alike
 - おお/だい (大): Large, big, great, major, ultimate
+- おおい (多い): Many, numerous, a lot, large amount of, frequent
 - おおき(な) (大き): Great, grand, large
 - おれ (俺): I, me
 - おる (居る): To be (animate), exist
@@ -286,6 +303,7 @@
 
 - せかい (世界): The world, universe, society
 - せいき (生気): Life, vitality, vigor, verve, spirit
+- せなか (背中): Back of the body
 
 ** し
 
@@ -294,6 +312,7 @@
 - しいる (強いる): To force, compel, coerce, press, impose
 - しかし (): However, but
 - しんじる (信じる): To believe in, place trust in, confide in, have faith in
+- しんぱい(な/する) (心配): Worry, concern, anxiety, uneasiness, fear
 - しぬ (死ぬ): To die, pass away
 - しろい (白い): White
 - しせん (視線): One's line of sight, glance, gaze
@@ -313,6 +332,7 @@
 
 - そんざい(する) (存在): Existence, being
 - そら/から/カラ (空): Sky, air, state of mind / Empty, emptiness
+- それでも (): But still, and yet, nevertheless, even so, notwithstanding
 
 ** す
 
@@ -334,7 +354,9 @@
 
 ** と
 
+- とびら (扉): Door, gate, opening, title page
 - とぶ (飛ぶ): To fly, soar, leap, rush, be missing a page
+- とこ (床): Bed, bedding, alcove, riverbed, seedbed
 - ところ (所): Place, spot, scene, site, area
 - とる (取る): To take, pick up, grab, obtain, keep
 - とおる (通る): To go by, travel along on a route, use a road, carry of a voice, pass on (like a customer's order to the kitchen)
@@ -364,6 +386,7 @@
 ** や
 
 - やはり (): As expected, sure enough, in any case, even so, nonetheless
+- やがて (): Before long, soon, shortly, finally, eventually
 - やおや (八百屋): Greengrocer, fruit and vegetable shop
 - やつ (奴): Fellow, guy, chap, he, she: All in a derogatory manner
 
