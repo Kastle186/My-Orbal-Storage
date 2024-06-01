@@ -14,6 +14,7 @@
 ** ば
 
 - ばあい (場合): Case, situation
+- ばりき (馬力): Horsepower, HP, energy, vitality, vigour
 - ばんごう (番号): Number, series of digits
 - ばしょ (場所): Place, location, spot, position, space
 
@@ -37,6 +38,7 @@
 ** だ
 
 - だいいち (第一): First, foremost, most important, primary, number one in importance
+- だまる (黙る): To be silent, to say nothing
 - だれ (誰): Who
 - だす (出す): To take out, put out, reveal, submit, send
 
@@ -52,6 +54,7 @@
 
 - ど (度): Degree (angle, temperature, scale), counter of occurrences, strength of glasses, alcohol volume
 - どおり (通り): Street, Avenue
+- どうじ (同時): Simultaneous, concurrent, at the same time, synchronous, together
 
 ** ふ
 
@@ -59,9 +62,17 @@
 - ふね (船): Ship, boat, watercraft, tank, counter for boat-shaped containers
 - ふる (振る): To wave, shake, swing, reject, give up
 
+** が
+
+- がいぶ (外部): Outside of a building, exterior, outside of a group
+
 ** ご
 
 - ご (五): Five, 5
+
+** ぐ
+
+- ぐらい/くらい (): Approximately, about, around, or so, to the extent that, almost enough
 
 ** は
 
@@ -225,6 +236,7 @@
 - もくてき (目的): Purpose, goal, aim, objective, intention
 - もんだい (問題): Question (on a test or a doubt), problem, issue, trouble, controversy
 - もし (): If, in case, supposing
+- もと (元): Origin, source, basis, foundation, root
 - もつ (持つ): To hold in one's hand, carry, have, own, possess
 
 ** む
@@ -238,6 +250,7 @@
 ** な
 
 - ながい (長い): Long, prolonged, protracted
+- ないぶ (内部): Interior, inside, internal
 - なな/しち (七): Seven, 7
 - なぜ (何故): Why, how
 
@@ -257,6 +270,7 @@
 ** の
 
 - のこる (残る): To remain, be left
+- のむ (飲む): To drink, gulp, swallow, take medicine, engulf
 - のる (乗る): To get in vehicle, board, step on, mount, take part
 
 ** お
@@ -269,6 +283,7 @@
 - おく (奥): Inner part, depths, back of a house/drawer/building
 - おくゆき (奥行き): Depth, length
 - おもえる (思える): To seem, appear likely
+- おもいだす (思い出す): To recall, remember, recollect
 - おもう (思う): To think, consider, believe, imagine, expect
 - おんな/じょ (女): Woman, female, gal
 - おなじ (同じ): Same, identical, equal, equivalent, alike
@@ -277,6 +292,7 @@
 - おおき(な) (大き): Great, grand, large
 - おれ (俺): I, me
 - おる (居る): To be (animate), exist
+- おしえる (教える): To teach, instruct, tell, inform, show, preach
 - おそい (遅い): Slow, time-consuming, dull, late, unpunctual
 - おと (音): Sound, noise, note (musical)
 - おとこ/だん (男): Man, male, fellow, guy, manliness
@@ -302,8 +318,10 @@
 ** せ
 
 - せかい (世界): The world, universe, society
+- せいかつ(する) (生活): Life, living, livelihood
 - せいき (生気): Life, vitality, vigor, verve, spirit
 - せなか (背中): Back of the body
+- せつめい(する) (説明): Explanation, description, caption
 
 ** し
 
@@ -344,6 +362,7 @@
 
 - たかい (高い): High, tall, expensive
 - たしか(な) (確か): Sure, certain, accurate, if I'm not mistaken, if I recall correctly
+- たてる (立てる): To put up, erect, raise, thrust into, start a rumour
 - たつ (立つ): To stand up, rise, find oneself in a situation
 
 ** て
@@ -365,14 +384,20 @@
 
 - つづける (続ける): To continue, keep up, keep on
 - つぎ (次): Next, following, subsequent, stage, station
+- つぐ (継): To succeed a person, inherit, take over, mend, repair
 - つくる (作る): To make, produce, manufacture, prepare, brew
+- つる (釣る): To fish, angle, catch, lure in, allure
+- つつ (): While, even though, despite
 - つよい (強い): Strong, potent, powerful, resilient, trustworthy
 
 ** う
 
+- うち (内): Inside, within, among, amidst, in secret
 - うで (腕): Arm, skill, efforts, ability
 - うごく (動く): To move, stir, operate, vary, fluctuate
 - うける (受ける): To receive, get, sustain damage, accept a challenge, catch a ball
+- うま (馬): Horse
+- うなずく (頷く): To nod, bow one's head in assent, agree
 - うる (得る): To get, acquire, attain - As suffix: To be able to, can
 
 ** わ
@@ -387,7 +412,9 @@
 
 - やはり (): As expected, sure enough, in any case, even so, nonetheless
 - やがて (): Before long, soon, shortly, finally, eventually
+- やめる (): To stop an activity, cease, discontinue, end, quit
 - やおや (八百屋): Greengrocer, fruit and vegetable shop
+- やさい (野菜): Vegetable
 - やつ (奴): Fellow, guy, chap, he, she: All in a derogatory manner
 
 ** よ
@@ -406,4 +433,3 @@
 ** ず
 
 - ずっと (): Continuously in some state, throughout, all along, the whole time, all the way
-
