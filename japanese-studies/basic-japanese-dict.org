@@ -18,6 +18,10 @@
 - ばんごう (番号): Number, series of digits
 - ばしょ (場所): Place, location, spot, position, space
 
+** べ
+
+- べつ(な) (別): Distinction, difference, separate, extra, exception
+
 ** ぼ
 
 - ぼく (僕): I, me, you (when addressing a young boy)
@@ -65,6 +69,7 @@
 ** が
 
 - がいぶ (外部): Outside of a building, exterior, outside of a group
+- がっこう (学校): School
 
 ** ご
 
@@ -96,6 +101,7 @@
 - ひかる (光る): To shine, glitter, be bright
 - ひく (引く): To pull, tug, draw a line or card, haul, subtract
 - ひと (人): Person, someone, human
+- ひとびと (人々): People, men and women, everybody
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, required
 
 ** ひゃ
@@ -121,13 +127,16 @@
 - いきる (生きる): To live, exist, subsist, come to life, be enlivened
 - いみ(する) (意味): Meaning, significance, sense
 - いれる (入れる): To put in, let in, bring in, install, employ
+- いしき(する) (意識): Consciousness, awareness, sense
 - いう (言う/云う): To say, utter, name, declare, make a noise
 - いっしょに (一緒に): Together, at the same time
+- いっしゅん (一瞬): For an instant, for a moment
 
 ** じ
 
 - じ/とき (時): Time, hour, moment
 - じぶん (自分): Myself, oneself
+- じけん (事件): Event, affair, incident, trouble, scandal
 - じしん (自身): One's self, oneself
 
 ** じゅ
@@ -156,6 +165,7 @@
 - かれら (彼ら): They, them
 - かた (肩): Shoulder
 - かたち (形): Form, shape, figure
+- かざん (火山): Volcano
 - かぜ (風): Wind, breeze, draft
 - かず/すう (数): Number, amount, quantity
 
@@ -174,6 +184,7 @@
 - きみ (君): You, buddy, pal
 - きもち (気持ち): Feeling, sensation, mood, state of mind, sentiment
 - きる (切る): To cut, sever, turn off the light, disconnect, criticize
+- きる (着る): To wear, put on, take responsibility
 - きっと (): Surely, undoubtedly, almost certainly, most likely, ~90% chance of being true
 
 ** きょ
@@ -202,6 +213,7 @@
 - くち (口): Mouth, opening, hole, gap, orifice
 - くちびる (唇): Lip, lips
 - くださる (): To confer, bestow, kindly do for someone, oblige, do someone a favor
+- くい (悔い): Regret, repentance
 - くに (国): Country, state, region, province of Japan, land
 - くろい (黒い): Black, dark, suspicious, wicked, ill-boding
 - くるま/クルマ (車): Car, automobile, vehicle
@@ -212,6 +224,7 @@
 - まど (窓): Window
 - まなこ (眼): Eyeball
 - まるで (): As if, just like, quite
+- またたく (瞬く): To twinkle, flicker, waver, blink, wink, bat
 - まつ (待つ): To wait, await, look forward to
 - まったく (全く): Really, truly, indeed, wholly, perfectly
 
@@ -299,6 +312,10 @@
 - おう (王): King, ruler, sovereign, monarch, tycoon
 - おわる (終わる): To end, close, finish
 
+** りょ
+
+- りょう (両): Both, counter for carriages, counter for suits of clothing
+
 ** りゅ
 
 - りゅう (竜): Dragon, naga
@@ -344,10 +361,12 @@
 
 ** しゅ
 
+- しゅんかん (瞬間): Moment, second, instant
 - しゅうりょう(する) (終了): End, close, termination
 
 ** そ
 
+- そば/はた (側): Near, close, beside, vicinity, proximity
 - そんざい(する) (存在): Existence, being
 - そら/から/カラ (空): Sky, air, state of mind / Empty, emptiness
 - それでも (): But still, and yet, nevertheless, even so, notwithstanding
@@ -379,6 +398,7 @@
 - ところ (所): Place, spot, scene, site, area
 - とる (取る): To take, pick up, grab, obtain, keep
 - とおる (通る): To go by, travel along on a route, use a road, carry of a voice, pass on (like a customer's order to the kitchen)
+- とても/とっても (): Very, awfully, exceedingly
 
 ** つ
 
@@ -386,6 +406,7 @@
 - つぎ (次): Next, following, subsequent, stage, station
 - つぐ (継): To succeed a person, inherit, take over, mend, repair
 - つくる (作る): To make, produce, manufacture, prepare, brew
+- つまり (): That is to say, in other words, I mean, when all is said and done, to sum up
 - つる (釣る): To fish, angle, catch, lure in, allure
 - つつ (): While, even though, despite
 - つよい (強い): Strong, potent, powerful, resilient, trustworthy
@@ -397,6 +418,7 @@
 - うごく (動く): To move, stir, operate, vary, fluctuate
 - うける (受ける): To receive, get, sustain damage, accept a challenge, catch a ball
 - うま (馬): Horse
+- うみ (海): Sea, ocean, waters
 - うなずく (頷く): To nod, bow one's head in assent, agree
 - うる (得る): To get, acquire, attain - As suffix: To be able to, can
 
@@ -420,6 +442,7 @@
 ** よ
 
 - よぶ (呼ぶ): To call out to, invite, summon
+- よい/いい (良い): Good, excellent, fine, nice, pleasant
 - よこ/ヨコ (横): Horizontal (as opposed to vertical), side-to-side (as opposed to front-to-back), side of a box
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
