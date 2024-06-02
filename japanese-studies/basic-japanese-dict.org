@@ -10,6 +10,8 @@
 - あるく (歩く): To walk
 - あし (足): Foot, paw, leg
 - あたま (頭): Head, mind, intellect, tip, top structural component
+- あう (合う): To merge, unite, fit, match, agree with, be profitable, be equitable
+- あう (会う): To meet, encounter, see
 
 ** ば
 
@@ -37,6 +39,7 @@
 - ち (地): Ground, land, soil, territory, earth element
 - ちがう (違う): To differ, be different, disagree, be incorrect, be mistaken
 - ちいさい (小さい): Small, little, tiny, soft volume, trivial
+- ちかい (近い): Near, short distance, close (distance, time, relationship), soon, intimate
 - ちから (力): Power, force, strength, might, capability
 
 ** だ
@@ -163,6 +166,7 @@
 - からだ/しんたい ([身]体): Body, torso, constitution of the body
 - かれ (彼): He, him, boyfriend
 - かれら (彼ら): They, them
+- かるい (軽い): Light (not heavy or with little resistance), nimble, agile, slight, non-serious
 - かた (肩): Shoulder
 - かたち (形): Form, shape, figure
 - かざん (火山): Volcano
@@ -191,6 +195,10 @@
 
 - きょじゅう(する) (居住): Residence, abode, dwelling
 - きょうしつ (教室): Classroom, lecture room, department in a university
+
+** きゅ
+
+- きゅう (九): Nine, 9
 
 ** こ
 
@@ -262,7 +270,7 @@
 
 ** な
 
-- ながい (長い): Long, prolonged, protracted
+- ながい (長い): Long (distance, length, time), protracted, prolonged
 - ないぶ (内部): Interior, inside, internal
 - なな/しち (七): Seven, 7
 - なぜ (何故): Why, how
@@ -312,6 +320,10 @@
 - おう (王): King, ruler, sovereign, monarch, tycoon
 - おわる (終わる): To end, close, finish
 
+** り
+
+- りゆう (理由): Reason, pretext, motive
+
 ** りょ
 
 - りょう (両): Both, counter for carriages, counter for suits of clothing
@@ -345,6 +357,7 @@
 - しばらく(する) (): For a moment, for a minute, for a while, for some time, for the time being, for now
 - しごと(する) (仕事): Work, job, labour, occupation, employment
 - しいる (強いる): To force, compel, coerce, press, impose
+- しかも (): Moreover, furthermore, nevertheless
 - しかし (): However, but
 - しんじる (信じる): To believe in, place trust in, confide in, have faith in
 - しんぱい(な/する) (心配): Worry, concern, anxiety, uneasiness, fear
@@ -421,6 +434,7 @@
 - うみ (海): Sea, ocean, waters
 - うなずく (頷く): To nod, bow one's head in assent, agree
 - うる (得る): To get, acquire, attain - As suffix: To be able to, can
+- うしろ (後ろ): Back, behind, rear
 
 ** わ
 
@@ -446,6 +460,7 @@
 - よこ/ヨコ (横): Horizontal (as opposed to vertical), side-to-side (as opposed to front-to-back), side of a box
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
+- よう (用): Business, task, errand, use, purpose
 - ようす (様子): State of affairs, situation, circumstances, look, sign
 
 ** ゆ
