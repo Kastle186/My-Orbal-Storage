@@ -62,6 +62,7 @@
                         '(("\\_<ARGS\\_>"           . font-lock-variable-name-face)
 
                           ("\\_<append[!]?\\_>"     . font-lock-builtin-face)
+                          ("\\_<cmp\\_>"            . font-lock-builtin-face)
                           ("\\_<eachline\\_>"       . font-lock-builtin-face)
                           ("\\_<eof\\_>"            . font-lock-builtin-face)
                           ("\\_<findfirst\\_>"      . font-lock-builtin-face)
