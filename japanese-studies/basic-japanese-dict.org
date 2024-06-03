@@ -2,11 +2,14 @@
 
 ** あ
 
+- あがる (上がる): To rise, go up, ascend, improve, be promoted
 - あげる (上げる): To raise, elevate, launch, give to someone, surface from beneath
 - あいだ (間): Space between, gap, interval, duration, period of time
 - あいて (相手): Companion, partner, company, opponent, other party
+- あかい (赤い): Red, crimson, scarlet, vermillion, shades of red
 - あく (開く): To open, be empty, be vacant, be open, have an interval
 - あまり(な) (): Remainder, rest, not much, extreme, tremendous
+- あおい (青い): Blue, azure, green when referring to fruits, vegetables, and traffic lights
 - あるく (歩く): To walk
 - あし (足): Foot, paw, leg
 - あたま (頭): Head, mind, intellect, tip, top structural component
@@ -44,6 +47,7 @@
 
 ** だ
 
+- だい (台): Stand, rack, pedestal, level (e.g. price), range (e.g. physical units), period of time, viewing platform, tower
 - だいいち (第一): First, foremost, most important, primary, number one in importance
 - だまる (黙る): To be silent, to say nothing
 - だれ (誰): Who
@@ -61,6 +65,7 @@
 
 - ど (度): Degree (angle, temperature, scale), counter of occurrences, strength of glasses, alcohol volume
 - どおり (通り): Street, Avenue
+- どうが (動画): Video, clip, animation
 - どうじ (同時): Simultaneous, concurrent, at the same time, synchronous, together
 
 ** ふ
@@ -72,6 +77,7 @@
 ** が
 
 - がいぶ (外部): Outside of a building, exterior, outside of a group
+- がぞう (画像): Image, picture, portrait
 - がっこう (学校): School
 
 ** ご
@@ -139,6 +145,8 @@
 ** じ
 
 - じ/とき (時): Time, hour, moment
+- じどう (自動): Automatic, intransitive verb
+- じどう (児童): Children, juvenile
 - じぶん (自分): Myself, oneself
 - じけん (事件): Event, affair, incident, trouble, scandal
 - じしん (自身): One's self, oneself
@@ -155,6 +163,7 @@
 - かげ (影): Shadow, silhouette, reflection, ominous sign, trace
 - かいし(する) (開始): Start, commencement, beginning, initiation
 - かいしゃ (会社): Company, corporation, workplace
+- かこむ (囲む): To surround, encircle, enclose, fence, lay siege to, wall in
 - かく (書く): To write, compose, pen, draw, paint
 - かみ (髪): Hair on the head
 - かみ(な) (神): God, deity, divinity, spirit, godly
@@ -162,6 +171,7 @@
 - かんじ (感じ): Feeling, sense, impression
 - かんじる (感じる): To feel, sense, experience
 - かんけい(する) (関係): Relationship, connection, participation, connected to, sexual relationship
+- かなり(な) (): Considerably, fairly, quite, rather, pretty (as counting adverb)
 - かのじょ (彼女): She, her, girlfriend
 - かお (顔): Face, visage, expression
 - からだ/しんたい ([身]体): Body, torso, constitution of the body
@@ -348,9 +358,11 @@
 
 ** さ
 
+- さい (歳): Suffix for years old count
 - さいご (最後): End, conclusion, last, final, latest
 - さいしん (最新): Latest, newest, late-breaking news
 - さいしょ (最初): Beginning, first, onset
+- さん (三): Three, 3
 - さらに (更に): Furthermore, again, after all, more and more, moreover, even more
 - さっき (): A short while ago, a moment ago, just now
 
@@ -385,7 +397,10 @@
 
 ** しゅ
 
+- しゅどう (手動): Manual operation
 - しゅんかん (瞬間): Moment, second, instant
+- しゅうい (周囲): Surroundings, environs, circumference
+- しゅうきょう (宗教): Religion, belief, faith
 - しゅうりょう(する) (終了): End, close, termination
 
 ** そ
@@ -394,6 +409,7 @@
 - そんざい(する) (存在): Existence, being
 - そら/から/カラ (空): Sky, air, state of mind / Empty, emptiness
 - それでも (): But still, and yet, nevertheless, even so, notwithstanding
+- そうぞう(する) (想像): Imagination, supposition, guess
 
 ** す
 
@@ -403,8 +419,10 @@
 
 ** た
 
+- たべる (食べる): To eat, live off a salary, subsist on
 - たかい (高い): High, tall, expensive
 - たしか(な) (確か): Sure, certain, accurate, if I'm not mistaken, if I recall correctly
+- たる (足る): To be sufficient, enough, worth doing, worthy of, do in the job
 - たてる (立てる): To put up, erect, raise, thrust into, start a rumour
 - たつ (立つ): To stand up, rise, find oneself in a situation
 
@@ -446,6 +464,7 @@
 - うみ (海): Sea, ocean, waters
 - うなずく (頷く): To nod, bow one's head in assent, agree
 - うる (得る): To get, acquire, attain - As suffix: To be able to, can
+- うしなう (失う): To lose, miss a chance/opportunity, concede in games
 - うしろ (後ろ): Back, behind, rear
 - うつくしい (美しい): Beautiful, pretty, lovely, sweet, pure
 
@@ -466,16 +485,19 @@
 - やおや (八百屋): Greengrocer, fruit and vegetable shop
 - やさい (野菜): Vegetable
 - やつ (奴): Fellow, guy, chap, he, she: All in a derogatory manner
+- やっぱり/やはり (): As expected, sure enough, just as one thought, all the same, nonetheless
 
 ** よ
 
 - よぶ (呼ぶ): To call out to, invite, summon
 - よい/いい (良い): Good, excellent, fine, nice, pleasant
 - よこ/ヨコ (横): Horizontal (as opposed to vertical), side-to-side (as opposed to front-to-back), side of a box
+- よむ (読む): To read, recire, chant, decipher, guess
 - よん (四): Four, 4
 - よる (夜): Evening, night, dinner time
 - よう (用): Business, task, errand, use, purpose
 - ようす (様子): State of affairs, situation, circumstances, look, sign
+- よやく(する) (予約): Reservation, appointment, booking, advance order, subscription
 
 ** ゆ
 
