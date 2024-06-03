@@ -87,6 +87,7 @@
 - はち (八): Eight, 8
 - はいる (入る): To enter, go into, join
 - はじまる/はじめる (始[ま|め]る): To start, begin, commence, initiate, open up
+- はじめて (初めて): First time, only after, not until
 - はなれる (離れる): To be separated, distant, leave a job, lose connection with, drift away from
 - はなし (話): Talk, speech, chat, conversation, discussion
 - はなす (話す): To talk, speak, converse, chat, tell
@@ -272,6 +273,7 @@
 
 - ながい (長い): Long (distance, length, time), protracted, prolonged
 - ないぶ (内部): Interior, inside, internal
+- なく (泣く): To cry, weep, sob
 - なな/しち (七): Seven, 7
 - なぜ (何故): Why, how
 
@@ -302,6 +304,7 @@
 - おこなう (行う): To perform, conduct, carry out by oneself
 - おく (置く): To put, place, leave alone/behind, put down a tool, do something in advance
 - おく (奥): Inner part, depths, back of a house/drawer/building
+- おくじょう (屋上): Rooftop
 - おくゆき (奥行き): Depth, length
 - おもえる (思える): To seem, appear likely
 - おもいだす (思い出す): To recall, remember, recollect
@@ -315,10 +318,16 @@
 - おる (居る): To be (animate), exist
 - おしえる (教える): To teach, instruct, tell, inform, show, preach
 - おそい (遅い): Slow, time-consuming, dull, late, unpunctual
+- おす (押す): To push, press, apply pressure from above, force, make sure
 - おと (音): Sound, noise, note (musical)
 - おとこ/だん (男): Man, male, fellow, guy, manliness
 - おう (王): King, ruler, sovereign, monarch, tycoon
 - おわる (終わる): To end, close, finish
+
+** れ
+
+- れんちゅう (連中): Bunch, gang, pack, group (derogatory), troupe
+- れんらく(する) (連絡): Contact, get in touch, communication, correspondence, connection (with transportation or between matters)
 
 ** り
 
@@ -327,6 +336,7 @@
 ** りょ
 
 - りょう (両): Both, counter for carriages, counter for suits of clothing
+- りょうて (両手): Both hands, both arms, secret jargon ten
 
 ** りゅ
 
@@ -359,6 +369,7 @@
 - しいる (強いる): To force, compel, coerce, press, impose
 - しかも (): Moreover, furthermore, nevertheless
 - しかし (): However, but
+- しく (敷く): To spread, lay out, impose widely
 - しんじる (信じる): To believe in, place trust in, confide in, have faith in
 - しんぱい(な/する) (心配): Worry, concern, anxiety, uneasiness, fear
 - しぬ (死ぬ): To die, pass away
@@ -400,6 +411,7 @@
 ** て
 
 - て (手): Hand, forepaw, hand of cards, handle, help
+- ていえん (庭園): Garden, park
 - てき (敵): Rival, adversary, menace, threat, enemy
 - てつだう (手伝う): To help, assist, aid, contribute to, be a factor in
 
@@ -435,6 +447,7 @@
 - うなずく (頷く): To nod, bow one's head in assent, agree
 - うる (得る): To get, acquire, attain - As suffix: To be able to, can
 - うしろ (後ろ): Back, behind, rear
+- うつくしい (美しい): Beautiful, pretty, lovely, sweet, pure
 
 ** わ
 
@@ -449,6 +462,7 @@
 - やはり (): As expected, sure enough, in any case, even so, nonetheless
 - やがて (): Before long, soon, shortly, finally, eventually
 - やめる (): To stop an activity, cease, discontinue, end, quit
+- やね (屋根): Roof
 - やおや (八百屋): Greengrocer, fruit and vegetable shop
 - やさい (野菜): Vegetable
 - やつ (奴): Fellow, guy, chap, he, she: All in a derogatory manner
@@ -466,6 +480,7 @@
 ** ゆ
 
 - ゆび (指): Finger, toe, digit
+- ゆめ (夢): Dream
 - ゆっくり(する) (): Slowly, unhurriedly, without haste, leisurely, with time to spare
 
 ** ず
