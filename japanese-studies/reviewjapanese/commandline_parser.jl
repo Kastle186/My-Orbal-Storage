@@ -1,10 +1,10 @@
 # Command Line Parsing Little Tool
 
-using ArgParse
-
 """
 """
 module CommandLineParser
+
+using ArgParse
 
 export parsecmdline
 
@@ -16,24 +16,24 @@ function parsecmdline_helper(args::Vector{String})
     @add_arg_table s begin
         "--word-files"
             help = "File(s) containing the words you wish to practice, separated by spaces."
-            arg_type = Vector{String}
+            arg_type = String
             required = true
             nargs = '+'
 
         "--ask"
-            help = "What you wish to be asked: Kanji or Kana?"
+            help = "What you wish to be asked: Kanji or Kana&English?"
             arg_type = String
-            required = false
+            required = true
 
         "--answer"
             help = "What you wish to answer: Kana or English?"
             arg_type = String
-            required = false
+            required = true
 
         "--num-questions"
             help = "How many questions do want the quiz to have?"
             arg_type = Int
-            required = false
+            required = true
     end
 
     return parse_args(args, s)
@@ -63,34 +63,28 @@ function validate_args(parsed_args::Dict{String,Any})
     # - TODO EXTRA: Give me a word in English, and I reply with the Japanese Kanji.
     # - TODO LONGER TERM: Grammar rules.
 
-    toask = haskey(parsed_args, "ask") ? lowercase(parsed_args["ask"]) : ""
+    toask = lowercase(parsed_args["ask"])
     askprompt = "Enter the question's prompt (kanji/kana&english): "
 
-    while cmp(toask, "kanji") != 0 || cmp(toask, "kana&english") != 0
-        if ! isempty(toask)
-            print("Apologies, but '$toask' os not a supported type of question. ")
-        end
-
+    while cmp(toask, "kanji") != 0 && cmp(toask, "kana&english") != 0
+        print("Apologies, but '$toask' is not a supported type of question. ")
         print("$askprompt: ")
         toask = lowercase(readline(stdin))
     end
     parsed_args["ask"] = toask
 
     validanswers = cmp(toask, "kanji") == 0 ? ["kana", "english"] : ["kanji"]
-    toans = haskey(parsed_args, "answer") ? lowercase(parsed_args["answer"]) : ""
+    toans = lowercase(parsed_args["answer"])
     ansprompt = "Enter the type of answer you want to give ($(join(validanswers, '/'))): "
 
-    while ! toans in validanswers
-        if ! isempty(toans)
-            print("Apologies, but '$toans' is not a possible answer type in this case. ")
-        end
-
+    while ! (toans in validanswers)
+        print("Apologies, but '$toans' is not a possible answer type in this case. ")
         print("$ansprompt: ")
         toans = lowercase(readline(stdin))
     end
     parsed_args["answer"] = toans
 
-    numqs = haskey(parsed_args, "num-questions") ? parsed_args["num-questions"] ? 0
+    numqs = parsed_args["num-questions"]
     qsprompt = "Enter the number of questions you want the quiz to have: "
 
     while numqs <= 0
