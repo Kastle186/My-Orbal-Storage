@@ -1,0 +1,26 @@
+* Japanese/English Dictionary From My Stay in Japan
+
+** ひ
+
+- ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
+
+** き
+
+- きそん(する) (既存): Existing
+
+** きょ
+
+- きょか(する) (許可): Permission, approval, authorization
+
+** な
+
+- なまえくうかん (名前空間): Namespace
+
+** た
+
+- たとえば (例えば): For example, for instance
+
+** よ
+
+- よびだし(する) (呼び出し): Call, summons, paging
+
