@@ -35,10 +35,34 @@ def parse_cmdline(args: list[str]) -> argparse.Namespace:
 
     return parser.parse_args()
 
-# ---------- Get_Words_From_Files() ----------
+# ---------- Get_Words_From_File() ----------
 
-def get_words_from_files(files: list[str]) -> list[JPWord]:
+def get_words_from_file(pool: list[JPWord], filename: str) -> None:
+    with open(filename) as fp:
+        for line in fp:
+            if not line.startswith("- "): continue
+
+            # Parts[0] = Dash denoting the start of the list item.
+            # Parts[1] = Hiragana Writing
+            # Parts[2] = Kanji Writing
+            # Parts[3..] = Meanings in English
+
+            parts = line.strip().split(" ")
+            kanawriting = parts[1]
+            kanjiwriting = ''.join([c for c in parts[2] if not c in '():'])
+            english = ' '.join(parts[3:])
+
+            word = JPWord(english, kanawriting, kanjiwriting)
+            pool.append(word)
+
+# ---------- Generate_Word_Pool() ----------
+
+def generate_word_pool(files: list[str]) -> list[JPWord]:
     word_pool = []
+
+    for f in files:
+        get_words_from_file(word_pool, f)
+
     return word_pool
 
 # ---------- Main() ----------
