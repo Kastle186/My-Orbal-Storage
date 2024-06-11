@@ -2,6 +2,7 @@
 
 import sys
 import argparse
+import random
 
 # ********** JPWord Class **********
 
@@ -27,7 +28,7 @@ def parse_cmdline(args: list[str]) -> argparse.Namespace:
                         help='List of files containing the words to review,' \
                              ' separated by spaces.')
 
-    parser.add_argument('--quiz-type', choices=['read','write'], metavar='TYPE',
+    parser.add_argument('--quiz-kind', choices=['read','write'], metavar='TYPE',
                         type=str, help='Whether you want to practice reading or writing.')
 
     parser.add_argument('--num-questions', metavar='NUM', type=int,
@@ -52,7 +53,7 @@ def get_words_from_file(pool: list[JPWord], filename: str) -> None:
             kanjiwriting = ''.join([c for c in parts[2] if not c in '():'])
             english = ' '.join(parts[3:])
 
-            word = JPWord(english, kanawriting, kanjiwriting)
+            word = JPWord(english, kanawriting, kanjiwriting)# ---------- Run_Quiz() ----------
             pool.append(word)
 
 # ---------- Generate_Word_Pool() ----------
@@ -65,10 +66,27 @@ def generate_word_pool(files: list[str]) -> list[JPWord]:
 
     return word_pool
 
+# ---------- Run_Quiz() ----------
+
+def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
+    q_counter = 1
+
+    while q_counter <= num_questions:
+        # Run Quiz!
+
+# ---------- Setup_And_Run_App() ----------
+
+def setup_and_run_app(params: argparse.Namespace) -> None:
+    # TODO: Add params validation.
+    word_pool = generate_word_pool(params.words_files)
+    random.shuffle(word_pool)
+    run_quiz(word_pool, params.quiz_kind, params.num_questions)
+
 # ---------- Main() ----------
 
 def main(args: list[str]) -> int:
     params = parse_cmdline(args)
+    setup_and_run_app(params)
     return 0
 
 main(sys.argv)
