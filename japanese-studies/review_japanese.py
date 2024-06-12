@@ -94,8 +94,8 @@ def ask(question: JPWord, qkind: str) -> str:
             from_prompt = f"of '{question.kana}' when it means '{question.english}'"
             to_prompt = 'the kanji'
 
-    answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n")
-    return answer.lower()
+    answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
+    return answer.lower() if len(answer) > 0 else "<no response>"
 
 # ---------- Run_Quiz() ----------
 
@@ -108,15 +108,13 @@ def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
         q_counter += 1
         question = random.choice(word_pool)
 
-        if kind == 'read':
-            expected_answer_type = 'english'
-        elif kind == 'write':
-            expected_answer_type = 'kanji' if question.kanji else 'kana'
+        expected_answer_type = 'english' if kind == 'read' else 'kanji'
+        if not question.kanji: expected_answer_type = 'kana'
 
         answer = ask(question, kind)
         expected = getattr(question, expected_answer_type).lower()
 
-        if answer == expected:
+        if answer in expected:
             corrects.append(QA(question, answer))
         else:
             misses.append(QA(question, answer))
