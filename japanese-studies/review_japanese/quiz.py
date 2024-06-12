@@ -1,9 +1,8 @@
-#!/usr/bin/python
+# File: quiz.py
 
-import argparse
 import random
-import sys
 
+from argparse import Namespace
 from collections import namedtuple
 
 # ********** JPWord Class **********
@@ -22,25 +21,6 @@ class JPWord:
 # ********** Question/Answer Set Type **********
 
 QA = namedtuple('QA', ['question', 'answer'])
-
-# ---------- Parse_CmdLine() ----------
-
-def parse_cmdline(args: list[str]) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        prog='review_japanese.py',
-        description='Little script to review and practice my japanese knowledge!')
-
-    parser.add_argument('--words-files', metavar='FILE', nargs='+', type=str,
-                        help='List of files containing the words to review,' \
-                             ' separated by spaces.')
-
-    parser.add_argument('--quiz-kind', choices=['read','write'], metavar='TYPE',
-                        type=str, help='Whether you want to practice reading or writing.')
-
-    parser.add_argument('--num-questions', metavar='NUM', type=int,
-                        help='Number of questions you want this game to include :)')
-
-    return parser.parse_args()
 
 # ---------- Get_Words_From_File() ----------
 
@@ -97,30 +77,6 @@ def ask(question: JPWord, qkind: str) -> str:
     answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
     return answer.lower() if len(answer) > 0 else "<no response>"
 
-# ---------- Run_Quiz() ----------
-
-def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
-    q_counter = 1
-    corrects = []
-    misses = []
-
-    while q_counter <= num_questions:
-        q_counter += 1
-        question = random.choice(word_pool)
-
-        expected_answer_type = 'english' if kind == 'read' else 'kanji'
-        if not question.kanji: expected_answer_type = 'kana'
-
-        answer = ask(question, kind)
-        expected = getattr(question, expected_answer_type).lower()
-
-        if answer in expected:
-            corrects.append(QA(question, answer))
-        else:
-            misses.append(QA(question, answer))
-
-    display_results(corrects, misses, num_questions)
-
 # ---------- Display_Results() ----------
 
 def display_results(corrects: list[QA], misses: list[QA], num_questions: int) -> None:
@@ -143,19 +99,34 @@ def display_results(corrects: list[QA], misses: list[QA], num_questions: int) ->
         print(f"\n{str(correct.question)}")
         print(f"You answered: '{correct.answer}'")
 
+# ---------- Run_Quiz() ----------
+
+def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
+    q_counter = 1
+    corrects = []
+    misses = []
+
+    while q_counter <= num_questions:
+        q_counter += 1
+        question = random.choice(word_pool)
+
+        expected_answer_type = 'english' if kind == 'read' else 'kanji'
+        if not question.kanji:
+            expected_answer_type = 'kana'
+
+        answer = ask(question, kind)
+        expected = getattr(question, expected_answer_type).lower()
+
+        if answer in expected:
+            corrects.append(QA(question, answer))
+        else:
+            misses.append(QA(question, answer))
+
+    display_results(corrects, misses, num_questions)
+
 # ---------- Setup_And_Run_App() ----------
 
-def setup_and_run_app(params: argparse.Namespace) -> None:
-    # TODO: Add params validation.
+def setup_and_run_app(params: Namespace) -> None:
     word_pool = generate_word_pool(params.words_files)
     random.shuffle(word_pool)
     run_quiz(word_pool, params.quiz_kind, params.num_questions)
-
-# ---------- Main() ----------
-
-def main(args: list[str]) -> int:
-    params = parse_cmdline(args)
-    setup_and_run_app(params)
-    return 0
-
-main(sys.argv)
