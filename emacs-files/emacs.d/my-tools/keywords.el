@@ -117,3 +117,6 @@
                           ("\\_<Symbol\\_>"         . font-lock-type-face)
                           ("\\_<Tuple\\_>"          . font-lock-type-face)
                           ("\\_<Vector\\_>"         . font-lock-type-face)))
+
+(font-lock-add-keywords 'python-mode
+                        '(("\\_<namedtuple\\_>" . font-lock-type-face)))
