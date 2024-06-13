@@ -34,8 +34,9 @@ def parse_cmdline(args: list[str]) -> argparse.Namespace | None:
                         help='List of files containing the words to review,' \
                              ' separated by spaces.')
 
-    parser.add_argument('--quiz-kind', choices=['read','write'], metavar='TYPE',
-                        type=str, help='Whether you want to practice reading or writing.')
+    parser.add_argument('--quiz-kind', choices=['translate','read','write'], metavar='TYPE',
+                        type=str, help='Whether you want to practice translating,' \
+                                       ' reading, or writing.')
 
     parser.add_argument('--num-questions', metavar='NUM', type=int,
                         help='Number of questions you want this game to include :)')

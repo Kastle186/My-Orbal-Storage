@@ -14,9 +14,11 @@ class JPWord:
         self.kanji = kanji
 
     def __str__(self) -> str:
-        return "\n".join([f"English: {self.english}",
-                          f"Kana: {self.kana}",
-                          f"Kanji: {self.kanji}"])
+        strrep = f"- English: {self.english}\n" \
+                 f"  Kana: {self.kana}"
+        if self.kanji:
+            strrep += f"\n  Kanji: {self.kanji}"
+        return strrep
 
 # ********** Question/Answer Set Type **********
 
@@ -58,13 +60,15 @@ def ask(question: JPWord, qkind: str) -> str:
     from_prompt = ''
     to_prompt = ''
 
-    if qkind == 'read':
-        from_prompt = 'of the following '
+    if qkind == 'translate' or qkind == 'read':
+        from_prompt = 'of the following'
         to_prompt = 'the meaning'
+
         if not question.kanji:
-            from_prompt += f"word '{question.kana}'"
+            from_prompt += f" word '{question.kana}'"
         else:
-            from_prompt += f"kanji '{question.kanji}'"
+            from_prompt += f" kanji '{question.kanji}'"
+            to_prompt += ' and kana writing' if qkind == 'read' else ''
 
     elif qkind == 'write':
         if not question.kanji:
@@ -76,6 +80,25 @@ def ask(question: JPWord, qkind: str) -> str:
 
     answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
     return answer.lower() if len(answer) > 0 else "<no response>"
+
+# ---------- Check_Answer() ----------
+
+def check_answer(question: JPWord, answer: str, kind: str) -> bool:
+    if kind == 'translate' or (kind == 'read' and not question.kanji):
+        return answer in question.english
+
+    if kind == 'read' and question.kanji:
+        try:
+            en, jp = map(lambda x: x.strip(), answer.split(','))
+        except ValueError:
+            return False
+        else:
+            return en in question.english and jp == question.kana
+
+    if kind == 'write':
+        return True
+
+    return False
 
 # ---------- Display_Results() ----------
 
@@ -109,15 +132,9 @@ def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
     while q_counter <= num_questions:
         q_counter += 1
         question = random.choice(word_pool)
-
-        expected_answer_type = 'english' if kind == 'read' else 'kanji'
-        if not question.kanji:
-            expected_answer_type = 'kana'
-
         answer = ask(question, kind)
-        expected = getattr(question, expected_answer_type).lower()
 
-        if answer in expected:
+        if check_answer(question, answer, kind):
             corrects.append(QA(question, answer))
         else:
             misses.append(QA(question, answer))
