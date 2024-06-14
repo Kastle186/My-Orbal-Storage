@@ -85,7 +85,11 @@ def ask(question: JPWord, qkind: str) -> str:
 
 def check_answer(question: JPWord, answer: str, kind: str) -> bool:
     if kind == 'translate' or (kind == 'read' and not question.kanji):
-        return answer in question.english
+        return answer in question.english.lower()
+
+    # FIXME: Some words have multiple kana writings, which are separated by
+    #        forward slashes '/'. Only one is enough to get the question right,
+    #        so handle this special case.
 
     if kind == 'read' and question.kanji:
         try:
@@ -93,7 +97,7 @@ def check_answer(question: JPWord, answer: str, kind: str) -> bool:
         except ValueError:
             return False
         else:
-            return en in question.english and jp == question.kana
+            return en in question.english.lower() and jp == question.kana
 
     if kind == 'write':
         return True
