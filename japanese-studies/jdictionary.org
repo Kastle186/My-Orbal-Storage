@@ -1,11 +1,28 @@
 * Japanese/English Dictionary From My Stay in Japan
 
+** あ
+
+- あんぜん(な) (安全): Safety, security
+
 ** ひ
 
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
 
+** へ
+
+- へんしん(する) (返信): Reply, answer
+
+** か
+
+- かんり(する) (管理): Control, management of a business/account
+
+** け
+
+- けんさく(する) (検索): Look up, search for, retrieve data, refer to, search engines' prompt
+
 ** き
 
+- きりかえ (切り替え): Exchange, conversion, switchover
 - きそん(する) (既存): Existing
 
 ** きょ
@@ -16,11 +33,49 @@
 
 - なまえくうかん (名前空間): Namespace
 
+** れ
+
+- れんけい(する) (連携): Cooperation, coordination, link
+- れんらく(する) (連絡): Contact, get in touch, communication, connection with transportation or between matters, join a railway line
+
+** さ
+
+- さんか(する) (参加): Participation, joining, entry
+
+** せ
+
+- せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
+- せつぞく(する) (接続): Connection, attachment, union, joint, link
+
+** し
+
+- しんせい(する) (申請): Application, request, petition
+
+** しょ
+
+- しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
+
+** そ
+
+- そうしん(する) (送信): Transmission, sending
+
 ** た
 
+- たいせき(する) (退席): Leaving one's seat, afk
 - たとえば (例えば): For example, for instance
+
+** と
+
+- とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
+
+** つ
+
+- ついか(する) (追加): Addition, supplement, appending
 
 ** よ
 
 - よびだし(する) (呼び出し): Call, summons, paging
 
+** ぜ
+
+- ぜんいん (全員): All members, all hands, everyone, everybody, whole crew
