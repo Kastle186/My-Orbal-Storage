@@ -12,6 +12,10 @@
 
 - へんしん(する) (返信): Reply, answer
 
+** ほ
+
+- ほじょ(する) (補助): Assistance, support, aid, help, subsidy
+
 ** か
 
 - かんり(する) (管理): Control, management of a business/account
@@ -33,6 +37,14 @@
 
 - なまえくうかん (名前空間): Namespace
 
+** に
+
+- にゅうりょく(する) (入力): Input, data entry
+
+** お
+
+- おんせい (音声): Voice, speech, sound or audio
+
 ** れ
 
 - れんけい(する) (連携): Cooperation, coordination, link
@@ -44,8 +56,9 @@
 
 ** せ
 
-- せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
+- せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
 - せつぞく(する) (接続): Connection, attachment, union, joint, link
+- せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
 
 ** し
 
@@ -54,6 +67,10 @@
 ** しょ
 
 - しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
+
+** しゅ
+
+- しゅつりょく(する) (出力): Output (electrical, signal, data, etc)
 
 ** そ
 

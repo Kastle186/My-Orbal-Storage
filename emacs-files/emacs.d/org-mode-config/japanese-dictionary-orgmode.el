@@ -2,11 +2,66 @@
 ;;  Japanese Dictionary Org-Mode Configuration!
 ;; *********************************************
 
-(setq is-for-lexicon nil)
+(setq word-first-syllable "")
 
 ;; *********************************
 ;;  New Item Data Prompt Functions!
 ;; *********************************
+
+;; ********************
+;; get-word-for-lexicon
+;; ********************
+;; Helper function to add word to a lexicon because Emacs' org-mode templates are
+;; being annoying.
+
+(defun get-word-for-lexicon ()
+  "Helper function to add word to a lexicon."
+  (get-word-data nil))
+
+
+;; ***********************
+;; get-word-for-dictionary
+;; ***********************
+;; Helper function to add word to a dictionary because Emacs' org-mode templates
+;; are being annoying.
+
+(defun get-word-for-dictionary ()
+  "Helper function to add word to a dictionary."
+  (get-word-data t))
+
+
+;; *************
+;; get-word-data
+;; *************
+;; Get the new word's information: Hiragana writing, Kanji writing if the word has
+;; one, and the word's definition in English. Most words have at least a kanji in
+;; their way of writing them. We also want to record the hiragana-only writing to
+;; be able to easily review how they are pronounced, since memorizing kanji's
+;; pronunciations is... well... not gonna happen.
+
+(defun get-word-data (dict-only)
+  "Prompt for the word's necessary information to record it to the lexicon and/or
+the dictionary."
+  (let ((hiragana-writing (read-string "Enter the word's hiragana spelling: "))
+        (kanji-writing (read-string "Enter the word's kanji representation: "))
+        (word-type (get-suru-na-if-so))
+        (english-def (read-string "Enter the word's definition in English: ")))
+
+    ;; FIXME: For dictionary-only inputs, it doesn't create the new syllable
+    ;;        section, it only appends the word at the end.
+
+    (when (and (not dict-only)
+               (y-or-n-p "Will this word be added to a dictionary as well? "))
+      (record-word-to-dictionary hiragana-writing
+                                 kanji-writing
+                                 word-type
+                                 english-def))
+    (format "%s%s (%s): %s\n"
+            hiragana-writing
+            word-type
+            kanji-writing
+            english-def)))
+
 
 ;; *****************
 ;; get-suru-na-if-so
@@ -30,87 +85,24 @@ and return its suffix if needed."
           ((string-equal word-type "")     ""))))
 
 
-;; ***********************
-;; (get-word-written-form)
-;; ***********************
-;; Most words have at least a kanji in their way of writing them. We also want to
-;; record the hiragana-only writing to be able to easily review how they are
-;; pronounced, since memorizing kanji's pronunciations is... not gonna happen.
+;; *************************
+;; get-dictionary-word-place
+;; *************************
+;; Explanation goes here :)
 
-(defun get-word-written-form (spelling-type)
-  "Prompt for the word's writing. This function is usually called twice per word
-capture: One for kanji+hiragana or katakana, and one for hiragana-only."
-  (let ((word-writing (read-string
-                       (format "Enter the word's %s spelling: " spelling-type))))
-    (format "%s" word-writing)))
-
-
-;; ************
-;; get-new-word
-;; ************
-;; Get the new word's information: Hiragana writing, Kanji writing if the word has
-;; one, and the word's definition in English.
-
-(defun get-new-word ()
-  "Prompt for the word's necessary information to record it to the lexicon and
-the dictionary."
-  (let ((hiragana-writing (get-word-written-form "hiragana"))
-        (kanji-writing (get-word-written-form "kanji"))
-        (word-type (get-suru-na-if-so))
-        (definition (read-string "Enter the word's definition in English: ")))
-
-    (record-word-to-dictionary hiragana-writing kanji-writing word-type definition)
-    (if (y-or-n-p "Will this word be added to a lexicon file? ")
+(defun get-dictionary-word-place ()
+  "Prompt for the dictionary file path, and search for the starting syllable of the
+word to add it there. If not found, add a new section with said syllable, and write
+down the word there."
+  (let ((dict-file (read-file-name "Enter the dictionary's file path: ")))
+    (find-file dict-file)
+    (if-let ((header-pos (org-find-exact-headline-in-buffer word-first-syllable)))
         (progn
-          (setq is-for-lexicon t)
-          (format "%s%s (%s): %s\n"
-                  kanji-writing
-                  word-type
-                  hiragana-writing
-                  definition))
-      nil)))
-
-
-;; ****************
-;; get-new-sentence
-;; ****************
-;; Get an example sentence in Japanese with it's English translation.
-
-(defun get-new-sentence ()
-  "Prompt for the example sentence in Japanese, and then for its English translation.
-If the 'good/official' English translation differs from how it would be if translated
-literally, there is another prompt afterwards to retrieve this case."
-  (setq is-for-lexicon t)
-  (let ((japanese-sentence (read-string
-                            "Enter the example sentence in Japanese: "))
-        (english-translation (read-string
-                              "Enter the sentence's English translation: "))
-        (literal-translation (read-string
-                              "Enter the literal translation if it differs: ")))
-
-    (if (string-empty-p literal-translation)
-        (setq english-translation (concat english-translation "."))
-      (setq english-translation (concat english-translation ". (/Lit./ " literal-translation ").")))
-    (format "*- %s -> %s*" japanese-sentence english-translation)))
-
-
-;; ********************
-;; get-word-found-place
-;; ********************
-;; We are adding support to select the file where we want to add the new word
-;; at will during runtime. This little function is like the main hub that delegates
-;; finding the word's new place to the appropriate function, depending on what kind
-;; of file we will be working with.
-
-(defun get-word-found-place ()
-  "Ask whether this word will be added to a lexicon file, and find the appropriate
-location for it in this case. If not, then it means it will only be added to a
-dictionary, and for that case, everything is taken care of by the dictionary word
-recording function."
-  (when is-for-lexicon
-    (let ((lex-file (read-file-name "Enter the lexicon's file path: ")))
-      (get-lexicon-word-place lex-file)))
-  (setq is-for-lexicon nil))
+          (goto-char header-pos)
+          (if (org-goto-sibling)
+              (forward-line -1)
+            (goto-char (point-max))))
+      (goto-char (point-max)))))
 
 
 ;; **********************
@@ -120,18 +112,19 @@ recording function."
 ;; we have to specify said field when filing the individual words' information. This
 ;; function asks and retrieves that information.
 
-(defun get-lexicon-word-place (lex-file)
+(defun get-lexicon-word-place ()
   "Prompt for the source of where the given word was found, and move the cursor to
 said position in the lexicon file."
-  (find-file lex-file)
-  (let ((place (read-string "Enter the place you found the word at: ")))
-    (if-let ((header-pos (org-find-exact-headline-in-buffer place)))
-        (progn
-          (goto-char header-pos)
-          (if (org-goto-sibling)
-              (forward-line -1)
-            (goto-char (point-max))))
-      (goto-char (point-max)))))
+  (let ((lex-file (read-file-name "Enter the lexicon's file path: ")))
+    (find-file lex-file)
+    (let ((place (read-string "Enter the place you found the word at: ")))
+      (if-let ((header-pos (org-find-exact-headline-in-buffer place)))
+          (progn
+            (goto-char header-pos)
+            (if (org-goto-sibling)
+                (forward-line -1)
+              (goto-char (point-max))))
+        (goto-char (point-max))))))
 
 
 ;; *************************
@@ -168,6 +161,28 @@ added to the lexicon, or if it was prompted to be a dictionary-only addition."
     (insert (format "- %s%s (%s): %s\n" hiragana nasuru kanji english))))
 
 
+;; ****************
+;; get-new-sentence
+;; ****************
+;; Get an example sentence in Japanese with it's English translation.
+
+(defun get-new-sentence ()
+  "Prompt for the example sentence in Japanese, and then for its English translation.
+If the 'good/official' English translation differs from how it would be if translated
+literally, there is another prompt afterwards to retrieve this case."
+  (let ((japanese-sentence (read-string
+                            "Enter the example sentence in Japanese: "))
+        (english-translation (read-string
+                              "Enter the sentence's English translation: "))
+        (literal-translation (read-string
+                              "Enter the literal translation if it differs: ")))
+
+    (if (string-empty-p literal-translation)
+        (setq english-translation (concat english-translation "."))
+      (setq english-translation (concat english-translation ". (/Lit./ " literal-translation ").")))
+    (format "*- %s -> %s*" japanese-sentence english-translation)))
+
+
 ;; *********************
 ;;  New Item Templates!
 ;; *********************
@@ -188,15 +203,22 @@ added to the lexicon, or if it was prompted to be a dictionary-only addition."
              t)
 
 (add-to-list 'org-capture-templates
-             '("w" "New Japanese Word"
-               item (function get-word-found-place)
-               #'get-new-word
+             '("w" "New Japanese Word (Lexicon and Dictionary)"
+               item (function get-lexicon-word-place)
+               #'get-word-for-lexicon
+               :empty-lines 0 :immediate-finish t :jump-to-captured t)
+             t)
+
+(add-to-list 'org-capture-templates
+             '("d" "New Japanese Word (Dictionary only)"
+               item (function get-dictionary-word-place)
+               #'get-word-for-dictionary
                :empty-lines 0 :immediate-finish t :jump-to-captured t)
              t)
 
 (add-to-list 'org-capture-templates
              '("e" "New Japanese Sentence Example"
-               plain (function get-word-found-place)
+               plain (function get-lexicon-word-place)
                #'get-new-sentence
                :empty-lines-after 1 :immediate-finish t :jump-to-captured t)
              t)
