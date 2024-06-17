@@ -4,6 +4,23 @@
 
 - あんぜん(な) (安全): Safety, security
 
+** ば
+
+- ばあい (場合): Case, situation
+
+** ど
+
+- どうが (動画): Video (especially digital), video clip, clip, animation, in-between animations
+
+** ふ
+
+- ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
+- ふざい (不在): Absence
+
+** が
+
+- がぞう (画像): Image, picture, portrait
+
 ** は
 
 - はいたつ(する) (配達): Delivery
@@ -16,15 +33,34 @@
 ** へ
 
 - へんしん(する) (返信): Reply, answer
+- へんしゅう(する) (編集): Editing, compilation
 
 ** ほ
 
-- ほじょ(する) (補助): Assistance, support, aid, help, subsidy
+- ほご(する) (保護): Protection, safeguard, guardianship, custody, patronage, preservation, conservation
+- ほうそう(する) (放送): Broadcast, program, announcement
+
+** い
+
+- いじょう (以上): Not less than, and upwards, or more, more than, further than
+
+** じ
+
+- じかん (時間): Time, hour, period, class, lesson
+
+** じょ
+
+- じょうほう (情報): Information (can also be digitally encoded), report, intelligence
+
+** じゅ
+
+- じゅしん(する) (受信): Receiving (message, letter, email, etc), reception (radio, TV, etc)
 
 ** か
 
 - かいし(する) (開始): Commencement, beginning, initiation
 - かんり(する) (管理): Control, management of a business/account
+- かつ (): And, moreover, besides, as well as, and on top of that, at the same time
 
 ** け
 
@@ -39,9 +75,11 @@
 
 - きょか(する) (許可): Permission, approval, authorization
 
-** じょ
+** こ
 
-- じょうほう (情報): Information (can also be digitally encoded), report, intelligence
+- こうしん(する) (更新): Renewal, update, replacement
+- こうそく(な) (高速): High-speed, rapid, express
+- こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
 
 ** な
 
@@ -54,6 +92,7 @@
 ** お
 
 - おんせい (音声): Voice, speech, sound or audio
+- おうとう(する) (応答): Reply, answer, response (chat, email, etc)
 
 ** れ
 
@@ -65,10 +104,12 @@
 - さいしん (最新): Latest, newest, late-breaking (news)
 - さいしゅう (最終): Last, final, closing
 - さんか(する) (参加): Participation, joining, entry
+- さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
 
 ** せ
 
 - せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
+- せつやく(する) (節約): Economising, saving
 - せつぞく(する) (接続): Connection, attachment, union, joint, link
 - せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
 
@@ -98,6 +139,10 @@
 - たいせき(する) (退席): Leaving one's seat, afk
 - たとえば (例えば): For example, for instance
 
+** て
+
+- てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
+
 ** と
 
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
@@ -115,3 +160,7 @@
 ** ぜ
 
 - ぜんいん (全員): All members, all hands, everyone, everybody, whole crew
+
+** ず
+
+- ずみ (済み): Arranged, taken care of, settled, completed, finished
