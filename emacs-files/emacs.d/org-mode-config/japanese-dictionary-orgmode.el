@@ -47,6 +47,8 @@ the dictionary."
         (word-type (get-suru-na-if-so))
         (english-def (read-string "Enter the word's definition in English: ")))
 
+    (setq word-first-syllable (substring hiragana-writing 0 1))
+
     ;; FIXME: For dictionary-only inputs, it doesn't create the new syllable
     ;;        section, it only appends the word at the end.
 
@@ -56,7 +58,7 @@ the dictionary."
                                  kanji-writing
                                  word-type
                                  english-def))
-    (format "%s%s (%s): %s\n"
+    (format "%s%s (%s): %s\n\n"
             hiragana-writing
             word-type
             kanji-writing
