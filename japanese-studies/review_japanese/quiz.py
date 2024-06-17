@@ -79,17 +79,20 @@ def ask(question: JPWord, qkind: str) -> str:
             to_prompt = 'the kanji'
 
     answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
-    return answer.lower() if len(answer) > 0 else "<no response>"
+    return answer if len(answer) > 0 else "<no response>"
 
 # ---------- Check_Answer() ----------
 
 def check_answer(question: JPWord, answer: str, kind: str) -> bool:
     if kind == 'translate' or (kind == 'read' and not question.kanji):
-        return answer in question.english.lower()
+        return answer.lower() in question.english.lower()
 
     # FIXME: Some words have multiple kana writings, which are separated by
     #        forward slashes '/'. Only one is enough to get the question right,
     #        so handle this special case.
+
+    # FEATURE: Add partially correct answers, when either the english meaning or
+    #          the kana writing are correct.
 
     if kind == 'read' and question.kanji:
         try:
@@ -97,8 +100,13 @@ def check_answer(question: JPWord, answer: str, kind: str) -> bool:
         except ValueError:
             return False
         else:
-            return en in question.english.lower() and jp == question.kana
+            en = en.lower()
+            jp = jp.rstrip('(')[0]
+            expected_en = question.english.lower()
+            expected_jp = question.kana.rstrip('(')[0]
+            return en in expected_en and jp == expected_jp
 
+    # TODO: Implement writing checks.
     if kind == 'write':
         return True
 
