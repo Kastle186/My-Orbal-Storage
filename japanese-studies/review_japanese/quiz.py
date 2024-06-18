@@ -1,5 +1,6 @@
 # File: quiz.py
 
+import enum
 import random
 
 from argparse import Namespace
@@ -23,6 +24,13 @@ class JPWord:
 # ********** Question/Answer Set Type **********
 
 QA = namedtuple('QA', ['question', 'answer'])
+
+# ********** Answer States Enum **********
+
+class AnswerState(Enum):
+    CORRECT = 1
+    MISSED  = 2
+    PARTIAL = 3
 
 # ---------- Get_Words_From_File() ----------
 
@@ -83,7 +91,7 @@ def ask(question: JPWord, qkind: str) -> str:
 
 # ---------- Check_Answer() ----------
 
-def check_answer(question: JPWord, answer: str, kind: str) -> bool:
+def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
     if kind == 'translate' or (kind == 'read' and not question.kanji):
         return answer.lower() in question.english.lower()
 
@@ -98,19 +106,23 @@ def check_answer(question: JPWord, answer: str, kind: str) -> bool:
         try:
             en, jp = map(lambda x: x.strip(), answer.split(','))
         except ValueError:
-            return False
+            return AnswerState.MISSED
         else:
             en = en.lower()
-            jp = jp.rstrip('(')[0]
+            jp = jp.split('(')[0]
             expected_en = question.english.lower()
-            expected_jp = question.kana.rstrip('(')[0]
-            return en in expected_en and jp == expected_jp
+            expected_jp = question.kana.split('(')[0]
+
+            if en in expected_en and jp == expected_jp:
+                return AnswerState.CORRECT
+            else:
+                return AnswerState.MISSED
 
     # TODO: Implement writing checks.
     if kind == 'write':
-        return True
+        return AnswerState.CORRECT
 
-    return False
+    return AnswerState.MISSED
 
 # ---------- Display_Results() ----------
 
@@ -140,13 +152,14 @@ def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
     q_counter = 1
     corrects = []
     misses = []
+    partials = []
 
     while q_counter <= num_questions:
         q_counter += 1
         question = random.choice(word_pool)
         answer = ask(question, kind)
 
-        if check_answer(question, answer, kind):
+        if check_answer(question, answer, kind) == AnswerState.CORRECT:
             corrects.append(QA(question, answer))
         else:
             misses.append(QA(question, answer))
