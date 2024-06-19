@@ -2,6 +2,7 @@
 
 ** あ
 
+- あかるさ (明るさ): Brightness, luminance, cheerfulness
 - あんぜん(な) (安全): Safety, security
 
 ** ば
@@ -83,6 +84,7 @@
 
 ** こ
 
+- こおり (氷): Ice, shaved ice
 - こうしん(する) (更新): Renewal, update, replacement
 - こうそく(な) (高速): High-speed, rapid, express
 - こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
@@ -91,8 +93,14 @@
 
 - くだもの/かぶつ (果物): Fruit
 
+** み
+
+- みず (水): Water (especially cool, fresh water for drinking)
+
 ** な
 
+- ないぶ (内部): Interior, inside, internal
+- ないぞう(する) (内蔵): Internal (disk, drive), built-in, equipped with
 - なまえくうかん (名前空間): Namespace
 
 ** に
@@ -108,6 +116,7 @@
 
 - れんけい(する) (連携): Cooperation, coordination, link
 - れんらく(する) (連絡): Contact, get in touch, communication, connection with transportation or between matters, join a railway line
+- れいぞうこ (冷蔵庫): Refrigerator, fridge
 
 ** り
 
@@ -125,6 +134,7 @@
 - せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
 - せつやく(する) (節約): Economising, saving
 - せつぞく(する) (接続): Connection, attachment, union, joint, link
+- せっけん (石[鹸|けん]): Soap
 - せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
 
 ** し
@@ -174,6 +184,7 @@
 
 ** や
 
+- やかん (夜間): Night, nighttime
 - やさい (野菜): Vegetable
 
 ** よ
