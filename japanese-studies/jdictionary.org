@@ -26,6 +26,7 @@
 
 - はいたつ(する) (配達): Delivery
 - はいしん(する) (配信): Distribution of information, broadcast, delivery, transmission, streaming
+- はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
 
 ** ひ
 
@@ -43,6 +44,7 @@
 ** ほ
 
 - ほご(する) (保護): Protection, safeguard, guardianship, custody, patronage, preservation, conservation
+- ほうこく(する) (報告): Report, information
 - ほうそう(する) (放送): Broadcast, program, announcement
 
 ** い
@@ -65,14 +67,19 @@
 
 - かいし(する) (開始): Commencement, beginning, initiation
 - かんり(する) (管理): Control, management of a business/account
+- かのう(な) (可能): Possible, potential, feasible
 - かつ (): And, moreover, besides, as well as, and on top of that, at the same time
 
 ** け
 
+- けいか(する) (経過): Passage of time, elapsing, lapse, progress, development, course of events
+- けいこく(する) (警告): Warning, advice
+- けいさつ (警察): Police
 - けんさく(する) (検索): Look up, search for, retrieve data, refer to, search engines' prompt
 
 ** き
 
+- きおく(する) (記憶): Memory, recollection, remembrance
 - きりかえ (切り替え): Exchange, conversion, switchover
 - きそん(する) (既存): Existing
 
@@ -132,6 +139,9 @@
 ** せ
 
 - せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
+- せいこう(する) (成功): Success, achievement, prosperity
+- せんたく(する) (洗濯): Washing, laundry, relaxing, taking a break
+- せんたく(する) (選択): Choice, selection, option
 - せつやく(する) (節約): Economising, saving
 - せつぞく(する) (接続): Connection, attachment, union, joint, link
 - せっけん (石[鹸|けん]): Soap
