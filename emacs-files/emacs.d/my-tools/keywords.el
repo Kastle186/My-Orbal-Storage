@@ -120,3 +120,7 @@
 
 (font-lock-add-keywords 'python-mode
                         '(("\\_<namedtuple\\_>" . font-lock-type-face)))
+
+(font-lock-add-keywords 'sh-mode
+                        '(("\\_<local\\_>"  . font-lock-keyword-face))
+                          ("\\_<source\\_>" . font-lock-builtin-face)))
