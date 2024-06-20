@@ -1,10 +1,10 @@
 # File: quiz.py
 
-import enum
 import random
 
 from argparse import Namespace
 from collections import namedtuple
+from enum import Enum
 
 # ********** JPWord Class **********
 

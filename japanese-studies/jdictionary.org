@@ -9,6 +9,18 @@
 
 - ばあい (場合): Case, situation
 
+** べ
+
+- べんきょう(する) (勉強): Study, diligence, working hard, experience, lesson for the future
+
+** ち
+
+- ちかく (近く): Nearby, vicinity, close to, shortly, soon
+
+** で
+
+- でんき (電気): Electricity, electric light
+
 ** ど
 
 - どうが (動画): Video (especially digital), video clip, clip, animation, in-between animations
@@ -16,6 +28,7 @@
 ** ふ
 
 - ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
+- ふく (吹): To blow (on), breathe out, puff, whistle, sprout
 - ふざい (不在): Absence
 
 ** が
@@ -68,6 +81,7 @@
 - かいし(する) (開始): Commencement, beginning, initiation
 - かんり(する) (管理): Control, management of a business/account
 - かのう(な) (可能): Possible, potential, feasible
+- かのうせい (可能性): Potentiality, likelihood, possibility
 - かつ (): And, moreover, besides, as well as, and on top of that, at the same time
 
 ** け
@@ -75,12 +89,17 @@
 - けいか(する) (経過): Passage of time, elapsing, lapse, progress, development, course of events
 - けいこく(する) (警告): Warning, advice
 - けいさつ (警察): Police
+- けんこう(な) (健康): Health, healthy, sound, fit, wholesome
 - けんさく(する) (検索): Look up, search for, retrieve data, refer to, search engines' prompt
 
 ** き
 
+- きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
+- きおん (気温): Air temperature
 - きおく(する) (記憶): Memory, recollection, remembrance
 - きりかえ (切り替え): Exchange, conversion, switchover
+- きろく(する) (記録): Record, minutes, document, results, score
+- きしょう (気象): Weather, climate, temperament
 - きそん(する) (既存): Existing
 
 ** きょ
@@ -95,6 +114,7 @@
 - こうしん(する) (更新): Renewal, update, replacement
 - こうそく(な) (高速): High-speed, rapid, express
 - こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
+- こうつう(する) (交通): Traffic, transportation, communication, exchange of ideas, intercourse
 
 ** く
 
@@ -128,6 +148,10 @@
 ** り
 
 - りれき (履歴): History, record, log, background, career
+
+** りょ
+
+- りょこう(する) (旅行): Travel, trip, journey, excursion, tour
 
 ** さ
 
@@ -180,17 +204,21 @@
 
 ** て
 
+- てんき (天気): Weather, the elements
 - てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
 
 ** と
 
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
 - とうろく(する) (登録): Registration, entry, record
+- とっぷう (突風): Gust of wind, blast
 
 ** つ
 
-- つうち(する) (通知): Notice, report, notification on a smartphone, PC, etc
 - ついか(する) (追加): Addition, supplement, appending
+- つうち(する) (通知): Notice, report, notification on a smartphone, PC, etc
+- つうよう(する) (通用): Popular use, circulation, to pass as
+- つよい (強い): Strong, potent, tough, powerful, fierce, durable, knowledgeable, dependable, trustworthy
 
 ** や
 
