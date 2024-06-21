@@ -18,6 +18,11 @@ that will help me wonders in my day-to-day job.
   * Support multiple repos at a time.
   * Shortcuts to set new environment variables around them.
 
+- Try to make a general C# command-line argument parser that does not rely on
+  the monstrosity that ~System.CommandLine~ is.
+
+- Coffee App local replacement.
+
 ** Debugging
 
 - Make a stable pipeline to debug coreclr with either lldb, or cgdb, or both.
