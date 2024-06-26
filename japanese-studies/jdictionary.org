@@ -59,11 +59,13 @@
 
 - ほご(する) (保護): Protection, safeguard, guardianship, custody, patronage, preservation, conservation
 - ほんじつ (本日): Today, this day
+- ほんやく(する) (翻訳): Translation, deciphering, decoding
 - ほうこく(する) (報告): Report, information
 - ほうそう(する) (放送): Broadcast, program, announcement
 
 ** い
 
+- いちぶ (一部): One part, one portion, one section, one copy of a document, some
 - いじょう (以上): Not less than, and upwards, or more, more than, further than
 
 ** じ
@@ -82,6 +84,7 @@
 
 ** か
 
+- かいはつ(する) (開発): Development, exploitation of resources
 - かいし(する) (開始): Commencement, beginning, initiation
 - かんり(する) (管理): Control, management of a business/account
 - かのう(な) (可能): Possible, potential, feasible
@@ -99,6 +102,7 @@
 
 ** き
 
+- きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
 - きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
 - きおん (気温): Air temperature
 - きおく(する) (記憶): Memory, recollection, remembrance
@@ -167,10 +171,13 @@
 
 ** さ
 
-- さいしん (最新): Latest, newest, late-breaking (news)
-- さいしゅう (最終): Last, final, closing
-- さんか(する) (参加): Participation, joining, entry
+- さぎょう(する) (作業): Work, operation, manufacture, fatigue duty
 - さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
+- さいしん (最新): Latest, newest, late-breaking (news)
+- さいしょ (最初): Beginning, outset, first, onset
+- さいしゅう (最終): Last, final, closing
+- さくせい(する) (作成): Draw up (legal document, contract, will, etc), create, prepare, write, frame, make, produce
+- さんか(する) (参加): Participation, joining, entry
 
 ** せ
 
@@ -197,6 +204,7 @@
 ** しょ
 
 - しょくば (職場): One's post, place of work, workplace
+- しょり(する) (処理): Processing, dealing with, treatment, disposition, disposal
 - しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
 - しょうさい(する) (詳細): Details, particulars, specific, close-up view, zoomed-in view
 
@@ -228,6 +236,7 @@
 
 ** と
 
+- ところ (所/処): Place, spot, scene, site, area, space
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
 - とうろく(する) (登録): Registration, entry, record
 - とっぷう (突風): Gust of wind, blast
@@ -239,6 +248,10 @@
 - つうよう(する) (通用): Popular use, circulation, to pass as
 - つよい (強い): Strong, potent, tough, powerful, fierce, durable, knowledgeable, dependable, trustworthy
 
+** わ
+
+- わりあて/かっとう (割り当て/割当): Assignment, allotment, allocation, quota, rationing
+
 ** や
 
 - やかん (夜間): Night, nighttime
@@ -247,6 +260,9 @@
 ** よ
 
 - よびだし(する) (呼び出し): Call, summons, paging
+- よき(する) (予期): Expectation, assume will happen, forecast
+- よきせぬ (予期せぬ): Unexpected, unforeseen
+- よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
 
 ** ぜ
 
