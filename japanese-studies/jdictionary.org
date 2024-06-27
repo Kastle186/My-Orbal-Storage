@@ -12,6 +12,7 @@
 ** べ
 
 - べんきょう(する) (勉強): Study, diligence, working hard, experience, lesson for the future
+- べつ(な) (別): Distinction, difference, discrimination, separate, another
 
 ** ち
 
@@ -44,6 +45,7 @@
 
 ** ひ
 
+- ひてい(する) (否定): Denial, negation, repudiation, disavowal, NOT operation (programming and computers)
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
 
 ** ひょ
@@ -138,6 +140,10 @@
 
 - みず (水): Water (especially cool, fresh water for drinking)
 
+** も
+
+- もくてき (目的): Purpose, goal, aim, objective, intention
+
 ** な
 
 - ないぶ (内部): Interior, inside, internal
@@ -196,6 +202,7 @@
 - しんちゃくじょうほう (新着情報): What's new on webpages/programs/newsletters, announcement of new arrivals or events
 - しんがた (新型): New type, new style, new model
 - しんせい(する) (申請): Application, request, petition
+- しよう(する) (使用): Use, application, employment, utilization, utilisation
 
 ** しゃ
 
@@ -215,6 +222,8 @@
 
 ** そ
 
+- そんざい(する) (存在): Existence, being
+- そしき (組織): Organization, formation, structure, system (not computational), tissue, weave of a fabric
 - そうしん(する) (送信): Transmission, sending
 
 ** す
@@ -225,7 +234,6 @@
 
 - たいせき(する) (退席): Leaving one's seat, afk
 - たいしゅつ(する) (退出): Leave work at the end of the day, withdrawal, exit from a market or call
-
 - たもつ (保つ): To keep, preserve, retain, maintain, sustain
 - たとえば (例えば): For example, for instance
 
@@ -237,6 +245,7 @@
 ** と
 
 - ところ (所/処): Place, spot, scene, site, area, space
+- とくべつ(な) (特別): Special, particular, extraordinary, exceptional
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
 - とうろく(する) (登録): Registration, entry, record
 - とっぷう (突風): Gust of wind, blast
@@ -262,11 +271,18 @@
 - よびだし(する) (呼び出し): Call, summons, paging
 - よき(する) (予期): Expectation, assume will happen, forecast
 - よきせぬ (予期せぬ): Unexpected, unforeseen
+- よそう(する) (予想): Expectation, anticipation, prediction, forecast, conjecture
+- よわい (弱い): Weak, frail, delicate, tender, unskilled
 - よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
 
 ** ぜ
 
+- ぜんご(する) (前後): Front and back, back and forth, around/approximately a quantity, age, time, etc, just when, co-occurring, happening at the same time
 - ぜんいん (全員): All members, all hands, everyone, everybody, whole crew
+
+** ぞ
+
+- ぞくする (属する): To belong to, come under, be affiliated with, be subject to
 
 ** ず
 
