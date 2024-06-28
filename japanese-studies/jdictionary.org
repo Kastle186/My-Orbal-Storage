@@ -68,6 +68,7 @@
 ** い
 
 - いちぶ (一部): One part, one portion, one section, one copy of a document, some
+- いどう(する) (移動): Movement, transfer, migration, removal, travel, mobile, roving
 - いじょう (以上): Not less than, and upwards, or more, more than, further than
 
 ** じ
@@ -87,6 +88,7 @@
 ** か
 
 - かいはつ(する) (開発): Development, exploitation of resources
+- かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
 - かんり(する) (管理): Control, management of a business/account
 - かのう(な) (可能): Possible, potential, feasible
@@ -144,6 +146,10 @@
 
 - もくてき (目的): Purpose, goal, aim, objective, intention
 
+** む
+
+- むりょう (無料): Free of charge, gratuitous
+
 ** な
 
 - ないぶ (内部): Interior, inside, internal
@@ -187,6 +193,7 @@
 
 ** せ
 
+- せいひん (製品): Manufactured goods, finished goods, product
 - せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
 - せいこう(する) (成功): Success, achievement, prosperity
 - せんたく(する) (洗濯): Washing, laundry, relaxing, taking a break
@@ -232,6 +239,7 @@
 
 ** た
 
+- たいおう(する) (対応): Equivalence, suitability, matching, be appropriate for, coping with, reception, compatibility with technology, software, etc, capability, support for
 - たいせき(する) (退席): Leaving one's seat, afk
 - たいしゅつ(する) (退出): Leave work at the end of the day, withdrawal, exit from a market or call
 - たもつ (保つ): To keep, preserve, retain, maintain, sustain
@@ -274,6 +282,10 @@
 - よそう(する) (予想): Expectation, anticipation, prediction, forecast, conjecture
 - よわい (弱い): Weak, frail, delicate, tender, unskilled
 - よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
+
+** ゆ
+
+- ゆうりょう (有料): Fee-charging, paid, not free
 
 ** ぜ
 
