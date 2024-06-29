@@ -98,6 +98,7 @@
 - かいはつ(する) (開発): Development, exploitation of resources
 - かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
+- かくとく(する) (獲得): Acquisition, possession
 - かんり(する) (管理): Control, management of a business/account
 - かのう(な) (可能): Possible, potential, feasible
 - かのうせい (可能性): Potentiality, likelihood, possibility
@@ -114,6 +115,7 @@
 
 ** き
 
+- きげん (期限): Term, period, time frame/limit, deadline, cutoff date/time
 - きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
 - きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
 - きおん (気温): Air temperature

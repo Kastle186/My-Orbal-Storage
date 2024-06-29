@@ -111,9 +111,10 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
             en = en.lower()
             jp = jp.split('(')[0]
             expected_en = question.english.lower()
-            expected_jp = question.kana.split('(')[0]
+            expected_jp = list(map(lambda x: x.strip(),
+                                   question.kana.split('(')[0].split('/')))
 
-            if en in expected_en and jp == expected_jp:
+            if en in expected_en and jp in expected_jp:
                 return AnswerState.CORRECT
             else:
                 return AnswerState.MISSED
@@ -156,7 +157,7 @@ def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
 
     while q_counter <= num_questions:
         q_counter += 1
-        question = random.choice(word_pool)
+        question = word_pool[random.randint(0, len(word_pool)-1)]
         answer = ask(question, kind)
 
         if check_answer(question, answer, kind) == AnswerState.CORRECT:
@@ -170,5 +171,5 @@ def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
 
 def setup_and_run_app(params: Namespace) -> None:
     word_pool = generate_word_pool(params.words_files)
-    random.shuffle(word_pool)
+    # random.shuffle(word_pool)
     run_quiz(word_pool, params.quiz_kind, params.num_questions)
