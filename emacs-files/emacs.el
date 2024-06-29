@@ -52,6 +52,7 @@
 (setq-default ediff-forward-word-function 'forward-char)
 (setq-default delete-selection-mode t)
 (setq-default org-confirm-babel-evaluate nil)
+(setq-default org-element-use-cache nil)
 (setq-default ring-bell-function 'ignore)
 ;; (setq-default markdown-command "/usr/bin/pandoc")
 
