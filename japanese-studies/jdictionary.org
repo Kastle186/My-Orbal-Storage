@@ -42,11 +42,16 @@
 - がぞう (画像): Image, picture, portrait
 - がっこう (学校): School
 
+** ぎ
+
+- ぎんこう (銀行): Bank, banking institution
+
 ** は
 
 - はいたつ(する) (配達): Delivery
 - はいしん(する) (配信): Distribution of information, broadcast, delivery, transmission, streaming
 - はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
+- はねる (跳ねる): To jump, leap, prance, spring up, bound, hop, break up, come to an end, hit
 
 ** ひ
 
@@ -118,6 +123,7 @@
 - きげん (期限): Term, period, time frame/limit, deadline, cutoff date/time
 - きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
 - きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
+- きんとう(な) (均等): Equality, uniformity, evenness
 - きおん (気温): Air temperature
 - きおく(する) (記憶): Memory, recollection, remembrance
 - きりかえ (切り替え): Exchange, conversion, switchover
@@ -130,6 +136,10 @@
 - きょか(する) (許可): Permission, approval, authorization
 - きょうつう(な) (共通): Common, shared, mutual
 - きょうゆう(する) (共有): Sharing (files, devices, viewpoints), joint ownership, co-ownership
+
+** きゅ
+
+- きゅうぎょう(する) (休業): Suspension of business, temporary closure, shutdown, holiday
 
 ** こ
 
@@ -144,6 +154,7 @@
 ** く
 
 - くだもの/かぶつ (果物): Fruit
+- くうこう (空港): Airport
 
 ** ま
 
@@ -193,6 +204,8 @@
 
 ** りょ
 
+- りょかん (旅館): Ryokan, traditional japanese inn
+- りょけん/パスポート (旅券): Passport
 - りょこう(する) (旅行): Travel, trip, journey, excursion, tour
 
 ** さ
@@ -260,6 +273,7 @@
 - たいおう(する) (対応): Equivalence, suitability, matching, be appropriate for, coping with, reception, compatibility with technology, software, etc, capability, support for
 - たいせき(する) (退席): Leaving one's seat, afk
 - たいしゅつ(する) (退出): Leave work at the end of the day, withdrawal, exit from a market or call
+- たいよう (太陽): Sun
 - たもつ (保つ): To keep, preserve, retain, maintain, sustain
 - たとえば (例えば): For example, for instance
 
