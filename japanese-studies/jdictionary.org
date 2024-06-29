@@ -14,6 +14,10 @@
 - べんきょう(する) (勉強): Study, diligence, working hard, experience, lesson for the future
 - べつ(な) (別): Distinction, difference, discrimination, separate, another
 
+** びょ
+
+- びょう (秒): Second (unit of time)
+
 ** ち
 
 - ちかく (近く): Nearby, vicinity, close to, shortly, soon
@@ -29,6 +33,7 @@
 ** ふ
 
 - ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
+- ふべん(な) (不便): Inconvenience, inexpediency, unhandiness
 - ふく (吹): To blow (on), breathe out, puff, whistle, sprout
 - ふざい (不在): Absence
 
@@ -45,6 +50,7 @@
 
 ** ひ
 
+- ひくい (低い): Low (rank, degree, value, content, quality, position, key, volume), short height, deep voice
 - ひてい(する) (否定): Denial, negation, repudiation, disavowal, NOT operation (programming and computers)
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
 
@@ -82,8 +88,10 @@
 
 ** じゅ
 
+- じゅんび(する) (準備): Preparation, arrangements, getting ready, provision, setup, reserving
 - じゅんきょ(する) (準拠): Basis, based on, conformance, conformity, authority of, standard, reference
 - じゅしん(する) (受信): Receiving (message, letter, email, etc), reception (radio, TV, etc)
+- じゅうしょ (住所): Address, residence, domicile
 
 ** か
 
@@ -125,6 +133,7 @@
 
 - こんご (今後): From now on, hereafter
 - こおり (氷): Ice, shaved ice
+- ことば (言葉): Word, phrase, expression, term, manner of speech
 - こうしん(する) (更新): Renewal, update, replacement
 - こうそく(な) (高速): High-speed, rapid, express
 - こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
@@ -145,6 +154,7 @@
 ** も
 
 - もくてき (目的): Purpose, goal, aim, objective, intention
+- もうしわけ(する) (申し訳): Apology, excuse
 
 ** む
 
@@ -153,6 +163,7 @@
 ** な
 
 - ないぶ (内部): Interior, inside, internal
+- ないよう (内容): Contents, substance, matter, detail, import
 - ないぞう(する) (内蔵): Internal (disk, drive), built-in, equipped with
 - なまえくうかん (名前空間): Namespace
 - ななめ(な) (斜め): Slanting, tilted, diagonal, sloping, oblique, distorted, amiss, awry
@@ -171,6 +182,7 @@
 
 - れんけい(する) (連携): Cooperation, coordination, link
 - れんらく(する) (連絡): Contact, get in touch, communication, connection with transportation or between matters, join a railway line
+- れんらくさき (連絡先): Contact address
 - れいぞうこ (冷蔵庫): Refrigerator, fridge
 
 ** り
@@ -183,11 +195,13 @@
 
 ** さ
 
+- さがす (探す): To search, look for something desired, hunt for, seek, rummage in, fish around
 - さぎょう(する) (作業): Work, operation, manufacture, fatigue duty
 - さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
 - さいしん (最新): Latest, newest, late-breaking (news)
 - さいしょ (最初): Beginning, outset, first, onset
 - さいしゅう (最終): Last, final, closing
+- さいてい(な) (最低): Least, lowest, minimum, worst, awful, horrible, nasty, disgusting
 - さくせい(する) (作成): Draw up (legal document, contract, will, etc), create, prepare, write, frame, make, produce
 - さんか(する) (参加): Participation, joining, entry
 
@@ -217,6 +231,7 @@
 
 ** しょ
 
+- しょうひん (商品): Commodity, article of commerce, goods, stock, merchandise
 - しょくば (職場): One's post, place of work, workplace
 - しょり(する) (処理): Processing, dealing with, treatment, disposition, disposal
 - しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
@@ -239,6 +254,7 @@
 
 ** た
 
+- たいき(する) (待機): Standing by, awaiting an opportunity, being on alert, quarantine
 - たいおう(する) (対応): Equivalence, suitability, matching, be appropriate for, coping with, reception, compatibility with technology, software, etc, capability, support for
 - たいせき(する) (退席): Leaving one's seat, afk
 - たいしゅつ(する) (退出): Leave work at the end of the day, withdrawal, exit from a market or call
@@ -255,6 +271,7 @@
 - ところ (所/処): Place, spot, scene, site, area, space
 - とくべつ(な) (特別): Special, particular, extraordinary, exceptional
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
+- とうちゃく(する) (到着): Arrival
 - とうろく(する) (登録): Registration, entry, record
 - とっぷう (突風): Gust of wind, blast
 
