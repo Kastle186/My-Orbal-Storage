@@ -106,6 +106,7 @@
 - かいし(する) (開始): Commencement, beginning, initiation
 - かいすう (回数): Number of times, frequency, count
 - かくとく(する) (獲得): Acquisition, possession
+- かんぺき(な) (完[璧|ぺき]): Perfect, complete, flawless
 - かんり(する) (管理): Control, management of a business/account
 - かんぜん(な) (完全): Perfect, complete
 - かのう(な) (可能): Possible, potential, feasible
@@ -318,6 +319,7 @@
 - よびだし(する) (呼び出し): Call, summons, paging
 - よき(する) (予期): Expectation, assume will happen, forecast
 - よきせぬ (予期せぬ): Unexpected, unforeseen
+- よろこんで (喜んで): With pleasure
 - よそう(する) (予想): Expectation, anticipation, prediction, forecast, conjecture
 - よわい (弱い): Weak, frail, delicate, tender, unskilled
 - よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
