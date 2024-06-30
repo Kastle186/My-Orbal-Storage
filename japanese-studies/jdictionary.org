@@ -85,6 +85,7 @@
 ** じ
 
 - じかん (時間): Time, hour, period, class, lesson
+- じっそう(する) (実装): Implementation of a feature, installation of equipment, mounting, packaging
 
 ** じょ
 
@@ -103,11 +104,14 @@
 - かいはつ(する) (開発): Development, exploitation of resources
 - かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
+- かいすう (回数): Number of times, frequency, count
 - かくとく(する) (獲得): Acquisition, possession
 - かんり(する) (管理): Control, management of a business/account
+- かんぜん(な) (完全): Perfect, complete
 - かのう(な) (可能): Possible, potential, feasible
 - かのうせい (可能性): Potentiality, likelihood, possibility
 - かつ (): And, moreover, besides, as well as, and on top of that, at the same time
+- かず/すう (数): Number, amount / Several, quantity, figures
 
 ** け
 
@@ -246,6 +250,7 @@
 
 ** しょ
 
+- しょうぼう(する) (消防): Fire-fighting, fire department, fire brigade
 - しょうひん (商品): Commodity, article of commerce, goods, stock, merchandise
 - しょくば (職場): One's post, place of work, workplace
 - しょり(する) (処理): Processing, dealing with, treatment, disposition, disposal
@@ -279,6 +284,7 @@
 
 ** て
 
+- ていでんりょく (低電力): Low-power electrical/electricity
 - てんき (天気): Weather, the elements
 - てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
 

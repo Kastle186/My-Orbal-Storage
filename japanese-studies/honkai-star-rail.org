@@ -1,7 +1,12 @@
 * Honkai Star Rail Japanese/English Learnings
 
+** ぼ
+
+- ぼうぎょ(する) (防御): **Defense**, safeguard, protection
+
 ** ちょ
 
+- ちょうせん(する) (挑戦): Challenge, defiance, dare, attempt, try
 - ちょうやく(する) (跳躍): **Warp**, jump, leap, skip, bound
 
 ** で
@@ -17,13 +22,24 @@
 
 - ごうせい(する) (合成): **Synthesize**, composition, synthesis, compounding
 
+** は
+
+- はつどう(する) (発動): Putting into operation, invocation
+
 ** へ
 
+- へんにゅう(する) (編入): Admission, incorporation, enlistment, enrollment
 - へんせい(する) (編成): Composition, formation, organization, organisation, compilation
+
+** ひ
+
+- ひっさつわざ (必殺技): **Ultimate attack**, special or lethal move, killer technique
+*- ひかりまるぎり (光円錐): Light Cone*
 
 ** ほ
 
 - ほんだな (本棚): Bookshelves, bookshelf, bookcase
+- ほうしゅう (報酬): Remuneration, recompense, reward, toll
 
 ** い
 
@@ -32,14 +48,27 @@
 ** か
 
 - かいたく(する) (開拓): **Trailblazing**, reclamation of land, cultivation, development, pioneering, opening up a new market, breaking new ground
+- かくさん(する) (拡散): Spreading, disseminating, scattering, diffusion of light or gas
 
 ** き
 
 - きんこう(する) (均衡): **Equilibrium**, balance
 
+** きょ
+
+- きょうか(する) (強化): Strengthening, intensifying, reinforcement, enhancement, solidification
+
+** こ
+
+- こうげき(する) (攻撃): **Attack**, assault, raid, onslaught, offensive
+
 ** く
 
 - くんこう (勲功): Merits, distinguished services
+
+** じょ
+
+- じょうげん (上限): Upper limit, supremum
 
 ** み
 
@@ -49,14 +78,39 @@
 
 - ななし/ナナシ (名[無|な]し): **Nameless**, be nameless, namelessness, be without a name
 
+** さ
+
+- さい (再): Again, re-, deutero-, deuto-, deuter-
+
+** せ
+
+- せんとう(する) (戦闘): Battle, fight, combat
+
 ** し
 
 - し/つかさ (司): Office (government department beneath a bureau under the ritsuryou system)
+- しんよう(する) (信用): **Credit (finance)**, confidence, trust, faith, reputation
+
+** しょ
+
+- しょうかく(する) (昇格): Promotion, raising of status
+- しょうひ(する) (消費): Consumption, expenditure, spending
+
+** そ
+
+- そう (総): Whole, total, gross, entire, overall, general
 
 ** た
 
 - たびきろく (旅記録): **Travel Log**, travel document, travel record
+- たんたい (単体): Something standing alone, separate item, solo item, simple substance (chemical)
+- たりる (足りる): To be sufficient, enough, worth doing, deserve, do the job, serve, answer
 
 ** う
 
 - うらない (占い/卜): Fortune-telling, divination
+
+** ぜ
+
+- ぜんかい (前回): Previous time, last time, previous installment, previous session
+- ぜんたい (全体): Whole, entirety, whatever is the matter
