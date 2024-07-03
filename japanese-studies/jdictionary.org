@@ -39,6 +39,7 @@
 
 ** が
 
+- がめん (画面): Screen of a computer, TV, etc, image on a screen, picture, scene, surface of a painting
 - がぞう (画像): Image, picture, portrait
 - がっこう (学校): School
 

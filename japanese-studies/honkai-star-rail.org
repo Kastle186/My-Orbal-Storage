@@ -4,6 +4,10 @@
 
 - ぼうぎょ(する) (防御): **Defense**, safeguard, protection
 
+** ぶ
+
+- ぶんれつ(する) (分裂): Split, division, break up
+
 ** ちょ
 
 - ちょうせん(する) (挑戦): Challenge, defiance, dare, attempt, try
@@ -18,12 +22,17 @@
 - ふと (太): Grand, magnificent, excellent, fat, fatty
 - *ふとうらないし (太卜司): Grand Divination Commission*
 
+** げ
+
+- げんてい(する) (限定): Limit, restriction
+
 ** ご
 
 - ごうせい(する) (合成): **Synthesize**, composition, synthesis, compounding
 
 ** は
 
+- はけん(する) (派遣): Dispatch, deployment, temporary employee/worker
 - はつどう(する) (発動): Putting into operation, invocation
 
 ** へ
@@ -44,6 +53,7 @@
 ** い
 
 - いらい(する) (依頼): **Assignments**, Request, commission, entrusting with a matter, dependence, reliance
+- いっかつ(する) (一括): Lumping together, summing up, bundle, lump, batch
 
 ** か
 
@@ -52,6 +62,7 @@
 
 ** き
 
+- きかん (期間): Period, term, interval
 - きんこう(する) (均衡): **Equilibrium**, balance
 
 ** きょ
@@ -65,6 +76,10 @@
 ** く
 
 - くんこう (勲功): Merits, distinguished services
+
+** じ
+
+- じげん (次元): Dimension, perspective, point of reference
 
 ** じょ
 
@@ -89,12 +104,17 @@
 ** し
 
 - し/つかさ (司): Office (government department beneath a bureau under the ritsuryou system)
+- しんこう(する) (進行): Moving forward, onward movement, advance, advancement, progress, progression
 - しんよう(する) (信用): **Credit (finance)**, confidence, trust, faith, reputation
 
 ** しょ
 
 - しょうかく(する) (昇格): Promotion, raising of status
 - しょうひ(する) (消費): Consumption, expenditure, spending
+*
+** す
+
+- すすむ (進む): To advance, go forward, go ahead of, make progress, improve
 
 ** そ
 
@@ -108,6 +128,7 @@
 
 ** う
 
+- うけとり (受[け]取[り]): Receiving, receipt
 - うらない (占い/卜): Fortune-telling, divination
 
 ** ぜ
