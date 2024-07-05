@@ -14,9 +14,17 @@ that will help me wonders in my day-to-day job.
 - Make a full setup and on-the-run script to ease the burden on working on the
   runtime repo:
   
-  * Shortcuts for building subsets, tests, and cleaning.
-  * Support multiple repos at a time.
-  * Shortcuts to set new environment variables around them.
+  * Support multiple repos at a time
+  * Build subsets
+  * Build tests
+  * Generate layout
+  * Keep CORE_ROOT environment variable updated
+  * Shortcuts to multiple key places:
+    + Repo Root
+    + Tests Path
+    + Tests Artifacts
+  * Other miscellaneous tools that might come in handy:
+    + Get the assembly details of any given DLL
 
 - Try to make a general C# command-line argument parser that does not rely on
   the monstrosity that ~System.CommandLine~ is.
