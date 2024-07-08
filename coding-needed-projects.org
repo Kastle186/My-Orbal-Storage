@@ -15,6 +15,7 @@ that will help me wonders in my day-to-day job.
   runtime repo:
   
   * Support multiple repos at a time
+    + Persist settings to share them across multiple terminals
   * Build subsets
   * Build tests
   * Generate layout
@@ -34,3 +35,11 @@ that will help me wonders in my day-to-day job.
 ** Debugging
 
 - Make a stable pipeline to debug coreclr with either lldb, or cgdb, or both.
+
+** Other Utilities
+
+- Make a full infrastructure where you have cool utilities at hand, and can
+  optionally load "plugins" like the dotnet environment stuff.
+  + Run multiple scripts
+  + Get total item count in a directory
+  + Larger history for 'cd -'

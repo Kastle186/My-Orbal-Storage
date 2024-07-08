@@ -106,6 +106,7 @@
 - かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
 - かいすう (回数): Number of times, frequency, count
+- かくにん(する) (確認): Confirmation, verification, validation, review, check, affirmation, identification
 - かくとく(する) (獲得): Acquisition, possession
 - かんぺき(な) (完[璧|ぺき]): Perfect, complete, flawless
 - かんり(する) (管理): Control, management of a business/account
@@ -121,11 +122,15 @@
 - けいこく(する) (警告): Warning, advice
 - けいこう (傾向): Tendency, trend, inclination
 - けいさつ (警察): Police
+- けん (権): Right to do something, authority, power
 - けんこう(な) (健康): Health, healthy, sound, fit, wholesome
+- けんり (権利): Right, privilege
 - けんさく(する) (検索): Look up, search for, retrieve data, refer to, search engines' prompt
+- けっか(する) (結果): Result, consequence, outcome, effect, fruition, therefore
 
 ** き
 
+- きどく(な) (既読): Already read
 - きげん (期限): Term, period, time frame/limit, deadline, cutoff date/time
 - きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
 - きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
@@ -168,6 +173,7 @@
 
 ** み
 
+- みどく(な) (未読): Unread
 - みず (水): Water (especially cool, fresh water for drinking)
 
 ** も
@@ -322,6 +328,7 @@
 - よきせぬ (予期せぬ): Unexpected, unforeseen
 - よろこんで (喜んで): With pleasure
 - よそう(する) (予想): Expectation, anticipation, prediction, forecast, conjecture
+- ようやく(する) (要約): Summary, digest
 - よわい (弱い): Weak, frail, delicate, tender, unskilled
 - よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
 
