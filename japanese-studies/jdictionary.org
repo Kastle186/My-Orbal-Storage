@@ -135,6 +135,7 @@
 - きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
 - きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
 - きんとう(な) (均等): Equality, uniformity, evenness
+- きんきゅう(な) (緊急): Urgency, emergency
 - きおん (気温): Air temperature
 - きおく(する) (記憶): Memory, recollection, remembrance
 - きりかえ (切り替え): Exchange, conversion, switchover
@@ -293,6 +294,7 @@
 ** て
 
 - ていでんりょく (低電力): Low-power electrical/electricity
+- ていし(する) (停止): Stoppage, halt, standstill, ceasing movement or activity, suspension of operations, interruption, prohibition, ban
 - てんき (天気): Weather, the elements
 - てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
 
@@ -302,6 +304,7 @@
 - とくべつ(な) (特別): Special, particular, extraordinary, exceptional
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
 - とうちゃく(する) (到着): Arrival
+- とうこう(する) (投稿): Contribution to a newspaper, magazine, etc, submission or post on a blog, social media, etc
 - とうろく(する) (登録): Registration, entry, record
 - とっぷう (突風): Gust of wind, blast
 
@@ -334,6 +337,8 @@
 
 ** ゆ
 
+- ゆうせん(する) (優先): Preference, priority, precedence
+- ゆうせんど (優先度): Degree of relative priority
 - ゆうりょう (有料): Fee-charging, paid, not free
 
 ** ぜ
