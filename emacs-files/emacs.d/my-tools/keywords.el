@@ -33,7 +33,9 @@
                           ("\\_<upcase\\_>"               . font-lock-builtin-face)))
 
 (font-lock-add-keywords 'csharp-mode
-                        '(("\\_<init\\_>" . font-lock-keyword-face)))
+                        '(("\\_<init\\_>"     . font-lock-keyword-face)
+                          ("\\_<notnull\\_>"  . font-lock-keyword-face)
+                          ("\\_<required\\_>" . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'c-mode
                         '(("\\_<bool\\_>"    . font-lock-type-face)

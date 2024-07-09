@@ -28,6 +28,7 @@
 ;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
 ;; by default when editing these types of files.
 
+(add-to-list 'auto-mode-alist '("\\.inl\\'"        . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.csproj\\'"     . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.ilproj\\'"     . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.proj\\'"       . xml-mode))
@@ -207,7 +208,9 @@
                ("Agenda"     (mode . org-mode))
                ("Bash"       (mode . sh-mode))
                ("C"          (mode . c-mode))
-               ("C++"        (mode . c++-mode))
+               ("C++"        (or
+                              (mode . c++-mode)
+                              (name . "\\.inl")))
                ("C#"         (mode . csharp-mode))
                ("CMake"      (mode . cmake-mode))
                ("Docker"     (or
