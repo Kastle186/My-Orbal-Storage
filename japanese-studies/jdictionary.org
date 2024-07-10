@@ -22,6 +22,11 @@
 
 - ちかく (近く): Nearby, vicinity, close to, shortly, soon
 
+** ちゅ
+
+- ちゅうい(する) (注意): Attention, notice, heed, care, caution, precaution, advice, warning
+- ちゅういほう (注意報): Warning for a storm or bad weather, advisory
+
 ** で
 
 - でんき (電気): Electricity, electric light
@@ -62,6 +67,7 @@
 
 ** ひょ
 
+- ひょうげん(する) (表現): Expression, presentation, representation, notation
 - ひょうじ(する) (表示): Display, indication, showing, expression, representation
 
 ** へ
@@ -82,6 +88,7 @@
 - いちぶ (一部): One part, one portion, one section, one copy of a document, some
 - いどう(する) (移動): Movement, transfer, migration, removal, travel, mobile, roving
 - いじょう (以上): Not less than, and upwards, or more, more than, further than
+- いみ(する) (意味): Meaning, significance, sense
 
 ** じ
 
@@ -142,6 +149,7 @@
 - きろく(する) (記録): Record, minutes, document, results, score
 - きしょう (気象): Weather, climate, temperament
 - きそん(する) (既存): Existing
+- きっかけ (): Chance, start, cue, excuse, motive, impetus, occasion
 
 ** きょ
 
@@ -158,6 +166,7 @@
 - こんご (今後): From now on, hereafter
 - こおり (氷): Ice, shaved ice
 - ことば (言葉): Word, phrase, expression, term, manner of speech
+- こうおん (高温): High temperature
 - こうしん(する) (更新): Renewal, update, replacement
 - こうそく(な) (高速): High-speed, rapid, express
 - こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
@@ -244,6 +253,7 @@
 - せつぞく(する) (接続): Connection, attachment, union, joint, link
 - せっけん (石[鹸|けん]): Soap
 - せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
+- せっていかのう(な) (設定可能): Configurable
 
 ** し
 
