@@ -24,6 +24,7 @@
 
 ** げ
 
+- げきは(する) (撃破): Crushing
 - げんてい(する) (限定): Limit, restriction
 
 ** ご
@@ -42,12 +43,14 @@
 
 ** ひ
 
-- ひっさつわざ (必殺技): **Ultimate attack**, special or lethal move, killer technique
 *- ひかりまるぎり (光円錐): Light Cone*
+- ひめ (姫): Princess, young lady of noble birth
+- ひっさつわざ (必殺技): **Ultimate attack**, special or lethal move, killer technique
 
 ** ほ
 
 - ほんだな (本棚): Bookshelves, bookshelf, bookcase
+- ほうほう (方法): Method, process, manner, way, means, technique
 - ほうしゅう (報酬): Remuneration, recompense, reward, toll
 
 ** い
@@ -81,17 +84,26 @@
 
 - じげん (次元): Dimension, perspective, point of reference
 
+** じゃ
+
+- じゃくてん (弱点): Weak point, weakness, shortcoming, defect, flaw, sore/tender spot
+
 ** じょ
 
 - じょうげん (上限): Upper limit, supremum
 
 ** み
 
+- みかた(する) (味方): Friend, ally, supporter, take sides with, stand by, back up
 - みきにゅう (未記入): **Blank profile**, blank book
 
 ** な
 
 - ななし/ナナシ (名[無|な]し): **Nameless**, be nameless, namelessness, be without a name
+
+** りょ
+
+- りょう (量): Quantity, amount, volume, capacity, generosity, magnanimity, tolerance
 
 ** さ
 
@@ -111,7 +123,7 @@
 
 - しょうかく(する) (昇格): Promotion, raising of status
 - しょうひ(する) (消費): Consumption, expenditure, spending
-*
+
 ** す
 
 - すすむ (進む): To advance, go forward, go ahead of, make progress, improve
@@ -119,19 +131,34 @@
 ** そ
 
 - そう (総): Whole, total, gross, entire, overall, general
+- そう (層): Stratum
 
 ** た
 
 - たびきろく (旅記録): **Travel Log**, travel document, travel record
 - たんたい (単体): Something standing alone, separate item, solo item, simple substance (chemical)
 - たりる (足りる): To be sufficient, enough, worth doing, deserve, do the job, serve, answer
+- たっする (達する): To reach, get to, arrive at
+
+** て
+
+- てき (敵): Opponent, rival, adversary, menace, danger, threat, enemy
+
+** つ
+
+- ついげき(する) (追撃): Pursuit (of a fleeing enemy), chase
 
 ** う
 
 - うけとり (受[け]取[り]): Receiving, receipt
 - うらない (占い/卜): Fortune-telling, divination
 
+** よ
+
+- よび (予備): Reserve, spare, preparation, preliminaries
+
 ** ぜ
 
+- ぜんぶ (全部): All, entire, whole, altogether
 - ぜんかい (前回): Previous time, last time, previous installment, previous session
 - ぜんたい (全体): Whole, entirety, whatever is the matter
