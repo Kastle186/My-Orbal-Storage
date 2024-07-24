@@ -1,8 +1,21 @@
 * Honkai Star Rail Japanese/English Learnings
 
+** あ
+
+- あしあと/そくせき (足跡): Footprints, record of page visitors in (social) networking sites
+- あたえる (与える): To give, grant, confer, provide, cause, inflict, to pass variable to a function
+
+** ば
+
+- ばんのう (万能): All-purpose, utility, universal, all-powerful, almighty, omnipotent, all-around
+
 ** ぼ
 
 - ぼうぎょ(する) (防御): **Defense**, safeguard, protection
+
+** ち
+
+- ちがう (違う): To differ from, be unlike, disagree with, be wrong, be incorrect, be mistaken
 
 ** ぶ
 
@@ -10,6 +23,7 @@
 
 ** ちょ
 
+- ちょうくご (直後): Immediately following
 - ちょうせん(する) (挑戦): Challenge, defiance, dare, attempt, try
 - ちょうやく(する) (跳躍): **Warp**, jump, leap, skip, bound
 
@@ -19,8 +33,10 @@
 
 ** ふ
 
+- ふく (拭く): To wipe, dry
 - ふと (太): Grand, magnificent, excellent, fat, fatty
 - *ふとうらないし (太卜司): Grand Divination Commission*
+- ふよ(する) (付与): Grant, allowance, endowment, bestowal
 
 ** げ
 
@@ -55,6 +71,7 @@
 
 ** い
 
+- いちらん(する) (一覧): Summary, list, table, glance, inspection
 - いらい(する) (依頼): **Assignments**, Request, commission, entrusting with a matter, dependence, reliance
 - いっかつ(する) (一括): Lumping together, summing up, bundle, lump, batch
 
@@ -91,6 +108,7 @@
 ** じょ
 
 - じょうげん (上限): Upper limit, supremum
+- じょうきゃく/じょうかく (乗客): Passenger
 
 ** み
 
@@ -100,6 +118,10 @@
 ** な
 
 - ななし/ナナシ (名[無|な]し): **Nameless**, be nameless, namelessness, be without a name
+
+** れ
+
+- れっしゃ (列車): Train, railway train
 
 ** りょ
 
@@ -119,6 +141,10 @@
 - しんこう(する) (進行): Moving forward, onward movement, advance, advancement, progress, progression
 - しんよう(する) (信用): **Credit (finance)**, confidence, trust, faith, reputation
 
+** しゃ
+
+- しゃしょう (車掌): Train conductor
+
 ** しょ
 
 - しょうかく(する) (昇格): Promotion, raising of status
@@ -132,6 +158,7 @@
 
 - そう (総): Whole, total, gross, entire, overall, general
 - そう (層): Stratum
+- そざい (素材): Ingredient, raw material, resource, unprocessed timber, topic
 
 ** た
 
@@ -156,6 +183,11 @@
 ** よ
 
 - よび (予備): Reserve, spare, preparation, preliminaries
+
+** ゆ
+
+- ゆか/とこ (床): Floor, stage for the narrator, dining platform across a river / Bed, bedding
+- ゆめ (夢): Dream
 
 ** ぜ
 

@@ -203,6 +203,10 @@
 - なまえくうかん (名前空間): Namespace
 - ななめ(な) (斜め): Slanting, tilted, diagonal, sloping, oblique, distorted, amiss, awry
 
+** ね
+
+- ねる (寝る): To sleep (lying down), go to bed, sleep with someone and have intercourse
+
 ** に
 
 - にゅうりょく(する) (入力): Input, data entry
@@ -241,6 +245,7 @@
 - さいてい(な) (最低): Least, lowest, minimum, worst, awful, horrible, nasty, disgusting
 - さくせい(する) (作成): Draw up (legal document, contract, will, etc), create, prepare, write, frame, make, produce
 - さんか(する) (参加): Participation, joining, entry
+- さんそ (酸素): Oxygen (O)
 
 ** せ
 
@@ -289,6 +294,7 @@
 
 ** す
 
+- すいそ (水素): Hydrogen (H)
 - すずしい (涼しい): Cool, refreshing, clear, pure, innocent, composed, unconcerned
 
 ** た
