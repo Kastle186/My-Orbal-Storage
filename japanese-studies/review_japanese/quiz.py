@@ -5,6 +5,7 @@ import random
 from argparse import Namespace
 from collections import namedtuple
 from enum import Enum
+from typing import TextIO
 
 # ********** JPWord Class **********
 
@@ -95,10 +96,6 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
     if kind == 'translate' or (kind == 'read' and not question.kanji):
         return answer.lower() in question.english.lower()
 
-    # FIXME: Some words have multiple kana writings, which are separated by
-    #        forward slashes '/'. Only one is enough to get the question right,
-    #        so handle this special case.
-
     # FEATURE: Add partially correct answers, when either the english meaning or
     #          the kana writing are correct.
 
@@ -125,27 +122,40 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
 
     return AnswerState.MISSED
 
+# ---------- Multi_IO_Print() ----------
+
+def multi_io_print(text: str, file_stream: TextIO) -> None:
+    print(text, end='')
+    file_stream.write(text)
+
 # ---------- Display_Results() ----------
 
 def display_results(corrects: list[QA], misses: list[QA], num_questions: int) -> None:
     num_corrects = len(corrects)
     num_misses = len(misses)
+    results_file = open('results.txt', 'wt', encoding='utf8')
 
-    print(f"\nYou had {num_corrects}/{num_questions} correct answers",
-          end="!\n" if num_corrects == num_questions else ".\n")
+    multi_io_print(f"\nYou had {num_corrects}/{num_questions} correct answers.\n",
+                   results_file)
 
     if num_corrects == num_questions:
-        print("\nWay to go! You got them all right this time!\n")
+        multi_io_print("\nWay to go! You got them all right this time!\n",
+                       results_file)
     else:
-        print("\nHere are the ones you missed, so you can review them :)")
-        for miss in misses:
-            print(f"\n{str(miss.question)}")
-            print(f"You answered: '{miss.answer}'")
+        multi_io_print("\nHere are the ones you missed, so you can review them :)\n",
+                       results_file)
 
-    print("\nHere are the ones you got right:")
+        for miss in misses:
+            multi_io_print(f"\n{str(miss.question)}\n", results_file)
+            multi_io_print(f"You answered: '{miss.answer}'\n", results_file)
+
+    multi_io_print("\nHere are the ones you got right:\n", results_file)
+
     for correct in corrects:
-        print(f"\n{str(correct.question)}")
-        print(f"You answered: '{correct.answer}'")
+        multi_io_print(f"\n{str(correct.question)}\n", results_file)
+        multi_io_print(f"You answered: '{correct.answer}'\n", results_file)
+
+    results_file.close()
 
 # ---------- Run_Quiz() ----------
 
