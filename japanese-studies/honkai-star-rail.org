@@ -12,10 +12,15 @@
 ** ぼ
 
 - ぼうぎょ(する) (防御): **Defense**, safeguard, protection
+- ぼうけん(する) (冒険): Adventure, venture (unlikely to succeed), risky attempt/endeavor
 
 ** ち
 
 - ちがう (違う): To differ from, be unlike, disagree with, be wrong, be incorrect, be mistaken
+
+** ちょ
+
+- ちょうたつ(する) (調達): Supply, provision, raising, procurement
 
 ** ぶ
 
@@ -65,6 +70,7 @@
 
 ** ほ
 
+- ほきゅう(する) (補給): Supply(ing), replenishment
 - ほんだな (本棚): Bookshelves, bookshelf, bookcase
 - ほうほう (方法): Method, process, manner, way, means, technique
 - ほうしゅう (報酬): Remuneration, recompense, reward, toll
@@ -78,6 +84,7 @@
 ** か
 
 - かいたく(する) (開拓): **Trailblazing**, reclamation of land, cultivation, development, pioneering, opening up a new market, breaking new ground
+- かこ (過去): The past, bygone days, one's (secret) past, preterite, previous life
 - かくさん(する) (拡散): Spreading, disseminating, scattering, diffusion of light or gas
 
 ** き
@@ -118,6 +125,7 @@
 ** な
 
 - ななし/ナナシ (名[無|な]し): **Nameless**, be nameless, namelessness, be without a name
+- なやむ (悩む): To be worried, be troubled
 
 ** れ
 
@@ -127,9 +135,15 @@
 
 - りょう (量): Quantity, amount, volume, capacity, generosity, magnanimity, tolerance
 
+** る
+
+- るいけい(する) (累計): Cumulative/accumulated total up to now
+
 ** さ
 
 - さい (再): Again, re-, deutero-, deuto-, deuter-
+- さいわい(な) (幸い): Luckily, fortunately, happiness, blessedness, luck, felicity
+- さきほどから (先[ほど|程]から): Since some time ago, for some time, for quite a while
 
 ** せ
 
@@ -164,6 +178,7 @@
 
 - たびきろく (旅記録): **Travel Log**, travel document, travel record
 - たんたい (単体): Something standing alone, separate item, solo item, simple substance (chemical)
+- たおす (倒す): To defeat, beat, overthrow, recline, fell, bring down, throw down
 - たりる (足りる): To be sufficient, enough, worth doing, deserve, do the job, serve, answer
 - たっする (達する): To reach, get to, arrive at
 
@@ -177,7 +192,9 @@
 
 ** う
 
+- うちゅう (宇宙): Universe, cosmos, space
 - うけとり (受[け]取[り]): Receiving, receipt
+- うんてん(する) (運転): Operation of a machine, driving a vehicle, use of capital/funds, management investment
 - うらない (占い/卜): Fortune-telling, divination
 
 ** よ
