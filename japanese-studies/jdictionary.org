@@ -102,6 +102,7 @@
 ** じょ
 
 - じょうほう (情報): Information (can also be digitally encoded), report, intelligence
+- じょうきょう (状況): State of affairs, situation, condition, circumstances
 - じょうたい (状態): State, condition, situation, appearance, circumstances
 
 ** じゅ
@@ -110,9 +111,11 @@
 - じゅんきょ(する) (準拠): Basis, based on, conformance, conformity, authority of, standard, reference
 - じゅしん(する) (受信): Receiving (message, letter, email, etc), reception (radio, TV, etc)
 - じゅうしょ (住所): Address, residence, domicile
+- じゅうよう(な) (重要): Important, momentous, essential, principal, major
 
 ** か
 
+- かだい (課題): Subject, theme, issue, matter, homework, assignment, task, challenge, problem, question
 - かいはつ(する) (開発): Development, exploitation of resources
 - かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
@@ -157,6 +160,7 @@
 
 ** きょ
 
+- きょひ(する) (拒否): Refusal, rejection, denial
 - きょか(する) (許可): Permission, approval, authorization
 - きょうつう(な) (共通): Common, shared, mutual
 - きょうゆう(する) (共有): Sharing (files, devices, viewpoints), joint ownership, co-ownership
@@ -164,6 +168,7 @@
 ** きゅ
 
 - きゅうぎょう(する) (休業): Suspension of business, temporary closure, shutdown, holiday
+- きゅうか (休暇): Holiday, day off, furlough, absence from work
 
 ** こ
 
@@ -188,6 +193,7 @@
 ** め
 
 - めいしゅ (盟主): Leader of an alliance, leading power
+- めいわく(な) (迷惑): Junk mail, trouble, bother, annoyance, nuisance, inconvenience
 
 ** み
 
@@ -235,6 +241,7 @@
 ** り
 
 - りれき (履歴): History, record, log, background, career
+- りゆう/わけ (理由): Reason, pretext, motive
 
 ** りょ
 
