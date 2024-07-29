@@ -4,6 +4,7 @@
 
 - あかるさ (明るさ): Brightness, luminance, cheerfulness
 - あんぜん(な) (安全): Safety, security
+- あたる (当る): To be hit, equivalent to, applicable, right on the money of a prediction or thought, selected as winner, be successful, be well, be assigned, be called on, be on a hitting streak
 
 ** ば
 
@@ -57,10 +58,12 @@
 - はいたつ(する) (配達): Delivery
 - はいしん(する) (配信): Distribution of information, broadcast, delivery, transmission, streaming
 - はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
+- はんのう(する) (反応): Reaction, response
 - はねる (跳ねる): To jump, leap, prance, spring up, bound, hop, break up, come to an end, hit
 
 ** ひ
 
+- ひづけ (日[付|附]): Date, dating
 - ひくい (低い): Low (rank, degree, value, content, quality, position, key, volume), short height, deep voice
 - ひてい(する) (否定): Denial, negation, repudiation, disavowal, NOT operation (programming and computers)
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
@@ -93,6 +96,7 @@
 ** じ
 
 - じかん (時間): Time, hour, period, class, lesson
+- じこく (時刻): Time (favourable), opportunity, chance
 - じっそう(する) (実装): Implementation of a feature, installation of equipment, mounting, packaging
 
 ** じょ
@@ -180,6 +184,10 @@
 ** ま
 
 - または (又は): Or, either or
+
+** め
+
+- めいしゅ (盟主): Leader of an alliance, leading power
 
 ** み
 
@@ -274,12 +282,13 @@
 
 ** しょ
 
-- しょうぼう(する) (消防): Fire-fighting, fire department, fire brigade
-- しょうひん (商品): Commodity, article of commerce, goods, stock, merchandise
 - しょくば (職場): One's post, place of work, workplace
 - しょり(する) (処理): Processing, dealing with, treatment, disposition, disposal
+- しょうぼう(する) (消防): Fire-fighting, fire department, fire brigade
+- しょうひん (商品): Commodity, article of commerce, goods, stock, merchandise
 - しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
 - しょうさい(する) (詳細): Details, particulars, specific, close-up view, zoomed-in view
+- しょうたい (正体): True character, true form, true colors, identity, origin, consciousness
 
 ** しゅ
 
@@ -330,6 +339,10 @@
 - つうち(する) (通知): Notice, report, notification on a smartphone, PC, etc
 - つうよう(する) (通用): Popular use, circulation, to pass as
 - つよい (強い): Strong, potent, tough, powerful, fierce, durable, knowledgeable, dependable, trustworthy
+
+** う
+
+- うれしい (嬉しい): Happy, glad, pleased, delighted, overjoyed, gratified
 
 ** わ
 
