@@ -30,7 +30,11 @@
 
 ** で
 
+- でんち (電池): Battery, cell
 - でんき (電気): Electricity, electric light
+- でんし (電子): Electron, electronic
+- でんたく (電卓): (Pocket) Electronic Calculator
+- でんわ(する) (電話): Telephone call, phone call
 
 ** ど
 
@@ -60,6 +64,7 @@
 - はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
 - はんのう(する) (反応): Reaction, response
 - はねる (跳ねる): To jump, leap, prance, spring up, bound, hop, break up, come to an end, hit
+- はつおん(する) (発音): Pronunciation, production of sound
 
 ** ひ
 
@@ -229,6 +234,7 @@
 ** お
 
 - おんせい (音声): Voice, speech, sound or audio
+- おんせいがく (音声学): Phonetics
 - おうとう(する) (応答): Reply, answer, response (chat, email, etc)
 
 ** れ
@@ -265,8 +271,10 @@
 ** せ
 
 - せいひん (製品): Manufactured goods, finished goods, product
+- せいかく(な) (正確): Accurate, correct, precise, exact
 - せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
 - せいこう(する) (成功): Success, achievement, prosperity
+- せいせい(する) (生成): Creation, generation, formation, derivation
 - せんたく(する) (洗濯): Washing, laundry, relaxing, taking a break
 - せんたく(する) (選択): Choice, selection, option
 - せつやく(する) (節約): Economising, saving
@@ -334,6 +342,7 @@
 
 - ところ (所/処): Place, spot, scene, site, area, space
 - とくべつ(な) (特別): Special, particular, extraordinary, exceptional
+- とりけす (取り消す): To cancel, withdraw, retract, take back words, revoke
 - とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
 - とうちゃく(する) (到着): Arrival
 - とうこう(する) (投稿): Contribution to a newspaper, magazine, etc, submission or post on a blog, social media, etc
@@ -385,6 +394,7 @@
 ** ぞ
 
 - ぞくする (属する): To belong to, come under, be affiliated with, be subject to
+- ぞっこう(する) (続行): Continuation, continuance, resuming
 
 ** ず
 
