@@ -219,11 +219,13 @@
 - ないぶ (内部): Interior, inside, internal
 - ないよう (内容): Contents, substance, matter, detail, import
 - ないぞう(する) (内蔵): Internal (disk, drive), built-in, equipped with
+- なかま (仲間): Companion, fellow, friend, mate, comrade, partner, coworker, associate, group, circle, gang, member of the same category
 - なまえくうかん (名前空間): Namespace
 - ななめ(な) (斜め): Slanting, tilted, diagonal, sloping, oblique, distorted, amiss, awry
 
 ** ね
 
+- ねがう (願う): To desire, wish, hope, implore, pray, have something done for oneself
 - ねる (寝る): To sleep (lying down), go to bed, sleep with someone and have intercourse
 
 ** に
