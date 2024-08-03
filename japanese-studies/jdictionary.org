@@ -45,6 +45,8 @@
 - ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
 - ふべん(な) (不便): Inconvenience, inexpediency, unhandiness
 - ふく (吹): To blow (on), breathe out, puff, whistle, sprout
+- ふろ (風呂): Bath, bathtub, bathroom, bathhouse, room for drying lacquerware, base of a sword
+- ふうそく (風速): Wind speed
 - ふざい (不在): Absence
 
 ** が
@@ -56,6 +58,10 @@
 ** ぎ
 
 - ぎんこう (銀行): Bank, banking institution
+
+** ご
+
+- ごろ/ころ (頃): Approximate/around/about/toward a certain time, suitable time or condition
 
 ** は
 
@@ -72,6 +78,7 @@
 - ひくい (低い): Low (rank, degree, value, content, quality, position, key, volume), short height, deep voice
 - ひてい(する) (否定): Denial, negation, repudiation, disavowal, NOT operation (programming and computers)
 - ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
+- ひやけ(する) (日[焼|や]け): Sunburn, suntan, drying up of a river, field, etc
 
 ** ひょ
 
@@ -85,6 +92,7 @@
 
 ** ほ
 
+- ほぼ (): Almost, roughly, approximately
 - ほご(する) (保護): Protection, safeguard, guardianship, custody, patronage, preservation, conservation
 - ほんじつ (本日): Today, this day
 - ほんやく(する) (翻訳): Translation, deciphering, decoding
@@ -102,6 +110,7 @@
 
 - じかん (時間): Time, hour, period, class, lesson
 - じこく (時刻): Time (favourable), opportunity, chance
+- じっさい (実際): Reality, actuality, actual conditions, practice as opposed to theory, truly
 - じっそう(する) (実装): Implementation of a feature, installation of equipment, mounting, packaging
 
 ** じょ
@@ -125,6 +134,7 @@
 - かいはつしゃ (開発者): Developer
 - かいし(する) (開始): Commencement, beginning, initiation
 - かいすう (回数): Number of times, frequency, count
+- かこ (過去): The past, bygone days, one's past that one would rather keep secret, preterite, previous life
 - かくにん(する) (確認): Confirmation, verification, validation, review, check, affirmation, identification
 - かくとく(する) (獲得): Acquisition, possession
 - かんぺき(な) (完[璧|ぺき]): Perfect, complete, flawless
@@ -133,6 +143,7 @@
 - かのう(な) (可能): Possible, potential, feasible
 - かのうせい (可能性): Potentiality, likelihood, possibility
 - かつ (): And, moreover, besides, as well as, and on top of that, at the same time
+- かぞく (家族): Family
 - かず/すう (数): Number, amount / Several, quantity, figures
 
 ** け
@@ -184,11 +195,14 @@
 - こうしん(する) (更新): Renewal, update, replacement
 - こうそく(な) (高速): High-speed, rapid, express
 - こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
+- こうすい (降水): Rainfall, precipitation
 - こうつう(する) (交通): Traffic, transportation, communication, exchange of ideas, intercourse
 
 ** く
 
 - くだもの/かぶつ (果物): Fruit
+- くうき (空気): Air, atmosphere, mood, situation, someone with no presence
+- くうきしつ (空気質): Air quality
 - くうこう (空港): Airport
 
 ** ま
@@ -237,6 +251,7 @@
 
 - おんせい (音声): Voice, speech, sound or audio
 - おんせいがく (音声学): Phonetics
+- おなじ/おんなじ (同じ): Same, identical, equal, uniform, equivalent, similar, common origin, changeless, alike
 - おうとう(する) (応答): Reply, answer, response (chat, email, etc)
 
 ** れ
@@ -261,9 +276,11 @@
 
 - さがす (探す): To search, look for something desired, hunt for, seek, rummage in, fish around
 - さぎょう(する) (作業): Work, operation, manufacture, fatigue duty
+- さいだい (最大): Biggest, greatest, largest, maximum
 - さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
 - さいしん (最新): Latest, newest, late-breaking (news)
 - さいしょ (最初): Beginning, outset, first, onset
+- さいしょう (最小): Smallest (in size, degree, etc), least, minimum, minimal
 - さいしゅう (最終): Last, final, closing
 - さいてい(な) (最低): Least, lowest, minimum, worst, awful, horrible, nasty, disgusting
 - さくせい(する) (作成): Draw up (legal document, contract, will, etc), create, prepare, write, frame, make, produce
@@ -287,10 +304,15 @@
 
 ** し
 
+- しかい (視界): Field of vision, one's visibility, view, visual field, one's ken
 - しんちゃく(する) (新着): New arrivals, new acquisitions
 - しんちゃくじょうほう (新着情報): What's new on webpages/programs/newsletters, announcement of new arrivals or events
 - しんがた (新型): New type, new style, new model
 - しんせい(する) (申請): Application, request, petition
+- しすう (指数): Index (number), exponent in floating-point representation, characteristic
+- してい (視程): Visibility
+- してい(する) (指定): Designation, specification, assignment, appointment, pointing at
+- しつもん(する) (質問): Question, inquiry, enquiry
 - しよう(する) (使用): Use, application, employment, utilization, utilisation
 
 ** しゃ
@@ -321,10 +343,13 @@
 ** す
 
 - すいそ (水素): Hydrogen (H)
+- すいぞくかん (水族館): Aquarium
 - すずしい (涼しい): Cool, refreshing, clear, pure, innocent, composed, unconcerned
 
 ** た
 
+- たいかん(する) (体感): Bodily sensation, sense, experience
+- たいかんおんど (体感温度): Effective temperature, wind-chill index
 - たいき(する) (待機): Standing by, awaiting an opportunity, being on alert, quarantine
 - たいおう(する) (対応): Equivalence, suitability, matching, be appropriate for, coping with, reception, compatibility with technology, software, etc, capability, support for
 - たいせき(する) (退席): Leaving one's seat, afk
@@ -338,6 +363,7 @@
 - ていでんりょく (低電力): Low-power electrical/electricity
 - ていし(する) (停止): Stoppage, halt, standstill, ceasing movement or activity, suspension of operations, interruption, prohibition, ban
 - てんき (天気): Weather, the elements
+- てんし (天使): Angel
 - てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
 
 ** と
@@ -384,6 +410,7 @@
 
 ** ゆ
 
+- ゆび (指): Finger, toe, digit
 - ゆうせん(する) (優先): Preference, priority, precedence
 - ゆうせんど (優先度): Degree of relative priority
 - ゆうりょう (有料): Fee-charging, paid, not free
