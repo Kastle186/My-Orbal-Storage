@@ -94,7 +94,9 @@ def ask(question: JPWord, qkind: str) -> str:
 
 def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
     if kind == 'translate' or (kind == 'read' and not question.kanji):
-        return answer.lower() in question.english.lower()
+        en = answer.lower()
+        expected_en = question.english.lower()
+        return AnswerState.CORRECT if en in expected_en else AnswerState.MISSED
 
     # FEATURE: Add partially correct answers, when either the english meaning or
     #          the kana writing are correct.
