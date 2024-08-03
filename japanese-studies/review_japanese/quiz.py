@@ -31,7 +31,7 @@ QA = namedtuple('QA', ['question', 'answer'])
 class AnswerState(Enum):
     CORRECT = 1
     MISSED  = 2
-    PARTIAL = 3
+    PARTIAL = 3 # Currently Unused
 
 # ---------- Get_Words_From_File() ----------
 
@@ -118,10 +118,6 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
             else:
                 return AnswerState.MISSED
 
-    # TODO: Implement writing checks.
-    if kind == 'write':
-        return AnswerState.CORRECT
-
     return AnswerState.MISSED
 
 # ---------- Multi_IO_Print() ----------
@@ -151,11 +147,12 @@ def display_results(corrects: list[QA], misses: list[QA], num_questions: int) ->
             multi_io_print(f"\n{str(miss.question)}\n", results_file)
             multi_io_print(f"You answered: '{miss.answer}'\n", results_file)
 
-    multi_io_print("\nHere are the ones you got right:\n", results_file)
+    if num_corrects > 0:
+        multi_io_print("\nHere are the ones you got right:\n", results_file)
 
-    for correct in corrects:
-        multi_io_print(f"\n{str(correct.question)}\n", results_file)
-        multi_io_print(f"You answered: '{correct.answer}'\n", results_file)
+        for correct in corrects:
+            multi_io_print(f"\n{str(correct.question)}\n", results_file)
+            multi_io_print(f"You answered: '{correct.answer}'\n", results_file)
 
     results_file.close()
 
