@@ -3,6 +3,7 @@
 ;; *********************************************
 
 (setq word-first-syllable "")
+(defvar words-temp-buffer-name "*Japanese of the Session*")
 
 ;; *********************************
 ;;  New Item Data Prompt Functions!
@@ -58,11 +59,14 @@ the dictionary."
                                  kanji-writing
                                  word-type
                                  english-def))
-    (format "%s%s (%s): %s\n\n"
-            hiragana-writing
-            word-type
-            kanji-writing
-            english-def)))
+
+    (let ((word-output (format "%s%s (%s): %s"
+                               hiragana-writing
+                               word-type
+                               kanji-writing
+                               english-def)))
+      (save-word-to-temp-buffer word-output)
+      word-output)))
 
 
 ;; *****************
@@ -161,6 +165,24 @@ added to the lexicon, or if it was prompted to be a dictionary-only addition."
        (goto-char (point-max))
        (insert (format "\n** %s\n\n" syllable))))
     (insert (format "- %s%s (%s): %s\n" hiragana nasuru kanji english))))
+
+
+;; *************************
+;; save-word-to-temp-buffer
+;; *************************
+;; I've lost track of how many times I record and save a new word, only to need it
+;; and have already forgot it right after. So, to solve this little personal problem,
+;; we also create a temporary buffer where we store the words we've added during
+;; the current Emacs session. Just as an easy way to look them up in these cases
+;; that have annoyed me more than the should have :)
+
+(defun save-word-to-temp-buffer (word-info)
+  "Write the just captured word information on a temporary buffer for easier lookup
+during the current Emacs session."
+  (get-buffer-create words-temp-buffer-name)
+  (with-current-buffer words-temp-buffer-name
+    (goto-char (point-max))
+    (insert (format "%s\n" word-info))))
 
 
 ;; ****************
