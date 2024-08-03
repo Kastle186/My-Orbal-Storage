@@ -208,14 +208,14 @@ literally, there is another prompt afterwards to retrieve this case."
              '("w" "New Japanese Word (Lexicon and Dictionary)"
                item (function get-lexicon-word-place)
                #'get-word-for-lexicon
-               :empty-lines 0 :immediate-finish t :jump-to-captured t)
+               :empty-lines-after 1 :immediate-finish t :jump-to-captured t)
              t)
 
 (add-to-list 'org-capture-templates
              '("d" "New Japanese Word (Dictionary only)"
                item (function get-dictionary-word-place)
                #'get-word-for-dictionary
-               :empty-lines 0 :immediate-finish t :jump-to-captured t)
+               :empty-lines-after 1 :immediate-finish t :jump-to-captured t)
              t)
 
 (add-to-list 'org-capture-templates

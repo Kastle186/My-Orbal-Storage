@@ -225,7 +225,7 @@
                               (name . "\\.??proj")
                               (name . "\\.props")
                               (name . "\\.targets")))
-               ("PowerShell" (mode . ps-mode))
+               ("PowerShell" (mode . powershell-mode))
                ("Python"     (or
                               (mode . python-mode)
                               (name . "^\\*Python\\*$")))
