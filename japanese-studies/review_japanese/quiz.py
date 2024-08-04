@@ -22,6 +22,9 @@ class JPWord:
             strrep += f"\n  Kanji: {self.kanji}"
         return strrep
 
+    def orig_str(self) -> str:
+        return f"- {self.kana} ({self.kanji}): {self.english}"
+
 # ********** Question/Answer Set Type **********
 
 QA = namedtuple('QA', ['question', 'answer'])
@@ -66,26 +69,14 @@ def generate_word_pool(files: list[str]) -> list[JPWord]:
 # ---------- Ask() ----------
 
 def ask(question: JPWord, qkind: str) -> str:
-    from_prompt = ''
-    to_prompt = ''
+    from_prompt = 'of the following'
+    to_prompt = 'the meaning'
 
-    if qkind == 'translate' or qkind == 'read':
-        from_prompt = 'of the following'
-        to_prompt = 'the meaning'
-
-        if not question.kanji:
-            from_prompt += f" word '{question.kana}'"
-        else:
-            from_prompt += f" kanji '{question.kanji}'"
-            to_prompt += ' and kana writing' if qkind == 'read' else ''
-
-    elif qkind == 'write':
-        if not question.kanji:
-            from_prompt = f"for '{question.english}'"
-            to_prompt = 'the japanese word'
-        else:
-            from_prompt = f"of '{question.kana}' when it means '{question.english}'"
-            to_prompt = 'the kanji'
+    if not question.kanji:
+        from_prompt += f" word '{question.kana}'"
+    else:
+        from_prompt += f" kanji '{question.kanji}'"
+        to_prompt += ' and kana writing' if qkind == 'read' else ''
 
     answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
     return answer if len(answer) > 0 else "<no response>"
@@ -120,6 +111,12 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
 
     return AnswerState.MISSED
 
+# ---------- Record_Misses() ----------
+
+def record_misses(to_study: list[QA]) -> None:
+    with open('to-study.org', 'a', encoding='utf8') as fp:
+        fp.writelines([qa.question.orig_str() + '\n' for qa in to_study])
+
 # ---------- Multi_IO_Print() ----------
 
 def multi_io_print(text: str, file_stream: TextIO) -> None:
@@ -146,6 +143,8 @@ def display_results(corrects: list[QA], misses: list[QA], num_questions: int) ->
         for miss in misses:
             multi_io_print(f"\n{str(miss.question)}\n", results_file)
             multi_io_print(f"You answered: '{miss.answer}'\n", results_file)
+
+        record_misses(misses)
 
     if num_corrects > 0:
         multi_io_print("\nHere are the ones you got right:\n", results_file)
