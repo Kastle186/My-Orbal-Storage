@@ -98,6 +98,7 @@
 - ほんやく(する) (翻訳): Translation, deciphering, decoding
 - ほうこく(する) (報告): Report, information
 - ほうそう(する) (放送): Broadcast, program, announcement
+- ほぞん(する) (保存): Saving to disk, preservation, conservation, storage, maintenance
 
 ** い
 
@@ -259,6 +260,7 @@
 - おんせい (音声): Voice, speech, sound or audio
 - おんせいがく (音声学): Phonetics
 - おなじ/おんなじ (同じ): Same, identical, equal, uniform, equivalent, similar, common origin, changeless, alike
+- おとな/だいにん(な) (大人): Adult, grown-up
 - おうとう(する) (応答): Reply, answer, response (chat, email, etc)
 
 ** れ
