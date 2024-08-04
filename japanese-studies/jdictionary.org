@@ -105,6 +105,7 @@
 - いどう(する) (移動): Movement, transfer, migration, removal, travel, mobile, roving
 - いじょう (以上): Not less than, and upwards, or more, more than, further than
 - いみ(する) (意味): Meaning, significance, sense
+- いしょう (衣装): Clothing, costume, outfit, garment, dress
 
 ** じ
 
@@ -139,6 +140,7 @@
 - かくとく(する) (獲得): Acquisition, possession
 - かんぺき(な) (完[璧|ぺき]): Perfect, complete, flawless
 - かんり(する) (管理): Control, management of a business/account
+- かんそう (感想): Impressions, thoughts, feelings, reactions
 - かんぜん(な) (完全): Perfect, complete
 - かのう(な) (可能): Possible, potential, feasible
 - かのうせい (可能性): Potentiality, likelihood, possibility
@@ -236,6 +238,7 @@
 - なかま (仲間): Companion, fellow, friend, mate, comrade, partner, coworker, associate, group, circle, gang, member of the same category
 - なまえくうかん (名前空間): Namespace
 - ななめ(な) (斜め): Slanting, tilted, diagonal, sloping, oblique, distorted, amiss, awry
+- なにより (何より): Above anything else, more than anything, most important
 
 ** ね
 
@@ -244,8 +247,12 @@
 
 ** に
 
-- にゅうりょく(する) (入力): Input, data entry
+- にあう (似[合|あ]う): To suit, match, be like
 - にっかん (日間): Daytime, during the day
+
+** にゅ
+
+- にゅうりょく(する) (入力): Input, data entry
 
 ** お
 
