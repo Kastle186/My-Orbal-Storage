@@ -45,6 +45,7 @@
 - ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
 - ふべん(な) (不便): Inconvenience, inexpediency, unhandiness
 - ふく (吹): To blow (on), breathe out, puff, whistle, sprout
+- ふくめる (含める): To include in a group or scope, to put in, to permeate with flavor
 - ふろ (風呂): Bath, bathtub, bathroom, bathhouse, room for drying lacquerware, base of a sword
 - ふうそく (風速): Wind speed
 - ふざい (不在): Absence
@@ -61,6 +62,7 @@
 
 ** ご
 
+- ごらんなさる ([ご|御]覧なさる): Try to look or do something
 - ごろ/ころ (頃): Approximate/around/about/toward a certain time, suitable time or condition
 
 ** は
@@ -68,6 +70,7 @@
 - はいたつ(する) (配達): Delivery
 - はいしん(する) (配信): Distribution of information, broadcast, delivery, transmission, streaming
 - はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
+- はん/ばん (版): Edition, version, printing, implementation of software, plate, block, cast, impression
 - はんのう(する) (反応): Reaction, response
 - はねる (跳ねる): To jump, leap, prance, spring up, bound, hop, break up, come to an end, hit
 - はつおん(する) (発音): Pronunciation, production of sound
@@ -257,6 +260,7 @@
 
 ** お
 
+- おきかえる (置き[換|か]える): To replace, to move, to change the position of
 - おんせい (音声): Voice, speech, sound or audio
 - おんせいがく (音声学): Phonetics
 - おなじ/おんなじ (同じ): Same, identical, equal, uniform, equivalent, similar, common origin, changeless, alike
@@ -273,6 +277,7 @@
 ** り
 
 - りれき (履歴): History, record, log, background, career
+- りよう(する) (利用): Use, utilization, utilisation, application
 - りゆう/わけ (理由): Reason, pretext, motive
 
 ** りょ
