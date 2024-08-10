@@ -68,7 +68,7 @@ def generate_word_pool(files: list[str]) -> list[JPWord]:
 
 # ---------- Ask() ----------
 
-def ask(question: JPWord, qkind: str) -> str:
+def ask(question: JPWord, qkind: str, qnum: int) -> str:
     from_prompt = 'of the following'
     to_prompt = 'the meaning'
 
@@ -78,7 +78,7 @@ def ask(question: JPWord, qkind: str) -> str:
         from_prompt += f" kanji '{question.kanji}'"
         to_prompt += ' and kana writing' if qkind == 'read' else ''
 
-    answer = input(f"\nWhat is {to_prompt} {from_prompt}?\n").strip()
+    answer = input(f"\n{qnum}) What is {to_prompt} {from_prompt}?\n").strip()
     return answer if len(answer) > 0 else "<no response>"
 
 # ---------- Check_Answer() ----------
@@ -89,25 +89,22 @@ def check_answer(question: JPWord, answer: str, kind: str) -> AnswerState:
         expected_en = question.english.lower()
         return AnswerState.CORRECT if en in expected_en else AnswerState.MISSED
 
-    # FEATURE: Add partially correct answers, when either the english meaning or
-    #          the kana writing are correct.
+    # FEATURE IDEA: Add partially correct answers, when either the english meaning
+    #               or the kana writing are correct.
 
-    if kind == 'read' and question.kanji:
-        try:
-            en, jp = map(lambda x: x.strip(), answer.split(','))
-        except ValueError:
-            return AnswerState.MISSED
-        else:
-            en = en.lower()
-            jp = jp.split('(')[0]
-            expected_en = question.english.lower()
-            expected_jp = list(map(lambda x: x.strip(),
+    try:
+        en, jp = map(lambda x: x.strip(), answer.split(','))
+    except ValueError:
+        return AnswerState.MISSED
+    else:
+        en = en.lower()
+        jp = jp.split('(')[0]
+        expected_en = question.english.lower()
+        expected_jp = list(map(lambda x: x.strip(),
                                    question.kana.split('(')[0].split('/')))
 
-            if en in expected_en and jp in expected_jp:
-                return AnswerState.CORRECT
-            else:
-                return AnswerState.MISSED
+        if en in expected_en and jp in expected_jp:
+            return AnswerState.CORRECT
 
     return AnswerState.MISSED
 
@@ -158,15 +155,15 @@ def display_results(corrects: list[QA], misses: list[QA], num_questions: int) ->
 # ---------- Run_Quiz() ----------
 
 def run_quiz(word_pool: list[JPWord], kind: str, num_questions: int) -> None:
-    q_counter = 1
+    q_counter = 0
     corrects = []
     misses = []
     partials = []
 
-    while q_counter <= num_questions:
+    while q_counter < num_questions:
         q_counter += 1
         question = word_pool[random.randint(0, len(word_pool)-1)]
-        answer = ask(question, kind)
+        answer = ask(question, kind, q_counter)
 
         if check_answer(question, answer, kind) == AnswerState.CORRECT:
             corrects.append(QA(question, answer))
