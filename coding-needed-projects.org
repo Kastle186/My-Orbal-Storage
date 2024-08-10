@@ -3,43 +3,14 @@
 In this little doc, I will describe ideas I get for coding projects, setups, etc,
 that will help me wonders in my day-to-day job.
 
-** Japanese Studies
+** Work Related
 
-- I'm missing to implement the writing mode of the review app I made.
-- Add to the little app, or entirely create a new one if needed, to also practice
-  japanese grammar.
+My ultimate goal for my work is to be able to work as seamlessly as possible on Linux,
+and finally get rid of the last remaining dependencies on Windows. The next list shows
+some use cases I've encountered on my day-to-day job that would make for some neat
+features for my devenv :)
 
-** Dotnet
-
-- Make a full setup and on-the-run script to ease the burden on working on the
-  runtime repo:
-  
-  * Support multiple repos at a time
-    + Persist settings to share them across multiple terminals
-  * Build subsets
-  * Build tests
-  * Generate layout
-  * Keep CORE_ROOT environment variable updated
-  * Shortcuts to multiple key places:
-    + Repo Root
-    + Tests Path
-    + Tests Artifacts
-  * Other miscellaneous tools that might come in handy:
-    + Get the assembly details of any given DLL
-
-- Try to make a general C# command-line argument parser that does not rely on
-  the monstrosity that ~System.CommandLine~ is.
-
-- Coffee App local replacement.
-
-** Debugging
-
-- Make a stable pipeline to debug coreclr with either lldb, or cgdb, or both.
-
-** Other Utilities
-
-- Make a full infrastructure where you have cool utilities at hand, and can
-  optionally load "plugins" like the dotnet environment stuff.
-  + Run multiple scripts
-  + Get total item count in a directory
-  + Larger history for 'cd -'
+- Be able to translate Crossgen2 Windows command lines to Linux command lines.
+- Find a good mapping from Windows' "dumpbin -headers" to Linux's "objdump -x"
+- Figure out if we can read MSBuild binary logs programmatically somehow,
+  and how to do it in case it's possible.
