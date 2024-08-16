@@ -1,7 +1,7 @@
 *.exe
 *.out
 **/obj/*
-**/out/*
+**/App/*
 **/bin/*
 **/__pycache__/*
 japanese-studies/results.txt

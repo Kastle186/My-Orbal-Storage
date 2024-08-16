@@ -10,20 +10,20 @@ public class Program
     {
         string cmd = args[0];
         string[] cmdArgs = args[1..];
-        int exitCode = 0;
+        int exitCode = 999;
 
         switch (cmd)
         {
             case "dir2stack":
-                Commands.Dir2Stack(cmdArgs);
+                exitCode = Commands.Dir2Stack(cmdArgs);
                 break;
 
             case "ncd":
-                Commands.Ncd(cmdArgs);
+                exitCode = Commands.Ncd(cmdArgs);
                 break;
 
             case "cdprev":
-                Commands.CdPrev(cmdArgs);
+                exitCode = Commands.CdPrev(cmdArgs);
                 break;
 
             default:
