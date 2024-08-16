@@ -18,12 +18,16 @@ public class Program
                 exitCode = Commands.Dir2Deque(cmdArgs);
                 break;
 
+            case "dirdequeue":
+                exitCode = Commands.DirDequeue();
+                break;
+
             case "ncd":
                 exitCode = Commands.Ncd(cmdArgs);
                 break;
 
             case "cdprev":
-                exitCode = Commands.CdPrev(cmdArgs);
+                exitCode = Commands.CdPrev();
                 break;
 
             default:

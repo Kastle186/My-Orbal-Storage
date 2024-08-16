@@ -44,6 +44,22 @@ function ncd {
     cd $newpath_out
 }
 
-# function cdprev {
-#     echo 'Command cdprev under construction!'
-# }
+function cdprev {
+    local prevpath_out
+    local cdprev_code
+
+    prevpath_out=$($ORBAL_ENV_APP cdprev)
+    cdprev_code=$?
+
+    if [[ "$cdprev_code" == "2" ]]; then
+        return 0
+    fi
+
+    if [[ "$cdprev_code" != "0" ]]; then
+        echo $prevpath_out
+        return 1
+    fi
+
+    cd $prevpath_out
+    export DIR_DEQUE="$($ORBAL_ENV_APP dirdequeue)"
+}

@@ -30,8 +30,8 @@ public static class Commands
         // to make more overhead with repeating that.
         string newPath = args[0];
 
-        string dirStackValue = Environment.GetEnvironmentVariable("DIR_DEQUE");
-        string[] histPaths = dirStackValue.Split(DIR_DEQUE_SEPARATOR);
+        string dirDequeValue = Environment.GetEnvironmentVariable("DIR_DEQUE");
+        string[] histPaths = dirDequeValue.Split(DIR_DEQUE_SEPARATOR);
 
         if (histPaths.Length == DIR_DEQUE_MAX_SIZE)
         {
@@ -48,9 +48,21 @@ public static class Commands
         }
         else
         {
-            Console.WriteLine($"{dirStackValue}{DIR_DEQUE_SEPARATOR}{newPath}");
+            Console.WriteLine($"{dirDequeValue}{DIR_DEQUE_SEPARATOR}{newPath}");
         }
 
+        return 0;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    internal static int DirDequeue()
+    {
+        string dirDequeValue = Environment.GetEnvironmentVariable("DIR_DEQUE");
+        string[] histPaths = dirDequeValue.Split(DIR_DEQUE_SEPARATOR);
+        Console.WriteLine(string.Join(DIR_DEQUE_SEPARATOR, histPaths[..^2]));
         return 0;
     }
 
@@ -93,8 +105,34 @@ public static class Commands
         return 0;
     }
 
-    public static int CdPrev(string[] args)
+    /// <summary>
+    /// Returns to the previous directory. Note that 'previous' in this context
+    /// means the previous cwd/pwd, which may or may not be even in the same
+    /// directory tree as the current one. For example in the following snippet:
+    /// <code>
+    /// cd one
+    /// cd ../two/three
+    /// </code>
+    /// The current directory would be ./two/three and the previous would be ./one.
+    /// </summary>
+    /// <remarks>
+    /// If the DIR_DEQUE only has one directory, then this command has no effect.
+    /// </remarks>
+    /// <returns>
+    /// Prints the new working directory for the shell to consume and move to, and
+    /// returns 0 if everything went fine. Returns 2 and doesn't print anything to
+    /// signal the shell to do nothing since there's no previous directory to move
+    /// to. Returns -1 if something went wrong.
+    /// </returns>
+    public static int CdPrev()
     {
+        string dirDequeValue = Environment.GetEnvironmentVariable("DIR_DEQUE");
+
+        if (!dirDequeValue.Contains(DIR_DEQUE_SEPARATOR))
+            return 2;
+
+        string[] histPaths = dirDequeValue.Split(DIR_DEQUE_SEPARATOR);
+        Console.WriteLine(histPaths[histPaths.Length-2]);
         return 0;
     }
 }
