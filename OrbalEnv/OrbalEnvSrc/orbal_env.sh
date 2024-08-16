@@ -22,13 +22,13 @@ fi
 # Configure and define the Orbal Environment variables and functions!
 # ******************************************************************* #
 
-export DIR_STACK="$PWD"
+export DIR_DEQUE="$PWD"
 
-# function cd {
-#     builtin cd "$@"
-#     cdcode=$?
-#     [[ "$cdcode" == "0" ]] && export DIR_STACK="$($ORBAL_ENV_APP dir2stack "$PWD")"
-# }
+function cd {
+    builtin cd "$@"
+    local cdcode=$?
+    [[ "$cdcode" == "0" ]] && export DIR_DEQUE="$($ORBAL_ENV_APP dir2deque "$PWD")"
+}
 
 function ncd {
     local newpath_out

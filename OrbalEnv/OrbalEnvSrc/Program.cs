@@ -14,8 +14,8 @@ public class Program
 
         switch (cmd)
         {
-            case "dir2stack":
-                exitCode = Commands.Dir2Stack(cmdArgs);
+            case "dir2deque":
+                exitCode = Commands.Dir2Deque(cmdArgs);
                 break;
 
             case "ncd":

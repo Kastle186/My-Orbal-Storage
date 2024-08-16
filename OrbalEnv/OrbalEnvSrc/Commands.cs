@@ -5,11 +5,52 @@ using System.IO;
 
 public static class Commands
 {
-    private const int DIR_STACK_MAX_SIZE = 10;
-    private const string DIR_STACK_SEPARATOR = ";;";
+    private const int DIR_DEQUE_MAX_SIZE = 10;
+    private const string DIR_DEQUE_SEPARATOR = ";;";
 
-    public static int Dir2Stack(string[] args)
+    /// <summary>
+    /// Appends the new cwd/pwd to the DIR_DEQUE environment variable. The purpose
+    /// of said variable is to store the directory history for the 'cdprev' command.
+    /// </summary>
+    /// <remarks>
+    /// The history stores at most <c>DIR_DEQUE_MAX_SIZE (default: 10)</c> paths.
+    /// When 'cd' is issued and the deque is full, the path at the end is discarded,
+    /// as to make space for the new one. It also uses ';;' as separator. The reason
+    /// for being unconventional here is as to not collide with potential pathnames
+    /// with special characters (e.g. Windows' "C:\" or Samba's mounted paths with ":").
+    /// </remarks>
+    /// <seealso cref="CdPrev" />
+    /// <returns>
+    /// Prints the new value of the DIR_DEQUE environment variable for the shell
+    /// to consume and set it. Returns 0 if everything went fine, -1 otherwise.
+    /// </returns>
+    internal static int Dir2Deque(string[] args)
     {
+        // Path has already been validated by 'cd' at this point, so no need to
+        // to make more overhead with repeating that.
+        string newPath = args[0];
+
+        string dirStackValue = Environment.GetEnvironmentVariable("DIR_DEQUE");
+        string[] histPaths = dirStackValue.Split(DIR_DEQUE_SEPARATOR);
+
+        if (histPaths.Length == DIR_DEQUE_MAX_SIZE)
+        {
+            // To dequeue from the end of the deque, we have to then push back
+            // the remaining items, as to make space at the front.
+
+            for (int i = 1; i < DIR_DEQUE_MAX_SIZE-1; i++)
+            {
+                histPaths[i-1] = histPaths[i];
+            }
+
+            histPaths[DIR_DEQUE_MAX_SIZE-1] = newPath;
+            Console.WriteLine(string.Join(DIR_DEQUE_SEPARATOR, histPaths));
+        }
+        else
+        {
+            Console.WriteLine($"{dirStackValue}{DIR_DEQUE_SEPARATOR}{newPath}");
+        }
+
         return 0;
     }
 
