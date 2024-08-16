@@ -63,3 +63,7 @@ function cdprev {
     cd $prevpath_out
     export DIR_DEQUE="$($ORBAL_ENV_APP dirdequeue)"
 }
+
+function cdroot {
+    cd $(git rev-parse --show-toplevel)
+}
