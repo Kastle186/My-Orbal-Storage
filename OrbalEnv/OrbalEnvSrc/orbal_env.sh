@@ -67,3 +67,8 @@ function cdprev {
 function cdroot {
     cd $(git rev-parse --show-toplevel)
 }
+
+function itemcount {
+    local items_out=$($ORBAL_ENV_APP itemcount "$@")
+    echo $items_out
+}

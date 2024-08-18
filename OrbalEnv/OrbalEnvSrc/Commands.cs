@@ -21,8 +21,8 @@ public static class Commands
     /// </remarks>
     /// <seealso cref="CdPrev" />
     /// <returns>
-    /// Prints the new value of the DIR_DEQUE environment variable for the shell
-    /// to consume and set it. Returns 0 if everything went fine, -1 otherwise.
+    /// Outputs the new value of the DIR_DEQUE environment variable for the shell
+    /// to consume and set it.
     /// </returns>
     internal static int Dir2Deque(string[] args)
     {
@@ -55,8 +55,10 @@ public static class Commands
     }
 
     /// <summary>
+    /// Removes the oldest entry in the DIR_DEQUE environment variable.
     /// </summary>
     /// <returns>
+    /// Outputs the new DIR_DEQUE value for the shell to consume and export.
     /// </returns>
     internal static int DirDequeue()
     {
@@ -76,14 +78,14 @@ public static class Commands
     /// function ends the looping there, as there is nowhere else to move up to.
     /// </remarks>
     /// <returns>
-    /// Prints the new working directory for the shell to consume and move to, and
-    /// returns 0 if everything went fine. Returns -1 otherwise.
+    /// Outputs the new working directory for the shell to consume and move to,
+    /// and returns 0 if everything went fine. Returns -1 otherwise.
     /// </returns>
     public static int Ncd(string[] args)
     {
         if (!Int32.TryParse(args[0], out int level))
         {
-            Console.WriteLine($"Ncd: An integer is required as argument.");
+            Console.WriteLine("Ncd: An integer is required as argument.");
             return -1;
         }
 
@@ -119,10 +121,10 @@ public static class Commands
     /// If the DIR_DEQUE only has one directory, then this command has no effect.
     /// </remarks>
     /// <returns>
-    /// Prints the new working directory for the shell to consume and move to, and
-    /// returns 0 if everything went fine. Returns 2 and doesn't print anything to
+    /// Outputs the new working directory for the shell to consume and move to, and
+    /// returns 0 if everything went fine. Returns 2 and doesn't output anything to
     /// signal the shell to do nothing since there's no previous directory to move
-    /// to. Returns -1 if something went wrong.
+    /// back to.
     /// </returns>
     public static int CdPrev()
     {
@@ -133,6 +135,43 @@ public static class Commands
 
         string[] histPaths = dirDequeValue.Split(DIR_DEQUE_SEPARATOR);
         Console.WriteLine(histPaths[histPaths.Length-2]);
+        return 0;
+    }
+
+    /// <summary>
+    /// Retrieves the number of directories, number of files, and the total residing
+    /// in the given path. It arranges them in the following format:
+    ///   <c>\<Total\> items: \<NumDirs\> directories, \<NumFiles\> files</c>
+    /// </summary>
+    /// <remarks>
+    /// If no directory is passed as an argument, then this command runs on the
+    /// current path.
+    /// </remarks>
+    /// <returns>
+    /// Outputs the path's item count and returns 0 if everything went fine.
+    /// Returns -1 otherwise.
+    /// </returns>
+    public static int ItemCount(string[] args)
+    {
+        string path = args.Length > 0 ? args[0] : Directory.GetCurrentDirectory();
+
+        if (!Directory.Exists(path))
+        {
+            Console.WriteLine("ItemCount: The given path was not found.");
+            return -1;
+        }
+
+        // IDEA: Might be cool to also allow counting certain patterns, rather than
+        //       only all or nothing. Also, would be nice to be able to receive the
+        //       files wildcard only, and assume it's on the current directory.
+
+        int numDirs = Directory.GetDirectories(path);
+        int numFiles = Directory.GetFiles(path);
+
+        Console.WriteLine("{0} items: {1} directories, {2} files",
+                          numDirs + numFiles,
+                          numDirs,
+                          numFiles);
         return 0;
     }
 }

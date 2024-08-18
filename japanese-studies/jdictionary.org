@@ -297,6 +297,7 @@
 
 - さがす (探す): To search, look for something desired, hunt for, seek, rummage in, fish around
 - さぎょう(する) (作業): Work, operation, manufacture, fatigue duty
+- さいちゅう/さなか (最中): In the middle of, in the midst of, at the height of
 - さいだい (最大): Biggest, greatest, largest, maximum
 - さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
 - さいしん (最新): Latest, newest, late-breaking (news)

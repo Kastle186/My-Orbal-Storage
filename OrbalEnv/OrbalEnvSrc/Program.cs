@@ -30,6 +30,10 @@ public class Program
                 exitCode = Commands.CdPrev();
                 break;
 
+            case "itemcount":
+                exitCode = Commands.ItemCount(cmdArgs);
+                break;
+
             default:
                 Console.WriteLine($"Apologies, but the command '{cmd}' isn't available yet.");
                 exitCode = -1;
