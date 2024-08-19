@@ -165,8 +165,8 @@ public static class Commands
         //       only all or nothing. Also, would be nice to be able to receive the
         //       files wildcard only, and assume it's on the current directory.
 
-        int numDirs = Directory.GetDirectories(path);
-        int numFiles = Directory.GetFiles(path);
+        int numDirs = Directory.GetDirectories(path).Length;
+        int numFiles = Directory.GetFiles(path).Length;
 
         Console.WriteLine("{0} items: {1} directories, {2} files",
                           numDirs + numFiles,

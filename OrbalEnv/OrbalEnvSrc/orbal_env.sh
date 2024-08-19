@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-# GENERAL TODO: Add safeguards where needed.
+# GENERAL TODO:
+#   - Add safeguards where needed.
+#   - Add the check for Linux/Mac vs Windows because Bash is also available on Windows
+#     through MinGW and Git Bash. Windows should in theory use the Powershell version
+#     of the Orbal Environment, but it's better to keep it open :)
+#   - Implement a 'cdnext' command to match Powershell's "sl -" and "sl +".
 
 # ***************************** #
 # Set up the Orbal Environment! #
@@ -14,7 +19,7 @@ ORBAL_ENV_APP="$ORBAL_ENV_SRC/App/OrbalEnv"
 dotnet build "$ORBAL_ENV_SRC/OrbalEnv.csproj"
 
 if [[ "$?" != "0" ]]; then
-    echo -e "\nSomething went wrong building the Orbal Environment. Check the C# error message."
+    echo -e "\nSomething went wrong building the Orbal Environment. Check the C# message."
     return 1
 fi
 
@@ -44,6 +49,15 @@ function ncd {
     cd $newpath_out
 }
 
+function cdroot {
+    cd $(git rev-parse --show-toplevel)
+}
+
+function itemcount {
+    local items_out=$($ORBAL_ENV_APP itemcount "$@")
+    echo $items_out
+}
+
 function cdprev {
     local prevpath_out
     local cdprev_code
@@ -62,13 +76,4 @@ function cdprev {
 
     cd $prevpath_out
     export DIR_DEQUE="$($ORBAL_ENV_APP dirdequeue)"
-}
-
-function cdroot {
-    cd $(git rev-parse --show-toplevel)
-}
-
-function itemcount {
-    local items_out=$($ORBAL_ENV_APP itemcount "$@")
-    echo $items_out
 }
