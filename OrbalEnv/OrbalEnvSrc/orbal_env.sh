@@ -2,16 +2,22 @@
 
 # GENERAL TODO:
 #   - Add safeguards where needed.
-#   - Add the check for Linux/Mac vs Windows because Bash is also available on Windows
-#     through MinGW and Git Bash. Windows should in theory use the Powershell version
-#     of the Orbal Environment, but it's better to keep it open :)
 
 # ***************************** #
 # Set up the Orbal Environment! #
 # ***************************** #
 
+case "$(uname -s)" in
+    CYGWIN*|MINGW*|MSYS*)
+        EXT='.exe'
+        ;;
+    *)
+        EXT=''
+        ;;
+esac
+
 ORBAL_ENV_SRC=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-ORBAL_ENV_APP="$ORBAL_ENV_SRC/App/OrbalEnv"
+ORBAL_ENV_APP="$ORBAL_ENV_SRC/App/OrbalEnv$EXT"
 
 # First, we need to build the Orbal Env App. All its configuration parameters are
 # already set in the csproj, so calling 'dotnet build' is enough.

@@ -1,15 +1,13 @@
 # GENERAL TODO:
 #   - Add safeguards where needed.
-#   - Add the check for Linux/Mac vs Windows because Powershell is available on
-#     all platforms. Linux and Mac should in theory use the Bash version of the
-#     Orbal Environment, but it's better to keep it open :)
 
 # ***************************** #
 # Set up the Orbal Environment! #
 # ***************************** #
 
+$ext = if ($IsWindows) { ".exe" } else { "" }
 $orbalEnvSrc = $PSScriptRoot
-$orbalEnvApp = Join-Path $orbalEnvSrc "App" "OrbalEnv"
+$orbalEnvApp = Join-Path $orbalEnvSrc "App" "OrbalEnv$ext"
 
 # First, we need to build the Orbal Env App. All its configuration parameters are
 # already set in the csproj, so calling 'dotnet build' is enough.
