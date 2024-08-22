@@ -29,7 +29,7 @@ if [[ "$?" != "0" ]]; then
 fi
 
 # ******************************************************************* #
-# Configure and define the Orbal Environment variables and functions!
+# Configure and define the Orbal Environment variables and functions! #
 # ******************************************************************* #
 
 function ncd {
