@@ -1,8 +1,9 @@
 // File: Setup.cs
 
 using System;
-using System.Runtime.InteropServices;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 public static class DotnetDevSetup
 {
@@ -48,6 +49,35 @@ public static class DotnetDevSetup
     }
 
     /// <summary>
+    /// Processes and validates the path of the runtime repo clone the user wants
+    /// to work on.
+    /// </summary>
+    /// <returns>
+    /// Outputs the full path to the given clone of the runtime repo for the shell
+    /// to consume and set, and returns 0 if everything goes fine, and -1 otherwise.
+    /// </returns>
+    public static int SetRepo(string[] cmdArgs)
+    {
+        if (cmdArgs.Length < 1 || string.IsNullOrWhiteSpace(cmdArgs[0]))
+        {
+            Console.WriteLine("SetRepo: A path to the runtime repo is required.");
+            return -1;
+        }
+
+        string repoPath = cmdArgs[0];
+
+        if (!Directory.Exists(repoPath))
+        {
+            Console.WriteLine("SetRepo: The given path '{0}' was unfortunately not found.",
+                              repoPath);
+            return -1;
+        }
+
+        Console.WriteLine(Path.GetFullPath(repoPath));
+        return 0;
+    }
+
+    /// <summary>
     /// Processes and validates the new operating system value that the user wants
     /// to set to the DOTNET_DEV_OS environment variable.
     /// </summary>
@@ -57,7 +87,7 @@ public static class DotnetDevSetup
     /// </returns>
     public static int SetOS(string[] cmdArgs)
     {
-        if (cmdArgs.Length < 1)
+        if (cmdArgs.Length < 1 || string.IsNullOrWhiteSpace(cmdArgs[0]))
         {
             Console.WriteLine("SetOS: An operating system name is required as argument.");
             return -1;
@@ -90,7 +120,7 @@ public static class DotnetDevSetup
     /// </returns>
     public static int SetArch(string[] cmdArgs)
     {
-        if (cmdArgs.Length < 1)
+        if (cmdArgs.Length < 1 || string.IsNullOrWhiteSpace(cmdArgs[0]))
         {
             Console.WriteLine("SetArch: An architecture name is required as argument.");
             return -1;
@@ -114,13 +144,20 @@ public static class DotnetDevSetup
     /// Processes and validates the new configuration value that the user wants
     /// to set to the DOTNET_DEV_CONFIG environment variable.
     /// </summary>
+    /// <remarks>
+    /// </remarks>
+    /// CoreCLR specifically has an additional supported configuration called
+    /// "Checked". One can build using it by means of the command 'buildclrchk',
+    /// but regarding as to universally setting it for DOTNET_DEV_CONFIG, we are
+    /// opting to not permit it, at least for the time being, because all the other
+    /// components of the runtime repo only support "Debug" and "Release".
     /// <returns>
     /// Outputs the new configuration in titlecase for the shell to consume and set.
     /// Returns 0 if everything went fine, and -1 otherwise.
     /// </returns>
     public static int SetConfig(string[] cmdArgs)
     {
-        if (cmdArgs.Length < 1)
+        if (cmdArgs.Length < 1 || string.IsNullOrWhiteSpace(cmdArgs[0]))
         {
             Console.WriteLine("SetConfig: A configuration name is required as argument.");
             return -1;
@@ -128,11 +165,8 @@ public static class DotnetDevSetup
 
         string newConfig = cmdArgs[0].ToLower();
 
-        // NOTE: CoreCLR specifically has an additional supported configuration
-        //       called "Checked". One can build using it by means of the command
-        //       'buildclrchk', but for universally setting it, we are opting to
-        //       not permit it, at least for the time being, because all the other
-        //       components of the runtime repo only support debug and release.
+        // Check this function's "Remarks" section of its doc for notes regarding
+        // the absence of CoreCLR's "Checked" configuration here in this check.
 
         if (newConfig != "debug" && newConfig != "release")
         {

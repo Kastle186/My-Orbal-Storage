@@ -22,8 +22,9 @@ public class Program
                 exitCode = DotnetDevSetup.GetArchitecture();
                 break;
 
-            // case "setrepo":
-            //     break;
+            case "setrepo":
+                exitCode = DotnetDevSetup.SetRepo(cmdArgs);
+                break;
 
             case "setos":
                 exitCode = DotnetDevSetup.SetOS(cmdArgs);
