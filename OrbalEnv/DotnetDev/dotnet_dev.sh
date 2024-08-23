@@ -29,6 +29,7 @@ fi
 # Configure the Dotnet Dev Environment #
 # ************************************ #
 
+export DOTNET_DEV_WHATIF_PREVIEW=0
 export DOTNET_DEV_REPO=""
 
 export DOTNET_DEV_OS="$($DOTNET_DEV_APP getos)"
@@ -54,7 +55,12 @@ function setos {
         return 1
     fi
 
-    export DOTNET_DEV_OS=$newos_out
+    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo "export DOTNET_DEV_OS=$newos_out"
+    else
+        export DOTNET_DEV_OS=$newos_out
+    fi
+
     updatepaths
 }
 
@@ -70,7 +76,12 @@ function setarch {
         return 1
     fi
 
-    export DOTNET_DEV_ARCH=$newarch_out
+    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo "export DOTNET_DEV_ARCH=$newarch_out"
+    else
+        export DOTNET_DEV_ARCH=$newarch_out
+    fi
+
     updatepaths
 }
 
@@ -86,7 +97,12 @@ function setconfig {
         return 1
     fi
 
-    export DOTNET_DEV_CONFIG=$newconfig_out
+    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo "export DOTNET_DEV_CONFIG=$newconfig_out"
+    else
+        export DOTNET_DEV_CONFIG=$newconfig_out
+    fi
+
     updatepaths
 }
 
@@ -102,13 +118,24 @@ function setrepo {
         return 1
     fi
 
-    export DOTNET_DEV_REPO="$repopath_out"
-    export DOTNET_DEV_CLRSRC="$DOTNET_DEV_REPO/src/coreclr"
-    export DOTNET_DEV_TESTSRC="$DOTNET_DEV_REPO/src/tests"
-    export DOTNET_DEV_LIBSSRC="$DOTNET_DEV_REPO/src/libraries"
+    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo "export DOTNET_DEV_REPO=\"$repopath_out\""
+        echo "export DOTNET_DEV_CLRSRC=\"$repopath_out/src/coreclr\""
+        echo "export DOTNET_DEV_TESTSRC=\"$repopath_out/src/tests\""
+        echo "export DOTNET_DEV_LIBSSRC=\"$repopath_out/src/libraries\""
 
-    export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/\
+        echo "export DOTNET_DEV_COREROOT=\"$repopath_out/artifacts/tests/coreclr/\
+$DOTNET_DEV_PLATFORM/Tests/Core_Root\""
+
+    else
+        export DOTNET_DEV_REPO="$repopath_out"
+        export DOTNET_DEV_CLRSRC="$DOTNET_DEV_REPO/src/coreclr"
+        export DOTNET_DEV_TESTSRC="$DOTNET_DEV_REPO/src/tests"
+        export DOTNET_DEV_LIBSSRC="$DOTNET_DEV_REPO/src/libraries"
+
+        export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/
 $DOTNET_DEV_PLATFORM/Tests/Core_Root"
+    fi
 }
 
 function updatepaths {
@@ -116,3 +143,41 @@ function updatepaths {
     export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/\
 $DOTNET_DEV_PLATFORM/Tests/Core_Root"
 }
+
+# **************************************************************** #
+# The Functions in Charge of all the Dotnet Dev Environment Magic! #
+# **************************************************************** #
+
+# FEATURE: Enable the 'whatif-preview' scenario with a command-line flag as well.
+
+function whatifpreview {
+    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" == "0" ]]; then
+        export DOTNET_DEV_WHATIF_PREVIEW=1
+        echo 'What-If Preview Mode Enabled.'
+    else
+        export DOTNET_DEV_WHATIF_PREVIEW=0
+        echo 'What-If Preview Mode Disabled.'
+    fi
+}
+
+function buildmain {
+    local buildrepo_out
+    local buildrepo_code
+
+    buildrepo_out=$($DOTNET_DEV_APP "$@")
+    buildrepo_code=$?
+
+    if [[ "$buildrepo_code" != "0" || "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo $buildrepo_out
+        return 1
+    fi
+}
+
+alias buildclrdbg=''
+alias buildclrchk=''
+alias buildclrrel=''
+alias buildlibsdbg=''
+alias buildlibsrel=''
+alias genlayoutdbg=''
+alias genlayoutchk=''
+alias genlayoutrel=''
