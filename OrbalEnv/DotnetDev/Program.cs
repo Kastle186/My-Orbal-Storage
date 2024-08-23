@@ -14,6 +14,8 @@ public class Program
 
         switch (cmd)
         {
+            // Setup Commands
+
             case "getos":
                 exitCode = DotnetDevSetup.GetOperatingSystem();
                 break;
@@ -36,6 +38,12 @@ public class Program
 
             case "setconfig":
                 exitCode = DotnetDevSetup.SetConfig(cmdArgs);
+                break;
+
+            // Magic Commands
+
+            case "buildrepo":
+                exitCode = DotnetDevCommands.BuildRuntimeRepo(cmdArgs);
                 break;
 
             default:

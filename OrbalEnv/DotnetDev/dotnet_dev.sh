@@ -160,11 +160,15 @@ function whatifpreview {
     fi
 }
 
-function buildmain {
+function buildrepo {
     local buildrepo_out
     local buildrepo_code
 
-    buildrepo_out=$($DOTNET_DEV_APP "$@")
+    # First argument is the build type, which can be either 'main' or 'tests'
+    # as of now. That will tell the DotnetDev which script to run and how to
+    # process the arguments.
+
+    buildrepo_out=$($DOTNET_DEV_APP buildrepo "$1" "${@:2}")
     buildrepo_code=$?
 
     if [[ "$buildrepo_code" != "0" || "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
@@ -173,7 +177,7 @@ function buildmain {
     fi
 }
 
-alias buildclrdbg=''
+alias buildclrdbg='buildrepo main subset=clr conf=debug'
 alias buildclrchk=''
 alias buildclrrel=''
 alias buildlibsdbg=''
