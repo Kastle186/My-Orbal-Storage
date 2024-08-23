@@ -36,7 +36,9 @@
 
 (font-lock-add-keywords 'csharp-mode
                         '(("\\_<init\\_>"     . font-lock-keyword-face)
+                          ("\\_<not\\_>"      . font-lock-keyword-face)
                           ("\\_<notnull\\_>"  . font-lock-keyword-face)
+                          ("\\_<record\\_>"   . font-lock-keyword-face)
                           ("\\_<required\\_>" . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'c-mode
