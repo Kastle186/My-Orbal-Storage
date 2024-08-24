@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 public static class DotnetDevCommands
@@ -13,18 +14,35 @@ public static class DotnetDevCommands
 
     static readonly string s_scriptExt = OperatingSystem.IsWindows() ? ".cmd" : ".sh";
 
-    // Need to briefly explain this map and why it does not have all possible
-    // flags the runtime repo build script supports.
+    // The Dotnet Dev Environment allows the user to pass the arguments to the
+    // build scripts either literally how they would when calling said scripts
+    // directly, or in the form of 'param=value'. For this notation, there are
+    // some keywords that map to the full name of the argument supported by the
+    // runtime repo. The s_dotnetDevOptsMap is made for mapping those conversions.
+    //
+    // The interesting thing to note here, is that every parameter can be passed
+    // as 'param=value', or just 'param' if they're flags, regardless of whether
+    // they are included in this conversion table. The param name for those absent
+    // here is the exact same as the build script flag. Therefore, adding them here
+    // to the conversion table would be kind of pointless, since the mapping would
+    // involve only adding the dash '-' at the beginning. Depending on how things
+    // turn out, we might end up adding them, but for now, we can handle adding
+    // the dash '-' as we go processing them.
 
     static readonly Dictionary<string, string> s_dotnetDevOptsMap = new()
     {
-        { "binlog",   "-binaryLog" },
-        { "cc",       "-cross" },
-        { "conf",     "-configuration" },
-        { "hostconf", "-hostConfiguration" }
-        { "libsconf", "-librariesConfiguration" },
-        { "runconf",  "-runtimeConfiguration" }
+        { "binlog",   "binaryLog" },
+        { "cc",       "cross" },
+        { "conf",     "configuration" },
+        { "hostconf", "hostConfiguration" },
+        { "libsconf", "librariesConfiguration" },
+        { "runconf",  "runtimeConfiguration" }
     };
+
+    // NEXT STEPS:
+    // * Comment the BuildRuntimeMain() function's code.
+    // * Add method doc to the BuildRuntimeRepo() function.
+    // * Add support for abbreviated configuration values.
 
     /// <summary>
     /// </summary>
@@ -41,6 +59,16 @@ public static class DotnetDevCommands
             return -1;
         }
 
+        string repoPath = Environment.GetEnvironmentVariable("DOTNET_DEV_REPO");
+
+        if (string.IsNullOrEmpty(repoPath))
+        {
+            Console.WriteLine("BuildRuntimeRepo: The path to the repo to work on"
+                              + " is needed to be set. Use the 'setrepo' command"
+                              + " for this, and try again.");
+            return -1;
+        }
+
         string buildType = args[0].ToLower();
         int result = 999;
 
@@ -50,11 +78,11 @@ public static class DotnetDevCommands
         switch (buildType)
         {
             case "main":
-                result = BuildRuntimeMain(args[1..]);
+                result = BuildRuntimeMain(repoPath, args[1..]);
                 break;
 
             case "tests":
-                result = BuildRuntimeTests(args[1..]);
+                result = BuildRuntimeTests(repoPath, args[1..]);
                 break;
 
             default:
@@ -66,13 +94,57 @@ public static class DotnetDevCommands
         return result;
     }
 
-    private static int BuildRuntimeMain(string[] args)
+    private static int BuildRuntimeMain(string repoPath, string[] args)
     {
+        bool dashedFlagsStarted = false;
+        string scriptPath = Path.Join(repoPath, $"build{s_scriptExt}");
+        StringBuilder buildOptsSb = new StringBuilder();
+
+        foreach (string arg in args)
+        {
+            if (arg.Contains('='))
+            {
+                string[] paramKvp = arg.Split('=');
+
+                if (paramKvp.Length == 1)
+                {
+                    Console.WriteLine($"BuildRuntimeMain: The flag '{paramKvp[0]}'"
+                                      + " is missing its value.");
+                    return -1;
+                }
+
+                string optName = s_dotnetDevOptsMap.ContainsKey(paramKvp[0])
+                                 ? s_dotnetDevOptsMap[paramKvp[0]]
+                                 : paramKvp[0];
+
+                string optValue = paramKvp[1];
+                buildOptsSb.Append($" -{optName} {optValue}");
+            }
+            else if (arg.StartsWith('-'))
+            {
+                if (!dashedFlagsStarted)
+                    dashedFlagsStarted = true;
+
+                buildOptsSb.Append($" {arg}");
+            }
+            else
+            {
+                string convertedArg = s_dotnetDevOptsMap.ContainsKey(arg)
+                                      ? s_dotnetDevOptsMap[arg]
+                                      : arg;
+ 
+                buildOptsSb.Append(dashedFlagsStarted ? $" {convertedArg}"
+                                                      : $" -{convertedArg}");
+            }
+        }
+
+        Console.WriteLine($"{scriptPath} {buildOptsSb.ToString()}");
         return 0;
     }
 
-    private static int BuildRuntimeTests(string[] args)
+    private static int BuildRuntimeTests(string repoPath, string[] args)
     {
-        return 0;
+        Console.WriteLine("Build Runtime Tests Under Construction!");
+        return -1;
     }
 }

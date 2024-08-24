@@ -175,13 +175,16 @@ function buildrepo {
         echo $buildrepo_out
         return 1
     fi
+
+    echo 'Under construction!'
 }
 
 alias buildclrdbg='buildrepo main subset=clr conf=debug'
-alias buildclrchk=''
-alias buildclrrel=''
-alias buildlibsdbg=''
-alias buildlibsrel=''
-alias genlayoutdbg=''
-alias genlayoutchk=''
-alias genlayoutrel=''
+alias buildclrchk='buildrepo main subset=clr conf=checked'
+alias buildclrrel='buildrepo main subset=clr conf=release'
+alias buildlibsdbg='buildrepo main subset=libs conf=debug'
+alias buildlibsrel='buildrepo main subset=libs conf=release'
+
+alias genlayoutdbg='buildrepo tests conf=debug'
+alias genlayoutchk='buildrepo tests conf=checked'
+alias genlayoutrel='buildrepo tests conf=release'
