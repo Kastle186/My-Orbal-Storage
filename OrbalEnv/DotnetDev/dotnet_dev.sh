@@ -148,7 +148,7 @@ $DOTNET_DEV_PLATFORM/Tests/Core_Root"
 # The Functions in Charge of all the Dotnet Dev Environment Magic! #
 # **************************************************************** #
 
-# FEATURE: Enable the 'whatif-preview' scenario with a command-line flag as well.
+# FEATURE IDEA: Enable the 'whatif-preview' scenario with a command-line flag as well.
 
 function whatifpreview {
     if [[ "$DOTNET_DEV_WHATIF_PREVIEW" == "0" ]]; then
