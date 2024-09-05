@@ -159,3 +159,46 @@ function whatifpreview {
         echo 'What-If Preview Mode Disabled.'
     fi
 }
+
+function buildrepo {
+    local buildrepo_out
+    local buildrepo_code
+
+    buildrepo_out=$($DOTNET_DEV_APP buildrepo "$@")
+    buildrepo_code=$?
+
+    if [[ "$buildrepo_code" != "0" || "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+        echo $buildrepo_out
+        return 1
+    fi
+
+    $buildrepo_out
+}
+
+alias buildclr="buildrepo -subset clr"
+alias buildclrdbg="buildrepo -subset clr -configuration Debug"
+alias buildclrchk="buildrepo -subset clr -configuration Checked"
+alias buildclrrel="buildrepo -subset clr -configuration Release"
+
+alias buildlibs="buildrepo -subset libs"
+alias buildlibsdbg="buildrepo -subset libs -configuration Debug"
+alias buildlibschk="buildrepo -subset libs -configuration Checked"
+alias buildlibsrel="buildrepo -subset libs -configuration Release"
+
+alias buildclrlibs="buildrepo -subset clr+libs"
+alias buildclrlibsdbg="buildrepo -subset clr+libs -configuration Debug"
+alias buildclrlibsrel="buildrepo -subset clr+libs -configuration Release"
+
+alias buildclrlibsdbgrel="buildrepo -s clr+libs -rc Debug -lc Release"
+alias buildclrlibschkrel="buildrepo -s clr+libs -rc Checked -lc Release"
+alias buildclrlibschkdbg="buildrepo -s clr+libs -rc Checked -lc Debug"
+alias buildclrlibsreldbg="buildrepo -s clr+libs -rc Release -lc Debug"
+
+# Using single quotes here because we want to cd into the literal environment variable,
+# to whatever value it has when issuing the alias. Otherwise, it will expand the
+# environment variable at the time of sourcing the script, and assign that value to
+# the 'cd' path, which in this case would be the empty string.
+
+alias cdclr='cd $DOTNET_DEV_CLRSRC'
+alias cdtests='cd $DOTNET_DEV_TESTSRC'
+alias cdlibs='cd $DOTNET_DEV_LIBSSRC'

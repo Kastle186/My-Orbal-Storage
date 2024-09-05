@@ -73,7 +73,8 @@ public static class DotnetDevSetup
             return -1;
         }
 
-        Console.WriteLine(Path.GetFullPath(repoPath));
+        string repoAbsolutePath = Path.GetFullPath(repoPath);
+        Console.WriteLine(Path.TrimEndingDirectorySeparator(repoAbsolutePath));
         return 0;
     }
 

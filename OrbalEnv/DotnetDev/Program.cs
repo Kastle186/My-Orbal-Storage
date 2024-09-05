@@ -40,6 +40,10 @@ public class Program
                 exitCode = DotnetDevSetup.SetConfig(cmdArgs);
                 break;
 
+            case "buildrepo":
+                exitCode = DotnetDevCommands.BuildRepo(cmdArgs);
+                break;
+
             default:
                 Console.WriteLine($"Apologies, but the command '{cmd}' isn't available yet.");
                 exitCode = -1;
