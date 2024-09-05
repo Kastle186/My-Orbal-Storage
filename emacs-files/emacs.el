@@ -221,6 +221,7 @@
                               (mode . json-mode)
                               (name . "\\.json")))
                ("Julia"      (mode . julia-mode))
+               ("Markdown"   (mode . markdown-mode))
                ("MSBuild"    (or
                               (name . "\\.??proj")
                               (name . "\\.props")
