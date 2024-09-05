@@ -159,32 +159,3 @@ function whatifpreview {
         echo 'What-If Preview Mode Disabled.'
     fi
 }
-
-function buildrepo {
-    local buildrepo_out
-    local buildrepo_code
-
-    # First argument is the build type, which can be either 'main' or 'tests'
-    # as of now. That will tell the DotnetDev which script to run and how to
-    # process the arguments.
-
-    buildrepo_out=$($DOTNET_DEV_APP buildrepo "$1" "${@:2}")
-    buildrepo_code=$?
-
-    if [[ "$buildrepo_code" != "0" || "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
-        echo $buildrepo_out
-        return 1
-    fi
-
-    echo 'Under construction!'
-}
-
-alias buildclrdbg='buildrepo main subset=clr conf=debug'
-alias buildclrchk='buildrepo main subset=clr conf=checked'
-alias buildclrrel='buildrepo main subset=clr conf=release'
-alias buildlibsdbg='buildrepo main subset=libs conf=debug'
-alias buildlibsrel='buildrepo main subset=libs conf=release'
-
-alias genlayoutdbg='buildrepo tests conf=debug'
-alias genlayoutchk='buildrepo tests conf=checked'
-alias genlayoutrel='buildrepo tests conf=release'
