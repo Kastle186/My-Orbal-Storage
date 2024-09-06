@@ -61,7 +61,7 @@ function setos {
         export DOTNET_DEV_OS=$newos_out
     fi
 
-    updatepaths
+    updateplatform
 }
 
 function setarch {
@@ -82,7 +82,7 @@ function setarch {
         export DOTNET_DEV_ARCH=$newarch_out
     fi
 
-    updatepaths
+    updateplatform
 }
 
 function setconfig {
@@ -103,7 +103,7 @@ function setconfig {
         export DOTNET_DEV_CONFIG=$newconfig_out
     fi
 
-    updatepaths
+    updateplatform
 }
 
 function setrepo {
@@ -118,27 +118,24 @@ function setrepo {
         return 1
     fi
 
-    if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
-        echo "export DOTNET_DEV_REPO=\"$repopath_out\""
-        echo "export DOTNET_DEV_CLRSRC=\"$repopath_out/src/coreclr\""
-        echo "export DOTNET_DEV_TESTSRC=\"$repopath_out/src/tests\""
-        echo "export DOTNET_DEV_LIBSSRC=\"$repopath_out/src/libraries\""
+    envvars_exports=("export DOTNET_DEV_REPO=\"$repopath_out\""
+                     "export DOTNET_DEV_CLRSRC=\"$repopath_out/src/coreclr\""
+                     "export DOTNET_DEV_TESTSRC=\"$repopath_out/src/tests\""
+                     "export DOTNET_DEV_LIBSSRC=\"$repopath_out/src/libraries\""
+                     "export DOTNET_DEV_COREROOT=\"$repopath_out/artifacts/tests/\
+coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root\"")
 
-        echo "export DOTNET_DEV_COREROOT=\"$repopath_out/artifacts/tests/coreclr/\
-$DOTNET_DEV_PLATFORM/Tests/Core_Root\""
-
-    else
-        export DOTNET_DEV_REPO="$repopath_out"
-        export DOTNET_DEV_CLRSRC="$DOTNET_DEV_REPO/src/coreclr"
-        export DOTNET_DEV_TESTSRC="$DOTNET_DEV_REPO/src/tests"
-        export DOTNET_DEV_LIBSSRC="$DOTNET_DEV_REPO/src/libraries"
-
-        export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/
-$DOTNET_DEV_PLATFORM/Tests/Core_Root"
-    fi
+    for export_cmd in "${envvars_exports[@]}"
+    do
+        if [[ "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
+            echo "$export_cmd"
+        else
+            $export_cmd
+        fi
+    done
 }
 
-function updatepaths {
+function updateplatform {
     export DOTNET_DEV_PLATFORM="$DOTNET_DEV_OS.$DOTNET_DEV_ARCH.$DOTNET_DEV_CONFIG"
     export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/\
 $DOTNET_DEV_PLATFORM/Tests/Core_Root"
@@ -163,8 +160,10 @@ function whatifpreview {
 function buildrepo {
     local buildrepo_out
     local buildrepo_code
+    local build_type="$1"
+    shift
 
-    buildrepo_out=$($DOTNET_DEV_APP buildrepo "$@")
+    buildrepo_out=$($DOTNET_DEV_APP "build" $build_type "$@")
     buildrepo_code=$?
 
     if [[ "$buildrepo_code" != "0" || "$DOTNET_DEV_WHATIF_PREVIEW" != "0" ]]; then
@@ -175,24 +174,27 @@ function buildrepo {
     $buildrepo_out
 }
 
-alias buildclr="buildrepo -subset clr"
-alias buildclrdbg="buildrepo -subset clr -configuration Debug"
-alias buildclrchk="buildrepo -subset clr -configuration Checked"
-alias buildclrrel="buildrepo -subset clr -configuration Release"
+# *************** #
+# Magical Aliases #
+# *************** #
 
-alias buildlibs="buildrepo -subset libs"
-alias buildlibsdbg="buildrepo -subset libs -configuration Debug"
-alias buildlibschk="buildrepo -subset libs -configuration Checked"
-alias buildlibsrel="buildrepo -subset libs -configuration Release"
+alias buildclr="buildrepo main -subset clr"
+alias buildclrdbg="buildrepo main -subset clr -configuration Debug"
+alias buildclrchk="buildrepo main -subset clr -configuration Checked"
+alias buildclrrel="buildrepo main -subset clr -configuration Release"
 
-alias buildclrlibs="buildrepo -subset clr+libs"
-alias buildclrlibsdbg="buildrepo -subset clr+libs -configuration Debug"
-alias buildclrlibsrel="buildrepo -subset clr+libs -configuration Release"
+alias buildlibs="buildrepo main -subset libs"
+alias buildlibsdbg="buildrepo main -subset libs -configuration Debug"
+alias buildlibsrel="buildrepo main -subset libs -configuration Release"
 
-alias buildclrlibsdbgrel="buildrepo -s clr+libs -rc Debug -lc Release"
-alias buildclrlibschkrel="buildrepo -s clr+libs -rc Checked -lc Release"
-alias buildclrlibschkdbg="buildrepo -s clr+libs -rc Checked -lc Debug"
-alias buildclrlibsreldbg="buildrepo -s clr+libs -rc Release -lc Debug"
+alias buildclrlibs="buildrepo main -subset clr+libs"
+alias buildclrlibsdbg="buildrepo main -subset clr+libs -configuration Debug"
+alias buildclrlibsrel="buildrepo main -subset clr+libs -configuration Release"
+
+alias buildclrlibschkdbg="buildrepo main -s clr+libs -rc Checked -lc Debug"
+alias buildclrlibsreldbg="buildrepo main -s clr+libs -rc Release -lc Debug"
+alias buildclrlibsdbgrel="buildrepo main -s clr+libs -rc Debug -lc Release"
+alias buildclrlibschkrel="buildrepo main -s clr+libs -rc Checked -lc Release"
 
 # Using single quotes here because we want to cd into the literal environment variable,
 # to whatever value it has when issuing the alias. Otherwise, it will expand the

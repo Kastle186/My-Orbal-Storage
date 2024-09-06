@@ -1,4 +1,8 @@
-# GENERAL TODO: Add safeguards where needed.
+#Requires -Version 7.0
+
+# ************************************************* #
+# Source all the Plugins for the Orbal Environment! #
+# ************************************************* #
 
 $mainScriptDir = $PSScriptRoot
 $pluginEntries = (Get-ChildItem -Path $mainScriptDir `
