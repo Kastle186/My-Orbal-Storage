@@ -19,17 +19,16 @@ public static class DotnetDevCommands
     static readonly string s_scriptExt = OperatingSystem.IsWindows() ? ".cmd" : ".sh";
 
     /// <summary>
-    /// Validates the specified repo path exists and processes the command-line
-    /// for building. If the architecture, operating system, and/or configuration
-    /// are missing, it appends them to the received args with the values set to
-    /// their respective environment variables.
+    /// Validates the specified repo path exists and calls the appropriate helper
+    /// function, depending on the type of build.
     /// </summary>
     /// <returns>
-    /// Outputs the full build command for the shell to process and run, and
-    /// returns 0 if everything went fine. Returns -1 otherwise.
+    /// Returns the value received from the helper function, or -1 if the repo path
+    ///  was not found or if no build type, or an unrecognized one, was received.
     /// </returns>
     public static int BuildRepo(string[] buildArgs)
     {
+        int result = 999;
         string repoPath = Environment.GetEnvironmentVariable(ENV_REPO_ROOT);
 
         if (string.IsNullOrEmpty(repoPath))
@@ -39,6 +38,46 @@ public static class DotnetDevCommands
             return -1;
         }
 
+        if (buildArgs.Length < 1 || string.IsNullOrWhiteSpace(buildArgs[0]))
+        {
+            Console.WriteLine("BuildRepo: A build type is required. The currently"
+                              + " supported values are 'main' and 'tests'");
+            return -1;
+        }
+
+        string buildType = buildArgs[0];
+
+        switch (buildType)
+        {
+            case "main":
+                result = BuildMain(repoPath, buildArgs[1..]);
+                break;
+
+            case "tests":
+                Console.WriteLine("Under Construction!");
+                break;
+
+            default:
+                Console.WriteLine($"The build type '{buildType}' was not recognized.");
+                result = -1;
+                break;
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Validates the specified repo path exists and processes the command-line
+    /// for building. If the architecture, operating system, and/or configuration
+    /// are missing, it appends them to the received args with the values set to
+    /// their respective environment variables.
+    /// </summary>
+    /// <returns>
+    /// Outputs the full build command for the shell to process and run, and
+    /// returns 0 if everything went fine. Returns -1 otherwise.
+    /// </returns>
+    private static int BuildMain(string repoPath, string[] buildArgs)
+    {
         string argsStr = string.Join(' ', buildArgs);
         StringBuilder argsSb = new StringBuilder(argsStr);
 
@@ -72,6 +111,11 @@ public static class DotnetDevCommands
         Console.WriteLine("{0} {1}",
                           Path.Join(repoPath, $"build{s_scriptExt}"),
                           argsSb.ToString());
+        return 0;
+    }
+
+    private static int BuildTests(string repoPath, string[] buildArgs)
+    {
         return 0;
     }
 }

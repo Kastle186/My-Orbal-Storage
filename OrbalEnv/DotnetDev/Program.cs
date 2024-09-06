@@ -40,7 +40,7 @@ public class Program
                 exitCode = DotnetDevSetup.SetConfig(cmdArgs);
                 break;
 
-            case "buildrepo":
+            case "build":
                 exitCode = DotnetDevCommands.BuildRepo(cmdArgs);
                 break;
 
