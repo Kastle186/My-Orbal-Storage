@@ -118,12 +118,12 @@ function setrepo {
         return 1
     fi
 
-    envvars_exports=("export DOTNET_DEV_REPO=\"$repopath_out\""
-                     "export DOTNET_DEV_CLRSRC=\"$repopath_out/src/coreclr\""
-                     "export DOTNET_DEV_TESTSRC=\"$repopath_out/src/tests\""
-                     "export DOTNET_DEV_LIBSSRC=\"$repopath_out/src/libraries\""
-                     "export DOTNET_DEV_COREROOT=\"$repopath_out/artifacts/tests/\
-coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root\"")
+    envvars_exports=("export DOTNET_DEV_REPO=$repopath_out"
+                     "export DOTNET_DEV_CLRSRC=$repopath_out/src/coreclr"
+                     "export DOTNET_DEV_TESTSRC=$repopath_out/src/tests"
+                     "export DOTNET_DEV_LIBSSRC=$repopath_out/src/libraries"
+                     "export DOTNET_DEV_COREROOT=$repopath_out/artifacts/tests/\
+coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root")
 
     for export_cmd in "${envvars_exports[@]}"
     do
@@ -195,6 +195,16 @@ alias buildclrlibschkdbg="buildrepo main -s clr+libs -rc Checked -lc Debug"
 alias buildclrlibsreldbg="buildrepo main -s clr+libs -rc Release -lc Debug"
 alias buildclrlibsdbgrel="buildrepo main -s clr+libs -rc Debug -lc Release"
 alias buildclrlibschkrel="buildrepo main -s clr+libs -rc Checked -lc Release"
+
+alias genlayout="buildrepo tests libs=rel -generatelayoutonly"
+alias genlayoutdbg="buildrepo tests libs=rel -debug -generatelayoutonly"
+alias genlayoutchk="buildrepo tests libs=rel -checked -generatelayoutonly"
+alias genlayoutrel="buildrepo tests libs=rel -release -generatelayoutonly"
+
+alias genlayoutlibsdbg="buildrepo tests libs=dbg -generatelayoutonly"
+alias genlayoutdbglibsdbg="buildrepo tests libs=dbg -debug -generatelayoutonly"
+alias genlayoutchklibsdbg="buildrepo tests libs=dbg -checked -generatelayoutonly"
+alias genlayoutrellibsdbg="buildrepo tests libs=dbg -release -generatelayoutonly"
 
 # Using single quotes here because we want to cd into the literal environment variable,
 # to whatever value it has when issuing the alias. Otherwise, it will expand the

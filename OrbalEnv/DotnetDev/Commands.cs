@@ -54,7 +54,7 @@ public static class DotnetDevCommands
                 break;
 
             case "tests":
-                Console.WriteLine("Under Construction!");
+                result = BuildTests(repoPath, buildArgs[1..]);
                 break;
 
             default:
@@ -114,8 +114,35 @@ public static class DotnetDevCommands
         return 0;
     }
 
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
     private static int BuildTests(string repoPath, string[] buildArgs)
     {
+        string libsConfig = string.Empty;
+
+        if (buildArgs.Length > 0 && buildArgs[0].StartsWith("libs="))
+        {
+            string[] libsCfgTokens = buildArgs[0].Split('=');
+
+            if (libsCfgTokens[1].ToLower() == "dbg")
+                libsConfig = "-p:LibrariesConfiguration=Debug";
+            else
+                libsConfig = "-p:LibrariesConfiguration=Release";
+
+            buildArgs = buildArgs[1..];
+        }
+        else
+        {
+            libsConfig = "-p:LibrariesConfiguration=Release";
+        }
+
+        string testsBuildScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
+        Console.WriteLine("{0} {1} {2}",
+                          testsBuildScript,
+                          string.Join(' ', buildArgs),
+                          libsConfig);
         return 0;
     }
 }
