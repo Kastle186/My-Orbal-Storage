@@ -25,8 +25,8 @@ if ($LASTEXITCODE -ne 0) {
 $Env:DOTNET_DEV_WHATIF_PREVIEW = 0
 $Env:DOTNET_DEV_REPO = ""
 
-$Env:DOTNET_DEV_OS = Invoke-Expression "$dotnetDevApp `"getos`""
-$Env:DOTNET_DEV_ARCH = Invoke-Expression "$dotnetDevApp `"getarch`""
+$Env:DOTNET_DEV_OS = (Invoke-Expression "$dotnetDevApp getos")
+$Env:DOTNET_DEV_ARCH = (Invoke-Expression "$dotnetDevApp getarch")
 $Env:DOTNET_DEV_CONFIG = "Debug"
 
 $Env:DOTNET_DEV_PLATFORM = "$Env:DOTNET_DEV_OS.$Env:DOTNET_DEV_ARCH.$Env:DOTNET_DEV_CONFIG"
@@ -36,8 +36,8 @@ $Env:DOTNET_DEV_CLRSRC = ""
 $Env:DOTNET_DEV_TESTSRC = ""
 $Env:DOTNET_DEV_LIBSSRC = ""
 
-function Set-OS([string]$osValue) {
-    $newOsOut = Invoke-Expression "$dotnetDevApp `"setos`" $osValue"
+function Set-OS([string]$OsValue) {
+    $newOsOut = (Invoke-Expression "$dotnetDevApp setos $OsValue")
     $setOsCode = $LASTEXITCODE
 
     if ($setOsCode -ne 0) {
@@ -55,9 +55,9 @@ function Set-OS([string]$osValue) {
     Update-Platform
 }
 
-function Set-Arch([string]$archValue) {
+function Set-Arch([string]$ArchValue) {
     Write-Host $archValue
-    $newArchOut = Invoke-Expression "$dotnetDevApp `"setarch`" $archValue"
+    $newArchOut = (Invoke-Expression "$dotnetDevApp setarch $ArchValue")
     $setArchCode = $LASTEXITCODE
 
     if ($setArchCode -ne 0) {
@@ -75,8 +75,8 @@ function Set-Arch([string]$archValue) {
     Update-Platform
 }
 
-function Set-Config([string]$configValue) {
-    $newConfigOut = Invoke-Expression "$dotnetDevApp `"setconfig`" $configValue"
+function Set-Config([string]$ConfigValue) {
+    $newConfigOut = (Invoke-Expression "$dotnetDevApp setconfig $ConfigValue")
     $setConfigCode = $LASTEXITCODE
 
     if ($setConfigCode -ne 0) {
@@ -94,8 +94,8 @@ function Set-Config([string]$configValue) {
     Update-Platform
 }
 
-function Set-Repo([string]$repoValue) {
-    $newRepoOut = Invoke-Expression "$dotnetDevApp `"setrepo`" $repoValue"
+function Set-Repo([string]$RepoValue) {
+    $newRepoOut = (Invoke-Expression "$dotnetDevApp setrepo $RepoValue")
     $setRepoCode = $LASTEXITCODE
 
     if ($setRepoCode -ne 0) {
@@ -155,8 +155,8 @@ function WhatIf-Preview() {
     }
 }
 
-function Build-Repo([string]$buildType, [string]$buildArgs) {
-    $buildRepoOut = Invoke-Expression "$dotnetDevApp `"build`" $buildType $buildArgs"
+function Build-Repo([string]$BuildType, [string]$BuildArgs) {
+    $buildRepoOut = (Invoke-Expression "$dotnetDevApp build $BuildType $BuildArgs")
     $buildRepoCode = $LASTEXITCODE
 
     if (($buildRepoCode -ne 0) -or ($Env:DOTNET_DEV_WHATIF_PREVIEW -ne 0)) {
