@@ -174,37 +174,48 @@ function buildrepo {
     $buildrepo_out
 }
 
+# function testing {
+#     $DOTNET_DEV_APP "build" "main" "$@"
+# }
+
+# alias testingalias="testing set=clr+libs config=rel lc=dbg runconf=chk arch=x64 arch=x86 -s host -os linux -rc Release -lc Release -a arm64"
+
+# alias testingalias2="testing set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.iltools arch=arm64 config=Release subset=clr.alljits+clr.spmi -s libs /p:NoPgo=true --runtimeConfiguration Checked -p:UseCrossgen2=false --test -arch x64,x86 -bl"
+
 # *************** #
 # Magical Aliases #
 # *************** #
 
-alias buildclr="buildrepo main -subset clr"
-alias buildclrdbg="buildrepo main -subset clr -configuration Debug"
-alias buildclrchk="buildrepo main -subset clr -configuration Checked"
-alias buildclrrel="buildrepo main -subset clr -configuration Release"
+alias buildmain="buildrepo main"
+alias buildtests="buildrepo tests"
 
-alias buildlibs="buildrepo main -subset libs"
-alias buildlibsdbg="buildrepo main -subset libs -configuration Debug"
-alias buildlibsrel="buildrepo main -subset libs -configuration Release"
+alias buildclr="buildrepo main subset=clr"
+alias buildclrdbg="buildrepo main subset=clr config=dbg"
+alias buildclrchk="buildrepo main subset=clr config=chk"
+alias buildclrrel="buildrepo main subset=clr config=rel"
 
-alias buildclrlibs="buildrepo main -subset clr+libs"
-alias buildclrlibsdbg="buildrepo main -subset clr+libs -configuration Debug"
-alias buildclrlibsrel="buildrepo main -subset clr+libs -configuration Release"
+alias buildlibs="buildrepo main subset=libs"
+alias buildlibsdbg="buildrepo main subset=libs config=dbg"
+alias buildlibsrel="buildrepo main subset=libs config=rel"
 
-alias buildclrlibschkdbg="buildrepo main -s clr+libs -rc Checked -lc Debug"
-alias buildclrlibsreldbg="buildrepo main -s clr+libs -rc Release -lc Debug"
-alias buildclrlibsdbgrel="buildrepo main -s clr+libs -rc Debug -lc Release"
-alias buildclrlibschkrel="buildrepo main -s clr+libs -rc Checked -lc Release"
+alias buildclrlibs="buildrepo main subset=clr+libs"
+alias buildclrlibsdbg="buildrepo main subset=clr+libs config=dbg"
+alias buildclrlibsrel="buildrepo main subset=clr+libs config=rel"
 
-alias genlayout="buildrepo tests libs=rel -generatelayoutonly"
-alias genlayoutdbg="buildrepo tests libs=rel -debug -generatelayoutonly"
-alias genlayoutchk="buildrepo tests libs=rel -checked -generatelayoutonly"
-alias genlayoutrel="buildrepo tests libs=rel -release -generatelayoutonly"
+alias buildclrlibschkdbg="buildrepo main subset=clr+libs runconf=chk libsconf=dbg"
+alias buildclrlibsreldbg="buildrepo main subset=clr+libs runconf=rel libsconf=dbg"
+alias buildclrlibsdbgrel="buildrepo main subset=clr+libs runconf=dbg libsconf=rel"
+alias buildclrlibschkrel="buildrepo main subset=clr+libs runconf=chk libsconf=rel"
 
-alias genlayoutlibsdbg="buildrepo tests libs=dbg -generatelayoutonly"
-alias genlayoutdbglibsdbg="buildrepo tests libs=dbg -debug -generatelayoutonly"
-alias genlayoutchklibsdbg="buildrepo tests libs=dbg -checked -generatelayoutonly"
-alias genlayoutrellibsdbg="buildrepo tests libs=dbg -release -generatelayoutonly"
+# alias gencoreroot="buildrepo tests libs=rel genlayout"
+# alias gencorerootdbg="buildrepo tests libs=rel clr=dbg genlayout"
+# alias gencorerootchk="buildrepo tests libs=rel clr=chk genlayout"
+# alias gencorerootrel="buildrepo tests libs=rel clr=rel genlayout"
+
+# alias gencorerootlibsdbg="buildrepo tests libs=dbg genlayout"
+# alias gencorerootdbglibsdbg="buildrepo tests libs=dbg clr=dbg genlayout"
+# alias gencorerootchklibsdbg="buildrepo tests libs=dbg clr=chk genlayout"
+# alias gencorerootrellibsdbg="buildrepo tests libs=dbg clr=rel genlayout"
 
 # Using single quotes here because we want to cd into the literal environment variable,
 # to whatever value it has when issuing the alias. Otherwise, it will expand the

@@ -1,16 +1,12 @@
 // File: Commands.cs
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
 public static class DotnetDevCommands
 {
-    // PLANS:
-    // Parse the command line. We can defer faulty command-lines to be handled
-    // by the runtime repo's build script, so here, we'll just assume they're
-    // well-formed.
-
     const string ENV_REPO_ROOT = "DOTNET_DEV_REPO";
     const string ENV_ARCH = "DOTNET_DEV_ARCH";
     const string ENV_OS = "DOTNET_DEV_OS";
@@ -66,6 +62,11 @@ public static class DotnetDevCommands
         return result;
     }
 
+    // TODO: Update this method's docs, and restore the functionality of automatically
+    //       adding the architecture, operating system, and general configuration
+    //       flags with the values from the environment variables, in the cases
+    //       where they are not provided by the user.
+
     /// <summary>
     /// Validates the specified repo path exists and processes the command-line
     /// for building. If the architecture, operating system, and/or configuration
@@ -78,39 +79,182 @@ public static class DotnetDevCommands
     /// </returns>
     private static int BuildMain(string repoPath, string[] buildArgs)
     {
-        string argsStr = string.Join(' ', buildArgs);
-        StringBuilder argsSb = new StringBuilder(argsStr);
+        int argIndex = 0;
+        Dictionary<string, string> processedArgs = new Dictionary<string, string>();
+        List<string> msbuildFlags = new List<string>();
 
-        if (!argsStr.Contains("-a ") && !argsStr.Contains("-arch "))
+        // DotnetDev expects all the flags in the 'key=value' format to be passed
+        // before the dashed ones and the MSBuild ones. That's why we have to keep
+        // track of the index even after we exit this loop.
+
+        for (; argIndex < buildArgs.Length; argIndex++)
         {
-            argsSb.AppendFormat(" -arch {0}",
-                                Environment.GetEnvironmentVariable(ENV_ARCH));
+            string nextArg = buildArgs[argIndex];
+
+            // This means the next flag is meant to be passed directly to the build
+            // command-line, so we are done processing the 'param=arg' notation args.
+            if (nextArg.StartsWith('-') || nextArg.StartsWith('/'))
+                break;
+
+            string[] kvp = nextArg.Split('=');
+            string paramName = kvp[0];
+            string argValue = kvp.Length > 1 ? kvp[1] : "";
+
+            // For the 'param=arg' notation, one can pass the same name as the
+            // runtime repo's build script flags, or use one of the shorthand aliases
+            // we've defined here. If an alias is detected, we set the param name
+            // to its long flag from the build script for clearer and universal
+            // handling, as we later on also process the dashed arguments and there
+            // may or may not be duplicates.
+
+            if (paramName == "set")
+            {
+                paramName = "subset";
+            }
+            else if (paramName == "conf"
+                     || paramName == "config"
+                     || paramName == "configuration")
+            {
+                paramName = "configuration";
+                BuildUtils.ProcessBuildConfigKvpArg(ref argValue);
+            }
+            else if (paramName == "lc"
+                     || paramName == "libsconf"
+                     || paramName == "libsconfig"
+                     || paramName == "librariesConfiguration")
+            {
+                paramName = "librariesConfiguration";
+                BuildUtils.ProcessBuildConfigKvpArg(ref argValue);
+            }
+            else if (paramName == "rc"
+                     || paramName == "runconf"
+                     || paramName == "runtimeconfig"
+                     || paramName == "runtimeConfiguration"
+                     || paramName == "clrconf"
+                     || paramName == "clrconfig")
+            {
+                paramName = "runtimeConfiguration";
+                BuildUtils.ProcessBuildConfigKvpArg(ref argValue);
+            }
+
+            if (!processedArgs.ContainsKey(paramName))
+            {
+                processedArgs.Add(paramName, argValue);
+            }
+            else if (!string.IsNullOrEmpty(processedArgs[paramName]))
+            {
+                if (paramName == "subset")
+                    processedArgs[paramName] += $"+{argValue}";
+                else
+                    processedArgs[paramName] += $",{argValue}";
+            }
         }
 
-        if (!argsStr.Contains("-os "))
+        // Once we're done processing the arguments in the 'param=arg' notation,
+        // we might bump into dashed arguments meant to be passed as is to the
+        // build script. However, here we also take into account the possibility
+        // of duplicated arguments on the same command-line (e.g. arch=x64 -a x86).
+        // In this case, we append both values accordingly, so as we don't end
+        // up with an invalid command-line due to the repeated flags.
+
+        for (; argIndex < buildArgs.Length; argIndex++)
         {
-            argsSb.AppendFormat(" -os {0}",
-                                Environment.GetEnvironmentVariable(ENV_OS));
+            string nextArg = buildArgs[argIndex];
+
+            if (nextArg.StartsWith("-p:") || nextArg.StartsWith("/p:"))
+            {
+                // If we entered this condition, then this means this argument is
+                // meant to be passed as an MSBuild flag. We store these ones
+                // separately, because we want to append them at the end of the
+                // final command-line.
+                msbuildFlags.Add(nextArg);
+                continue;
+            }
+
+            nextArg = nextArg.TrimStart('-').ToLower();
+
+            if (nextArg == "s" || nextArg == "subset")
+            {
+                BuildUtils.ProcessDashedBuildArg("subset",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (nextArg == "a" || nextArg == "arch")
+            {
+                BuildUtils.ProcessDashedBuildArg("arch",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (nextArg == "os")
+            {
+                BuildUtils.ProcessDashedBuildArg("os",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (nextArg == "c" || nextArg == "configuration")
+            {
+                BuildUtils.ProcessDashedBuildArg("configuration",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (nextArg == "lc" || nextArg == "librariesconfiguration")
+            {
+                BuildUtils.ProcessDashedBuildArg("librariesConfiguration",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (nextArg == "rc" || nextArg == "runtimeconfiguration")
+            {
+                BuildUtils.ProcessDashedBuildArg("runtimeConfiguration",
+                                                 buildArgs[++argIndex],
+                                                 processedArgs);
+            }
+            else if (!processedArgs.ContainsKey(nextArg))
+            {
+                // If this is the last token, or the next one is also a flag, then
+                // that means the current token is a switch flag, and therefore its
+                // would-be value is just the empty string.
+                string seeAhead = (argIndex + 1) == buildArgs.Length
+                                  ? string.Empty
+                                  : buildArgs[argIndex + 1];
+
+                if (seeAhead.StartsWith('-') || seeAhead.StartsWith('/'))
+                    seeAhead = string.Empty;
+
+                processedArgs.Add(nextArg, seeAhead);
+            }
+            else
+            {
+                Console.WriteLine("Found an unexpected invalid argument: '{0}'.",
+                                  nextArg);
+                return -1;
+            }
         }
 
-        // IDEA: Might be worth exploring the idea of it adding the `-configuration`
-        //       flag when at least one subset has its own configuration flag
-        //       specified AND at least one other subset doesn't have it there.
+        string buildScript = Path.Join(repoPath, $"build{s_scriptExt}");
+        StringBuilder argsSb = new StringBuilder();
 
-        if (!argsStr.Contains("-c ")
-            && !argsStr.Contains("-configuration ")
-            && !argsStr.Contains("-rc ")
-            && !argsStr.Contains("-runtimeConfiguration ")
-            && !argsStr.Contains("-lc ")
-            && !argsStr.Contains("-librariesConfiguration "))
+        foreach (KeyValuePair<string, string> argKvp in processedArgs)
         {
-            argsSb.AppendFormat(" -configuration {0}",
-                                Environment.GetEnvironmentVariable(ENV_CONFIG));
+            argsSb.Append($" -{argKvp.Key}");
+
+            if (!string.IsNullOrEmpty(argKvp.Value))
+                argsSb.Append($" {argKvp.Value}");
         }
 
-        Console.WriteLine("{0} {1}",
-                          Path.Join(repoPath, $"build{s_scriptExt}"),
-                          argsSb.ToString());
+        // The reason we are conditioning printing the script args and MSBuild flags
+        // is to avoid returning a command-line with trailing spaces in the cases
+        // where one or both of those are empty. If anything, for cleanliness.
+
+        Console.Write(buildScript);
+
+        if (argsSb.Length > 0)
+            Console.Write($"{argsSb.ToString()}");
+
+        if (msbuildFlags.Count > 0)
+            Console.Write($" {string.Join(' ', msbuildFlags)}");
+
+        Console.Write("\n");
         return 0;
     }
 
@@ -121,6 +265,11 @@ public static class DotnetDevCommands
     private static int BuildTests(string repoPath, string[] buildArgs)
     {
         string libsConfig = string.Empty;
+
+        // We can receive the flags directly to pass to the builds script, or we can
+        // receive the libraries configuration first in the form of 'libs=config'.
+        // In this case, we parse that first and generate the corresponding flag
+        // for MSBuild to be appended at the end.
 
         if (buildArgs.Length > 0 && buildArgs[0].StartsWith("libs="))
         {
