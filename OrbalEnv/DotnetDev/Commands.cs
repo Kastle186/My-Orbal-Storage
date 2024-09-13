@@ -403,6 +403,9 @@ public static class DotnetDevCommands
         if (argsSb.Length > 0)
             Console.Write($"{argsSb.ToString()}");
 
+        if (scriptFlags.Count > 0)
+            Console.Write($" {string.Join(' ', scriptFlags)}");
+
         if (msbuildFlags.Count > 0)
             Console.Write($" {string.Join(' ', msbuildFlags)}");
 
