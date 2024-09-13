@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 internal static class BuildUtils
 {
+    /// <summary>
+    /// </summary>
     public static void ProcessBuildConfigKvpArg(ref string configValue)
     {
         if (string.IsNullOrEmpty(configValue) || configValue == "dbg")
@@ -15,6 +17,8 @@ internal static class BuildUtils
             configValue = "Release";
     }
 
+    /// <summary>
+    /// </summary>
     public static void ProcessDashedBuildArg(string paramName,
                                              string argValue,
                                              Dictionary<string, string> processedArgs)
