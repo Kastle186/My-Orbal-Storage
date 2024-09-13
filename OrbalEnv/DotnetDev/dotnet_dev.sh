@@ -163,6 +163,11 @@ function buildrepo {
     local build_type="$1"
     shift
 
+    if [[ "$build_type" == "tests" && "$EXT" == ".exe" ]]; then
+        echo 'Building the tests is not yet supported on Windows.'
+        return 2
+    fi
+
     buildrepo_out=$($DOTNET_DEV_APP "build" $build_type "$@")
     buildrepo_code=$?
 

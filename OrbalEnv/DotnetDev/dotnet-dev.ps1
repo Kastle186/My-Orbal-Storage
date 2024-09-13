@@ -156,6 +156,12 @@ function WhatIf-Preview() {
 }
 
 function Build-Repo([string]$BuildType, [string]$BuildArgs) {
+    if (($BuildType -ieq "tests") -and $IsWindows)
+    {
+        Write-Host "Building the tests is not yet supported on Windows."
+        return 2
+    }
+
     $buildRepoOut = (Invoke-Expression "$dotnetDevApp build $BuildType $BuildArgs")
     $buildRepoCode = $LASTEXITCODE
 
