@@ -108,6 +108,7 @@ function Set-Repo([string]$RepoValue) {
         '$Env:DOTNET_DEV_CLRSRC = ' + (Join-Path $newRepoOut "src" "coreclr"),
         '$Env:DOTNET_DEV_TESTSRC = ' + (Join-Path $newRepoOut "src" "tests"),
         '$Env:DOTNET_DEV_LIBSSRC = ' + (Join-Path $newRepoOut "src" "libraries"),
+        '$Env:DOTNET_DEV_MONOSRC = ' + (Join-Path $newRepoOut "src" "mono"),
         '$Env:DOTNET_DEV_COREROOT = ' + (Join-Path $newRepoOut              `
                                                    "artifacts"              `
                                                    "tests"                  `
@@ -141,8 +142,6 @@ function Update-Platform() {
 # **************************************************************** #
 # The Functions in Charge of all the Dotnet Dev Environment Magic! #
 # **************************************************************** #
-
-# FEATURE IDEA: Enable the 'whatif-preview' scenario with a command-line flag as well.
 
 function WhatIf-Preview() {
     if ($Env:DOTNET_DEV_WHATIF_PREVIEW -eq 0) {
@@ -196,27 +195,28 @@ Set-Alias -Name buildrepo     -Value Build-Repo
 # Since Powershell doesn't support commands with arguments in aliases, we'll have
 # to use functions and then alias those instead.
 
-function Build-Clr() { Build-Repo "main" "-subset clr" }
-function Build-ClrDbg() { Build-Repo "main" "-subset clr -configuration Debug" }
-function Build-ClrChk() { Build-Repo "main" "-subset clr -configuration Checked" }
-function Build-ClrRel() { Build-Repo "main" "-subset clr -configuration Release" }
+function Build-Clr() { Build-Repo "main" "subset=clr" }
+function Build-ClrDbg() { Build-Repo "main" "subset=clr config=dbg" }
+function Build-ClrChk() { Build-Repo "main" "subset=clr config=chk" }
+function Build-ClrRel() { Build-Repo "main" "subset=clr config=rel" }
 
-function Build-Libs() { Build-Repo "main" "-subset libs" }
-function Build-LibsDbg() { Build-Repo "main" "-subset libs -configuration Debug" }
-function Build-LibsRel() { Build-Repo "main" "-subset libs -configuration Release" }
+function Build-Libs() { Build-Repo "main" "subset=libs" }
+function Build-LibsDbg() { Build-Repo "main" "subset=libs config=dbg" }
+function Build-LibsRel() { Build-Repo "main" "subset=libs config=rel" }
 
-function Build-ClrLibs() { Build-Repo "main" "-subset clr+libs" }
-function Build-ClrLibsDbg() { Build-Repo "main" "-subset clr+libs -configuration Debug" }
-function Build-ClrLibsRel() { Build-Repo "main" "-subset clr+libs -configuration Release" }
+function Build-ClrLibs() { Build-Repo "main" "subset=clr+libs" }
+function Build-ClrLibsDbg() { Build-Repo "main" "subset=clr+libs config=dbg" }
+function Build-ClrLibsRel() { Build-Repo "main" "subset=clr+libs config=rel" }
 
-function Build-ClrLibsChkDbg() { Build-Repo "main" "-s clr+libs -rc Checked -lc Debug" }
-function Build-ClrLibsRelDbg() { Build-Repo "main" "-s clr+libs -rc Release -lc Debug" }
-function Build-ClrLibsDbgRel() { Build-Repo "main" "-s clr+libs -rc Debug -lc Release" }
-function Build-ClrLibsChkRel() { Build-Repo "main" "-s clr+libs -rc Checked -lc Release" }
+function Build-ClrLibsChkDbg() { Build-Repo "main" "subset=clr+libs runconf=chk libsconf=dbg" }
+function Build-ClrLibsRelDbg() { Build-Repo "main" "subset=clr+libs runconf=rel libsconf=dbg" }
+function Build-ClrLibsDbgRel() { Build-Repo "main" "subset=clr+libs runconf=dbg libsconf=rel" }
+function Build-ClrLibsChkRel() { Build-Repo "main" "subset=clr+libs runconf=chk libsconf=rel" }
 
 function Cd-Clr() { Set-Location $Env:DOTNET_DEV_CLRSRC }
 function Cd-Tests() { Set-Location $Env:DOTNET_DEV_TESTSRC }
 function Cd-Libs() { Set-Location $Env:DOTNET_DEV_LIBSSRC }
+function Cd-Mono() { Set-Location $Env:DOTNET_DEV_MONOSRC }
 
 Set-Alias -Name buildclr    -Value Build-Clr
 Set-Alias -Name buildclrdbg -Value Build-ClrDbg
@@ -239,3 +239,4 @@ Set-Alias -Name buildclrlibschkrel -Value Build-ClrLibsChkRel
 Set-Alias -Name cdclr   -Value Cd-Clr
 Set-Alias -Name cdtests -Value Cd-Tests
 Set-Alias -Name cdlibs  -Value Cd-Libs
+Set-Alias -Name cdmono  -Value Cd-Mono

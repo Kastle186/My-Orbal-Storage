@@ -42,6 +42,7 @@ export DOTNET_DEV_COREROOT=""
 export DOTNET_DEV_CLRSRC=""
 export DOTNET_DEV_TESTSRC=""
 export DOTNET_DEV_LIBSSRC=""
+export DOTNET_DEV_MONOSRC=""
 
 function setos {
     local newos_out
@@ -122,6 +123,7 @@ function setrepo {
                      "export DOTNET_DEV_CLRSRC=$repopath_out/src/coreclr"
                      "export DOTNET_DEV_TESTSRC=$repopath_out/src/tests"
                      "export DOTNET_DEV_LIBSSRC=$repopath_out/src/libraries"
+                     "export DOTNET_DEV_MONOSRC=$repopath_out/src/mono"
                      "export DOTNET_DEV_COREROOT=$repopath_out/artifacts/tests/\
 coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root")
 
@@ -144,8 +146,6 @@ $DOTNET_DEV_PLATFORM/Tests/Core_Root"
 # **************************************************************** #
 # The Functions in Charge of all the Dotnet Dev Environment Magic! #
 # **************************************************************** #
-
-# FEATURE IDEA: Enable the 'whatif-preview' scenario with a command-line flag as well.
 
 function whatifpreview {
     if [[ "$DOTNET_DEV_WHATIF_PREVIEW" == "0" ]]; then
@@ -180,14 +180,14 @@ function buildrepo {
 }
 
 function testing {
-    $DOTNET_DEV_APP "build" "tests" "$@"
+    $DOTNET_DEV_APP "build" "main" "$@"
 }
 
-# alias testingalias="testing set=clr+libs config=rel lc=dbg runconf=chk arch=x64 arch=x86 -s host -os linux -rc Release -lc Release -a arm64"
+alias testingalias="testing set=clr+libs config=rel lc=dbg runconf=chk arch=x64 arch=x86 -s host -os linux -rc Release -lc Release -a arm64"
 
-# alias testingalias2="testing set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.iltools arch=arm64 config=Release subset=clr.alljits+clr.spmi -s libs /p:NoPgo=true --runtimeConfiguration Checked -p:UseCrossgen2=false --test -arch x64,x86 -bl"
+alias testingalias2="testing set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.iltools arch=arm64 config=Release subset=clr.alljits+clr.spmi -s libs /p:NoPgo=true --runtimeConfiguration Checked -p:UseCrossgen2=false --test -arch x64,x86 -bl"
 
-alias testingalias="testing clr=chk libs=dbg -generatelayoutonly -test:path.csproj -p:UseLocalAppHostPack=true"
+# alias testingalias="testing clr=chk libs=dbg -generatelayoutonly -test:path.csproj -p:UseLocalAppHostPack=true"
 
 # *************** #
 # Magical Aliases #
@@ -232,3 +232,4 @@ alias gencorerootrellibsdbg="buildrepo tests libs=dbg clr=rel -generatelayoutonl
 alias cdclr='cd $DOTNET_DEV_CLRSRC'
 alias cdtests='cd $DOTNET_DEV_TESTSRC'
 alias cdlibs='cd $DOTNET_DEV_LIBSSRC'
+alias cdmono='cd $DOTNET_DEV_MONOSRC'
