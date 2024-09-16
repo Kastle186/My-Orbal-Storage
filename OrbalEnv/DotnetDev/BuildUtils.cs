@@ -7,22 +7,14 @@ internal static class BuildUtils
 {
     /// <summary>
     /// </summary>
-    public static void ProcessBuildConfigKvpArg(ref string configValue)
+    public static void ProcessBuildArg(string paramName,
+                                       string argValue,
+                                       Dictionary<string, string> processedArgs,
+                                       bool isConfigParam)
     {
-        if (string.IsNullOrEmpty(configValue) || configValue == "dbg")
-            configValue = "Debug";
-        else if (configValue == "chk")
-            configValue = "Checked";
-        else if (configValue == "rel")
-            configValue = "Release";
-    }
+        if (isConfigParam)
+            ProcessBuildConfigArg(ref argValue);
 
-    /// <summary>
-    /// </summary>
-    public static void ProcessDashedBuildArg(string paramName,
-                                             string argValue,
-                                             Dictionary<string, string> processedArgs)
-    {
         if (!processedArgs.ContainsKey(paramName))
         {
             processedArgs.Add(paramName, argValue);
@@ -32,5 +24,30 @@ internal static class BuildUtils
             string valToAppend = paramName == "subset" ? $"+{argValue}" : $",{argValue}";
             processedArgs[paramName] += valToAppend;
         }
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsTestArgDuplicated(string paramName,
+                                           string argValue,
+                                           Dictionary<string, string> kvpArgs,
+                                           List<string> otherArgs)
+    {
+        return (kvpArgs.ContainsKey(paramName)
+                || !string.IsNullOrEmpty(
+                    otherArgs.Find(
+                        x => x.ToLower().Contains(argValue.ToLower()))));
+    }
+
+    private static void ProcessBuildConfigArg(ref string configValue)
+    {
+        if (string.IsNullOrEmpty(configValue) || configValue == "dbg")
+            configValue = "Debug";
+        else if (configValue == "chk")
+            configValue = "Checked";
+        else if (configValue == "rel")
+            configValue = "Release";
     }
 }
