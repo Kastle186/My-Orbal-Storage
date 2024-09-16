@@ -50,7 +50,7 @@ public static class DotnetDevCommands
                 break;
 
             case "tests":
-                // result = BuildTests(repoPath, buildArgs[1..]);
+                result = BuildTests(repoPath, buildArgs[1..]);
                 break;
 
             default:
@@ -343,7 +343,7 @@ public static class DotnetDevCommands
     private static int BuildTests(string repoPath, string[] buildArgs)
     {
         Dictionary<string, string> kvpArgs = new();
-        List<string> otherArgs = new();
+        List<string> scriptFlags = new();
         List<string> msBuildFlags = new();
 
         for (int i = 0; i < buildArgs.Length; i++)
@@ -356,7 +356,7 @@ public static class DotnetDevCommands
                 // meant to be passed as an MSBuild flag. We store these ones
                 // separately, because we want to append them at the end of the
                 // final command-line.
-                msbuildFlags.Add(nextArg);
+                msBuildFlags.Add(nextArg);
                 continue;
             }
 
@@ -364,7 +364,7 @@ public static class DotnetDevCommands
             {
                 // If we're here, that means we found an argument to pass directly
                 // to the tests script command-line directly.
-                otherArgs.Add(nextArg.TrimStart('-'));
+                scriptFlags.Add(nextArg.TrimStart('-'));
                 continue;
             }
 
@@ -381,7 +381,7 @@ public static class DotnetDevCommands
             {
                 paramName = "arch";
 
-                if (BuildUtils.IsTestArgDuplicated("arch", argValue, kvpArgs, otherArgs))
+                if (BuildUtils.IsTestArgDuplicated("arch", argValue, kvpArgs, scriptFlags))
                 {
                     Console.WriteLine("BuildTests: Only one arch value should be"
                                       + " specified.");
@@ -401,7 +401,7 @@ public static class DotnetDevCommands
                 paramName = "clr";
                 isConfigParam = true;
 
-                if (BuildUtils.IsTestArgDuplicated("clr", argValue, kvpArgs, otherArgs))
+                if (BuildUtils.IsTestArgDuplicated("clr", argValue, kvpArgs, scriptFlags))
                 {
                     Console.WriteLine("BuildTests: Only one CLR configuration value"
                                       + " should be specified.");
@@ -416,7 +416,7 @@ public static class DotnetDevCommands
                 paramName = "libs";
                 isConfigParam = true;
 
-                if (BuildUtils.IsTestArgDuplicated("libs", argValue, kvpArgs, otherArgs)
+                if (BuildUtils.IsTestArgDuplicated("libs", argValue, kvpArgs, scriptFlags)
                     || !string.IsNullOrEmpty(
                         msBuildFlags.Find(
                             x => x.Contains("LibrariesConfiguration"))))
@@ -430,20 +430,57 @@ public static class DotnetDevCommands
             // NOTE: We might have to make a similar method for processing test
             //       build args if they start differing too much, as we start
             //       supporting more in our DotnetDev Kvp Notation.
-            BuildUtils.ProcessBuildArg(paramName, argValue, processedArgs, isConfigParam);
+            BuildUtils.ProcessBuildArg(paramName, argValue, kvpArgs, isConfigParam);
         }
 
         // Build the command-line here: Note that we need to handle the special
         // cases for the architecture and clr configuration, since those don't
         // use dashes '-'.
 
-        string buildScript = Path.Join(repoPath, $"build{s_scriptExt}");
+        string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
         StringBuilder kvpArgsSb = new();
 
         foreach (KeyValuePair<string, string> argKvp in kvpArgs)
         {
+            if (argKvp.Key == "arch" || argKvp.Key == "clr")
+            {
+                kvpArgsSb.AppendFormat(" {0}", OperatingSystem.IsWindows()
+                                               ? argKvp.Value
+                                               : $"-{argKvp.Value}");
+                continue;
+            }
+            else if (argKvp.Key == "libs")
+            {
+                msBuildFlags.Add($"-p:LibrariesConfiguration={argKvp.Value}");
+                continue;
+            }
+
+            kvpArgsSb.Append($" -{argKvp.Key}");
+
+            if (!string.IsNullOrEmpty(argKvp.Value))
+            {
+                kvpArgsSb.AppendFormat("{0}{1}",
+                                       OperatingSystem.IsWindows() ? " " : ":",
+                                       argKvp.Value);
+            }
         }
 
+        // The reason we are conditioning printing the script args and MSBuild flags
+        // is to avoid returning a command-line with trailing spaces in the cases
+        // where one or both of those are empty. If anything, for cleanliness.
+
+        Console.Write(testsScript);
+
+        if (kvpArgsSb.Length > 0)
+            Console.Write($"{kvpArgsSb.ToString()}");
+
+        if (scriptFlags.Count > 0)
+            Console.Write($" {string.Join(' ', scriptFlags)}");
+
+        if (msBuildFlags.Count > 0)
+            Console.Write($" {string.Join(' ', msBuildFlags)}");
+
+        Console.Write("\n");
         return 0;
     }
 }
