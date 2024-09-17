@@ -31,10 +31,13 @@ $Env:DOTNET_DEV_CONFIG = "Debug"
 
 $Env:DOTNET_DEV_PLATFORM = "$Env:DOTNET_DEV_OS.$Env:DOTNET_DEV_ARCH.$Env:DOTNET_DEV_CONFIG"
 $Env:DOTNET_DEV_COREROOT = ""
+$Env:DOTNET_DEV_CLRBIN_ARTIFACTS = ""
+$Env:DOTNET_DEV_CLRTEST_ARTIFACTS = ""
 
 $Env:DOTNET_DEV_CLRSRC = ""
 $Env:DOTNET_DEV_TESTSRC = ""
 $Env:DOTNET_DEV_LIBSSRC = ""
+$Env:DOTNET_DEV_MONOSRC = ""
 
 function Set-OS([string]$OsValue) {
     $newOsOut = (Invoke-Expression "$dotnetDevApp setos $OsValue")
@@ -109,6 +112,18 @@ function Set-Repo([string]$RepoValue) {
         '$Env:DOTNET_DEV_TESTSRC = ' + (Join-Path $newRepoOut "src" "tests"),
         '$Env:DOTNET_DEV_LIBSSRC = ' + (Join-Path $newRepoOut "src" "libraries"),
         '$Env:DOTNET_DEV_MONOSRC = ' + (Join-Path $newRepoOut "src" "mono"),
+
+        '$Env:DOTNET_DEV_CLRBIN_ARTIFACTS = ' + (Join-Path $newRepoOut `
+                                                           "artifacts" `
+                                                           "bin"       `
+                                                           "coreclr"),
+
+        '$Env:DOTNET_DEV_CLRTEST_ARTIFACTS = ' + (Join-Path $newRepoOut `
+                                                           "artifacts"  `
+                                                           "tests"      `
+                                                           "coreclr"    `
+                                                           $Env:DOTNET_DEV_PLAFORM),
+
         '$Env:DOTNET_DEV_COREROOT = ' + (Join-Path $newRepoOut              `
                                                    "artifacts"              `
                                                    "tests"                  `
@@ -127,15 +142,21 @@ function Set-Repo([string]$RepoValue) {
     }
 }
 
+function Set-CoreRootEnvVar() {
+    $Env:CORE_ROOT = $Env:DOTNET_DEV_COREROOT
+}
+
 function Update-Platform() {
     $Env:DOTNET_DEV_PLATFORM = "$Env:DOTNET_DEV_OS.$Env:DOTNET_DEV_ARCH.$Env:DOTNET_DEV_CONFIG"
 
-    $Env:DOTNET_DEV_COREROOT = Join-Path $Env:DOTNET_DEV_REPO     `
-                                         "artifacts"              `
-                                         "tests"                  `
-                                         "coreclr"                `
-                                         $Env:DOTNET_DEV_PLATFORM `
-                                         "Tests"                  `
+    $Env:DOTNET_DEV_CLRTEST_ARTIFACTS = Join-Path $Env:DOTNET_DEV_REPO `
+                                                  "artifacts"          `
+                                                  "tests"              `
+                                                  "coreclr"            `
+                                                  $Env:DOTNET_DEV_PLATFORM
+
+    $Env:DOTNET_DEV_COREROOT = Join-Path $Env:DOTNET_DEV_CLRTEST_ARTIFACTS `
+                                         "Tests" `
                                          "Core_Root"
 }
 
@@ -155,12 +176,6 @@ function WhatIf-Preview() {
 }
 
 function Build-Repo([string]$BuildType, [string]$BuildArgs) {
-    if (($BuildType -ieq "tests") -and $IsWindows)
-    {
-        Write-Host "Building the tests is not yet supported on Windows."
-        return 2
-    }
-
     $buildRepoOut = (Invoke-Expression "$dotnetDevApp build $BuildType $BuildArgs")
     $buildRepoCode = $LASTEXITCODE
 
@@ -181,12 +196,13 @@ function Build-Repo([string]$BuildType, [string]$BuildArgs) {
 # seamless with its bash counterpart, we're adding some aliases to call the
 # functions just like in the bash version of the environment.
 
-Set-Alias -Name setos         -Value Set-OS
-Set-Alias -Name setarch       -Value Set-Arch
-Set-Alias -Name setconfig     -Value Set-Config
-Set-Alias -Name setrepo       -Value Set-Repo
-Set-Alias -Name whatifpreview -Value WhatIf-Preview
-Set-Alias -Name buildrepo     -Value Build-Repo
+Set-Alias -Name setos             -Value Set-OS
+Set-Alias -Name setarch           -Value Set-Arch
+Set-Alias -Name setconfig         -Value Set-Config
+Set-Alias -Name setrepo           -Value Set-Repo
+Set-Alias -Name setcorerootenvvar -Value Set-CoreRootEnvVar
+Set-Alias -Name whatifpreview     -Value WhatIf-Preview
+Set-Alias -Name buildrepo         -Value Build-Repo
 
 # ********************************* #
 # Magical Aliases! Er... Functions! #
@@ -213,10 +229,24 @@ function Build-ClrLibsRelDbg() { Build-Repo "main" "subset=clr+libs runconf=rel 
 function Build-ClrLibsDbgRel() { Build-Repo "main" "subset=clr+libs runconf=dbg libsconf=rel" }
 function Build-ClrLibsChkRel() { Build-Repo "main" "subset=clr+libs runconf=chk libsconf=rel" }
 
+function Gen-CoreRoot() { Build-Repo "tests" "libs=rel" "-GenerateLayoutOnly" }
+function Gen-CoreRootDbg() { Build-Repo "tests" "libs=rel" "clr=dbg" "-GenerateLayoutOnly" }
+function Gen-CoreRootChk() { Build-Repo "tests" "libs=rel" "clr=chk" "-GenerateLayoutOnly" }
+function Gen-CoreRootRel() { Build-Repo "tests" "libs=rel" "clr=rel" "-GenerateLayoutOnly" }
+
+function Gen-CoreRootLibsDbg() { Build-Repo "tests" "libs=dbg" "-GenerateLayoutOnly" }
+function Gen-CoreRootDbgLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=dbg" "-GenerateLayoutOnly" }
+function Gen-CoreRootChkLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=chk" "-GenerateLayoutOnly" }
+function Gen-CoreRootRelLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=rel" "-GenerateLayoutOnly" }
+
 function Cd-Clr() { Set-Location $Env:DOTNET_DEV_CLRSRC }
 function Cd-Tests() { Set-Location $Env:DOTNET_DEV_TESTSRC }
 function Cd-Libs() { Set-Location $Env:DOTNET_DEV_LIBSSRC }
 function Cd-Mono() { Set-Location $Env:DOTNET_DEV_MONOSRC }
+
+function Cd-ClrBins() { Set-Location $Env:DOTNET_DEV_CLRBIN_ARTIFACTS }
+function Cd-ClrTests() { Set-Location $Env:DOTNET_DEV_CLRTEST_ARTIFACTS }
+function Cd-CoreRoot() { Set-Location $Env:DOTNET_DEV_COREROOT }
 
 Set-Alias -Name buildclr    -Value Build-Clr
 Set-Alias -Name buildclrdbg -Value Build-ClrDbg
@@ -236,7 +266,21 @@ Set-Alias -Name buildclrlibsreldbg -Value Build-ClrLibsRelDbg
 Set-Alias -Name buildclrlibsdbgrel -Value Build-ClrLibsDbgRel
 Set-Alias -Name buildclrlibschkrel -Value Build-ClrLibsChkRel
 
+Set-Alias -Name gencoreroot    -Value Gen-CoreRoot
+Set-Alias -Name gencorerootdbg -Value Gen-CoreRootDbg
+Set-Alias -Name gencorerootchk -Value Gen-CoreRootChk
+Set-Alias -Name gencorerootrel -Value Gen-CoreRootRel
+
+Set-Alias -Name gencorerootlibsdbg    -Value Gen-CoreRootLibsDbg
+Set-Alias -Name gencorerootdbglibsdbg -Value Gen-CoreRootDbgLibsDbg
+Set-Alias -Name gencorerootchklibsdbg -Value Gen-CoreRootChkLibsDbg
+Set-Alias -Name gencorerootrellibsdbg -Value Gen-CoreRootRelLibsDbg
+
 Set-Alias -Name cdclr   -Value Cd-Clr
 Set-Alias -Name cdtests -Value Cd-Tests
 Set-Alias -Name cdlibs  -Value Cd-Libs
 Set-Alias -Name cdmono  -Value Cd-Mono
+
+Set-Alias -Name cdclrbins  -Value Cd-ClrBins
+Set-Alias -Name cdclrtests -Value Cd-ClrTests
+Set-Alias -Name cdcoreroot -Value Cd-CoreRoot

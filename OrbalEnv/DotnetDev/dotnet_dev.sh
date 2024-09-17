@@ -38,6 +38,8 @@ export DOTNET_DEV_CONFIG="Debug"
 
 export DOTNET_DEV_PLATFORM="$DOTNET_DEV_OS.$DOTNET_DEV_ARCH.$DOTNET_DEV_CONFIG"
 export DOTNET_DEV_COREROOT=""
+export DOTNET_DEV_CLRBIN_ARTIFACTS=""
+export DOTNET_DEV_CLRTEST_ARTIFACTS=""
 
 export DOTNET_DEV_CLRSRC=""
 export DOTNET_DEV_TESTSRC=""
@@ -124,6 +126,13 @@ function setrepo {
                      "export DOTNET_DEV_TESTSRC=$repopath_out/src/tests"
                      "export DOTNET_DEV_LIBSSRC=$repopath_out/src/libraries"
                      "export DOTNET_DEV_MONOSRC=$repopath_out/src/mono"
+
+                     "export DOTNET_DEV_CLRBIN_ARTIFACTS=$repopath_out/\
+artifacts/bin/coreclr"
+
+                     "export DOTNET_DEV_CLRTEST_ARTIFACTS=$repopath_out/\
+artifacts/tests/coreclr/$DOTNET_DEV_PLATFORM"
+
                      "export DOTNET_DEV_COREROOT=$repopath_out/artifacts/tests/\
 coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root")
 
@@ -137,10 +146,15 @@ coreclr/$DOTNET_DEV_PLATFORM/Tests/Core_Root")
     done
 }
 
+function setcorerootenvvar {
+    export CORE_ROOT=$DOTNET_DEV_COREROOT
+}
+
 function updateplatform {
     export DOTNET_DEV_PLATFORM="$DOTNET_DEV_OS.$DOTNET_DEV_ARCH.$DOTNET_DEV_CONFIG"
-    export DOTNET_DEV_COREROOT="$DOTNET_DEV_REPO/artifacts/tests/coreclr/\
-$DOTNET_DEV_PLATFORM/Tests/Core_Root"
+    export DOTNET_DEV_CLRTEST_ARTIFACTS="$DOTNET_DEV_REPO/artifacts/tests/coreclr/\
+$DOTNET_DEV_PLATFORM"
+    export DOTNET_DEV_COREROOT="$DOTNET_DEV_CLRTEST_ARTIFACTS/Tests/Core_Root"
 }
 
 # **************************************************************** #
@@ -233,3 +247,7 @@ alias cdclr='cd $DOTNET_DEV_CLRSRC'
 alias cdtests='cd $DOTNET_DEV_TESTSRC'
 alias cdlibs='cd $DOTNET_DEV_LIBSSRC'
 alias cdmono='cd $DOTNET_DEV_MONOSRC'
+
+alias cdclrbins='cd $DOTNET_DEV_CLRBIN_ARTIFACTS'
+alias cdclrtests='cd $DOTNET_DEV_CLRTEST_ARTIFACTS'
+alias cdcoreroot='cd $DOTNET_DEV_COREROOT'
