@@ -106,35 +106,33 @@ function Set-Repo([string]$RepoValue) {
         return 1
     }
 
-    $envVarsExports = @(
-        '$Env:DOTNET_DEV_REPO = ' + $newRepoOut,
-        '$Env:DOTNET_DEV_CLRSRC = ' + (Join-Path $newRepoOut "src" "coreclr"),
-        '$Env:DOTNET_DEV_TESTSRC = ' + (Join-Path $newRepoOut "src" "tests"),
-        '$Env:DOTNET_DEV_LIBSSRC = ' + (Join-Path $newRepoOut "src" "libraries"),
-        '$Env:DOTNET_DEV_MONOSRC = ' + (Join-Path $newRepoOut "src" "mono"),
+    $envVars = @{
+        "DOTNET_DEV_REPO" = $newRepoOut
+        "DOTNET_DEV_CLRSRC" = (Join-Path $newRepoOut "src" "coreclr")
+        "DOTNET_DEV_TESTSRC" = (Join-Path $newRepoOut "src" "tests")
+        "DOTNET_DEV_LIBSSRC" = (Join-Path $newRepoOut "src" "libraries")
+        "DOTNET_DEV_MONOSRC" = (Join-Path $newRepoOut "src" "mono")
 
-        '$Env:DOTNET_DEV_CLRBIN_ARTIFACTS = ' + (Join-Path $newRepoOut `
-                                                           "artifacts" `
-                                                           "bin"       `
-                                                           "coreclr"),
+        "DOTNET_DEV_CLRBIN_ARTIFACTS" = `
+          (Join-Path $newRepoOut "artifacts" "bin" "coreclr")
 
-        '$Env:DOTNET_DEV_CLRTEST_ARTIFACTS = ' + (Join-Path $newRepoOut `
-                                                           "artifacts"  `
-                                                           "tests"      `
-                                                           "coreclr"    `
-                                                           $Env:DOTNET_DEV_PLAFORM),
+        "DOTNET_DEV_CLRTEST_ARTIFACTS" = `
+          (Join-Path $newRepoOut "artifacts" "tests" "coreclr" $Env:DOTNET_DEV_PLATFORM)
 
-        '$Env:DOTNET_DEV_COREROOT = ' + (Join-Path $newRepoOut              `
-                                                   "artifacts"              `
-                                                   "tests"                  `
-                                                   "coreclr"                `
-                                                   $Env:DOTNET_DEV_PLATFORM `
-                                                   "Tests"                  `
-                                                   "Core_Root"))
+        "DOTNET_DEV_COREROOT" = (Join-Path $newRepoOut              `
+                                           "artifacts"              `
+                                           "tests"                  `
+                                           "coreclr"                `
+                                           $Env:DOTNET_DEV_PLATFORM `
+                                           "Tests"                  `
+                                           "Core_Root")
+    }
 
-    foreach ($exportCmd in $envVarsExports) {
+    $envVars.GetEnumerator() | ForEach-Object {
+        $exportCmd = "Set-Item Env:$($_.Key) $($_.Value)"
+
         if ($Env:DOTNET_DEV_WHATIF_PREVIEW -ne 0) {
-            Write-Host "$exportCmd"
+            Write-Host $exportCmd
         }
         else {
             Invoke-Expression $exportCmd
@@ -149,15 +147,11 @@ function Set-CoreRootEnvVar() {
 function Update-Platform() {
     $Env:DOTNET_DEV_PLATFORM = "$Env:DOTNET_DEV_OS.$Env:DOTNET_DEV_ARCH.$Env:DOTNET_DEV_CONFIG"
 
-    $Env:DOTNET_DEV_CLRTEST_ARTIFACTS = Join-Path $Env:DOTNET_DEV_REPO `
-                                                  "artifacts"          `
-                                                  "tests"              `
-                                                  "coreclr"            `
-                                                  $Env:DOTNET_DEV_PLATFORM
+    $Env:DOTNET_DEV_CLRTEST_ARTIFACTS = `
+      (Join-Path $Env:DOTNET_DEV_REPO "artifacts" "tests" "coreclr" $Env:DOTNET_DEV_PLATFORM)
 
-    $Env:DOTNET_DEV_COREROOT = Join-Path $Env:DOTNET_DEV_CLRTEST_ARTIFACTS `
-                                         "Tests" `
-                                         "Core_Root"
+    $Env:DOTNET_DEV_COREROOT = `
+      (Join-Path $Env:DOTNET_DEV_CLRTEST_ARTIFACTS "Tests" "Core_Root")
 }
 
 # **************************************************************** #
@@ -175,12 +169,12 @@ function WhatIf-Preview() {
     }
 }
 
-function Build-Repo([string]$BuildType, [string]$BuildArgs) {
-    $buildRepoOut = (Invoke-Expression "$dotnetDevApp build $BuildType $BuildArgs")
+function Build-Repo([string]$BuildType) {
+    $buildRepoOut = (Invoke-Expression "$dotnetDevApp build $BuildType $args")
     $buildRepoCode = $LASTEXITCODE
 
     if (($buildRepoCode -ne 0) -or ($Env:DOTNET_DEV_WHATIF_PREVIEW -ne 0)) {
-        Write-Host "$buildRepoOut"
+        Write-Host $buildRepoOut
         return 1
     }
 
@@ -211,33 +205,66 @@ Set-Alias -Name buildrepo         -Value Build-Repo
 # Since Powershell doesn't support commands with arguments in aliases, we'll have
 # to use functions and then alias those instead.
 
-function Build-Clr() { Build-Repo "main" "subset=clr" }
-function Build-ClrDbg() { Build-Repo "main" "subset=clr config=dbg" }
-function Build-ClrChk() { Build-Repo "main" "subset=clr config=chk" }
-function Build-ClrRel() { Build-Repo "main" "subset=clr config=rel" }
+function Build-Clr() { Build-Repo "main" "subset=clr $args" }
+function Build-ClrDbg() { Build-Repo "main" "subset=clr config=dbg $args" }
+function Build-ClrChk() { Build-Repo "main" "subset=clr config=chk $args" }
+function Build-ClrRel() { Build-Repo "main" "subset=clr config=rel $args" }
 
-function Build-Libs() { Build-Repo "main" "subset=libs" }
-function Build-LibsDbg() { Build-Repo "main" "subset=libs config=dbg" }
-function Build-LibsRel() { Build-Repo "main" "subset=libs config=rel" }
+function Build-Libs() { Build-Repo "main" "subset=libs $args" }
+function Build-LibsDbg() { Build-Repo "main" "subset=libs config=dbg $args" }
+function Build-LibsRel() { Build-Repo "main" "subset=libs config=rel $args" }
 
-function Build-ClrLibs() { Build-Repo "main" "subset=clr+libs" }
-function Build-ClrLibsDbg() { Build-Repo "main" "subset=clr+libs config=dbg" }
-function Build-ClrLibsRel() { Build-Repo "main" "subset=clr+libs config=rel" }
+function Build-ClrLibs() { Build-Repo "main" "subset=clr+libs $args" }
+function Build-ClrLibsDbg() { Build-Repo "main" "subset=clr+libs config=dbg $args" }
+function Build-ClrLibsRel() { Build-Repo "main" "subset=clr+libs config=rel $args" }
 
-function Build-ClrLibsChkDbg() { Build-Repo "main" "subset=clr+libs runconf=chk libsconf=dbg" }
-function Build-ClrLibsRelDbg() { Build-Repo "main" "subset=clr+libs runconf=rel libsconf=dbg" }
-function Build-ClrLibsDbgRel() { Build-Repo "main" "subset=clr+libs runconf=dbg libsconf=rel" }
-function Build-ClrLibsChkRel() { Build-Repo "main" "subset=clr+libs runconf=chk libsconf=rel" }
+function Build-ClrLibsChkDbg() {
+    Build-Repo "main" "subset=clr+libs runconf=chk libsconf=dbg $args"
+}
 
-function Gen-CoreRoot() { Build-Repo "tests" "libs=rel" "-GenerateLayoutOnly" }
-function Gen-CoreRootDbg() { Build-Repo "tests" "libs=rel" "clr=dbg" "-GenerateLayoutOnly" }
-function Gen-CoreRootChk() { Build-Repo "tests" "libs=rel" "clr=chk" "-GenerateLayoutOnly" }
-function Gen-CoreRootRel() { Build-Repo "tests" "libs=rel" "clr=rel" "-GenerateLayoutOnly" }
+function Build-ClrLibsRelDbg() {
+    Build-Repo "main" "subset=clr+libs runconf=rel libsconf=dbg $args"
+}
 
-function Gen-CoreRootLibsDbg() { Build-Repo "tests" "libs=dbg" "-GenerateLayoutOnly" }
-function Gen-CoreRootDbgLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=dbg" "-GenerateLayoutOnly" }
-function Gen-CoreRootChkLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=chk" "-GenerateLayoutOnly" }
-function Gen-CoreRootRelLibsDbg() { Build-Repo "tests" "libs=dbg" "clr=rel" "-GenerateLayoutOnly" }
+function Build-ClrLibsDbgRel() {
+    Build-Repo "main" "subset=clr+libs runconf=dbg libsconf=rel $args"
+}
+
+function Build-ClrLibsChkRel() {
+    Build-Repo "main" "subset=clr+libs runconf=chk libsconf=rel $args"
+}
+
+function Gen-CoreRoot() {
+    Build-Repo "tests" "libs=rel -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootDbg() {
+    Build-Repo "tests" "libs=rel clr=dbg -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootChk() {
+    Build-Repo "tests" "libs=rel clr=chk -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootRel() {
+    Build-Repo "tests" "libs=rel clr=rel -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootLibsDbg() {
+    Build-Repo "tests" "libs=dbg -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootDbgLibsDbg() {
+    Build-Repo "tests" "libs=dbg clr=dbg -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootChkLibsDbg() {
+    Build-Repo "tests" "libs=dbg clr=chk -GenerateLayoutOnly $args"
+}
+
+function Gen-CoreRootRelLibsDbg() {
+    Build-Repo "tests" "libs=dbg clr=rel -GenerateLayoutOnly $args"
+}
 
 function Cd-Clr() { Set-Location $Env:DOTNET_DEV_CLRSRC }
 function Cd-Tests() { Set-Location $Env:DOTNET_DEV_TESTSRC }
