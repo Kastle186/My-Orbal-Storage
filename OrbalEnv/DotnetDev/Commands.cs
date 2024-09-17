@@ -189,157 +189,6 @@ public static class DotnetDevCommands
     /// </summary>
     /// <returns>
     /// </returns>
-    // private static int BuildTests(string repoPath, string[] buildArgs)
-    // {
-    //     int argIndex = 0;
-    //     Dictionary<string, string> processedArgs = new();
-    //     List<string> scriptFlags = new();
-    //     List<string> msbuildFlags = new();
-
-    //     // DotnetDev expects all the flags in the 'key=value' format to be passed
-    //     // before the dashed ones and the MSBuild ones. That's why we have to keep
-    //     // track of the index even after we exit this loop.
-
-    //     for (; argIndex < buildArgs.Length; argIndex++)
-    //     {
-    //         string nextArg = buildArgs[argIndex];
-
-    //         // This means the next flag is meant to be passed directly to the build
-    //         // command-line, so we are done processing the 'param=arg' notation args.
-    //         if (!nextArg.Contains('=')
-    //             || nextArg.StartsWith("-p:")
-    //             || nextArg.StartsWith("/p:"))
-    //             break;
-
-    //         string[] kvp = nextArg.Split('=');
-    //         string paramName = kvp[0].ToLower();
-    //         string argValue = kvp.Length > 1 ? kvp[1] : "";
-
-    //         // For the 'param=arg' notation, one can pass the same name as the
-    //         // tests build script flags, or use one of the shorthand aliases we've
-    //         // defined here. If an alias is detected, we set the param name to its
-    //         // flag from the tests build script for clearer and universal handling,
-    //         // as we later on also process the dashed arguments and there may or
-    //         // may not be duplicates.
-
-    //         if (paramName == "clr"
-    //             || paramName == "clrconf"
-    //             || paramName == "clrconfig"
-    //             || paramName == "rc"
-    //             || paramName == "runconf"
-    //             || paramName == "runtimeconfig"
-    //             || paramName == "runtimeconfiguration")
-    //         {
-    //             paramName = "clr";
-    //             BuildUtils.ProcessBuildConfigKvpArg(ref argValue);
-    //         }
-    //         else if (paramName == "libs"
-    //                  || paramName == "libsconf"
-    //                  || paramName == "libsconfig"
-    //                  || paramName == "lc"
-    //                  || paramName == "librariesconfiguration")
-    //         {
-    //             paramName = "libs";
-    //             BuildUtils.ProcessBuildConfigKvpArg(ref argValue);
-
-    //             // Since the libraries configuration is passed as an MSBuild flag
-    //             // when building tests, we save it to the msbuildFlags list, rather
-    //             // than our usual processedArgs dictionary.
-
-    //             msbuildFlags.Add($"-p:LibrariesConfiguration={argValue}");
-    //             continue;
-    //         }
-
-    //         if (!processedArgs.ContainsKey(paramName))
-    //         {
-    //             processedArgs.Add(paramName, argValue);
-    //             continue;
-    //         }
-
-    //         if (paramName == "arch" || paramName == "clr")
-    //         {
-    //             Console.WriteLine("BuildTests: Only one {0} value may be specified.",
-    //                               paramName);
-    //             return -1;
-    //         }
-
-    //         if (paramName == "test" || paramName == "dir" || paramName == "tree")
-    //         {
-    //             processedArgs[paramName] += $";{argValue}";
-    //         }
-    //     }
-
-    //     for (; argIndex < buildArgs.Length; argIndex++)
-    //     {
-    //         string nextArg = buildArgs[argIndex];
-
-    //         if (nextArg.StartsWith("-p:") || nextArg.StartsWith("/p:"))
-    //         {
-    //             // If we entered this condition, then this means this argument is
-    //             // meant to be passed as an MSBuild flag. We store these ones
-    //             // separately, because we want to append them at the end of the
-    //             // final command-line.
-    //             //
-    //             // However, there is a specific flag we handle separately:
-    //             //   "-p:LibrariesConfiguration"
-    //             // This because we also support an alias for the kvp notation, so
-    //             // we have to make sure there are no duplicated values.
-
-    //             if (nextArg.Contains("LibrariesConfiguration")
-    //                 && (!string.IsNullOrEmpty(
-    //                         msbuildFlags.Find(
-    //                             x => x.Contains("LibrariesConfiguration")))))
-    //             {
-    //                 Console.WriteLine("BuildTests: Only one libraries configuration"
-    //                                   + " value may be specified.");
-    //                 return -1;
-    //             }
-
-    //             msbuildFlags.Add(nextArg);
-    //         }
-    //         else
-    //         {
-    //             scriptFlags.Add(nextArg);
-    //         }
-    //     }
-
-    //     string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
-    //     StringBuilder argsSb = new();
-
-    //     // This right now only works on Linux and Mac.
-    //     foreach (KeyValuePair<string, string> argKvp in processedArgs)
-    //     {
-    //         if (argKvp.Key == "arch" || argKvp.Key == "clr")
-    //         {
-    //             argsSb.Append($" -{argKvp.Value}");
-    //             continue;
-    //         }
-
-    //         argsSb.Append($" -{argKvp.Key}");
-
-    //         if (!string.IsNullOrEmpty(argKvp.Value))
-    //             argsSb.Append($":{argKvp.Value}");
-    //     }
-
-    //     // The reason we are conditioning printing the script args and MSBuild flags
-    //     // is to avoid returning a command-line with trailing spaces in the cases
-    //     // where one or both of those are empty. If anything, for cleanliness.
-
-    //     Console.Write(testsScript);
-
-    //     if (argsSb.Length > 0)
-    //         Console.Write($"{argsSb.ToString()}");
-
-    //     if (scriptFlags.Count > 0)
-    //         Console.Write($" {string.Join(' ', scriptFlags)}");
-
-    //     if (msbuildFlags.Count > 0)
-    //         Console.Write($" {string.Join(' ', msbuildFlags)}");
-
-    //     Console.Write("\n");
-    //     return 0;
-    // }
-
     private static int BuildTests(string repoPath, string[] buildArgs)
     {
         Dictionary<string, string> kvpArgs = new();
@@ -364,7 +213,7 @@ public static class DotnetDevCommands
             {
                 // If we're here, that means we found an argument to pass directly
                 // to the tests script command-line directly.
-                scriptFlags.Add(nextArg.TrimStart('-'));
+                scriptFlags.Add(nextArg);
                 continue;
             }
 
@@ -377,7 +226,7 @@ public static class DotnetDevCommands
             string argValue = kvp.Length > 1 ? kvp[1] : "";
             bool isConfigParam = false;
 
-            if (paramName == "a")
+            if (paramName == "a" || paramName == "arch")
             {
                 paramName = "arch";
 
@@ -391,6 +240,7 @@ public static class DotnetDevCommands
             else if (paramName == "c"
                      || paramName == "config"
                      || paramName == "configuration"
+                     || paramName == "clr"
                      || paramName == "clrconf"
                      || paramName == "clrconfig"
                      || paramName == "rc"
@@ -408,7 +258,8 @@ public static class DotnetDevCommands
                     return -1;
                 }
             }
-            else if (paramName == "libsconf"
+            else if (paramName == "libs"
+                     || paramName == "libsconf"
                      || paramName == "libsconfig"
                      || paramName == "lc"
                      || paramName == "librariesconfiguration")
@@ -439,12 +290,13 @@ public static class DotnetDevCommands
 
         string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
         StringBuilder kvpArgsSb = new();
+        bool isWindows = OperatingSystem.IsWindows();
 
         foreach (KeyValuePair<string, string> argKvp in kvpArgs)
         {
             if (argKvp.Key == "arch" || argKvp.Key == "clr")
             {
-                kvpArgsSb.AppendFormat(" {0}", OperatingSystem.IsWindows()
+                kvpArgsSb.AppendFormat(" {0}", isWindows
                                                ? argKvp.Value
                                                : $"-{argKvp.Value}");
                 continue;
@@ -460,7 +312,7 @@ public static class DotnetDevCommands
             if (!string.IsNullOrEmpty(argKvp.Value))
             {
                 kvpArgsSb.AppendFormat("{0}{1}",
-                                       OperatingSystem.IsWindows() ? " " : ":",
+                                       isWindows ? " " : ":",
                                        argKvp.Value);
             }
         }
