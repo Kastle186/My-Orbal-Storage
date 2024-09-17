@@ -303,7 +303,7 @@ public static class DotnetDevCommands
             }
             else if (argKvp.Key == "libs")
             {
-                msBuildFlags.Add($"-p:LibrariesConfiguration={argKvp.Value}");
+                msBuildFlags.Add($"/p:LibrariesConfiguration={argKvp.Value}");
                 continue;
             }
 
