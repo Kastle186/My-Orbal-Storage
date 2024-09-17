@@ -68,14 +68,28 @@ public static class DotnetDevCommands
     //       where they are not provided by the user.
 
     /// <summary>
-    /// Validates the specified repo path exists and processes the command-line
-    /// for building. If the architecture, operating system, and/or configuration
-    /// are missing, it appends them to the received args with the values set to
-    /// their respective environment variables.
+    /// Parses the incoming arguments to build the runtime repo. It allows them
+    /// using a kvp syntax, which also supports easy-to-use aliases for the parameter
+    /// names. It also supports receiving dashed arguments and MSBuild arguments,
+    /// which are passed directly to the script command-line.
     /// </summary>
+    /// <example>
+    /// This function also supports repeated arguments using the kvp notation,
+    /// the dashed notation, or a combination of both. Let's illustrate this
+    /// with an example. Picture the following DotnetDev command-line:
+    /// <code>
+    /// buildrepo set=clr config=rel config=dbg -subset libs
+    /// </code>
+    /// Once processed, the command-line for the runtime repo's build script will
+    /// have been transformed into one with no duplicates, as it expects it:
+    /// <code>
+    /// build.sh -subset clr+libs -configuration Release,Debug
+    /// </code>
+    /// </example>
     /// <returns>
-    /// Outputs the full build command for the shell to process and run, and
-    /// returns 0 if everything went fine. Returns -1 otherwise.
+    /// Outputs the full command-line for the shell to consume and use to call the
+    /// runtime repo's main build script, and returns 0 if everything went fine.
+    /// It returns -1 otherwise.
     /// </returns>
     private static int BuildMain(string repoPath, string[] buildArgs)
     {

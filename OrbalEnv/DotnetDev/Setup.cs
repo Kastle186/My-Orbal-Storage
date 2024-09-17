@@ -146,12 +146,12 @@ public static class DotnetDevSetup
     /// to set to the DOTNET_DEV_CONFIG environment variable.
     /// </summary>
     /// <remarks>
-    /// </remarks>
     /// CoreCLR specifically has an additional supported configuration called
     /// "Checked". One can build using it by means of the command 'buildclrchk',
     /// but regarding as to universally setting it for DOTNET_DEV_CONFIG, we are
     /// opting to not permit it, at least for the time being, because all the other
     /// components of the runtime repo only support "Debug" and "Release".
+    /// </remarks>
     /// <returns>
     /// Outputs the new configuration in titlecase for the shell to consume and set.
     /// Returns 0 if everything went fine, and -1 otherwise.
