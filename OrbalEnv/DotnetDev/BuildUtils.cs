@@ -104,6 +104,40 @@ internal static class BuildUtils
     }
 
     /// <summary>
+    /// </summary>
+    public static void AddDefaultParamsFromEnv(Dictionary<string, string> argsDict,
+                                               bool isTestBuild)
+    {
+        // NOTE: There is a potential bug to look at. In the case of calling the
+        //       main build script, with only specific configuration flags, results
+        //       in this function adding the general '-configuration' one at the
+        //       end, even though it's not necessary. I think the specific ones take
+        //       priority, and therefore this shouldn't affect the end result, but
+        //       I have to test it to make sure. High priority.
+
+        if (!argsDict.TryGetValue("arch", out string _))
+        {
+            argsDict.Add("arch", Environment.GetEnvironmentVariable("DOTNET_DEV_ARCH"));
+        }
+
+        if (!argsDict.TryGetValue("os", out string _))
+        {
+            argsDict.Add("os", Environment.GetEnvironmentVariable("DOTNET_DEV_OS"));
+        }
+
+        if (isTestBuild && !argsDict.TryGetValue("clr", out string _))
+        {
+            argsDict.Add("clr", Environment.GetEnvironmentVariable("DOTNET_DEV_CONFIG"));
+        }
+
+        if (!isTestBuild && !argsDict.TryGetValue("configuration", out string _))
+        {
+            argsDict.Add("configuration",
+                         Environment.GetEnvironmentVariable("DOTNET_DEV_CONFIG"));
+        }
+    }
+
+    /// <summary>
     /// Checks whether the received parameter has already been added to either
     /// the build arguments dictionary, or the list of arguments to pass as is
     /// to the script.

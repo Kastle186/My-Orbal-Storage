@@ -7,11 +7,6 @@ using System.Text;
 
 public static class DotnetDevCommands
 {
-    const string ENV_REPO_ROOT = "DOTNET_DEV_REPO";
-    const string ENV_ARCH = "DOTNET_DEV_ARCH";
-    const string ENV_OS = "DOTNET_DEV_OS";
-    const string ENV_CONFIG = "DOTNET_DEV_CONFIG";
-
     static readonly string s_scriptExt = OperatingSystem.IsWindows() ? ".cmd" : ".sh";
 
     /// <summary>
@@ -25,7 +20,7 @@ public static class DotnetDevCommands
     public static int BuildRepo(string[] buildArgs)
     {
         int result = 999;
-        string repoPath = Environment.GetEnvironmentVariable(ENV_REPO_ROOT);
+        string repoPath = Environment.GetEnvironmentVariable("DOTNET_DEV_REPO");
 
         if (string.IsNullOrEmpty(repoPath))
         {
@@ -61,11 +56,6 @@ public static class DotnetDevCommands
 
         return result;
     }
-
-    // TODO: Update this method's docs, and restore the functionality of automatically
-    //       adding the architecture, operating system, and general configuration
-    //       flags with the values from the environment variables, in the cases
-    //       where they are not provided by the user.
 
     /// <summary>
     /// Parses the incoming arguments to build the runtime repo. It allows them
@@ -140,6 +130,10 @@ public static class DotnetDevCommands
                                             processedArgs,
                                             isConfigParam);
         }
+
+        // Fetch the architecture, OS, and configuration values from the DotnetDev
+        // environment if the user didn't pass them.
+        BuildUtils.AddDefaultParamsFromEnv(processedArgs, isTestBuild: false);
 
         string buildScript = Path.Join(repoPath, $"build{s_scriptExt}");
         StringBuilder argsSb = new();
@@ -256,9 +250,13 @@ public static class DotnetDevCommands
                                             isConfigParam);
         }
 
+        // Fetch the architecture, OS, and configuration values from the DotnetDev
+        // environment if the user didn't pass them.
+        BuildUtils.AddDefaultParamsFromEnv(kvpArgs, isTestBuild: true);
+
         // Build the command-line here: Note that we need to handle the special
         // cases for the architecture and clr configuration, since those don't
-        // use dashes '-' on Windows.
+        // work with dashes '-' on Windows.
 
         string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
         StringBuilder kvpArgsSb = new();
@@ -281,13 +279,17 @@ public static class DotnetDevCommands
 
             kvpArgsSb.Append($" -{argKvp.Key}");
 
-            // Flags with values are separated by spaces on Windows,
-            // and colons ':' in all the other platforms.
+            // Flags with values are separated by spaces on Windows, and colons ':'
+            // in all the other platforms. The exception to this rule is the '-os'
+            // flag. This one is separated by a space regardless of platform.
 
             if (!string.IsNullOrEmpty(argKvp.Value))
             {
+                // FIXME: The '-os' flag is being added with the ':' separator,
+                //        rather than the space one, and I have no idea what in
+                //        the world is going on wrong here.
                 kvpArgsSb.AppendFormat("{0}{1}",
-                                       isWindows ? " " : ":",
+                                       (isWindows || argKvp.Value == "os") ? " " : ":",
                                        argKvp.Value);
             }
         }

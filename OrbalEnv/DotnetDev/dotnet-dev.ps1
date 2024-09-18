@@ -219,19 +219,19 @@ function Build-ClrLibsDbg() { Build-Repo "main" "subset=clr+libs config=dbg $arg
 function Build-ClrLibsRel() { Build-Repo "main" "subset=clr+libs config=rel $args" }
 
 function Build-ClrLibsChkDbg() {
-    Build-Repo "main" "subset=clr+libs runconf=chk libsconf=dbg $args"
+    Build-Repo "main" "subset=clr+libs clrconfig=chk libsconfig=dbg $args"
 }
 
 function Build-ClrLibsRelDbg() {
-    Build-Repo "main" "subset=clr+libs runconf=rel libsconf=dbg $args"
+    Build-Repo "main" "subset=clr+libs clrconfig=rel libsconfig=dbg $args"
 }
 
 function Build-ClrLibsDbgRel() {
-    Build-Repo "main" "subset=clr+libs runconf=dbg libsconf=rel $args"
+    Build-Repo "main" "subset=clr+libs clrconfig=dbg libsconfig=rel $args"
 }
 
 function Build-ClrLibsChkRel() {
-    Build-Repo "main" "subset=clr+libs runconf=chk libsconf=rel $args"
+    Build-Repo "main" "subset=clr+libs clrconfig=chk libsconfig=rel $args"
 }
 
 function Gen-CoreRoot() {
