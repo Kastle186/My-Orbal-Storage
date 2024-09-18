@@ -200,8 +200,15 @@ public static class DotnetDevCommands
     }
 
     /// <summary>
+    /// Parses the incoming arguments to build the coreclr tests. It allows them
+    /// using a kvp syntax, which also supports easy-to-use aliases for the parameter
+    /// names. It also supports receiving dashed arguments and MSBuild arguments,
+    /// which are passed directly to the script command-line.
     /// </summary>
     /// <returns>
+    /// Outputs the full command-line for the shell to consume and use to call the
+    /// runtime repo's test build script, and returns 0 if everything went fine.
+    /// It returns -1 otherwise.
     /// </returns>
     private static int BuildTests(string repoPath, string[] buildArgs)
     {
@@ -300,7 +307,7 @@ public static class DotnetDevCommands
 
         // Build the command-line here: Note that we need to handle the special
         // cases for the architecture and clr configuration, since those don't
-        // use dashes '-'.
+        // use dashes '-' on Windows.
 
         string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
         StringBuilder kvpArgsSb = new();
@@ -322,6 +329,9 @@ public static class DotnetDevCommands
             }
 
             kvpArgsSb.Append($" -{argKvp.Key}");
+
+            // Flags with values are separated by spaces on Windows,
+            // and colons ':' in all the other platforms.
 
             if (!string.IsNullOrEmpty(argKvp.Value))
             {
