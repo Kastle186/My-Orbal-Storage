@@ -132,44 +132,13 @@ public static class DotnetDevCommands
                 }
             }
 
-            bool isConfigParam = false;
+            (string normalizedParam, bool isConfigParam) =
+                BuildUtils.NormalizeParameter(paramName, isTestBuild: false);
 
-            if (paramName == "s" || paramName == "set")
-            {
-                paramName = "subset";
-            }
-            else if (paramName == "a")
-            {
-                paramName = "arch";
-            }
-            else if (paramName == "c"
-                     || paramName == "conf"
-                     || paramName == "config"
-                     || paramName == "configuration")
-            {
-                paramName = "configuration";
-                isConfigParam = true;
-            }
-            else if (paramName == "lc"
-                     || paramName == "libsconf"
-                     || paramName == "libsconfig"
-                     || paramName == "librariesconfiguration")
-            {
-                paramName = "librariesConfiguration";
-                isConfigParam = true;
-            }
-            else if (paramName == "rc"
-                     || paramName == "runconf"
-                     || paramName == "runtimeconfig"
-                     || paramName == "runtimeconfiguration"
-                     || paramName == "clrconf"
-                     || paramName == "clrconfig")
-            {
-                paramName = "runtimeConfiguration";
-                isConfigParam = true;
-            }
-
-            BuildUtils.ProcessBuildArg(paramName, argValue, processedArgs, isConfigParam);
+            BuildUtils.ProcessBuildArgument(normalizedParam,
+                                            argValue,
+                                            processedArgs,
+                                            isConfigParam);
         }
 
         string buildScript = Path.Join(repoPath, $"build{s_scriptExt}");
@@ -245,55 +214,33 @@ public static class DotnetDevCommands
             string[] kvp = nextArg.Split('=');
             string paramName = kvp[0].ToLower();
             string argValue = kvp.Length > 1 ? kvp[1] : "";
-            bool isConfigParam = false;
 
-            if (paramName == "a" || paramName == "arch")
+            (string normalizedParam, bool isConfigParam) =
+                BuildUtils.NormalizeParameter(paramName, isTestBuild: true);
+
+            if (normalizedParam == "arch"
+                || normalizedParam == "clr"
+                || normalizedParam == "libs")
             {
-                paramName = "arch";
-
-                if (BuildUtils.IsTestArgDuplicated("arch", argValue, kvpArgs, scriptFlags))
+                if (BuildUtils.IsTestArgDuplicated(normalizedParam,
+                                                   argValue,
+                                                   kvpArgs,
+                                                   scriptFlags))
                 {
-                    Console.WriteLine("BuildTests: Only one arch value should be"
-                                      + " specified.");
-                    return -1;
-                }
-            }
-            else if (paramName == "c"
-                     || paramName == "config"
-                     || paramName == "configuration"
-                     || paramName == "clr"
-                     || paramName == "clrconf"
-                     || paramName == "clrconfig"
-                     || paramName == "rc"
-                     || paramName == "runconf"
-                     || paramName == "runtimeconfig"
-                     || paramName == "runtimeconfiguration")
-            {
-                paramName = "clr";
-                isConfigParam = true;
-
-                if (BuildUtils.IsTestArgDuplicated("clr", argValue, kvpArgs, scriptFlags))
-                {
-                    Console.WriteLine("BuildTests: Only one CLR configuration value"
+                    Console.WriteLine($"BuildTests: Only one {normalizedParam} value"
                                       + " should be specified.");
                     return -1;
                 }
-            }
-            else if (paramName == "libs"
-                     || paramName == "libsconf"
-                     || paramName == "libsconfig"
-                     || paramName == "lc"
-                     || paramName == "librariesconfiguration")
-            {
-                paramName = "libs";
-                isConfigParam = true;
 
-                if (BuildUtils.IsTestArgDuplicated("libs", argValue, kvpArgs, scriptFlags)
-                    || !string.IsNullOrEmpty(
+                // We can also receive the libraries configuration through its
+                // MSBuild flag, so we have to check for that one as well.
+
+                if (normalizedParam == "libs"
+                    && !string.IsNullOrEmpty(
                         msBuildFlags.Find(
                             x => x.Contains("LibrariesConfiguration"))))
                 {
-                    Console.WriteLine("BuildTests: Only one Libraries configuration"
+                    Console.WriteLine("BuildTests: Only one LibrariesConfiguration"
                                       + " value should be specified.");
                     return -1;
                 }
@@ -302,7 +249,11 @@ public static class DotnetDevCommands
             // NOTE: We might have to make a similar method for processing test
             //       build args if they start differing too much, as we start
             //       supporting more in our DotnetDev Kvp Notation.
-            BuildUtils.ProcessBuildArg(paramName, argValue, kvpArgs, isConfigParam);
+
+            BuildUtils.ProcessBuildArgument(normalizedParam,
+                                            argValue,
+                                            kvpArgs,
+                                            isConfigParam);
         }
 
         // Build the command-line here: Note that we need to handle the special

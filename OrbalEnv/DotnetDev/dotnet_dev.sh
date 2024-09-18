@@ -194,14 +194,16 @@ function buildrepo {
 }
 
 function testing {
-    $DOTNET_DEV_APP "build" "tests" "$@"
+    local bldtyp=$1
+    shift
+    $DOTNET_DEV_APP "build" "$bldtyp" "$@"
 }
 
-# alias testingalias="testing set=clr+libs config=rel lc=dbg runconf=chk arch=x64 arch=x86 -s host -os linux -rc Release -lc Release -a arm64"
+alias testingalias="testing main set=clr+libs config=rel lc=dbg runconfig=chk arch=x64 arch=x86 -s host -os linux -rc Release -lc Release -a arm64"
 
-# alias testingalias2="testing set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.iltools arch=arm64 config=Release subset=clr.alljits+clr.spmi -s libs /p:NoPgo=true --runtimeConfiguration Checked -p:UseCrossgen2=false --test -arch x64,x86 -bl"
+alias testingalias2="testing main set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.iltools arch=arm64 config=Release subset=clr.alljits+clr.spmi -s libs /p:NoPgo=true --runtimeConfiguration Checked -p:UseCrossgen2=false --test -arch x64,x86 -bl"
 
-alias testingalias="testing clr=chk libs=dbg -generatelayoutonly -test:path.csproj -p:UseLocalAppHostPack=true"
+alias testingalias3="testing tests clr=chk libs=dbg -generatelayoutonly -test:path.csproj -p:UseLocalAppHostPack=true"
 
 # *************** #
 # Magical Aliases #
