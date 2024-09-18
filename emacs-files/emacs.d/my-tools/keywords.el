@@ -35,9 +35,11 @@
                           ("\\_<upcase\\_>"               . font-lock-builtin-face)))
 
 (font-lock-add-keywords 'csharp-mode
-                        '(("\\_<init\\_>"     . font-lock-keyword-face)
+                        '(("\\_<and\\_>"      . font-lock-keyword-face)
+                          ("\\_<init\\_>"     . font-lock-keyword-face)
                           ("\\_<not\\_>"      . font-lock-keyword-face)
                           ("\\_<notnull\\_>"  . font-lock-keyword-face)
+                          ("\\_<or\\_>"       . font-lock-keyword-face)
                           ("\\_<record\\_>"   . font-lock-keyword-face)
                           ("\\_<required\\_>" . font-lock-keyword-face)))
 
