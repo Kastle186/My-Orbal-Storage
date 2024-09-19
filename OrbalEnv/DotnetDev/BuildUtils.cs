@@ -108,12 +108,14 @@ internal static class BuildUtils
     public static void AddDefaultParamsFromEnv(Dictionary<string, string> argsDict,
                                                bool isTestBuild)
     {
-        // NOTE: There is a potential bug to look at. In the case of calling the
-        //       main build script, with only specific configuration flags, results
-        //       in this function adding the general '-configuration' one at the
-        //       end, even though it's not necessary. I think the specific ones take
-        //       priority, and therefore this shouldn't affect the end result, but
-        //       I have to test it to make sure. High priority.
+        // NOTE: When calling the main build script with only specific configuration
+        //       flags, this function ends up also adding the general '-configuration'
+        //       one, even though it might not be necessary. Testing on the actual
+        //       build, the specific ones seem to take priority over the general one,
+        //       which results in the general one being ignored. So, this function
+        //       adding it doesn't cause any issues, at least for the time being.
+        //       Still, it would be nice to only add it when necessary, perhaps
+        //       by looking at the received subset values.
 
         if (!argsDict.TryGetValue("arch", out string _))
         {

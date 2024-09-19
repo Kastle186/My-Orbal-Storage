@@ -6,8 +6,11 @@ public class Program
 {
     static int Main(string[] args)
     {
-        // TODO: Add a safeguard here for the case where we don't receive a command
-        //       to run, i.e. args[] is empty.
+        if (args.Length == 0 || string.IsNullOrWhiteSpace(args[0]))
+        {
+            Console.WriteLine("OrbalEnv: A command is required to run.");
+            return -1;
+        }
 
         string cmd = args[0];
         string[] cmdArgs = args[1..];
