@@ -1,6 +1,3 @@
-# GENERAL TODO:
-#   - Add safeguards where needed.
-
 # ***************************** #
 # Set up the Orbal Environment! #
 # ***************************** #

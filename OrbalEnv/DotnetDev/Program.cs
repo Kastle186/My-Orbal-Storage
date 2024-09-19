@@ -1,13 +1,14 @@
 // File: Program.cs
 
-// GENERAL TODO: Add safeguards where needed.
-
 using System;
 
 public class Program
 {
     static int Main(string[] args)
     {
+        // TODO: Add a safeguard here for the case where we don't receive a command
+        //       to run, i.e. args[] is empty.
+
         string cmd = args[0];
         string[] cmdArgs = args[1..];
         int exitCode = 999;

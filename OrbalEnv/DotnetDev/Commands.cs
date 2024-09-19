@@ -7,7 +7,8 @@ using System.Text;
 
 public static class DotnetDevCommands
 {
-    static readonly string s_scriptExt = OperatingSystem.IsWindows() ? ".cmd" : ".sh";
+    static readonly bool s_isWindows = OperatingSystem.IsWindows();
+    static readonly string s_scriptExt = s_isWindows ? ".cmd" : ".sh";
 
     /// <summary>
     /// Validates the specified repo path exists and calls the appropriate helper
@@ -212,6 +213,13 @@ public static class DotnetDevCommands
             (string normalizedParam, bool isConfigParam) =
                 BuildUtils.NormalizeParameter(paramName, isTestBuild: true);
 
+            // FIXME: Due to the architecture and configuration flags being switches
+            //        in the tests script, it is actually possible for things like
+            //        'build.sh arch=x64 -arm64' or 'build.sh clr=chk -Release' to
+            //        slip past unnoticed. This will cause an error or unpredictable
+            //        behavior when actually calling the script because those values
+            //        are not allowed to be duplicated in the same command-line.
+
             if (normalizedParam == "arch"
                 || normalizedParam == "clr"
                 || normalizedParam == "libs")
@@ -260,13 +268,12 @@ public static class DotnetDevCommands
 
         string testsScript = Path.Join(repoPath, "src", "tests", $"build{s_scriptExt}");
         StringBuilder kvpArgsSb = new();
-        bool isWindows = OperatingSystem.IsWindows();
 
         foreach (KeyValuePair<string, string> argKvp in kvpArgs)
         {
             if (argKvp.Key == "arch" || argKvp.Key == "clr")
             {
-                kvpArgsSb.AppendFormat(" {0}", isWindows
+                kvpArgsSb.AppendFormat(" {0}", s_isWindows
                                                ? argKvp.Value
                                                : $"-{argKvp.Value}");
                 continue;
@@ -285,11 +292,8 @@ public static class DotnetDevCommands
 
             if (!string.IsNullOrEmpty(argKvp.Value))
             {
-                // FIXME: The '-os' flag is being added with the ':' separator,
-                //        rather than the space one, and I have no idea what in
-                //        the world is going on wrong here.
                 kvpArgsSb.AppendFormat("{0}{1}",
-                                       (isWindows || argKvp.Value == "os") ? " " : ":",
+                                       (s_isWindows || argKvp.Key == "os") ? " " : ":",
                                        argKvp.Value);
             }
         }
