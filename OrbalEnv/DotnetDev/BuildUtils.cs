@@ -5,6 +5,28 @@ using System.Collections.Generic;
 
 internal static class BuildUtils
 {
+    private static HashSet<string> _supportedPlatforms = new HashSet<string>
+    {
+        "x86",
+        "x64",
+        "arm",
+        "armv6",
+        "armel",
+        "arm64",
+        "loongarch64",
+        "riscv64",
+        "s390x",
+        "ppc64le",
+        "wasm"
+    };
+
+    private static HashSet<string> _supportedConfigurations = new HashSet<string>
+    {
+        "debug",
+        "checked",
+        "release"
+    };
+
     /// <summary>
     /// The DotnetDev environment supports a wide variety of aliases for some
     /// parameters. However, we settle on one "universal" name for each one
@@ -140,6 +162,15 @@ internal static class BuildUtils
     }
 
     /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsTestsArchOrConfigDuplicate(string arg)
+    {
+        return false;
+    }
+
+    /// <summary>
     /// Checks whether the received parameter has already been added to either
     /// the build arguments dictionary, or the list of arguments to pass as is
     /// to the script.
@@ -161,6 +192,16 @@ internal static class BuildUtils
                 || !string.IsNullOrEmpty(
                     otherArgs.Find(
                         x => x.ToLower().Contains(argValue.ToLower()))));
+    }
+
+    private static bool IsSupportedPlatformValue(string val)
+    {
+        return _supportedPlatforms.Contains(val.ToLower());
+    }
+
+    private static bool IsSupportedConfigurationValue(string val)
+    {
+        return _supportedConfigurations.Contains(val.ToLower());
     }
 
     private static string NormalizeConfigArg(string configValue) => configValue switch

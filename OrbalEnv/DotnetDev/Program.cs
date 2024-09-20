@@ -18,8 +18,6 @@ public class Program
 
         switch (cmd)
         {
-            // Setup Commands
-
             case "getos":
                 exitCode = DotnetDevSetup.GetOperatingSystem();
                 break;

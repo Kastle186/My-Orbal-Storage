@@ -190,6 +190,15 @@ public static class DotnetDevCommands
                 // meant to be passed as an MSBuild flag. We store these ones
                 // separately, because we want to append them at the end of the
                 // final command-line.
+
+                // However, the tests build script parses the architecture and
+                // configuration values as switch flags, instead of the usual
+                // flag and value (e.g. for x64 on Checked, the command-line looks
+                // like "build.sh -x64 -Checked". So, we have to work around that
+                // to avoid potential duplicates.
+
+                string temp = nextArg.TrimStart('-');
+
                 msBuildFlags.Add(nextArg);
                 continue;
             }
