@@ -106,10 +106,11 @@ internal static class BuildUtils
     /// appends the new argument value to the existing one. It is worth noting
     /// that allowing duplicates is only allowed for the main build script.
     /// </remarks>
-    public static void ProcessBuildArgument(string paramName,
+    public static bool ProcessBuildArgument(string paramName,
                                             string argValue,
                                             Dictionary<string, string> processedArgs,
-                                            bool isConfigParam)
+                                            bool isConfigParam,
+                                            bool isTestBuild)
     {
         if (isConfigParam)
             argValue = NormalizeConfigArg(argValue);
@@ -118,11 +119,17 @@ internal static class BuildUtils
         {
             processedArgs.Add(paramName, argValue);
         }
+        else if (isTestBuild)
+        {
+            return false;
+        }
         else if (!processedArgs[paramName].Contains(argValue))
         {
             string valToAppend = paramName == "subset" ? $"+{argValue}" : $",{argValue}";
             processedArgs[paramName] += valToAppend;
         }
+
+        return true;
     }
 
     /// <summary>
@@ -162,15 +169,6 @@ internal static class BuildUtils
     }
 
     /// <summary>
-    /// </summary>
-    /// <returns>
-    /// </returns>
-    public static bool IsTestsArchOrConfigDuplicate(string arg)
-    {
-        return false;
-    }
-
-    /// <summary>
     /// Checks whether the received parameter has already been added to either
     /// the build arguments dictionary, or the list of arguments to pass as is
     /// to the script.
@@ -194,12 +192,20 @@ internal static class BuildUtils
                         x => x.ToLower().Contains(argValue.ToLower()))));
     }
 
-    private static bool IsSupportedPlatformValue(string val)
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsSupportedPlatformValue(string val)
     {
         return _supportedPlatforms.Contains(val.ToLower());
     }
 
-    private static bool IsSupportedConfigurationValue(string val)
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsSupportedConfigurationValue(string val)
     {
         return _supportedConfigurations.Contains(val.ToLower());
     }

@@ -129,7 +129,8 @@ public static class DotnetDevCommands
             BuildUtils.ProcessBuildArgument(normalizedParam,
                                             argValue,
                                             processedArgs,
-                                            isConfigParam);
+                                            isConfigParam,
+                                            isTestBuild: false);
         }
 
         // Fetch the architecture, OS, and configuration values from the DotnetDev
@@ -191,80 +192,63 @@ public static class DotnetDevCommands
                 // separately, because we want to append them at the end of the
                 // final command-line.
 
+                msBuildFlags.Add(nextArg);
+                continue;
+            }
+
+            string paramName = string.Empty;
+            string argValue = string.Empty;
+
+            if (nextArg.Contains('='))
+            {
+                // If we're here, then our next argument is in the DotnetDev's Kvp Form.
+                // MSBuild arguments also use a Kvp-like expression, but we already
+                // processed them above, so we're sure it's a DotnetDev one here.
+
+                string[] kvp = nextArg.Split('=');
+
+                paramName = kvp[0].ToLower();
+                argValue = kvp.Length > 1 ? kvp[1] : "";
+            }
+            else
+            {
+                // If we're here, that means we found an argument to pass directly
+                // to the tests script command-line directly.
+
                 // However, the tests build script parses the architecture and
                 // configuration values as switch flags, instead of the usual
                 // flag and value (e.g. for x64 on Checked, the command-line looks
                 // like "build.sh -x64 -Checked". So, we have to work around that
                 // to avoid potential duplicates.
 
-                string temp = nextArg.TrimStart('-');
+                argValue = nextArg.TrimStart('-');
 
-                msBuildFlags.Add(nextArg);
-                continue;
+                if (BuildUtils.IsSupportedPlatformValue(argValue))
+                    paramName = "arch";
+                else if (BuildUtils.IsSupportedConfigurationValue(argValue))
+                    paramName = "clr";
+                else
+                {
+                    // Not a platform or configuration value, so we can simply add it
+                    // as another flag to pass as is to the script.
+                    scriptFlags.Add(nextArg);
+                    continue;
+                }
             }
-
-            if (!nextArg.Contains('='))
-            {
-                // If we're here, that means we found an argument to pass directly
-                // to the tests script command-line directly.
-                scriptFlags.Add(nextArg);
-                continue;
-            }
-
-            // If we're here, then our next argument is in the DotnetDev's Kvp Form.
-            // MSBuild arguments also use a Kvp-like expression, but we already
-            // processed them above, so we're sure it's a DotnetDev one here.
-
-            string[] kvp = nextArg.Split('=');
-            string paramName = kvp[0].ToLower();
-            string argValue = kvp.Length > 1 ? kvp[1] : "";
 
             (string normalizedParam, bool isConfigParam) =
                 BuildUtils.NormalizeParameter(paramName, isTestBuild: true);
 
-            // FIXME: Due to the architecture and configuration flags being switches
-            //        in the tests script, it is actually possible for things like
-            //        'build.sh arch=x64 -arm64' or 'build.sh clr=chk -Release' to
-            //        slip past unnoticed. This will cause an error or unpredictable
-            //        behavior when actually calling the script because those values
-            //        are not allowed to be duplicated in the same command-line.
-
-            if (normalizedParam == "arch"
-                || normalizedParam == "clr"
-                || normalizedParam == "libs")
+            if (!BuildUtils.ProcessBuildArgument(normalizedParam,
+                                                 argValue,
+                                                 kvpArgs,
+                                                 isConfigParam,
+                                                 isTestBuild: true))
             {
-                if (BuildUtils.IsTestArgDuplicated(normalizedParam,
-                                                   argValue,
-                                                   kvpArgs,
-                                                   scriptFlags))
-                {
-                    Console.WriteLine($"BuildTests: Only one {normalizedParam} value"
-                                      + " should be specified.");
-                    return -1;
-                }
-
-                // We can also receive the libraries configuration through its
-                // MSBuild flag, so we have to check for that one as well.
-
-                if (normalizedParam == "libs"
-                    && !string.IsNullOrEmpty(
-                        msBuildFlags.Find(
-                            x => x.Contains("LibrariesConfiguration"))))
-                {
-                    Console.WriteLine("BuildTests: Only one LibrariesConfiguration"
-                                      + " value should be specified.");
-                    return -1;
-                }
+                Console.WriteLine($"BuildTests: Only one '{normalizedParam}' value"
+                                  + " should be specified.");
+                return -1;
             }
-
-            // NOTE: We might have to make a similar method for processing test
-            //       build args if they start differing too much, as we start
-            //       supporting more in our DotnetDev Kvp Notation.
-
-            BuildUtils.ProcessBuildArgument(normalizedParam,
-                                            argValue,
-                                            kvpArgs,
-                                            isConfigParam);
         }
 
         // Fetch the architecture, OS, and configuration values from the DotnetDev
