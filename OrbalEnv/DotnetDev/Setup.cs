@@ -145,13 +145,6 @@ public static class DotnetDevSetup
     /// Processes and validates the new configuration value that the user wants
     /// to set to the DOTNET_DEV_CONFIG environment variable.
     /// </summary>
-    /// <remarks>
-    /// CoreCLR specifically has an additional supported configuration called
-    /// "Checked". One can build using it by means of the command 'buildclrchk',
-    /// but regarding as to universally setting it for DOTNET_DEV_CONFIG, we are
-    /// opting to not permit it, at least for the time being, because all the other
-    /// components of the runtime repo only support "Debug" and "Release".
-    /// </remarks>
     /// <returns>
     /// Outputs the new configuration in titlecase for the shell to consume and set.
     /// Returns 0 if everything went fine, and -1 otherwise.
@@ -166,17 +159,29 @@ public static class DotnetDevSetup
 
         string newConfig = cmdArgs[0].ToLower();
 
-        // Check this function's "Remarks" section of its doc for notes regarding
-        // the absence of CoreCLR's "Checked" configuration here in this check.
-
-        if (newConfig != "debug" && newConfig != "release")
+        switch (newConfig)
         {
-            Console.WriteLine("SetConfig: You have to pick either '{0}' or '{1}'.",
-                              "debug", "release");
-            return -1;
+            case "dbg":
+            case "debug":
+                Console.WriteLine("Debug");
+                break;
+
+            case "chk":
+            case "checked":
+                Console.WriteLine("Checked");
+                break;
+
+            case "rel":
+            case "release":
+                Console.WriteLine("Release");
+                break;
+
+            default:
+                Console.WriteLine("SetConfig: You have to pick one of the following"
+                                  + " three: Debug, Checked, Release.");
+                return -1;
         }
 
-        Console.WriteLine(newConfig == "release" ? "Release" : "Debug");
         return 0;
     }
 }

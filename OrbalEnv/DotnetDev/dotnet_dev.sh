@@ -241,9 +241,9 @@ alias gencorerootrellibsdbg="buildrepo tests libs=dbg clr=rel -generatelayoutonl
 # the 'cd' path, which in this case would be the empty string.
 
 alias cdclr='cd $DOTNET_DEV_CLRSRC'
-alias cdtests='cd $DOTNET_DEV_TESTSRC'
 alias cdlibs='cd $DOTNET_DEV_LIBSSRC'
 alias cdmono='cd $DOTNET_DEV_MONOSRC'
+alias cdtests='cd $DOTNET_DEV_TESTSRC'
 
 alias cdclrbins='cd $DOTNET_DEV_CLRBIN_ARTIFACTS'
 alias cdclrtests='cd $DOTNET_DEV_CLRTEST_ARTIFACTS'
