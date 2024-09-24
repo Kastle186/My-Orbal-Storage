@@ -16,19 +16,24 @@ public static class DotnetDevSetup
     /// </returns>
     public static int GetOperatingSystem()
     {
-        // As of now, I don't expect my Dotnet Dev to be used outside of the
-        // mainstream operating systems. If required at some point, we can simply
-        // add new clauses to support those other operating systems. However,
-        // one can set a different OS by means of the 'setos' command.
-
         if (OperatingSystem.IsLinux())
+        {
             Console.WriteLine("linux");
-
-        if (OperatingSystem.IsMacOS())
+        }
+        else if (OperatingSystem.IsMacOS())
+        {
             Console.WriteLine("osx");
-
-        if (OperatingSystem.IsWindows())
+        }
+        else if (OperatingSystem.IsWindows())
+        {
             Console.WriteLine("windows");
+        }
+        else
+        {
+            Console.WriteLine("GetOperatingSystem: The detected operating system"
+                              + " was not Linux, Mac, or Windows.");
+            return -1;
+        }
 
         return 0;
     }
@@ -94,16 +99,12 @@ public static class DotnetDevSetup
             return -1;
         }
 
-        // TODO: Add the other OS's supported by the runtime repo to the
-        //       "supportedOSs" array.
-
         string newOS = cmdArgs[0].ToLower();
-        string[] supportedOSs = new[] { "linux", "osx", "windows" };
 
-        if (!supportedOSs.Any(os => os == newOS))
+        if (!BuildUtils.IsSupportedOSValue(newOS))
         {
-            Console.WriteLine("SetOS: The currently supported OS's are {0}.",
-                              string.Join(", ", supportedOSs));
+            Console.WriteLine("SetOS: The OS value '{0}' is not supported.",
+                              newOS);
             return -1;
         }
 
@@ -128,12 +129,11 @@ public static class DotnetDevSetup
         }
 
         string newArch = cmdArgs[0].ToLower();
-        string[] supportedArchs = Enum.GetNames(typeof(Architecture));
 
-        if (!supportedArchs.Any(a => a.ToLower() == newArch))
+        if (!BuildUtils.IsSupportedPlatformValue(newArch))
         {
-            Console.WriteLine("SetArch: The currently supported architectures are {0}.",
-                              string.Join(", ", supportedArchs));
+            Console.WriteLine("SetArch: The architecture value '{0}' is not supported.",
+                              newArch);
             return -1;
         }
 

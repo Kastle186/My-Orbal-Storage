@@ -27,6 +27,47 @@ internal static class BuildUtils
         "release"
     };
 
+    private static HashSet<string> _supportedOperatingSystems = new HashSet<string>
+    {
+        "windows",
+        "osx",
+        "linux",
+        "freebsd",
+        "maccatalyst",
+        "tvos",
+        "tvossimulator",
+        "ios",
+        "iossimulator",
+        "android",
+        "browser",
+        "wasi",
+        "netbsd",
+        "illumos",
+        "solaris",
+        "linux-musl",
+        "linux-bionic",
+        "tizen",
+        "haiku"
+    };
+
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsSupportedPlatformValue(string val)
+    {
+        return _supportedPlatforms.Contains(val.ToLower());
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <returns>
+    /// </returns>
+    public static bool IsSupportedOSValue(string val)
+    {
+        return _supportedOperatingSystems.Contains(val.ToLower());
+    }
+
     /// <summary>
     /// The DotnetDev environment supports a wide variety of aliases for some
     /// parameters. However, we settle on one "universal" name for each one
@@ -190,15 +231,6 @@ internal static class BuildUtils
                 || !string.IsNullOrEmpty(
                     otherArgs.Find(
                         x => x.ToLower().Contains(argValue.ToLower()))));
-    }
-
-    /// <summary>
-    /// </summary>
-    /// <returns>
-    /// </returns>
-    public static bool IsSupportedPlatformValue(string val)
-    {
-        return _supportedPlatforms.Contains(val.ToLower());
     }
 
     /// <summary>

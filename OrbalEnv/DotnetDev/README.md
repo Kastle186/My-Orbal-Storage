@@ -1,5 +1,15 @@
 # DotnetDev Environment!
 
+- [Requirements](#requirements)
+- [How To Use It](#how-to-use-it)
+  - [Further Configuration Options](#further-configuration-options)
+- [The Commands](#the-commands)
+  - [Navigation Commands](#navigation-commands)
+  - [Build Commands](#build-commands)
+    - [List of Currently Supported Build Commands](#list-of-currently-supported-build-commands)
+  - [Other Cool Utilities](#other-cool-utilities)
+- [Aliases Glossary](#aliases-glossary)
+
 Welcome to my *DotnetDev* environment to make it easier to work with the runtime
 codebase of .NET ([link here](https://github.com/dotnet/runtime)).
 
@@ -15,9 +25,16 @@ Currently, we have a Bash front-end and a Powershell Core front-end. Both are
 expected to work on all platforms, although the general recommendation is to
 use the Bash one for Linux and MacOS, and the Powershell one for Windows.
 
-## How to Use It
+## Requirements
 
-The first step is of course to clone this repo to your machine.
+- `Git`
+- `.NET 9 version or later`
+- `Bash and/or Powershell Core`
+
+## How To Use It
+
+The first step is of course to install the requirements if you haven't done so.
+Then, you can clone this repo to your machine.
 
 ```bash
 git clone https://github.com/ivdiazsa/DotnetDevEnvironment.git
@@ -103,6 +120,40 @@ Calling it as is, `buildclrlibs` would call the build script like the following:
 ./build.sh -subset clr+libs -arch <arch> -os <os> -configuration <config>
 ```
 
+However, let's suppose you also want to build the `host` and `packs`, which
+currently have no commands here. Let's also suppose you want a CI build, and
+libraries in `Release` configuration. You could call `buildclrlibs` like this:
+
+```bash
+buildclrlibs set=host+packs libs=rel --ci
+```
+
+DotnetDev will understand what you mean and call the build script with the following
+command-line:
+
+```bash
+./build.sh -subset clr+libs+host+packs -librariesConfiguration Release -ci -arch <arch> -os <os> -configuration <config>
+```
+
+You could've also passed the other subsets directly as `-subset host+packs` and/or
+the libraries configuration as `-lc Release`, and the end result would've been the
+same. DotnetDev aims to provide this flexibility so that you have its commands to
+help you, but are not confined to them in any way.
+
+Always make sure to provide the kvp values before the flagged values. It might
+work in any order, but that is untested as of this moment. It is part of my
+current backlog, so if it doesn't work yet, it will at some point.
+
+It is important to mention that the Kvp Aliases of DotnetDev can be used when
+calling both, the main script, and the tests script.
+
+**NOTE:** The flag values `set` and `libs` above are aliases for `subset` and
+`librariesConfiguration` respectively. They are available in DotnetDev's Kvp
+Notation only. For a full list of the currently supported aliases, check out the
+Aliases Glossary at the end of this `README`.
+
+#### List of Currently Supported Build Commands
+
 - `buildclr`: Builds the CLR in the currently set configuration.
 - `buildclrdbg`: Builds the CLR in the `Debug` configuration.
 - `buildclrchk`: Builds the CLR in the `Checked` configuration.
@@ -133,3 +184,86 @@ possible configurations.
 - `gencorerootdbglibsdbg`: Uses a CLR `Debug` build and `Debug` Libraries.
 - `gencorerootchklibsdbg`: Uses a CLR `Checked` build and `Debug` Libraries.
 - `gencorerootrellibsdbg`: Uses a CLR `Release` build and `Debug` Libraries.
+
+### Other Cool Utilities
+
+In addition to all the commands described in the previous sections, DotnetDev also
+has a few other neat utilities to help you with your work, which are described
+down below.
+
+**WhatIf Preview Mode**
+
+DotnetDev has a command called `whatifpreview`, which serves as a toggle for said
+mode. While this mode is activated, DotnetDev will not run any scripts. Instead,
+when you call any command, it will display what command-line it would run. This
+serves wonderfully when debugging commands or you simply want to know in detail
+what exactly a command does.
+
+**Set Core_Root Environment Variable**
+
+DotnetDev already keeps track of the *CORE_ROOT* path for commands like `cdcoreroot`.
+However, to not accidentally interfere with your work, it stores said path in its
+own environment variable `DOTNET_DEV_COREROOT`. If you want to use it for actual
+runtime tests, you can call the `setcorerootenvvar` command to have it set the path
+to the `CORE_ROOT` environment variable as well.
+
+Note that DotnetDev only updates its own environment variables when you change
+configuration, architecture, repo, os, etc. So, if you want to use a *CORE_ROOT*
+with the updated settings, you have to run `setcorerootenvvar` again.
+
+**Call Build Scripts Directly**
+
+The expectation is that DotnetDev's commands would be enough to provide at least
+the basis for your workflow. However, if you require to call the build scripts
+directly, and build the command-line entirely yourself, you can call the following
+commands from anywhere:
+
+- `buildmain`: Script at the runtime repo's root path.
+- `buildtests`: Script at `/runtime/src/tests`.
+
+## Aliases Glossary
+
+As mentioned above, the Kvp notation for arguments in the DotnetDev supports
+multiple aliases. They are case-insensitive and are described in the list down below.
+
+**Subset**
+
+- `s`
+- `set`
+- `subset`
+
+**Architecture**
+
+- `a`
+- `arch`
+
+**General Configuration**
+
+- `c`
+- `config`
+- `configuration`
+
+**Libraries Configuration**
+
+- `lc`
+- `libs`
+- `libsconfig`
+- `librariesconfiguration`
+
+**Runtime Configuration**
+
+- `clr`
+- `clrconfig`
+- `clrconfiguration`
+- `rc`
+- `runconfig`
+- `runtimeconfiguration`
+
+**Host Configuration**
+
+- `hc`
+- `hostconfig`
+- `hostconfiguration`
+
+As mentioned above in the building section, these aliases can be used transparently
+for both, the main script and the tests script.
