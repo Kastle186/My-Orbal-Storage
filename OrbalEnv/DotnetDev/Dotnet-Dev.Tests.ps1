@@ -6,6 +6,7 @@
 $global:EnvScript = Join-Path $PSScriptRoot "dotnet-dev.ps1"
 $global:DummyRepo = Join-Path $PSScriptRoot "Test-Dummy-Dir"
 $global:ScriptExt = if ($IsWindows) { ".cmd" } else { ".sh" }
+$global:TestFlagPrefix = if ($IsWindows) { "" } else { "-" }
 $global:MainScriptPath = Join-Path $DummyRepo "build$ScriptExt"
 $global:TestScriptPath = Join-Path $DummyRepo "src" "tests" "build$ScriptExt"
 
@@ -188,11 +189,109 @@ Describe 'Build-Repo Main' {
     }
 }
 
-# Describe 'Build-Repo Tests' {
-#     It 'Generate Core_Root as is' {
-#         $expected = (Join-Path $DummyRepo "src" "tests" $ScriptName)
-#     }
-# }
+# The Build-Repo Tests currently only work on MacOS and Linux.
+
+Describe 'Build-Repo Tests' {
+    Context 'Core_Root with Release Libraries as Default' {
+        It 'Generate Core_Root as is' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_CONFIG" `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Release"
+
+            gencoreroot 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Debug' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Debug"                  `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Release"
+
+            gencorerootdbg 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Checked' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Checked"                `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Release"
+
+            gencorerootchk 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Release' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Release"                `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Release"
+
+            gencorerootrel 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+    }
+
+    Context 'Core_Root with Debug Libraries' {
+        It 'Generate Core_Root as is' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_CONFIG" `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Debug"
+
+            gencorerootlibsdbg 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Debug' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Debug"                  `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Debug"
+
+            gencorerootdbglibsdbg 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Checked' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Checked"                `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Debug"
+
+            gencorerootchklibsdbg 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+
+        It 'Generate Core_Root on Release' {
+            $expected = $TestScriptPath `
+              + " ${TestFlagPrefix}Release"                `
+              + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"   `
+              + " ${TestFlagPrefix}os $Env:DOTNET_DEV_OS"  `
+              + " ${TestFlagPrefix}GenerateLayoutOnly"     `
+              + " /p:LibrariesConfiguration=Debug"
+
+            gencorerootrellibsdbg 6>&1 | Tee-Object -Variable result
+            $result[0] | Should -Be $expected
+        }
+    }
+}
 
 AfterAll {
     Remove-Item -Path "$DummyRepo" -Recurse
