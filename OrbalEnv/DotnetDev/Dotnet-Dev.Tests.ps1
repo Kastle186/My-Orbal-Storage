@@ -291,6 +291,10 @@ Describe 'Build-Repo Tests' {
     }
 }
 
+# NEEDED FIXES: Powershell doesn't like comma-separated values as arguments, as it
+#               automatically converts them to an array. Also, it doesn't like the
+#               colon ':' notation for certain test arguments like '-test'.
+
 Describe 'Complex Command Lines' {
     It 'CLR+Libs x64,x86,Arm64 +Host All Platforms' {
         $expected = $MainScriptPath `
@@ -338,6 +342,26 @@ Describe 'Complex Command Lines' {
           + " --test"                         `
           + ' -arch "x64,x86"'                `
           + " -bl"
+
+        Invoke-Expression "$devcmdline" 6>&1 | Tee-Object -Variable result
+        $result[0] | Should -Be $expected
+    }
+
+    It 'Checked CLR with Debug Libs Layout and a Dummy Test with an MSBuild Flag' {
+        $expected = $TestScriptPath `
+          + " ${TestFlagPrefix}Checked"               `
+          + " ${TestFlagPrefix}$Env:DOTNET_DEV_ARCH"  `
+          + " -os $Env:DOTNET_DEV_OS"                 `
+          + " -generatelayoutonly"                    `
+          + " -test:path.csproj"                      `
+          + " /p:UseLocalAppHostPack=true"            `
+          + " /p:LibrariesConfiguration=Debug"
+
+        $devcmdline = "buildrepo tests"    `
+          + " clr=chk libs=dbg"            `
+          + " -generatelayoutonly"         `
+          + " `"-test:path.csproj`""       `
+          + " /p:UseLocalAppHostPack=true"
 
         Invoke-Expression "$devcmdline" 6>&1 | Tee-Object -Variable result
         $result[0] | Should -Be $expected
