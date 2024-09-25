@@ -189,8 +189,6 @@ Describe 'Build-Repo Main' {
     }
 }
 
-# The Build-Repo Tests currently only work on MacOS and Linux.
-
 Describe 'Build-Repo Tests' {
     Context 'Core_Root with Release Libraries as Default' {
         It 'Generate Core_Root as is' {
@@ -290,6 +288,59 @@ Describe 'Build-Repo Tests' {
             gencorerootrellibsdbg 6>&1 | Tee-Object -Variable result
             $result[0] | Should -Be $expected
         }
+    }
+}
+
+Describe 'Complex Command Lines' {
+    It 'CLR+Libs x64,x86,Arm64 +Host All Platforms' {
+        $expected = $MainScriptPath `
+          + " -subset clr+libs+host"         `
+          + " -configuration Release"        `
+          + " -librariesConfiguration Debug" `
+          + " -runtimeConfiguration Checked" `
+          + " -arch x64,x86,arm64"           `
+          + " -os $Env:DOTNET_DEV_OS"
+
+        $devcmdline = "buildrepo main" `
+          + " set=clr+libs"            `
+          + " config=rel"              `
+          + " lc=dbg"                  `
+          + " runconfig=chk"           `
+          + " arch=x64"                `
+          + " arch=x86"                `
+          + " -s host"                 `
+          + " -a arm64"
+
+        Invoke-Expression "$devcmdline" 6>&1 | Tee-Object -Variable result
+        $result[0] | Should -Be $expected
+    }
+
+    It 'CLR Subsets with Libs x64,x86,Arm64 Obfuscated with Also Some MSBuild' {
+        $expected = $MainScriptPath `
+          + " -subset clr.runtime+clr.corelib+clr.nativecorelib+clr.tools+clr.alljits+libs+libs.tests" `
+          + " -arch arm64,x64,x86"           `
+          + " -configuration Release"        `
+          + " -runtimeConfiguration Checked" `
+          + " -test -bl"                     `
+          + " -os $Env:DOTNET_DEV_OS"        `
+          + " /p:NoPgo=true"                 `
+          + " /p:UseCrossgen2=false"
+
+        $devcmdline = "buildrepo main" `
+          + " set=clr.runtime+clr.corelib+clr.nativecorelib+clr.tools" `
+          + " arch=arm64"                     `
+          + " config=Release"                 `
+          + " subset=clr.alljits"             `
+          + " -s libs+libs.tests"             `
+          + " /p:NoPgo=true"                  `
+          + " --runtimeConfiguration Checked" `
+          + " /p:UseCrossgen2=false"          `
+          + " --test"                         `
+          + ' -arch "x64,x86"'                `
+          + " -bl"
+
+        Invoke-Expression "$devcmdline" 6>&1 | Tee-Object -Variable result
+        $result[0] | Should -Be $expected
     }
 }
 
