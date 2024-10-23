@@ -28,7 +28,7 @@ public class Program
 
             default:
                 Console.WriteLine($"Apologies, but the command '{cmd}' isn't available yet.");
-                exitCode = -1;
+                exitCode = 999;
                 break;
         }
 

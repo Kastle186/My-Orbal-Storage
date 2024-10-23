@@ -8,7 +8,7 @@ public class Program
     {
         if (args.Length == 0 || string.IsNullOrWhiteSpace(args[0]))
         {
-            Console.WriteLine("DotnetDev: A command is required to run.");
+            Console.WriteLine("GitEnv: A command is required to run.");
             return -1;
         }
 
@@ -18,32 +18,32 @@ public class Program
 
         switch (cmd)
         {
-            case "getos":
-                exitCode = DotnetDevSetup.GetOperatingSystem();
+            case "branches":
+                exitCode = GitCommands.GetBranches(cmdArgs);
                 break;
 
-            case "getarch":
-                exitCode = DotnetDevSetup.GetArchitecture();
+            case "newbranch":
+                exitCode = GitCommands.CreateNewBranch(cmdArgs);
                 break;
 
-            case "setrepo":
-                exitCode = DotnetDevSetup.SetRepo(cmdArgs);
+            case "checkout":
+                exitCode = GitCommands.Checkout(cmdArgs);
                 break;
 
-            case "setos":
-                exitCode = DotnetDevSetup.SetOS(cmdArgs);
+            case "checkin":
+                exitCode = GitCommands.Checkin(cmdArgs);
                 break;
 
-            case "setarch":
-                exitCode = DotnetDevSetup.SetArch(cmdArgs);
+            case "stage":
+                exitCode = GitCommands.StageChanges(cmdArgs);
                 break;
 
-            case "setconfig":
-                exitCode = DotnetDevSetup.SetConfig(cmdArgs);
+            case "unstage":
+                exitCode = GitCommands.UnstageChanges(cmdArgs);
                 break;
 
-            case "build":
-                exitCode = DotnetDevCommands.BuildRepo(cmdArgs);
+            case "update":
+                exitCode = GitCommands.UpdateBranch(cmdArgs);
                 break;
 
             default:
