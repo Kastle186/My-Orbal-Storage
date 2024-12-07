@@ -1,0 +1,213 @@
+* Honkai Star Rail Japanese/English Learnings
+
+** あ
+
+- あしあと/そくせき (足跡): Footprints, record of page visitors in (social) networking sites
+- あたえる (与える): To give, grant, confer, provide, cause, inflict, to pass variable to a function
+
+** ば
+
+- ばんのう (万能): All-purpose, utility, universal, all-powerful, almighty, omnipotent, all-around
+
+** ぼ
+
+- ぼうぎょ(する) (防御): **Defense**, safeguard, protection
+- ぼうけん(する) (冒険): Adventure, venture (unlikely to succeed), risky attempt/endeavor
+
+** ち
+
+- ちがう (違う): To differ from, be unlike, disagree with, be wrong, be incorrect, be mistaken
+
+** ちょ
+
+- ちょうたつ(する) (調達): Supply, provision, raising, procurement
+
+** ぶ
+
+- ぶんれつ(する) (分裂): Split, division, break up
+
+** ちょ
+
+- ちょうくご (直後): Immediately following
+- ちょうせん(する) (挑戦): Challenge, defiance, dare, attempt, try
+- ちょうやく(する) (跳躍): **Warp**, jump, leap, skip, bound
+
+** で
+
+- でいりぐち (出入り口): Exit and entrance
+
+** ふ
+
+- ふく (拭く): To wipe, dry
+- ふと (太): Grand, magnificent, excellent, fat, fatty
+- *ふとうらないし (太卜司): Grand Divination Commission*
+- ふよ(する) (付与): Grant, allowance, endowment, bestowal
+
+** げ
+
+- げきは(する) (撃破): Crushing
+- げんてい(する) (限定): Limit, restriction
+
+** ご
+
+- ごうせい(する) (合成): **Synthesize**, composition, synthesis, compounding
+
+** は
+
+- はけん(する) (派遣): Dispatch, deployment, temporary employee/worker
+- はつどう(する) (発動): Putting into operation, invocation
+
+** へ
+
+- へんにゅう(する) (編入): Admission, incorporation, enlistment, enrollment
+- へんせい(する) (編成): Composition, formation, organization, organisation, compilation
+
+** ひ
+
+*- ひかりまるぎり (光円錐): Light Cone*
+- ひめ (姫): Princess, young lady of noble birth
+- ひっさつわざ (必殺技): **Ultimate attack**, special or lethal move, killer technique
+
+** ほ
+
+- ほきゅう(する) (補給): Supply(ing), replenishment
+- ほんだな (本棚): Bookshelves, bookshelf, bookcase
+- ほうほう (方法): Method, process, manner, way, means, technique
+- ほうしゅう (報酬): Remuneration, recompense, reward, toll
+
+** い
+
+- いちらん(する) (一覧): Summary, list, table, glance, inspection
+- いらい(する) (依頼): **Assignments**, Request, commission, entrusting with a matter, dependence, reliance
+- いっかつ(する) (一括): Lumping together, summing up, bundle, lump, batch
+
+** か
+
+- かいたく(する) (開拓): **Trailblazing**, reclamation of land, cultivation, development, pioneering, opening up a new market, breaking new ground
+- かこ (過去): The past, bygone days, one's (secret) past, preterite, previous life
+- かくさん(する) (拡散): Spreading, disseminating, scattering, diffusion of light or gas
+
+** き
+
+- きかん (期間): Period, term, interval
+- きんこう(する) (均衡): **Equilibrium**, balance
+
+** きょ
+
+- きょうか(する) (強化): Strengthening, intensifying, reinforcement, enhancement, solidification
+
+** こ
+
+- こうげき(する) (攻撃): **Attack**, assault, raid, onslaught, offensive
+
+** く
+
+- くんこう (勲功): Merits, distinguished services
+
+** じ
+
+- じげん (次元): Dimension, perspective, point of reference
+
+** じゃ
+
+- じゃくてん (弱点): Weak point, weakness, shortcoming, defect, flaw, sore/tender spot
+
+** じょ
+
+- じょうげん (上限): Upper limit, supremum
+- じょうきゃく/じょうかく (乗客): Passenger
+
+** み
+
+- みかた(する) (味方): Friend, ally, supporter, take sides with, stand by, back up
+- みきにゅう (未記入): **Blank profile**, blank book
+
+** な
+
+- ななし/ナナシ (名[無|な]し): **Nameless**, be nameless, namelessness, be without a name
+- なやむ (悩む): To be worried, be troubled
+
+** れ
+
+- れっしゃ (列車): Train, railway train
+
+** りょ
+
+- りょう (量): Quantity, amount, volume, capacity, generosity, magnanimity, tolerance
+
+** る
+
+- るいけい(する) (累計): Cumulative/accumulated total up to now
+
+** さ
+
+- さい (再): Again, re-, deutero-, deuto-, deuter-
+- さいわい(な) (幸い): Luckily, fortunately, happiness, blessedness, luck, felicity
+- さきほどから (先[ほど|程]から): Since some time ago, for some time, for quite a while
+
+** せ
+
+- せんとう(する) (戦闘): Battle, fight, combat
+
+** し
+
+- し/つかさ (司): Office (government department beneath a bureau under the ritsuryou system)
+- しんこう(する) (進行): Moving forward, onward movement, advance, advancement, progress, progression
+- しんよう(する) (信用): **Credit (finance)**, confidence, trust, faith, reputation
+
+** しゃ
+
+- しゃしょう (車掌): Train conductor
+
+** しょ
+
+- しょうかく(する) (昇格): Promotion, raising of status
+- しょうひ(する) (消費): Consumption, expenditure, spending
+
+** す
+
+- すすむ (進む): To advance, go forward, go ahead of, make progress, improve
+
+** そ
+
+- そう (総): Whole, total, gross, entire, overall, general
+- そう (層): Stratum
+- そざい (素材): Ingredient, raw material, resource, unprocessed timber, topic
+
+** た
+
+- たびきろく (旅記録): **Travel Log**, travel document, travel record
+- たんたい (単体): Something standing alone, separate item, solo item, simple substance (chemical)
+- たおす (倒す): To defeat, beat, overthrow, recline, fell, bring down, throw down
+- たりる (足りる): To be sufficient, enough, worth doing, deserve, do the job, serve, answer
+- たっする (達する): To reach, get to, arrive at
+
+** て
+
+- てき (敵): Opponent, rival, adversary, menace, danger, threat, enemy
+
+** つ
+
+- ついげき(する) (追撃): Pursuit (of a fleeing enemy), chase
+
+** う
+
+- うちゅう (宇宙): Universe, cosmos, space
+- うけとり (受[け]取[り]): Receiving, receipt
+- うんてん(する) (運転): Operation of a machine, driving a vehicle, use of capital/funds, management investment
+- うらない (占い/卜): Fortune-telling, divination
+
+** よ
+
+- よび (予備): Reserve, spare, preparation, preliminaries
+
+** ゆ
+
+- ゆか/とこ (床): Floor, stage for the narrator, dining platform across a river / Bed, bedding
+- ゆめ (夢): Dream
+
+** ぜ
+
+- ぜんぶ (全部): All, entire, whole, altogether
+- ぜんかい (前回): Previous time, last time, previous installment, previous session
+- ぜんたい (全体): Whole, entirety, whatever is the matter

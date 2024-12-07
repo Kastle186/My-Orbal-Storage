@@ -1,0 +1,453 @@
+* Japanese/English Dictionary From My Stay in Japan
+
+** あ
+
+- あかるさ (明るさ): Brightness, luminance, cheerfulness
+- あんぜん(な) (安全): Safety, security
+- あたる (当る): To be hit, equivalent to, applicable, right on the money of a prediction or thought, selected as winner, be successful, be well, be assigned, be called on, be on a hitting streak
+
+** ば
+
+- ばあい (場合): Case, situation
+
+** べ
+
+- べんきょう(する) (勉強): Study, diligence, working hard, experience, lesson for the future
+- べつ(な) (別): Distinction, difference, discrimination, separate, another
+
+** びょ
+
+- びょう (秒): Second (unit of time)
+
+** ち
+
+- ちかく (近く): Nearby, vicinity, close to, shortly, soon
+
+** ちゃ
+
+- ちゃくじつ(な) (着実): Steady, sound, solid, reliable, trustworthy
+- ちゃくしん(する) (着信): Arrival of a post, news, correspondence, etc, receive a phone call, email, etc
+
+** ちゅ
+
+- ちゅうい(する) (注意): Attention, notice, heed, care, caution, precaution, advice, warning
+- ちゅういほう (注意報): Warning for a storm or bad weather, advisory
+
+** で
+
+- でんち (電池): Battery, cell
+- でんき (電気): Electricity, electric light
+- でんし (電子): Electron, electronic
+- でんたく (電卓): (Pocket) Electronic Calculator
+- でんわ(する) (電話): Telephone call, phone call
+
+** ど
+
+- どうが (動画): Video (especially digital), video clip, clip, animation, in-between animations
+
+** ふ
+
+- ふあん(な) (不安): Anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense
+- ふべん(な) (不便): Inconvenience, inexpediency, unhandiness
+- ふく (吹): To blow (on), breathe out, puff, whistle, sprout
+- ふくめる (含める): To include in a group or scope, to put in, to permeate with flavor
+- ふろ (風呂): Bath, bathtub, bathroom, bathhouse, room for drying lacquerware, base of a sword
+- ふうそく (風速): Wind speed
+- ふざい (不在): Absence
+
+** が
+
+- がめん (画面): Screen of a computer, TV, etc, image on a screen, picture, scene, surface of a painting
+- がぞう (画像): Image, picture, portrait
+- がっこう (学校): School
+
+** ぎ
+
+- ぎんこう (銀行): Bank, banking institution
+
+** ご
+
+- ごらんなさる ([ご|御]覧なさる): Try to look or do something
+- ごろ/ころ (頃): Approximate/around/about/toward a certain time, suitable time or condition
+
+** は
+
+- はいたつ(する) (配達): Delivery
+- はいしん(する) (配信): Distribution of information, broadcast, delivery, transmission, streaming
+- はき(する) (破棄): Tear up and discard documents, disposal, destruction, voiding, cancellation
+- はん/ばん (版): Edition, version, printing, implementation of software, plate, block, cast, impression
+- はんのう(する) (反応): Reaction, response
+- はねる (跳ねる): To jump, leap, prance, spring up, bound, hop, break up, come to an end, hit
+- はつおん(する) (発音): Pronunciation, production of sound
+
+** ひ
+
+- ひづけ (日[付|附]): Date, dating
+- ひくい (低い): Low (rank, degree, value, content, quality, position, key, volume), short height, deep voice
+- ひてい(する) (否定): Denial, negation, repudiation, disavowal, NOT operation (programming and computers)
+- ひつよう(な) (必要): Necessary, needed, essential, indispensable, requirement
+- ひやけ(する) (日[焼|や]け): Sunburn, suntan, drying up of a river, field, etc
+
+** ひょ
+
+- ひょうげん(する) (表現): Expression, presentation, representation, notation
+- ひょうじ(する) (表示): Display, indication, showing, expression, representation
+
+** へ
+
+- へんしん(する) (返信): Reply, answer
+- へんしゅう(する) (編集): Editing, compilation
+
+** ほ
+
+- ほぼ (): Almost, roughly, approximately
+- ほご(する) (保護): Protection, safeguard, guardianship, custody, patronage, preservation, conservation
+- ほんじつ (本日): Today, this day
+- ほんやく(する) (翻訳): Translation, deciphering, decoding
+- ほうこく(する) (報告): Report, information
+- ほうそう(する) (放送): Broadcast, program, announcement
+- ほぞん(する) (保存): Saving to disk, preservation, conservation, storage, maintenance
+
+** い
+
+- いちぶ (一部): One part, one portion, one section, one copy of a document, some
+- いどう(する) (移動): Movement, transfer, migration, removal, travel, mobile, roving
+- いじょう (以上): Not less than, and upwards, or more, more than, further than
+- いみ(する) (意味): Meaning, significance, sense
+- いしょう (衣装): Clothing, costume, outfit, garment, dress
+
+** じ
+
+- じかん (時間): Time, hour, period, class, lesson
+- じこく (時刻): Time (favourable), opportunity, chance
+- じっさい (実際): Reality, actuality, actual conditions, practice as opposed to theory, truly
+- じっそう(する) (実装): Implementation of a feature, installation of equipment, mounting, packaging
+
+** じょ
+
+- じょうほう (情報): Information (can also be digitally encoded), report, intelligence
+- じょうきょう (状況): State of affairs, situation, condition, circumstances
+- じょうたい (状態): State, condition, situation, appearance, circumstances
+
+** じゅ
+
+- じゅんび(する) (準備): Preparation, arrangements, getting ready, provision, setup, reserving
+- じゅんきょ(する) (準拠): Basis, based on, conformance, conformity, authority of, standard, reference
+- じゅしん(する) (受信): Receiving (message, letter, email, etc), reception (radio, TV, etc)
+- じゅうしょ (住所): Address, residence, domicile
+- じゅうよう(な) (重要): Important, momentous, essential, principal, major
+
+** か
+
+- かだい (課題): Subject, theme, issue, matter, homework, assignment, task, challenge, problem, question
+- かいはつ(する) (開発): Development, exploitation of resources
+- かいはつしゃ (開発者): Developer
+- かいし(する) (開始): Commencement, beginning, initiation
+- かいすう (回数): Number of times, frequency, count
+- かこ (過去): The past, bygone days, one's past that one would rather keep secret, preterite, previous life
+- かくにん(する) (確認): Confirmation, verification, validation, review, check, affirmation, identification
+- かくとく(する) (獲得): Acquisition, possession
+- かんぺき(な) (完[璧|ぺき]): Perfect, complete, flawless
+- かんり(する) (管理): Control, management of a business/account
+- かんそう (感想): Impressions, thoughts, feelings, reactions
+- かんぜん(な) (完全): Perfect, complete
+- かのう(な) (可能): Possible, potential, feasible
+- かのうせい (可能性): Potentiality, likelihood, possibility
+- かつ (): And, moreover, besides, as well as, and on top of that, at the same time
+- かぞく (家族): Family
+- かず/すう (数): Number, amount / Several, quantity, figures
+
+** け
+
+- けいか(する) (経過): Passage of time, elapsing, lapse, progress, development, course of events
+- けいこく(する) (警告): Warning, advice
+- けいこう (傾向): Tendency, trend, inclination
+- けいさつ (警察): Police
+- けん (権): Right to do something, authority, power
+- けんこう(な) (健康): Health, healthy, sound, fit, wholesome
+- けんり (権利): Right, privilege
+- けんさく(する) (検索): Look up, search for, retrieve data, refer to, search engines' prompt
+- けっか(する) (結果): Result, consequence, outcome, effect, fruition, therefore
+
+** き
+
+- きどく(な) (既読): Already read
+- きげん (期限): Term, period, time frame/limit, deadline, cutoff date/time
+- きかい (機械/器械): Machine, mechanism, instrument, appliance, apparatus
+- きもち (気持[ち]): Feeling, sensation, mood, sentiment, gratitude
+- きんとう(な) (均等): Equality, uniformity, evenness
+- きんきゅう(な) (緊急): Urgency, emergency
+- きおん (気温): Air temperature
+- きおく(する) (記憶): Memory, recollection, remembrance
+- きりかえ (切り替え): Exchange, conversion, switchover
+- きろく(する) (記録): Record, minutes, document, results, score
+- きしょう (気象): Weather, climate, temperament
+- きそん(する) (既存): Existing
+- きっかけ (): Chance, start, cue, excuse, motive, impetus, occasion
+
+** きょ
+
+- きょひ(する) (拒否): Refusal, rejection, denial
+- きょか(する) (許可): Permission, approval, authorization
+- きょうつう(な) (共通): Common, shared, mutual
+- きょうゆう(する) (共有): Sharing (files, devices, viewpoints), joint ownership, co-ownership
+
+** きゅ
+
+- きゅうぎょう(する) (休業): Suspension of business, temporary closure, shutdown, holiday
+- きゅうか (休暇): Holiday, day off, furlough, absence from work
+
+** こ
+
+- こんご (今後): From now on, hereafter
+- こおり (氷): Ice, shaved ice
+- ことば (言葉): Word, phrase, expression, term, manner of speech
+- こうもく (項目): Item, heading, category, clause, headword, entry
+- こうおん (高温): High temperature
+- こうしん(する) (更新): Renewal, update, replacement
+- こうそく(な) (高速): High-speed, rapid, express
+- こうそくどうろ (高速道路): Highway, freeway, expressway, motorway, interstate
+- こうすい (降水): Rainfall, precipitation
+- こうつう(する) (交通): Traffic, transportation, communication, exchange of ideas, intercourse
+
+** く
+
+- くだもの/かぶつ (果物): Fruit
+- くうき (空気): Air, atmosphere, mood, situation, someone with no presence
+- くうきしつ (空気質): Air quality
+- くうこう (空港): Airport
+
+** ま
+
+- または (又は): Or, either or
+
+** め
+
+- めいしゅ (盟主): Leader of an alliance, leading power
+- めいわく(な) (迷惑): Junk mail, trouble, bother, annoyance, nuisance, inconvenience
+
+** み
+
+- みだしご (見出し語): Headword in a dictionary/encyclopedia, entry word
+- みどく(な) (未読): Unread
+- みず (水): Water (especially cool, fresh water for drinking)
+
+** も
+
+- もくてき (目的): Purpose, goal, aim, objective, intention
+- もうしわけ(する) (申し訳): Apology, excuse
+
+** む
+
+- むりょう (無料): Free of charge, gratuitous
+
+** な
+
+- ないぶ (内部): Interior, inside, internal
+- ないよう (内容): Contents, substance, matter, detail, import
+- ないぞう(する) (内蔵): Internal (disk, drive), built-in, equipped with
+- なかま (仲間): Companion, fellow, friend, mate, comrade, partner, coworker, associate, group, circle, gang, member of the same category
+- なまえくうかん (名前空間): Namespace
+- ななめ(な) (斜め): Slanting, tilted, diagonal, sloping, oblique, distorted, amiss, awry
+- なにより (何より): Above anything else, more than anything, most important
+
+** ね
+
+- ねがう (願う): To desire, wish, hope, implore, pray, have something done for oneself
+- ねる (寝る): To sleep (lying down), go to bed, sleep with someone and have intercourse
+
+** に
+
+- にあう (似[合|あ]う): To suit, match, be like
+- にっかん (日間): Daytime, during the day
+
+** にゅ
+
+- にゅうりょく(する) (入力): Input, data entry
+
+** お
+
+- おきかえる (置き[換|か]える): To replace, to move, to change the position of
+- おんせい (音声): Voice, speech, sound or audio
+- おんせいがく (音声学): Phonetics
+- おなじ/おんなじ (同じ): Same, identical, equal, uniform, equivalent, similar, common origin, changeless, alike
+- おとな/だいにん(な) (大人): Adult, grown-up
+- おうとう(する) (応答): Reply, answer, response (chat, email, etc)
+
+** れ
+
+- れんけい(する) (連携): Cooperation, coordination, link
+- れんらく(する) (連絡): Contact, get in touch, communication, connection with transportation or between matters, join a railway line
+- れんらくさき (連絡先): Contact address
+- れいぞうこ (冷蔵庫): Refrigerator, fridge
+
+** り
+
+- りれき (履歴): History, record, log, background, career
+- りよう(する) (利用): Use, utilization, utilisation, application
+- りゆう/わけ (理由): Reason, pretext, motive
+
+** りょ
+
+- りょかん (旅館): Ryokan, traditional japanese inn
+- りょけん/パスポート (旅券): Passport
+- りょこう(する) (旅行): Travel, trip, journey, excursion, tour
+
+** さ
+
+- さがす (探す): To search, look for something desired, hunt for, seek, rummage in, fish around
+- さぎょう(する) (作業): Work, operation, manufacture, fatigue duty
+- さいちゅう/さなか (最中): In the middle of, in the midst of, at the height of
+- さいだい (最大): Biggest, greatest, largest, maximum
+- さいこう(な) (最高): Best, supreme, finest, highest, maximum, most, uppermost
+- さいしん (最新): Latest, newest, late-breaking (news)
+- さいしょ (最初): Beginning, outset, first, onset
+- さいしょう (最小): Smallest (in size, degree, etc), least, minimum, minimal
+- さいしゅう (最終): Last, final, closing
+- さいてい(な) (最低): Least, lowest, minimum, worst, awful, horrible, nasty, disgusting
+- さくせい(する) (作成): Draw up (legal document, contract, will, etc), create, prepare, write, frame, make, produce
+- さんか(する) (参加): Participation, joining, entry
+- さんそ (酸素): Oxygen (O)
+
+** せ
+
+- せいひん (製品): Manufactured goods, finished goods, product
+- せいかく(な) (正確): Accurate, correct, precise, exact
+- せいきゅう(する) (請求): (Claim, charge, application, request, billing) for a service
+- せいこう(する) (成功): Success, achievement, prosperity
+- せいせい(する) (生成): Creation, generation, formation, derivation
+- せんたく(する) (洗濯): Washing, laundry, relaxing, taking a break
+- せんたく(する) (選択): Choice, selection, option
+- せんとう (先頭): Head of a line, group, etc, front, lead, forefront, vanguard
+- せつやく(する) (節約): Economising, saving
+- せつぞく(する) (接続): Connection, attachment, union, joint, link
+- せっけん (石[鹸|けん]): Soap
+- せってい(する) (設定): Establishment, setting of a novel, options settings, preferences settings, configuration
+- せっていかのう(な) (設定可能): Configurable
+
+** し
+
+- しかい (視界): Field of vision, one's visibility, view, visual field, one's ken
+- しんちゃく(する) (新着): New arrivals, new acquisitions
+- しんちゃくじょうほう (新着情報): What's new on webpages/programs/newsletters, announcement of new arrivals or events
+- しんがた (新型): New type, new style, new model
+- しんせい(する) (申請): Application, request, petition
+- しすう (指数): Index (number), exponent in floating-point representation, characteristic
+- してい (視程): Visibility
+- してい(する) (指定): Designation, specification, assignment, appointment, pointing at
+- しつもん(する) (質問): Question, inquiry, enquiry
+- しよう(する) (使用): Use, application, employment, utilization, utilisation
+
+** しゃ
+
+- しゃしん (写真): Photograph, picture, snapshot
+
+** しょ
+
+- しょくば (職場): One's post, place of work, workplace
+- しょり(する) (処理): Processing, dealing with, treatment, disposition, disposal
+- しょうぼう(する) (消防): Fire-fighting, fire department, fire brigade
+- しょうひん (商品): Commodity, article of commerce, goods, stock, merchandise
+- しょうおん(する) (消音): Silencing of a machine, muffling, muting a device
+- しょうさい(する) (詳細): Details, particulars, specific, close-up view, zoomed-in view
+- しょうたい (正体): True character, true form, true colors, identity, origin, consciousness
+
+** しゅ
+
+- しゅつりょく(する) (出力): Output (electrical, signal, data, etc)
+- しゅうりょう(する) (終了): End, close, termination
+
+** そ
+
+- そんざい(する) (存在): Existence, being
+- そしき (組織): Organization, formation, structure, system (not computational), tissue, weave of a fabric
+- そうしん(する) (送信): Transmission, sending
+
+** す
+
+- すいそ (水素): Hydrogen (H)
+- すいぞくかん (水族館): Aquarium
+- すずしい (涼しい): Cool, refreshing, clear, pure, innocent, composed, unconcerned
+
+** た
+
+- たいかん(する) (体感): Bodily sensation, sense, experience
+- たいかんおんど (体感温度): Effective temperature, wind-chill index
+- たいき(する) (待機): Standing by, awaiting an opportunity, being on alert, quarantine
+- たいおう(する) (対応): Equivalence, suitability, matching, be appropriate for, coping with, reception, compatibility with technology, software, etc, capability, support for
+- たいせき(する) (退席): Leaving one's seat, afk
+- たいしゅつ(する) (退出): Leave work at the end of the day, withdrawal, exit from a market or call
+- たいよう (太陽): Sun
+- たもつ (保つ): To keep, preserve, retain, maintain, sustain
+- たとえば (例えば): For example, for instance
+
+** て
+
+- ていでんりょく (低電力): Low-power electrical/electricity
+- ていし(する) (停止): Stoppage, halt, standstill, ceasing movement or activity, suspension of operations, interruption, prohibition, ban
+- てんき (天気): Weather, the elements
+- てんし (天使): Angel
+- てんそう(する) (転送): Transfer, redirection, forwarding (telephone call, email, etc)
+
+** と
+
+- ところ (所/処): Place, spot, scene, site, area, space
+- とくべつ(な) (特別): Special, particular, extraordinary, exceptional
+- とりけす (取り消す): To cancel, withdraw, retract, take back words, revoke
+- とりこみちゅう (取り込み中): In the middle of doing something, busy with something, capturing or importing data
+- とうちゃく(する) (到着): Arrival
+- とうこう(する) (投稿): Contribution to a newspaper, magazine, etc, submission or post on a blog, social media, etc
+- とうろく(する) (登録): Registration, entry, record
+- とっぷう (突風): Gust of wind, blast
+
+** つ
+
+- ついか(する) (追加): Addition, supplement, appending
+- つうち(する) (通知): Notice, report, notification on a smartphone, PC, etc
+- つうよう(する) (通用): Popular use, circulation, to pass as
+- つよい (強い): Strong, potent, tough, powerful, fierce, durable, knowledgeable, dependable, trustworthy
+
+** う
+
+- うれしい (嬉しい): Happy, glad, pleased, delighted, overjoyed, gratified
+
+** わ
+
+- わりあて/かっとう (割り当て/割当): Assignment, allotment, allocation, quota, rationing
+
+** や
+
+- やかん (夜間): Night, nighttime
+- やさい (野菜): Vegetable
+
+** よ
+
+- よびだし(する) (呼び出し): Call, summons, paging
+- よき(する) (予期): Expectation, assume will happen, forecast
+- よきせぬ (予期せぬ): Unexpected, unforeseen
+- よろこんで (喜んで): With pleasure
+- よそう(する) (予想): Expectation, anticipation, prediction, forecast, conjecture
+- ようやく(する) (要約): Summary, digest
+- よわい (弱い): Weak, frail, delicate, tender, unskilled
+- よやく(する) (予約): Reservation, appointment, booking, contract, subscription, pledge, programming a device, setting a timer
+
+** ゆ
+
+- ゆび (指): Finger, toe, digit
+- ゆうせん(する) (優先): Preference, priority, precedence
+- ゆうせんど (優先度): Degree of relative priority
+- ゆうりょう (有料): Fee-charging, paid, not free
+
+** ぜ
+
+- ぜんご(する) (前後): Front and back, back and forth, around/approximately a quantity, age, time, etc, just when, co-occurring, happening at the same time
+- ぜんいん (全員): All members, all hands, everyone, everybody, whole crew
+
+** ぞ
+
+- ぞくする (属する): To belong to, come under, be affiliated with, be subject to
+- ぞっこう(する) (続行): Continuation, continuance, resuming
+
+** ず
+
+- ずみ (済み): Arranged, taken care of, settled, completed, finished
