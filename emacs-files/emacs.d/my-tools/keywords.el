@@ -67,9 +67,10 @@
                           ("\\_<FILE\\_>"    . font-lock-type-face)))
 
 (font-lock-add-keywords 'c++-mode
-                        '(("\\_<cin\\_>"   . font-lock-keyword-face)
-                          ("\\_<cout\\_>"  . font-lock-keyword-face)
-                          ("\\_<endl\\_>"  . font-lock-keyword-face)))
+                        '(("\\_<cin\\_>"     . font-lock-keyword-face)
+                          ("\\_<cout\\_>"    . font-lock-keyword-face)
+                          ("\\_<endl\\_>"    . font-lock-keyword-face)
+                          ("\\_<getline\\_>" . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'julia-mode
                         '(("\\_<ARGS\\_>"           . font-lock-variable-name-face)
@@ -132,6 +133,10 @@
                           ("\\_<Symbol\\_>"         . font-lock-type-face)
                           ("\\_<Tuple\\_>"          . font-lock-type-face)
                           ("\\_<Vector\\_>"         . font-lock-type-face)))
+
+(font-lock-add-keywords 'js-mode
+                        '(("\\_<\\([[:alnum:]]+\\)(" 1 font-lock-function-name-face)
+                          ("\\_<from\\_>"            . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'python-mode
                         '(("\\_<namedtuple\\_>" . font-lock-type-face)
