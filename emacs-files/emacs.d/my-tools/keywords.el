@@ -57,7 +57,9 @@
                           ("\\_<notnull\\_>"  . font-lock-keyword-face)
                           ("\\_<or\\_>"       . font-lock-keyword-face)
                           ("\\_<record\\_>"   . font-lock-keyword-face)
-                          ("\\_<required\\_>" . font-lock-keyword-face)))
+                          ("\\_<required\\_>" . font-lock-keyword-face)
+
+                          ("\\[,\\][[:blank:]]*\\([[:alnum:]]+\\)" 1 font-lock-variable-name-face)))
 
 (font-lock-add-keywords 'c-mode
                         '(("\\_<bool\\_>"    . font-lock-type-face)
