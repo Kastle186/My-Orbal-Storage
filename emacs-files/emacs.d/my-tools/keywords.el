@@ -14,7 +14,8 @@
                           ("\\_<custom-set-variables\\_>" . font-lock-builtin-face)
                           ("\\_<define-key\\_>"           . font-lock-builtin-face)
                           ("\\_<downcase\\_>"             . font-lock-builtin-face)
-                          ("\\_<eql\\_>"                  . font-lock-keyword-face)
+                          ("\\_<eq\\_>"                   . font-lock-builtin-face)
+                          ("\\_<eql\\_>"                  . font-lock-builtin-face)
                           ("\\_<equal\\_>"                . font-lock-builtin-face)
                           ("\\_<flatten-tree\\_>"         . font-lock-builtin-face)
                           ("\\_<format\\_>"               . font-lock-builtin-face)
@@ -26,6 +27,7 @@
                           ("\\_<insert-file-contents\\_>" . font-lock-builtin-face)
                           ("\\_<kbd\\_>"                  . font-lock-builtin-face)
                           ("\\_<length\\_>"               . font-lock-builtin-face)
+                          ("\\_<list\\_>"                 . font-lock-builtin-face)
                           ("\\_<load-file\\_>"            . font-lock-builtin-face)
                           ("\\_<mapcar\\_>"               . font-lock-builtin-face)
                           ("\\_<member\\_>"               . font-lock-builtin-face)
@@ -35,6 +37,9 @@
                           ("\\_<nth\\_>"                  . font-lock-builtin-face)
                           ("\\_<number-to-string\\_>"     . font-lock-builtin-face)
                           ("\\_<put\\_>"                  . font-lock-builtin-face)
+                          ("\\_<seq-map\\_>"              . font-lock-builtin-face)
+                          ("\\_<seq-mapn\\_>"             . font-lock-builtin-face)
+                          ("\\_<seq-map-indexed\\_>"      . font-lock-builtin-face)
                           ("\\_<set\\_>"                  . font-lock-builtin-face)
                           ("\\_<setenv\\_>"               . font-lock-builtin-face)
                           ("\\_<split-string\\_>"         . font-lock-builtin-face)
@@ -144,15 +149,19 @@
                           ("\\_<Vector\\_>"         . font-lock-type-face)))
 
 (font-lock-add-keywords 'js-mode
-                        '(("\\_<\\([[:alnum:]]+\\)(" 1 font-lock-function-name-face)
-                          ("\\_<from\\_>"            . font-lock-keyword-face)))
+                        '(("\\_<from\\_>"            . font-lock-keyword-face)
+                          ("\\_<BigInt\\_>"          . font-lock-type-face)
+                          ("\\_<Number\\_>"          . font-lock-type-face)
+                          ("\\_<\\([[:alnum:]]+\\)(" 1 font-lock-function-name-face)))
+
+(font-lock-add-keywords 'powershell-mode
+                        '(("\\_<::\\(new\\)\\_>" 1 font-lock-keyword-face)))
 
 (font-lock-add-keywords 'python-mode
                         '(("\\_<namedtuple\\_>" . font-lock-type-face)
-                          ("\\_<namedtuple\\_>" . font-lock-type-face)))
+                          ("\\_<Final\\_>"      . font-lock-type-face)
+                          ("\\_<TypeAlias\\_>"  . font-lock-type-face)
+                          ("\\_<Union\\_>"      . font-lock-type-face)))
 
 (font-lock-add-keywords 'sh-mode
-                        '(("\\_<local\\_>"     . font-lock-keyword-face)
-                          ("\\_<Final\\_>"     . font-lock-type-face)
-                          ("\\_<TypeAlias\\_>" . font-lock-type-face)
-                          ("\\_<Union\\_>"     . font-lock-type-face)))
+                        '(("\\_<local\\_>"     . font-lock-keyword-face)))

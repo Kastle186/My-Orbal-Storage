@@ -254,9 +254,11 @@
                               (name . "^\\*scratch\\*$")
                               (name . "^\\*Async-native-compile-log\\*$")
                               (name . "^\\*Backtrace\\*$")
+                              (name . "^\\*Compile-Log\\*$")
                               (name . "^\\*Completions\\*$")
                               (name . "^\\*GNU Emacs\\*$")
                               (name . "^\\*Messages\\*$")
+                              (name . "^\\*Occur\\*$")
                               (name . "^\\*Packages\\*$")
                               (name . "^\\*Warnings\\*$")))))))
 
