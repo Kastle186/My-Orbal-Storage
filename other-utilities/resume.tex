@@ -5,7 +5,6 @@
 % ---------- PAGE SETUP ---------- %
 
 \documentclass[letterpaper, 11pt]{article}
-\usepackage{helvet}
 \usepackage{fontawesome5}
 \usepackage{marvosym}
 \usepackage{latexsym}
@@ -20,6 +19,21 @@
 \usepackage{tabularx}
 \usepackage{hyphenat}
 \input{glyphtounicode}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -75,7 +89,7 @@
 \newcommand{\resumeProjectHeading}[3]{
   \vspace{-2pt}\item
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} $|$ \emph{#2} & #3
+    \textbf{#1} $|$ \small\textit{#2} & #3
   \end{tabular*}\vspace{-9pt}
 }
 
