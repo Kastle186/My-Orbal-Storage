@@ -1,14 +1,105 @@
-% Reference: https://www.overleaf.com/project/66a1fbbd90d4960b16c5b6b3
+% ---------- %
+% My Resume! %
+% ---------- %
+
+% ---------- PAGE SETUP ---------- %
+
 \documentclass[letterpaper, 11pt]{article}
 \usepackage{helvet}
+\usepackage{fontawesome5}
+\usepackage{marvosym}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% ---------- CUSTOM COMMANDS ---------- %
+
+\newcommand{\resumeSchoolHeading}[4]{
+  \vspace{-5pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small#4}
+  \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeCompanyHeading}[3]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 $|$ #3
+  \end{tabular*}
+}
+
+\newcommand{\resumePositionHeading}[2]{
+  \vspace{-3pt}
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small#2}
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} $|$ \emph{#2} & #3
+  \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSkillList}[2]{
+  \textbf{#1:}{ #2 } \\ \vspace{1.5pt}
+}
+
+% ---------- RESUME! ---------- %
 
 \begin{document}
 
 \begin{center}
-  \textbf{\Huge \scshape Ivan David Diaz Sanchez}
-  \small (425) 326-2657 $|$
-  \underline{diaz.ivan605@gmail.com} $|$
-  \underline{linkedin.com/in/<username>} $|$
+  \textbf{\Huge \scshape Ivan David Diaz Sanchez} \\ \vspace{3pt}
+  \small{
+    \faPhone\space (425) 326-2657 $|$
+    \Letter\space {diaz.ivan605@gmail.com} $|$
+    \faLinkedin\space linkedin.com/in/ivandaviddiazsanchez
+  }
 \end{center}
 
 % --------------- %
@@ -16,11 +107,119 @@
 % --------------- %
 
 \section{Work Experience}
+\vspace{1pt}
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+  % --------- %
+  % Microsoft %
+  % --------- %
+
+  \resumeCompanyHeading
+    {Microsoft Corporation}{Jul 2019 \textbf{--} Present}{Redmond, WA}
+
+    % ------------------------------ %
+    % Microsoft Software Engineer II %
+    % ------------------------------ %
+
+    \resumePositionHeading
+      {Software Engineer II}{Sep 2021 \textbf{--} Present}
+
+      \begin{itemize}
+        \resumeItem{Contributed to the development of the recent release of .NET Framework 4.8.1, which also provides native ARM64 support. Ported highly desirable features from .NET Core, and worked with the Windows team to ensure a seamless incorporation of the new version of the framework with the operating system.}
+        \resumeItem{Provided enhancements to the .NET runtime used in Docker Containers. Added the functionality to allow users to define how many processors to allocate for the container, and led the development of ASP.NET Core composite images. Measured multiple scenarios for accurate benchmarks to identify key areas of performance improvement, and contributed to reducing the size of the images while keeping the performance gains.}
+        \resumeItem{Added a new API to the .NET runtime that allows the user to set the application's entry assembly at runtime, instead of relying solely on what is set automatically it is launched. This facilitates the implementation of launcher apps and services like those found in Azure servers.}
+      \end{itemize}\vspace{-5pt}
+
+    % ----------------------------- %
+    % Microsoft Software Engineer I %
+    % ----------------------------- %
+
+    \resumePositionHeading
+      {Software Engineer}{Jul 2019 \textbf{--} Sep 2021}
+
+      \begin{itemize}
+        \resumeItem{Contributed to the development of an infrastructure measuring tool to gather performance benchmarks of the Garbage Collector in .NET Core and .NET Framework.}
+        \resumeItem{Provided various enhancements to the .NET Core build and test infrastructure to improve the developer experience, as well as laid the groundwork for a new unified system for all the runtime tests.}
+        \resumeItem{Provided the initial fixes and improvements to .NET Framework for ARM64, which later on was released for all architectures as version 4.8.1.}
+      \end{itemize}\vspace{-5pt}
+
+  % ------ %
+  % Oracle %
+  % ------ %
+
+  \resumeCompanyHeading
+    {Oracle}{Jan 2017 \textbf{--} Jul 2019}{Zapopan, Jalisco, Mexico}
+
+    % ---------------------------- %
+    % Oracle Software Developer II %
+    % ---------------------------- %
+
+    \resumePositionHeading
+      {Software Developer II}{Jan 2017 \textbf{--} Jul 2019}
+
+      \begin{itemize}
+        \resumeItem{Developed new functionalities and new enhancements for the PL/SQL Language that runs inside the Oracle Database, such as native Large Object management, and specialized numerical operations such as different types of rounding.}
+        \resumeItem{Created and maintained thorough testing mechanisms for Database packages working with PL/SQL and SQL together, as well as ensuring both languages exhibited the same behavior while maintaining similar performance benchmarks.}
+        \resumeItem{Maintained and improved certain Oracle Database packages for better performance and security.}
+      \end{itemize}\vspace{-5pt}
+
+\end{itemize}
 
 % --------- %
 % Education %
 % --------- %
 
 \section{Education}
+\vspace{1pt}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \resumeSchoolHeading
+      {B.S. Computer Science and Technology}{GPA 3.6/4.0}
+      {Instituto Tecnologico y de Estudios Superiores de Monterrey (ITESM)}{State of Mexico, Mexico}
+\end{itemize}
+
+% ----------- %
+% Skills Sets %
+% ----------- %
+
+\section{Skills}
+\vspace{1pt}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \resumeSkillList
+      {Languages}{C, C++, C\#, Ruby, Python, JavaScript, TypeScript, SQL, PL/SQL, Bash, Powershell, Elisp, Julia, Lua}
+    \resumeSkillList
+      {Technologies}{Git, Docker, Linux, Software Design, Software Infrastructure, .NET, Node.js, HTML/CSS, LaTeX, Emacs, Vim, Oracle, Sqlite, Discord API, Visual Studio, VS Code, LLDB, GIMP, Hyper-V}
+    \resumeSkillList
+      {Methodologies and Paradigms}{Scrum, Object Oriented, Functional Programming, DevOps, Continuous Integration (CI/CD), Test Driven}
+  }}
+\end{itemize}
+
+% -------- %
+% Projects %
+% -------- %
+
+\section{Projects}
+\vspace{1pt}
+\begin{itemize}[leftmargin=0.15in, label={}]
+
+  \resumeProjectHeading
+    {Fie Bot}{Python, Discord API}{Nov 2024 \textbf{--} Present}
+
+  \begin{itemize}
+    \resumeItem{Developing a Discord bot using Python to provide utilities and mini-games to a server I have with some friends.}
+    \resumeItem{Using this project for fun to also mentor one of my friends who is currently in the second half of his bachelor's in Computer Science.}
+  \end{itemize}\vspace{-5pt}
+
+  \resumeProjectHeading
+    {Review Japanese App}{Python, Emacs Lisp}{Summer 2024}
+
+    \begin{itemize}
+      \resumeItem{Developed a small app on Python to help me practice Japanese vocabulary.}
+      \resumeItem{Reads the words from custom dictionaries written in Emacs Lisp and Org-Mode, and uses Python to scramble and ask them via a prompt.}
+      \resumeItem{Provides various forms of studying. It can ask for Kana/Kanji of word in English, or the English translation of a Japanese word in Kana/Kanji.}
+    \end{itemize}\vspace{-5pt}
+\end{itemize}
 
 \end{document}
