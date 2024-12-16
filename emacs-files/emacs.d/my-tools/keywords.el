@@ -158,8 +158,11 @@
                           ("\\_<Number\\_>"          . font-lock-type-face)
                           ("\\_<\\([[:alnum:]]+\\)(" 1 font-lock-function-name-face)))
 
+;; FIXME: The second entry only works for matching 1D Arrays. Need to make it work
+;;        for N-dimensional Arrays, as well as N-jagged Arrays.
 (font-lock-add-keywords 'powershell-mode
-                        '(("\\_<::\\(new\\)\\_>" 1 font-lock-keyword-face)))
+                        '(("\\_<::\\(new\\)\\_>"       1 font-lock-keyword-face)
+                          ("\\[[[:alnum:]]+?\\[\\]\\]" . font-lock-type-face)))
 
 (font-lock-add-keywords 'python-mode
                         '(("\\_<namedtuple\\_>" . font-lock-type-face)
