@@ -238,6 +238,7 @@
                ("Ruby"       (or
                               (mode . ruby-mode)
                               (mode . inf-ruby-mode)))
+               ("Rust"       (mode . rust-mode))
                ("Swift"      (mode . swift-mode))
                ("Text"       (mode . text-mode))
                ("XML"        (name . "\\.xml"))
