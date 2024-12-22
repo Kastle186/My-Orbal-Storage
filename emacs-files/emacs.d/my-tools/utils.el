@@ -26,3 +26,24 @@ builtin function, (last), which returns the last element as a list."
   (when (not n)
     (setq n 1))
   (nth (- (length list) n) list))
+
+;; (Get-Random-Best-Themes)
+
+(defun get-random-best-themes (themes-file &optional n)
+  "Reads the themes file and returns n themes names at random to pick for this
+Emacs session."
+  (when (not n)
+    (setq n 1))
+
+  (let* ((themes (with-temp-buffer (insert-file-contents themes-file)
+                                   (split-string (buffer-string))))
+         (result (mapcar (lambda (x) (nth (- x 1) themes))
+                         (mapcar (lambda (_) (random (length themes)))
+                                 (number-sequence 1 n))))
+         (msg ""))
+
+    (while result
+      (setq msg (format "%s\n%s" msg (car result)))
+      (setq result (cdr result)))
+
+    msg))
