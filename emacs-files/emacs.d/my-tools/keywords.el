@@ -50,17 +50,6 @@
                           ("\\_<t\\_>"                    . font-lock-keyword-face)
                           ("\\_<upcase\\_>"               . font-lock-builtin-face)))
 
-(font-lock-add-keywords 'csharp-mode
-                        '(("\\_<and\\_>"      . font-lock-keyword-face)
-                          ("\\_<init\\_>"     . font-lock-keyword-face)
-                          ("\\_<not\\_>"      . font-lock-keyword-face)
-                          ("\\_<notnull\\_>"  . font-lock-keyword-face)
-                          ("\\_<or\\_>"       . font-lock-keyword-face)
-                          ("\\_<record\\_>"   . font-lock-keyword-face)
-                          ("\\_<required\\_>" . font-lock-keyword-face)
-
-                          ("\\[,\\][[:blank:]]*\\([[:alnum:]]+\\)" 1 font-lock-variable-name-face)))
-
 (font-lock-add-keywords 'c-mode
                         '(("\\_<bool\\_>"    . font-lock-type-face)
                           ("\\_<calloc\\_>"  . font-lock-builtin-face)
@@ -68,6 +57,8 @@
                           ("\\_<fprintf\\_>" . font-lock-builtin-face)
                           ("\\_<free\\_>"    . font-lock-builtin-face)
                           ("\\_<malloc\\_>"  . font-lock-builtin-face)
+                          ("\\_<memcpy\\_>"  . font-lock-builtin-face)
+                          ("\\_<memset\\_>"  . font-lock-builtin-face)
                           ("\\_<pid_t\\_>"   . font-lock-type-face)
                           ("\\_<printf\\_>"  . font-lock-builtin-face)
                           ("\\_<putc\\_>"    . font-lock-builtin-face)
@@ -82,13 +73,25 @@
                           ("\\_<strlen\\_>"  . font-lock-builtin-face)
                           ("\\_<strncpy\\_>" . font-lock-builtin-face)
                           ("\\_<strtol\\_>"  . font-lock-builtin-face)
-                          ("\\_<FILE\\_>"    . font-lock-type-face)))
+                          ("\\_<FILE\\_>"    . font-lock-type-face)
+                          ("\\_<NULL\\_>"    . font-lock-keyword-face)))
 
 (font-lock-add-keywords 'c++-mode
                         '(("\\_<cin\\_>"     . font-lock-keyword-face)
                           ("\\_<cout\\_>"    . font-lock-keyword-face)
                           ("\\_<endl\\_>"    . font-lock-keyword-face)
                           ("\\_<getline\\_>" . font-lock-keyword-face)))
+
+(font-lock-add-keywords 'csharp-mode
+                        '(("\\_<and\\_>"      . font-lock-keyword-face)
+                          ("\\_<init\\_>"     . font-lock-keyword-face)
+                          ("\\_<not\\_>"      . font-lock-keyword-face)
+                          ("\\_<notnull\\_>"  . font-lock-keyword-face)
+                          ("\\_<or\\_>"       . font-lock-keyword-face)
+                          ("\\_<record\\_>"   . font-lock-keyword-face)
+                          ("\\_<required\\_>" . font-lock-keyword-face)
+
+                          ("\\[,\\][[:blank:]]*\\([[:alnum:]]+\\)" 1 font-lock-variable-name-face)))
 
 (font-lock-add-keywords 'julia-mode
                         '(("\\_<ARGS\\_>"           . font-lock-variable-name-face)
