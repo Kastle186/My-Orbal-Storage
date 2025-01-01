@@ -188,5 +188,19 @@
                           ("\\_<TypeAlias\\_>"  . font-lock-type-face)
                           ("\\_<Union\\_>"      . font-lock-type-face)))
 
+(font-lock-add-keywords 'ruby-mode
+                        '(("\\_<gets\\_>"            . font-lock-builtin-face)
+                          ("\\_<each\\_>"            . font-lock-builtin-face)
+                          ("\\_<each_with_index\\_>" . font-lock-builtin-face)
+                          ("\\_<map[!]?\\_>"         . font-lock-builtin-face)
+                          ("\\_<reverse[!]?\\_>"     . font-lock-builtin-face)
+                          ("\\_<sort[!]?\\_>"        . font-lock-builtin-face)
+                          ("\\_<split\\_>"           . font-lock-builtin-face)
+                          ("\\_<to_f\\_>"            . font-lock-builtin-face)
+                          ("\\_<to_i\\_>"            . font-lock-builtin-face)
+                          ("\\_<to_s\\_>"            . font-lock-builtin-face)
+                          ("\\_<upto\\_>"            . font-lock-builtin-face)
+                          ("\\_<zip\\_>"             . font-lock-builtin-face)))
+
 (font-lock-add-keywords 'sh-mode
                         '(("\\_<local\\_>"     . font-lock-keyword-face)))
