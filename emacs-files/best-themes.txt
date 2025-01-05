@@ -1,8 +1,6 @@
 afternoon
 arjen
 azure-dark
-badwolf
-blue-sea
 clarity
 clues
 cobalt
@@ -10,11 +8,8 @@ cyberpunk
 dark-blue2
 deep-blue
 deeper-blue
-doom-1337
 doom-Iosvkem
 doom-acario-dark
-doom-ayu-dark
-doom-ayu-mirage
 doom-badger
 doom-challenger-deep
 doom-city-lights
