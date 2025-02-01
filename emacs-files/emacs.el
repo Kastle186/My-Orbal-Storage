@@ -186,25 +186,54 @@
 
 ;; The Emacs' default C-styles don't quite match my tastes, so change them to the
 ;; default linux ones. But only for C/C++ files because for other languages like C#,
-;; the Emacs' default styles fit my tastes best.
+;; the Emacs' default styles fit my tastes best. Also, add the extra keywords I've
+;; defined for each of the languages :)
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (font-lock-add-keywords 'emacs-lisp-mode my-elisp-keywords)))
+
+(add-hook 'lisp-interaction-mode-hook
+          (lambda () (font-lock-add-keywords 'lisp-interaction-mode my-elisp-keywords)))
 
 (add-hook 'c-mode-hook
           (lambda () (progn
                        (c-set-style "linux")
                        (setq c-basic-offset 4)
-                       (setq indent-tabs-mode nil))))
+                       (setq indent-tabs-mode nil)
+                       (font-lock-add-keywords 'c-mode my-c-language-keywords))))
 
 (add-hook 'c++-mode-hook
           (lambda () (progn
                        (c-set-style "linux")
                        (setq c-basic-offset 4)
-                       (setq indent-tabs-mode nil))))
+                       (setq indent-tabs-mode nil)
+                       (font-lock-add-keywords 'c++-mode my-c++-keywords))))
+
+(add-hook 'csharp-mode-hook
+          (lambda () (font-lock-add-keywords 'csharp-mode my-csharp-keywords)))
+
+(add-hook 'js-mode-hook
+          (lambda () (font-lock-add-keywords 'js-mode my-js-keywords)))
+
+(add-hook 'julia-mode-hook
+          (lambda () (font-lock-add-keywords 'julia-mode my-julia-keywords)))
+
+(add-hook 'python-mode-hook
+          (lambda () (font-lock-add-keywords 'python-mode my-python-keywords)))
+
+(add-hook 'ruby-mode-hook
+          (lambda () (font-lock-add-keywords 'ruby-mode my-ruby-keywords)))
+
+(add-hook 'sh-mode-hook
+          (lambda () (font-lock-add-keywords 'sh-mode my-shell-keywords)))
+
+;; Powershell mode for some reason didn't come with hooks included. Will get to
+;; make it myself later, but for now, we just load its keywords since the beginning.
+
+(font-lock-add-keywords 'powershell-mode my-powershell-keywords)
 
 ;; Grouping buffers by category in IBuffer makes my life so much easier
 ;; and productive :)
-
-;; TOTRY: Maybe create lists with the different conditions for each mode instead
-;;        of hard-coding them all here might look better.
 
 (setq ibuffer-saved-filter-groups
       (quote (("default"
