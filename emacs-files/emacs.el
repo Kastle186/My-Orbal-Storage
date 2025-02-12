@@ -300,7 +300,7 @@
  '(frame-background-mode 'dark)
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(rust-mode swift-mode ubuntu-theme treemacs-icons-dired treemacs-all-the-icons grep-a-lot markdown-mode writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
+   '(erlang go-mode rust-mode swift-mode ubuntu-theme treemacs-icons-dired treemacs-all-the-icons grep-a-lot markdown-mode writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode t)
