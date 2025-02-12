@@ -76,25 +76,6 @@
     (setq-default display-line-numbers-type 'absolute))
   (display-line-numbers-mode 1))
 
-;; FIXME: The find-char-* functions should allow going to the nth occurrence of the
-;;        character given. Right now, they always go to the first one only.
-
-(defun find-char-forward ()
-  "Find the next occurrence of the given char and move the cursor to it."
-  (interactive)
-  (let ((c (read-char "Character: ")))
-    (forward-char)
-    (while (not (equal c (char-after)))
-      (forward-char))))
-
-(defun find-char-backward ()
-  "Find the previous occurrence of the given char and move the cursor to it."
-  (interactive)
-  (let ((c (read-char "Character: ")))
-    (while (not (equal c (char-before)))
-      (backward-char))
-    (backward-char)))
-
 (windmove-default-keybindings)
 
 ;; Useful and Productive Keybindings!
@@ -209,8 +190,8 @@
                        (setq indent-tabs-mode nil)
                        (font-lock-add-keywords 'c++-mode my-c++-keywords))))
 
-(add-hook 'csharp-mode-hook
-          (lambda () (font-lock-add-keywords 'csharp-mode my-csharp-keywords)))
+(add-hook 'erlang-mode-hook
+          (lambda () (font-lock-add-keywords 'erlang-mode my-erlang-keywords)))
 
 (add-hook 'js-mode-hook
           (lambda () (font-lock-add-keywords 'js-mode my-js-keywords)))
@@ -227,40 +208,21 @@
 (add-hook 'sh-mode-hook
           (lambda () (font-lock-add-keywords 'sh-mode my-shell-keywords)))
 
-;; Powershell mode for some reason didn't come with hooks included. Will get to
-;; make it myself later, but for now, we just load its keywords since the beginning.
-
-(font-lock-add-keywords 'powershell-mode my-powershell-keywords)
-
 ;; Grouping buffers by category in IBuffer makes my life so much easier
 ;; and productive :)
 
 (setq ibuffer-saved-filter-groups
       (quote (("default"
-               ("Agenda"     (mode . org-mode))
                ("Bash/Shell" (mode . sh-mode))
                ("C"          (mode . c-mode))
-               ("C++"        (or
-                              (mode . c++-mode)
-                              (name . "\\.inl")))
-               ("C#"         (mode . csharp-mode))
-               ("CMake"      (mode . cmake-mode))
+               ("C++"        (mode . c++-mode))
                ("CSV"        (name . "\\.csv"))
-               ("Docker"     (or
-                              (mode . dockerfile-mode)
-                              (name . "^\\*?docker")))
                ("Elisp"      (mode . emacs-lisp-mode))
-               ("JSON"       (or
-                              (mode . json-mode)
-                              (name . "\\.json")))
+               ("JSON"       (mode . json-mode))
                ("Julia"      (mode . julia-mode))
                ("Lua"        (mode . lua-mode))
                ("Markdown"   (mode . markdown-mode))
-               ("MSBuild"    (or
-                              (name . "\\.??proj")
-                              (name . "\\.props")
-                              (name . "\\.targets")))
-               ("PowerShell" (mode . powershell-mode))
+               ("Org"        (mode . org-mode))
                ("Python"     (or
                               (mode . python-mode)
                               (name . "^\\*Python\\*$")))
@@ -270,7 +232,7 @@
                ("Rust"       (mode . rust-mode))
                ("Swift"      (mode . swift-mode))
                ("Text"       (mode . text-mode))
-               ("XML"        (name . "\\.xml"))
+               ("XML"        (mode . xml-mode))
                ("YAML"       (mode . yaml-mode))
                ("Terminals"  (mode . term-mode))
                ("Dired"      (mode . dired-mode))
@@ -338,7 +300,7 @@
  '(frame-background-mode 'dark)
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(rust-mode swift-mode ubuntu-theme treemacs-icons-dired treemacs-all-the-icons grep-a-lot markdown-mode powershell writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors csharp-mode julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme vs-light-theme vs-dark-theme github-dark-vscode-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
+   '(rust-mode swift-mode ubuntu-theme treemacs-icons-dired treemacs-all-the-icons grep-a-lot markdown-mode writeroom-mode json-mode org-bullets evil tool-bar+ dot-mode multiple-cursors julia-mode doom-themes wrap-region vimrc-mode transpose-frame vscode-dark-plus-theme lua-mode magit yaml-mode cmake-mode dockerfile-mode twilight-anti-bright-theme badwolf-theme clues-theme soothe-theme flatui-dark-theme subatomic-theme tangotango-theme afternoon-theme kaolin-themes gruber-darker-theme alect-themes apropospriate-theme ample-theme cyberpunk-theme moe-theme material-theme dracula-theme gruvbox-theme monokai-theme spacemacs-theme color-theme-modern color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized zenburn-theme treemacs))
  '(scroll-bar-mode nil)
  '(size-indication-mode t)
  '(tool-bar-mode t)

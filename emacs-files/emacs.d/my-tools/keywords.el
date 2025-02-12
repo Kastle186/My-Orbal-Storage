@@ -80,6 +80,9 @@
                                  ("\\_<size_t\\_>"  . font-lock-type-face)
                                  ("\\_<sprintf\\_>" . font-lock-builtin-face)
                                  ("\\_<sscanf\\_>"  . font-lock-builtin-face)
+                                 ("\\_<stderr\\_>"  . font-lock-keyword-face)
+                                 ("\\_<stdin\\_>"   . font-lock-keyword-face)
+                                 ("\\_<stdout\\_>"  . font-lock-keyword-face)
                                  ("\\_<strcmp\\_>"  . font-lock-builtin-face)
                                  ("\\_<strcpy\\_>"  . font-lock-builtin-face)
                                  ("\\_<strlen\\_>"  . font-lock-builtin-face)
@@ -87,24 +90,19 @@
                                  ("\\_<strtok\\_>"  . font-lock-builtin-face)
                                  ("\\_<strtol\\_>"  . font-lock-builtin-face)
                                  ("\\_<FILE\\_>"    . font-lock-type-face)
-                                 ("\\_<NULL\\_>"    . font-lock-keyword-face)))
+                                 ("\\_<NULL\\_>"    . font-lock-keyword-face)
+
+                                 ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-c++-keywords '(("\\_<cin\\_>"     . font-lock-keyword-face)
                           ("\\_<cout\\_>"    . font-lock-keyword-face)
                           ("\\_<endl\\_>"    . font-lock-keyword-face)
                           ("\\_<getline\\_>" . font-lock-keyword-face)))
 
-(defvar my-csharp-keywords '(("\\_<and\\_>"      . font-lock-keyword-face)
-                             ("\\_<init\\_>"     . font-lock-keyword-face)
-                             ("\\_<not\\_>"      . font-lock-keyword-face)
-                             ("\\_<notnull\\_>"  . font-lock-keyword-face)
-                             ("\\_<or\\_>"       . font-lock-keyword-face)
-                             ("\\_<record\\_>"   . font-lock-keyword-face)
-                             ("\\_<required\\_>" . font-lock-keyword-face)
-
-                             ("\\[,\\][[:blank:]]*\\([[:alnum:]]+\\)"
-                              1
-                              font-lock-variable-name-face)))
+(defvar my-erlang-keywords '(("\\_<error\\_>" . font-lock-keyword-face)
+                             ("\\_<false\\_>" . font-lock-keyword-face)
+                             ("\\_<ok\\_>"    . font-lock-keyword-face)
+                             ("\\_<true\\_>"  . font-lock-keyword-face)))
 
 (defvar my-js-keywords '(("\\_<filter\\_>"          . font-lock-builtin-face)
                          ("\\_<from\\_>"            . font-lock-keyword-face)
@@ -121,7 +119,7 @@
                          ("\\_<Number\\_>"          . font-lock-type-face)
 
                          ("\\_<\\(console\\).\\(log\\)(" 2 font-lock-builtin-face)
-                         ("\\_<\\([[:alnum:]]+\\)("      1 font-lock-function-name-face)))
+                         ("\\_<\\([A-Za-z0-9_]+\\)("     1 font-lock-function-name-face)))
 
 (defvar my-julia-keywords '(("\\_<ARGS\\_>"           . font-lock-variable-name-face)
 
@@ -187,11 +185,6 @@
                             ("\\_<Symbol\\_>"         . font-lock-type-face)
                             ("\\_<Tuple\\_>"          . font-lock-type-face)
                             ("\\_<Vector\\_>"         . font-lock-type-face)))
-
-;; FIXME: The second entry only works for matching 1D Arrays. Need to make it work
-;;        for N-dimensional Arrays, as well as N-jagged Arrays.
-(defvar my-powershell-keywords '(("\\_<::\\(new\\)\\_>"       1 font-lock-keyword-face)
-                                 ("\\[[[:alnum:]]+?\\[\\]\\]" . font-lock-type-face)))
 
 (defvar my-python-keywords '(("\\_<append\\_>"      . font-lock-builtin-face)
                              ("\\_<namedtuple\\_>"  . font-lock-type-face)
