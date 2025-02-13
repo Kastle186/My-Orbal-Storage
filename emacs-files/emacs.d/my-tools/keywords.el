@@ -97,12 +97,18 @@
 (defvar my-c++-keywords '(("\\_<cin\\_>"     . font-lock-keyword-face)
                           ("\\_<cout\\_>"    . font-lock-keyword-face)
                           ("\\_<endl\\_>"    . font-lock-keyword-face)
-                          ("\\_<getline\\_>" . font-lock-keyword-face)))
+                          ("\\_<getline\\_>" . font-lock-keyword-face)
+
+                          ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-erlang-keywords '(("\\_<error\\_>" . font-lock-keyword-face)
                              ("\\_<false\\_>" . font-lock-keyword-face)
                              ("\\_<ok\\_>"    . font-lock-keyword-face)
                              ("\\_<true\\_>"  . font-lock-keyword-face)))
+
+(defvar my-java-keywords '(("\\_<println\\_>" . font-lock-builtin-face)
+
+                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-js-keywords '(("\\_<filter\\_>"          . font-lock-builtin-face)
                          ("\\_<from\\_>"            . font-lock-keyword-face)
@@ -187,14 +193,29 @@
                             ("\\_<Vector\\_>"         . font-lock-type-face)))
 
 (defvar my-python-keywords '(("\\_<append\\_>"      . font-lock-builtin-face)
+                             ("\\_<float\\_>"       . font-lock-builtin-face)
+                             ("\\_<input\\_>"       . font-lock-builtin-face)
+                             ("\\_<int\\_>"         . font-lock-builtin-face)
+                             ("\\_<join\\_>"        . font-lock-builtin-face)
+                             ("\\_<len\\_>"         . font-lock-builtin-face)
+                             ("\\_<list\\_>"        . font-lock-builtin-face)
+                             ("\\_<map\\_>"         . font-lock-builtin-face)
                              ("\\_<namedtuple\\_>"  . font-lock-type-face)
+                             ("\\_<print\\_>"       . font-lock-builtin-face)
+                             ("\\_<range\\_>"       . font-lock-builtin-face)
+                             ("\\_<set\\_>"         . font-lock-builtin-face)
+                             ("\\_<sort\\_>"        . font-lock-builtin-face)
+                             ("\\_<sorted\\_>"      . font-lock-builtin-face)
                              ("\\_<split\\_>"       . font-lock-builtin-face)
+                             ("\\_<str\\_>"         . font-lock-builtin-face)
                              ("\\_<[l|r]?strip\\_>" . font-lock-builtin-face)
 
                              ("\\_<Final\\_>"       . font-lock-type-face)
                              ("\\_<TypeAlias\\_>"   . font-lock-type-face)
                              ("\\_<Self\\_>"        . font-lock-type-face)
-                             ("\\_<Union\\_>"       . font-lock-type-face)))
+                             ("\\_<Union\\_>"       . font-lock-type-face)
+
+                             ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-ruby-keywords '(("\\_<capitalize[!]?\\_>"  . font-lock-builtin-face)
                            ("\\_<chars\\_>"           . font-lock-builtin-face)

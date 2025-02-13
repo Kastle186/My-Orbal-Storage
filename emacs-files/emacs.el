@@ -26,19 +26,6 @@
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
 (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
 
-;; Some file extensions use the same syntax as XML. Let Emacs to enable xml-mode
-;; by default when editing these types of files.
-
-(add-to-list 'auto-mode-alist '("\\.inl\\'"        . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.csproj\\'"     . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.ilproj\\'"     . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.proj\\'"       . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.depproj\\'"    . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.sfxproj\\'"    . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.bundleproj\\'" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.props\\'"      . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.targets\\'"    . xml-mode))
-
 ;; Some nice general configuration :)
 
 (setq-default line-number-mode t)
@@ -165,10 +152,8 @@
           (lambda () (define-key dired-mode-map (kbd "^")
                        (lambda () (interactive) (find-alternate-file "..")))))
 
-;; The Emacs' default C-styles don't quite match my tastes, so change them to the
-;; default linux ones. But only for C/C++ files because for other languages like C#,
-;; the Emacs' default styles fit my tastes best. Also, add the extra keywords I've
-;; defined for each of the languages :)
+;; Add all the keywords and highlighting patterns for the different languages
+;; I regularly use :)
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (font-lock-add-keywords 'emacs-lisp-mode my-elisp-keywords)))
@@ -192,6 +177,9 @@
 
 (add-hook 'erlang-mode-hook
           (lambda () (font-lock-add-keywords 'erlang-mode my-erlang-keywords)))
+
+(add-hook 'java-mode-hook
+          (lambda () (font-lock-add-keywords 'java-mode my-java-keywords)))
 
 (add-hook 'js-mode-hook
           (lambda () (font-lock-add-keywords 'js-mode my-js-keywords)))
@@ -218,6 +206,8 @@
                ("C++"        (mode . c++-mode))
                ("CSV"        (name . "\\.csv"))
                ("Elisp"      (mode . emacs-lisp-mode))
+               ("Java"       (mode . java-mode))
+               ("JavaScript" (mode . js-mode))
                ("JSON"       (mode . json-mode))
                ("Julia"      (mode . julia-mode))
                ("Lua"        (mode . lua-mode))
