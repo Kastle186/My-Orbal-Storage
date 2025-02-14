@@ -106,9 +106,11 @@
                              ("\\_<ok\\_>"    . font-lock-keyword-face)
                              ("\\_<true\\_>"  . font-lock-keyword-face)))
 
-(defvar my-java-keywords '(("\\_<println\\_>" . font-lock-builtin-face)
+(defvar my-java-keywords '(("\\_<print\\_>"   . font-lock-builtin-face)
+                           ("\\_<println\\_>" . font-lock-builtin-face)
 
-                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
+                           ("\\_<\\(System\\).\\(out\\)" 2 font-lock-keyword-face)
+                           ("\\_<\\([A-Za-z0-9_]+\\)("   1 font-lock-function-name-face)))
 
 (defvar my-js-keywords '(("\\_<filter\\_>"          . font-lock-builtin-face)
                          ("\\_<from\\_>"            . font-lock-keyword-face)
@@ -124,8 +126,14 @@
                          ("\\_<BigInt\\_>"          . font-lock-type-face)
                          ("\\_<Number\\_>"          . font-lock-type-face)
 
-                         ("\\_<\\(console\\).\\(log\\)(" 2 font-lock-builtin-face)
-                         ("\\_<\\([A-Za-z0-9_]+\\)("     1 font-lock-function-name-face)))
+                         ("\\_<\\(console\\).\\(log\\)("
+                          2 font-lock-builtin-face)
+
+                         ("\\_<\\(new\\)[[:space:]]+\\([A-Za-z0-9_]+\\)"
+                          2 font-lock-type-face)
+
+                         ("\\_<\\([A-Za-z0-9_]+\\)("
+                          1 font-lock-function-name-face)))
 
 (defvar my-julia-keywords '(("\\_<ARGS\\_>"           . font-lock-variable-name-face)
 
