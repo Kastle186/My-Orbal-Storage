@@ -206,6 +206,7 @@
                ("C++"        (mode . c++-mode))
                ("CSV"        (name . "\\.csv"))
                ("Elisp"      (mode . emacs-lisp-mode))
+               ("Go"         (mode . go-mode))
                ("Java"       (mode . java-mode))
                ("JavaScript" (mode . js-mode))
                ("JSON"       (mode . json-mode))

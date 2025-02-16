@@ -247,6 +247,8 @@
                            ("\\_<to_s\\_>"            . font-lock-builtin-face)
                            ("\\_<uniq[!]?\\_>"        . font-lock-builtin-face)
                            ("\\_<upto\\_>"            . font-lock-builtin-face)
-                           ("\\_<zip\\_>"             . font-lock-builtin-face)))
+                           ("\\_<zip\\_>"             . font-lock-builtin-face)
+
+                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-shell-keywords '(("\\_<local\\_>" . font-lock-keyword-face)))
