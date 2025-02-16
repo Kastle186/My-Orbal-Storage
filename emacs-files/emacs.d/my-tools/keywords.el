@@ -251,4 +251,6 @@
 
                            ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
+(defvar my-rust-keywords '(("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
+
 (defvar my-shell-keywords '(("\\_<local\\_>" . font-lock-keyword-face)))

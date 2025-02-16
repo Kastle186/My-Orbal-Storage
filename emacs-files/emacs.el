@@ -193,6 +193,9 @@
 (add-hook 'ruby-mode-hook
           (lambda () (font-lock-add-keywords 'ruby-mode my-ruby-keywords)))
 
+(add-hook 'rust-mode-hook
+          (lambda () (font-lock-add-keywords 'rust-mode my-rust-keywords)))
+
 (add-hook 'sh-mode-hook
           (lambda () (font-lock-add-keywords 'sh-mode my-shell-keywords)))
 
