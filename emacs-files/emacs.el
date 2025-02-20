@@ -26,6 +26,10 @@
 (load-file "~/.emacs.d/my-tools/renpy-config.el")
 (load-file "~/.emacs.d/my-tools/dotnet-dev-environment.el")
 
+;; Associate modern JavaScript extension with js-mode.
+
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-mode))
+
 ;; Some nice general configuration :)
 
 (setq-default line-number-mode t)
