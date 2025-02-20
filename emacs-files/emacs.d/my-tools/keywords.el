@@ -6,6 +6,7 @@
 
 (defvar my-elisp-keywords '(("\\_<add-hook\\_>"             . font-lock-builtin-face)
                             ("\\_<add-to-list\\_>"          . font-lock-builtin-face)
+                            ("\\_<ash\\_>"                  . font-lock-builtin-face)
                             ("\\_<assq\\_>"                 . font-lock-builtin-face)
                             ("\\_<capitalize\\_>"           . font-lock-builtin-face)
                             ("\\_<car\\_>"                  . font-lock-builtin-face)
@@ -32,6 +33,12 @@
                             ("\\_<last\\_>"                 . font-lock-builtin-face)
                             ("\\_<list\\_>"                 . font-lock-builtin-face)
                             ("\\_<load-file\\_>"            . font-lock-builtin-face)
+                            ("\\_<logand\\_>"               . font-lock-builtin-face)
+                            ("\\_<logcount\\_>"             . font-lock-builtin-face)
+                            ("\\_<logior\\_>"               . font-lock-builtin-face)
+                            ("\\_<lognot\\_>"               . font-lock-builtin-face)
+                            ("\\_<logxor\\_>"               . font-lock-builtin-face)
+                            ("\\_<lsh\\_>"                  . font-lock-builtin-face)
                             ("\\_<mapc\\_>"                 . font-lock-builtin-face)
                             ("\\_<mapcan\\_>"               . font-lock-builtin-face)
                             ("\\_<mapcar\\_>"               . font-lock-builtin-face)
@@ -106,7 +113,8 @@
                              ("\\_<ok\\_>"    . font-lock-keyword-face)
                              ("\\_<true\\_>"  . font-lock-keyword-face)))
 
-(defvar my-java-keywords '(("\\_<print\\_>"   . font-lock-builtin-face)
+(defvar my-java-keywords '(("\\_<length\\_>"  . font-lock-builtin-face)
+                           ("\\_<print\\_>"   . font-lock-builtin-face)
                            ("\\_<println\\_>" . font-lock-builtin-face)
 
                            ("\\_<\\(System\\).\\(out\\)" 2 font-lock-keyword-face)
@@ -201,6 +209,7 @@
                             ("\\_<Vector\\_>"         . font-lock-type-face)))
 
 (defvar my-python-keywords '(("\\_<append\\_>"      . font-lock-builtin-face)
+                             ("\\_<chr\\_>"         . font-lock-builtin-face)
                              ("\\_<float\\_>"       . font-lock-builtin-face)
                              ("\\_<input\\_>"       . font-lock-builtin-face)
                              ("\\_<int\\_>"         . font-lock-builtin-face)
@@ -225,18 +234,22 @@
 
                              ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
-(defvar my-ruby-keywords '(("\\_<capitalize[!]?\\_>"  . font-lock-builtin-face)
+(defvar my-ruby-keywords '(("\\_<abs\\_>"             . font-lock-builtin-face)
+                           ("\\_<capitalize[!]?\\_>"  . font-lock-builtin-face)
                            ("\\_<chars\\_>"           . font-lock-builtin-face)
                            ("\\_<chomp[!]?\\_>"       . font-lock-builtin-face)
                            ("\\_<count\\_>"           . font-lock-builtin-face)
                            ("\\_<delete[!]?\\_>"      . font-lock-builtin-face)
+                           ("\\_<empty\\?\\_>"        . font-lock-builtin-face)
                            ("\\_<filter[!]?\\_>"      . font-lock-builtin-face)
                            ("\\_<gets\\_>"            . font-lock-builtin-face)
                            ("\\_<each\\_>"            . font-lock-builtin-face)
                            ("\\_<each_pair\\_>"       . font-lock-builtin-face)
                            ("\\_<each_with_index\\_>" . font-lock-builtin-face)
                            ("\\_<map[!]?\\_>"         . font-lock-builtin-face)
-                           ("\\_<uniq[!]?\\_>"        . font-lock-builtin-face)
+                           ("\\_<pop\\_>"             . font-lock-builtin-face)
+                           ("\\_<push\\_>"            . font-lock-builtin-face)
+                           ("\\_<reverse[!]?\\_>"     . font-lock-builtin-face)
                            ("\\_<reverse[!]?\\_>"     . font-lock-builtin-face)
                            ("\\_<select[!]?\\_>"      . font-lock-builtin-face)
                            ("\\_<sort[!]?\\_>"        . font-lock-builtin-face)
@@ -251,6 +264,7 @@
 
                            ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
-(defvar my-rust-keywords '(("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
+(defvar my-rust-keywords '(("\\_<new\\_>" . font-lock-keyword-face)
+                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
 (defvar my-shell-keywords '(("\\_<local\\_>" . font-lock-keyword-face)))
