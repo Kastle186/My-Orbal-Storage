@@ -1,5 +1,10 @@
 # My Portable Bash Profile!
 
+# My goodness the Ctrl-S freeze shortcut is so annoying. So, disabling it with
+# this, as I have no use for it.
+
+stty -ixon
+
 # While I'm fairly comfortable with the defaults of Bash, I have my tastes regarding
 # certain commands, aliases, and most importantly: Visual Looks! So, I keep here the
 # small pieces of customization to have Bash just like I like it :)
@@ -17,3 +22,13 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+function ncd()
+{
+    local path=""
+
+    for (( i=1; i<=$1; i++ )); do
+        path="../$path"
+    done
+
+    cd "$path"
+}

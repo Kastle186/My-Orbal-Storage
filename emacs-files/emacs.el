@@ -182,6 +182,9 @@
 (add-hook 'erlang-mode-hook
           (lambda () (font-lock-add-keywords 'erlang-mode my-erlang-keywords)))
 
+(add-hook 'go-mode-hook
+          (lambda () (font-lock-add-keywords 'go-mode my-go-keywords)))
+
 (add-hook 'java-mode-hook
           (lambda () (font-lock-add-keywords 'java-mode my-java-keywords)))
 

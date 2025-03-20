@@ -113,6 +113,8 @@
                              ("\\_<ok\\_>"    . font-lock-keyword-face)
                              ("\\_<true\\_>"  . font-lock-keyword-face)))
 
+(defvar my-go-keywords '(("\\_<\\(fmt\\).\\(Println\\)\\_>" 2 font-lock-builtin-face)))
+
 (defvar my-java-keywords '(("\\_<length\\_>"  . font-lock-builtin-face)
                            ("\\_<print\\_>"   . font-lock-builtin-face)
                            ("\\_<println\\_>" . font-lock-builtin-face)
