@@ -224,6 +224,8 @@
                              ("\\_<len\\_>"         . font-lock-builtin-face)
                              ("\\_<list\\_>"        . font-lock-builtin-face)
                              ("\\_<map\\_>"         . font-lock-builtin-face)
+                             ("\\_<max\\_>"         . font-lock-builtin-face)
+                             ("\\_<min\\_>"         . font-lock-builtin-face)
                              ("\\_<namedtuple\\_>"  . font-lock-type-face)
                              ("\\_<print\\_>"       . font-lock-builtin-face)
                              ("\\_<range\\_>"       . font-lock-builtin-face)
