@@ -119,6 +119,8 @@
                            ("\\_<print\\_>"   . font-lock-builtin-face)
                            ("\\_<println\\_>" . font-lock-builtin-face)
 
+                           ("\\_<\\(Math\\).\\(max\\)"   2 font-lock-builtin-face)
+                           ("\\_<\\(Math\\).\\(min\\)"   2 font-lock-builtin-face)
                            ("\\_<\\(System\\).\\(out\\)" 2 font-lock-keyword-face)
                            ("\\_<\\([A-Za-z0-9_]+\\)("   1 font-lock-function-name-face)))
 
