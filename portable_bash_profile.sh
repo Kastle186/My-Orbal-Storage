@@ -32,3 +32,6 @@ function ncd()
 
     cd "$path"
 }
+
+cd $KASTLE_DEV
+clear

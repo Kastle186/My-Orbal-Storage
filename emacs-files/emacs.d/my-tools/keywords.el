@@ -84,6 +84,7 @@
                                  ("\\_<puts\\_>"    . font-lock-builtin-face)
                                  ("\\_<realloc\\_>" . font-lock-builtin-face)
                                  ("\\_<scanf\\_>"   . font-lock-builtin-face)
+                                 ("\\_<sizeof\\_>"  . font-lock-keyword-face)
                                  ("\\_<size_t\\_>"  . font-lock-type-face)
                                  ("\\_<sprintf\\_>" . font-lock-builtin-face)
                                  ("\\_<sscanf\\_>"  . font-lock-builtin-face)
