@@ -102,10 +102,15 @@
 
                                  ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
-(defvar my-c++-keywords '(("\\_<cin\\_>"     . font-lock-keyword-face)
-                          ("\\_<cout\\_>"    . font-lock-keyword-face)
-                          ("\\_<endl\\_>"    . font-lock-keyword-face)
-                          ("\\_<getline\\_>" . font-lock-keyword-face)
+(defvar my-c++-keywords '(("\\_<\\(back\\)("      1 font-lock-builtin-face)
+                          ("\\_<cin\\_>"          . font-lock-keyword-face)
+                          ("\\_<cout\\_>"         . font-lock-keyword-face)
+                          ("\\_<\\(empty\\)("     1 font-lock-builtin-face)
+                          ("\\_<endl\\_>"         . font-lock-keyword-face)
+                          ("\\_<\\(front\\)("     1 font-lock-builtin-face)
+                          ("\\_<getline\\_>"      . font-lock-keyword-face)
+                          ("\\_<\\(pop_back\\)("  1 font-lock-builtin-face)
+                          ("\\_<\\(push_back\\)(" 1 font-lock-builtin-face)
 
                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
@@ -116,9 +121,11 @@
 
 (defvar my-go-keywords '(("\\_<\\(fmt\\).\\(Println\\)\\_>" 2 font-lock-builtin-face)))
 
-(defvar my-java-keywords '(("\\_<length\\_>"  . font-lock-builtin-face)
-                           ("\\_<print\\_>"   . font-lock-builtin-face)
-                           ("\\_<println\\_>" . font-lock-builtin-face)
+(defvar my-java-keywords '(("\\_<charAt\\_>"    . font-lock-builtin-face)
+                           ("\\_<length\\_>"    . font-lock-builtin-face)
+                           ("\\_<print\\_>"     . font-lock-builtin-face)
+                           ("\\_<println\\_>"   . font-lock-builtin-face)
+                           ("\\_<substring\\_>" . font-lock-builtin-face)
 
                            ("\\_<\\(Math\\).\\(max\\)"   2 font-lock-builtin-face)
                            ("\\_<\\(Math\\).\\(min\\)"   2 font-lock-builtin-face)
