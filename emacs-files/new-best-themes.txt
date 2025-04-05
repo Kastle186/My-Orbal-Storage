@@ -1,0 +1,6 @@
+cyberpunk
+deeper-blue
+doom-acario-dark
+doom-xcode
+kaolin-bubblegum
+spacemacs-dark
