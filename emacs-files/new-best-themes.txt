@@ -1,6 +1,16 @@
+alect-black
+alect-black-alt
 cyberpunk
 deeper-blue
 doom-acario-dark
+doom-molokai
+doom-monokai-pro
+doom-solarized-dark
+doom-tomorrow-night
 doom-xcode
+kaolin-aurora
 kaolin-bubblegum
+kaolin-galaxy
+leuven-dark
+sanityinc-solarized-dark
 spacemacs-dark
