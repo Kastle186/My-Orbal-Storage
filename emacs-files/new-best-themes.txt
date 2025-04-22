@@ -5,6 +5,8 @@ deeper-blue
 doom-acario-dark
 doom-molokai
 doom-monokai-pro
+doom-monokai-ristretto
+doom-one
 doom-solarized-dark
 doom-tomorrow-night
 doom-xcode
@@ -13,4 +15,6 @@ kaolin-bubblegum
 kaolin-galaxy
 leuven-dark
 sanityinc-solarized-dark
+seti
 spacemacs-dark
+ubuntu
