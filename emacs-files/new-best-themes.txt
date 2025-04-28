@@ -9,12 +9,15 @@ doom-monokai-ristretto
 doom-one
 doom-solarized-dark
 doom-tomorrow-night
+doom-wilmersdorf
 doom-xcode
 kaolin-aurora
 kaolin-bubblegum
+kaolin-dark
 kaolin-galaxy
 leuven-dark
 sanityinc-solarized-dark
 seti
+simple-1
 spacemacs-dark
 ubuntu
