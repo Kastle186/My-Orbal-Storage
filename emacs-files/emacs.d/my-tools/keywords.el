@@ -112,8 +112,11 @@
                           ("\\_<endl\\_>"         . font-lock-keyword-face)
                           ("\\_<\\(front\\)("     1 font-lock-builtin-face)
                           ("\\_<getline\\_>"      . font-lock-keyword-face)
+                          ("\\_<\\(pop\\)("       1 font-lock-builtin-face)
                           ("\\_<\\(pop_back\\)("  1 font-lock-builtin-face)
+                          ("\\_<\\(push\\)("      1 font-lock-builtin-face)
                           ("\\_<\\(push_back\\)(" 1 font-lock-builtin-face)
+                          ("\\_<\\(top\\)("       1 font-lock-builtin-face)
 
                           ("\\_<\\([A-Za-z0-9_]+\\)(" 1 font-lock-function-name-face)))
 
