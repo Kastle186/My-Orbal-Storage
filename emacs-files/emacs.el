@@ -182,6 +182,9 @@
 (add-hook 'erlang-mode-hook
           (lambda () (font-lock-add-keywords 'erlang-mode my-erlang-keywords)))
 
+(add-hook 'go-mode-hook
+          (lambda () (font-lock-add-keywords 'erlang-mode my-golang-keywords)))
+
 (add-hook 'java-mode-hook
           (lambda () (font-lock-add-keywords 'java-mode my-java-keywords)))
 
@@ -214,6 +217,9 @@
                ("CSV"        (name . "\\.csv"))
                ("Elisp"      (mode . emacs-lisp-mode))
                ("Go"         (mode . go-mode))
+               ("HTML"       (or
+                              (mode . html-mode)
+                              (mode . mhtml-mode)))
                ("Java"       (mode . java-mode))
                ("JavaScript" (mode . js-mode))
                ("JSON"       (mode . json-mode))
