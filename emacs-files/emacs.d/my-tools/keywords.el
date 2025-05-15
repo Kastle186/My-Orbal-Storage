@@ -125,6 +125,8 @@
                              ("\\_<ok\\_>"    . font-lock-keyword-face)
                              ("\\_<true\\_>"  . font-lock-keyword-face)))
 
+(defvar my-golang-keywords '(("\\_<make\\_>" . font-lock-keyword-face)))
+
 (defvar my-java-keywords '(("\\_<charAt\\_>"    . font-lock-builtin-face)
                            ("\\_<length\\_>"    . font-lock-builtin-face)
                            ("\\_<print\\_>"     . font-lock-builtin-face)
@@ -141,6 +143,7 @@
                            ("\\_<\\([A-Za-z0-9_]+\\)("          1 font-lock-function-name-face)))
 
 (defvar my-js-keywords '(("\\_<abs\\_>"      . font-lock-builtin-face)
+                         ("\\_<entries\\_>"  . font-lock-builtin-face)
                          ("\\_<filter\\_>"   . font-lock-builtin-face)
                          ("\\_<from\\_>"     . font-lock-keyword-face)
                          ("\\_<function\\_>" . font-lock-keyword-face)
@@ -154,8 +157,12 @@
                          ("\\_<splice\\_>"   . font-lock-builtin-face)
                          ("\\_<split\\_>"    . font-lock-builtin-face)
                          ("\\_<trim\\_>"     . font-lock-builtin-face)
+
+                         ("\\_<Array\\_>"    . font-lock-type-face)
                          ("\\_<BigInt\\_>"   . font-lock-type-face)
+                         ("\\_<Map\\_>"      . font-lock-type-face)
                          ("\\_<Number\\_>"   . font-lock-type-face)
+                         ("\\_<Set\\_>"      . font-lock-type-face)
 
                          ("\\_<\\(console\\).\\(log\\)("
                           2 font-lock-builtin-face)
@@ -235,6 +242,8 @@
                              ("\\_<any\\_>"         . font-lock-builtin-face)
                              ("\\_<append\\_>"      . font-lock-builtin-face)
                              ("\\_<chr\\_>"         . font-lock-builtin-face)
+                             ("\\_<defaultdict\\_>" . font-lock-type-face)
+                             ("\\_<deque\\_>"       . font-lock-type-face)
                              ("\\_<float\\_>"       . font-lock-builtin-face)
                              ("\\_<input\\_>"       . font-lock-builtin-face)
                              ("\\_<int\\_>"         . font-lock-builtin-face)
