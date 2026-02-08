@@ -1,0 +1,111 @@
+% ---------------- %
+% My Cover Letter! %
+% ---------------- %
+
+% ---------- PAGE SETUP ---------- %
+
+\documentclass[12pt]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{eso-pic}
+\usepackage{charter}
+
+% Adjust margins and other configuration
+
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+\definecolor{gr}{RGB}{225,225,225}
+
+% ---------- CUSTOM COMMANDS ---------- %
+
+\newcommand{\company}{Snowflake}
+
+\newcommand{\myContacts}[1]{
+    \begin{flushleft}
+        \faEnvelope\space diaz.ivan605@gmail.com \\ \vspace{#1}
+
+        \faLinkedin\space linkedin.com/in/ivandaviddiazsanchez \\ \vspace{#1}
+
+        \faPhone\space (425) 326-2657 \\ \vspace{#1}
+
+        \faMapMarker\space Bellevue, WA, United States of America
+    \end{flushleft}
+}
+
+\newcommand{\expressRoleInterest}[2]{
+    I am excited to express my interest in the #1 role at #2.
+}
+\newcommand{\cultureResonance}[3]{
+    #1's mission to #2. I am eager to #3.
+}
+\newcommand{\skillsBenefits}[3]{
+    My skills in #1 will be valuable assets in #2 at #3.
+}
+
+% ---------- COVER LETTER! ---------- %
+
+\begin{document}
+
+% Shaded header banner
+\AddToShipoutPictureBG{
+    \color{gr}
+    \AtPageUpperLeft{\rule[-1.95in]{\paperwidth}{1.95in}}
+}
+
+% Header contents
+\begin{center}
+    {\fontsize{28}{0}\selectfont\scshape Ivan David Diaz Sanchez}
+
+    \myContacts{1pt}
+\end{center}
+
+% Cover letter contents
+\vspace{0.35in}Dear Hiring Manager,
+
+\expressRoleInterest{Software Engineer - Developer Experience}{\company}With
+over 8 years of experience in software development, I am passionate about
+enhancing developer productivity and delivering robust solutions to enterprise
+systems.
+I am confident in my ability and skills to contribute effectively to your team.
+
+At Amazon, I implemented systems to ensure seamless software updates and monitor
+internal state and consistency, which are crucial for maintaining secure and
+efficient environments.
+I actively participated in implementing the designs from concept to deployment,
+where I demonstrated my commitment and capabilities to create reliable code,
+and impactful solutions to enterprise systems.
+
+At Microsoft, I was a key contributor to the development of .NET Framework 4.8.1,
+and engineered performance and feature enhancements to .NET Core, as well as to its
+development tools and pipelines, showcasing my ability to significantly support and
+improve developer and end-user experience.
+
+\cultureResonance{\company}
+{empower enterprises and individuals with leading-edge tools with minimal friction
+resonates with my passion for understanding business needs, and crafting efficient
+and reliable software to fulfill them}
+{contribute to the Developer Experience team with my expertise to help improve your
+infrastructure and tooling's elasticity, large-scale impact, and high performance}
+
+\skillsBenefits{Python, C\#, system performance, system design, and cross-team collaboration}
+{driving innovation and achieving excellence}
+{\company}
+
+Thank you very much for considering my application.
+I look forward to the opportunity to discuss how my skills and experiences can
+contribute to the success of your team.
+
+% Signature and closing
+\vspace{0.1in}
+\begin{flushleft}
+    Sincerely, \\ \vspace{0.2in}
+
+    Ivan Diaz \\ \vspace{1.5pt}
+
+    Software Development Engineer
+\end{flushleft}
+
+\end{document}
