@@ -1,0 +1,15 @@
+Dear Hiring Manager,
+
+I am excited to apply for the AI Platform Engineering role at The Walt Disney Company. Throughout my career, I have focused on building reliable, scalable, and performance-critical platforms that enable other teams to move faster and deliver impactful products—work that closely aligns with Disney’s mission to create innovative and unforgettable experiences through technology.
+
+I bring several years of hands-on experience designing and implementing large-scale systems across cloud-native and containerized environments. At Amazon, I architected and built distributed services responsible for orchestrating software updates and monitoring configuration drift across enterprise environments, with a strong emphasis on security, reliability, and operational correctness. Previously at Microsoft, I worked on core .NET runtime and framework components, contributing to ARM64 support, containerized runtime performance, and cloud-oriented APIs used in production Azure environments. These roles required deep systems thinking, careful architectural trade-offs, and extensive collaboration across engineering teams.
+
+I am particularly drawn to this role’s focus on AI platforms as foundational infrastructure. While my background is rooted in platform and runtime engineering, I have actively expanded my exposure to AI-driven systems through hands-on coursework using the OpenAI API and Node.js, building LLM-powered application workflows and backend services. Combined with my experience operating distributed systems at scale, this has strengthened my interest in enabling AI capabilities through robust, well-designed platforms rather than isolated features.
+
+I thrive in environments that value technical excellence, pragmatic decision-making, and collaboration across disciplines. Disney’s emphasis on innovation, creativity, and impact strongly resonates with me, and I would be excited to contribute my experience to a team shaping the next generation of AI-powered platforms across the company.
+
+Thank you for your time and consideration. I would welcome the opportunity to further discuss how my background and interests align with the AI Platform Engineering team at Disney.
+
+Sincerely,
+
+Ivan Diaz
