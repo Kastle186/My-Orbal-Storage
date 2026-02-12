@@ -139,9 +139,9 @@
       {Software Development Engineer III (Contractor)}{Jun 2025 \textbf{--} Jan 2026}
 
       \begin{itemize}
-        \resumeItem{Developed a seamless transition system for Microsoft Office updates and upgrades, efficiently ensuring compliance and keeping Amazon environments secure.}
-        \resumeItem{Built a new job to monitor internal system drift in Amazon environments, and adjust accordingly, ensuring consistency and accuracy at all times.}
-        \resumeItem{Designed and implemented a configurable system for finding the official releases of specific software, streamlining processes in the environments. Additionally, engineered an interface system to facilitate testing the system efficiently.}
+        \resumeItem{Designed and implemented a seamless Microsoft Office update and upgrade transition system, ensuring efficient enterprise-wide compliance and maintaining security standards across Amazon environments.}
+        \resumeItem{Built an automated system drift detection and remediation job to monitor configuration inconsistencies across internal infrastructure, improving environment reliability and operational accuracy.}
+        \resumeItem{Architected a configurable release-discovery system to identify official distributions of different software used by Amazon, reducing manual lookup efforts and accelerating deployment workflows; developed an accompanying test interface to streamline validation processes.}
       \end{itemize}\vspace{-5pt}
 
 
@@ -160,9 +160,11 @@
       {Software Engineer II}{Sep 2021 \textbf{--} Jan 2025}
 
       \begin{itemize}
-        \resumeItem{Contributed to the development of the recent release of .NET Framework 4.8.1, which also provides native ARM64 support. Ported highly desirable features from .NET Core, and worked with the Windows team to ensure a seamless incorporation of the new version of the framework with the operating system.}
-        \resumeItem{Provided enhancements to the .NET runtime used in Docker Containers. Added the functionality to allow users to define how many processors to allocate for the container, and led the development of ASP.NET Core composite images. Measured multiple scenarios for accurate benchmarks to identify key areas of performance improvement, and contributed to reducing the size of the images while keeping the performance gains.}
-        \resumeItem{Added a new API to the .NET runtime that allows the user to set the application's entry assembly at runtime, instead of relying solely on what is set automatically it is launched. This facilitates the implementation of launcher apps and services like those found in Azure servers.}
+        \resumeItem{Shipped key components of .NET Framework 4.8.1, enabling native ARM64 support and porting high-impact features from .NET Core to modernize the runtime.}
+        \resumeItem{Partnered with the Windows team to integrate the framework release seamlessly into the operating system, ensuring stability and compatibility at the OS level.}
+        \resumeItem{Enhanced the .NET runtime for Docker containers by implementing configurable processor allocation, improving resource efficiency in containerized workloads.}
+        \resumeItem{Led development of ASP.NET Core composite container images, conducting performance benchmarking across multiple scenarios to identify optimization opportunities. Reduced container image size while preserving performance gains, improving deployment efficiency and startup performance.}
+        \resumeItem{Designed and implemented a new runtime API enabling dynamic entry assembly configuration, supporting advanced launcher applications and Azure-hosted service scenarios.}
       \end{itemize}\vspace{-5pt}
 
     % ----------------------------- %
@@ -173,9 +175,9 @@
       {Software Engineer}{Jul 2019 \textbf{--} Sep 2021}
 
       \begin{itemize}
-        \resumeItem{Contributed to the development of an infrastructure measuring tool to gather performance benchmarks of the Garbage Collector in .NET Core and .NET Framework.}
-        \resumeItem{Provided various enhancements to the .NET Core build and test infrastructure to improve the developer experience, as well as laid the groundwork for a new unified system for all the runtime tests.}
-        \resumeItem{Provided the initial fixes and improvements to .NET Framework for ARM64, which later on was released for all architectures as version 4.8.1.}
+        \resumeItem{Built performance benchmarking infrastructure to measure and analyze Garbage Collector behavior across .NET Core and .NET Framework, enabling data-driven runtime optimizations.}
+        \resumeItem{Improved .NET Core build and test infrastructure, enhancing developer productivity and laying the groundwork for a unified runtime testing system.}
+        \resumeItem{Delivered foundational ARM64 compatibility fixes for .NET Framework, contributing to the eventual cross-architecture release in version 4.8.1.}
       \end{itemize}\vspace{-5pt}
 
   % ------ %
@@ -193,9 +195,9 @@
       {Software Developer II}{Jan 2017 \textbf{--} Jul 2019}
 
       \begin{itemize}
-        \resumeItem{Developed new functionalities and new enhancements for the PL/SQL Language that runs inside the Oracle Database, such as native Large Object management, and specialized numerical operations such as different types of rounding.}
-        \resumeItem{Created and maintained thorough testing mechanisms for Database packages working with PL/SQL and SQL together, as well as ensuring both languages exhibited the same behavior while maintaining similar performance benchmarks.}
-        \resumeItem{Maintained and improved certain Oracle Database packages for better performance and security.}
+        \resumeItem{Developed new PL/SQL language features within the Oracle Database engine, including native Large Object (LOB) management and advanced numerical operations.}
+        \resumeItem{Designed and maintained cross-language testing frameworks to ensure behavioral and performance parity between PL/SQL and SQL execution paths.}
+        %% \resumeItem{Optimized and hardened Oracle Database packages, improving performance and strengthening security guarantees.}
       \end{itemize}\vspace{-5pt}
 
 \end{itemize}
@@ -223,11 +225,20 @@
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
     \resumeSkillList
-      {Languages}{C, C++, C\#, Ruby, Python, JavaScript, SQL, PL/SQL, Bash, PowerShell, Elisp, Swift, Go, Julia, Lua}
+      {Languages}
+      {C, C++, C\#, Ruby, Python, JavaScript, SQL, PL/SQL, Bash, PowerShell, Elisp, Swift, Go, Julia, Lua}
+
     \resumeSkillList
-      {Technologies}{Git, Docker, Linux, AWS, Software Design, Software Infrastructure, .NET, Node.js, HTML/CSS, LaTeX, Emacs, Vim, Oracle, Discord API, Jetbrains, Visual Studio, LLDB, GIMP}
+      {Technologies}
+      {Git, .NET, Linux, AWS, Software Design, Software Infrastructure, Docker, OpenAI API, Node.js, HTML/CSS, LaTeX, Emacs, Vim, Oracle, Discord API}
+
+    %% \resumeSkillList
+    %%   {Testing \& Validation}
+    %%   {Automated Testing, Test Infrastructure, System Validation, Performance Testing, Regression Testing, Benchmarking}
+
     \resumeSkillList
-      {Methodologies and Paradigms}{Scrum, Object Oriented, Functional Programming, DevOps, Continuous Integration (CI/CD), Test Driven}
+      {Methodologies and Paradigms}
+      {Agile/Scrum, Object-Oriented Design, Test-Driven Development (TDD), DevOps, Continuous Integration (CI/CD), Relational Databases}
   }}
 \end{itemize}
 
@@ -245,26 +256,26 @@
 % Projects %
 % -------- %
 
-\section{Projects}
-\vspace{1pt}
-\begin{itemize}[leftmargin=0.15in, label={}]
+%% \section{Projects}
+%% \vspace{1pt}
+%% \begin{itemize}[leftmargin=0.15in, label={}]
 
-  \resumeProjectHeading
-    {Fie Bot}{Python, Discord API}{Nov 2024 \textbf{--} Feb 2025}
+%%   \resumeProjectHeading
+%%     {Fie Bot}{Python, Discord API}{Nov 2024 \textbf{--} Feb 2025}
 
-  \begin{itemize}
-    \resumeItem{Developing a Discord bot using Python to provide utilities and mini-games to a server I have with some friends.}
-    \resumeItem{Using this project for fun to also mentor one of my friends who is currently in the second half of his bachelor's in Computer Science.}
-  \end{itemize}\vspace{-5pt}
+%%   \begin{itemize}
+%%     \resumeItem{Developing a Discord bot using Python to provide utilities and mini-games to a server I have with some friends.}
+%%     \resumeItem{Using this project for fun to also mentor one of my friends who is currently in the second half of his bachelor's in Computer Science.}
+%%   \end{itemize}\vspace{-5pt}
 
-  \resumeProjectHeading
-    {Review Japanese App}{Python, Emacs Lisp}{Summer 2024}
+%%   \resumeProjectHeading
+%%     {Review Japanese App}{Python, Emacs Lisp}{Summer 2024}
 
-    \begin{itemize}
-      \resumeItem{Developed a small app on Python to help me practice Japanese vocabulary.}
-      \resumeItem{Reads the words from custom dictionaries written in Emacs Lisp and Org-Mode, and uses Python to scramble and ask them via a prompt.}
-      \resumeItem{Provides various forms of studying. It can ask for Kana/Kanji of word in English, or the English translation of a Japanese word in Kana/Kanji.}
-    \end{itemize}\vspace{-5pt}
-\end{itemize}
+%%     \begin{itemize}
+%%       \resumeItem{Developed a small app on Python to help me practice Japanese vocabulary.}
+%%       \resumeItem{Reads the words from custom dictionaries written in Emacs Lisp and Org-Mode, and uses Python to scramble and ask them via a prompt.}
+%%       \resumeItem{Provides various forms of studying. It can ask for Kana/Kanji of word in English, or the English translation of a Japanese word in Kana/Kanji.}
+%%     \end{itemize}\vspace{-5pt}
+%% \end{itemize}
 
 \end{document}
